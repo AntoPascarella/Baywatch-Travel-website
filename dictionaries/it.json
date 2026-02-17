@@ -1,0 +1,121 @@
+{
+    "common": {
+        "title": "Baywatch Travel",
+        "description": "La tua agenzia di viaggi a Ischia",
+        "cta": "Contattaci"
+    },
+    "nav": {
+        "home": "Home",
+        "destinations": "Destinazioni",
+        "contact": "Chi Siamo / Contatti"
+    },
+    "home": {
+        "hero": {
+            "headline": "Viaggi d'autore, da Ischia a tutta l'Italia.",
+            "subheadline": "Esperienze uniche, curate nei minimi dettagli per farti vivere la vera Dolce Vita.",
+            "cta_quote": "Richiedi preventivo",
+            "cta_whatsapp": "Scrivici su WhatsApp"
+        },
+        "quick_request": {
+            "title": "Richiesta Rapida",
+            "name": "Il tuo nome",
+            "email": "Email",
+            "destination": "Destinazione",
+            "destination_placeholder": "Scegli una meta…",
+            "message": "Note aggiuntive",
+            "submit": "Invia richiesta"
+        },
+        "partners": {
+            "title": "I Nostri Partner"
+        },
+        "usps": {
+            "incoming": {
+                "title": "Incoming Completo",
+                "desc": "Transfer, hotel, escursioni: pensiamo a tutto noi."
+            },
+            "local": {
+                "title": "Partner Locali",
+                "desc": "Solo le migliori guide e strutture selezionate."
+            },
+            "assistance": {
+                "title": "Assistenza Rapida",
+                "desc": "Supporto h24 per ogni tua esigenza in viaggio."
+            }
+        },
+        "destinations": {
+            "title": "Mete in Evidenza",
+            "subtitle": "Scopri le perle del Mediterraneo e oltre."
+        },
+        "services": {
+            "title": "I Nostri Servizi Incoming",
+            "items": {
+                "transfer": "Transfer Aeroportuali",
+                "hotel": "Hotel & Check-in Support",
+                "tours": "Escursioni Guidate",
+                "thermal": "Parchi Termali",
+                "dinner": "Cene Esperienziali"
+            }
+        },
+        "how_it_works": {
+            "title": "Come Funziona",
+            "step1": "Raccontaci il tuo viaggio ideale",
+            "step2": "Ricevi un itinerario su misura",
+            "step3": "Prenota e parti senza pensieri"
+        },
+        "testimonials": {
+            "title": "Dicono di Noi",
+            "review1": "Un'esperienza indimenticabile! Ischia è magica e l'organizzazione è stata impeccabile.",
+            "author1": "Giulia R.",
+            "review2": "Tutto perfetto, dai transfer alle escursioni in barca. Consigliatissimo!",
+            "author2": "Marco & Sara"
+        },
+        "faq": {
+            "title": "Domande Frequenti",
+            "q1": "Organizzate viaggi solo a Ischia?",
+            "a1": "No, copriamo tutta l'Italia con focus speciale su Campania, Roma e Toscana.",
+            "q2": "I transfer sono inclusi?",
+            "a2": "Possiamo includere transfer privati da/per aeroporti e stazioni.",
+            "q3": "Offrite assistenza durante il viaggio?",
+            "a3": "Sì, il nostro team è disponibile h24 per qualsiasi necessità."
+        },
+        "cta_final": {
+            "title": "Pronto a partire?",
+            "subtitle": "Compila il form qui sotto per un preventivo gratuito.",
+            "button": "Contattaci Ora"
+        }
+    },
+    "destinations": {
+        "hero_title": "Le Nostre Destinazioni",
+        "hero_subtitle": "Perle nascoste e mete iconiche del Mediterraneo.",
+        "discover": "Scopri"
+    },
+    "contact": {
+        "hero_title": "Chi Siamo & Contatti",
+        "hero_subtitle": "Pronti a partire? Siamo qui per creare l'itinerario perfetto per te.",
+        "info_title": "Resta in Contatto",
+        "visit": "Vieni a trovarci",
+        "email_us": "Scrivici",
+        "call_us": "Chiamaci",
+        "hours": "Lun – Ven, 9:00 – 18:00",
+        "form_title": "Inviaci un Messaggio",
+        "whatsapp_cta": "Oppure scrivici su WhatsApp"
+    },
+    "form": {
+        "name": "Nome",
+        "email": "Email",
+        "phone": "Telefono",
+        "phone_helper": "Opzionale – ti ricontatteremo se preferisci",
+        "destination": "Destinazione",
+        "destination_placeholder": "Scegli una meta…",
+        "message": "Messaggio",
+        "message_helper": "Raccontaci il tuo viaggio ideale",
+        "submit": "Invia messaggio",
+        "sending": "Invio in corso…",
+        "success_title": "Grazie!",
+        "success": "Messaggio inviato con successo!",
+        "send_another": "Invia un altro messaggio",
+        "error_name": "Il nome deve avere almeno 2 caratteri.",
+        "error_email": "Indirizzo email non valido.",
+        "error_message": "Il messaggio deve avere almeno 10 caratteri."
+    }
+}

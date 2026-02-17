@@ -1,0 +1,121 @@
+{
+    "common": {
+        "title": "Baywatch Travel",
+        "description": "Your travel agency in Ischia",
+        "cta": "Contact Us"
+    },
+    "nav": {
+        "home": "Home",
+        "destinations": "Destinations",
+        "contact": "About Us / Contact"
+    },
+    "home": {
+        "hero": {
+            "headline": "Signature journeys, from Ischia to all of Italy.",
+            "subheadline": "Unique experiences, curated to the smallest detail to let you live the true Dolce Vita.",
+            "cta_quote": "Request a Quote",
+            "cta_whatsapp": "Chat on WhatsApp"
+        },
+        "quick_request": {
+            "title": "Quick Request",
+            "name": "Your name",
+            "email": "Email",
+            "destination": "Destination",
+            "destination_placeholder": "Choose a destination…",
+            "message": "Additional notes",
+            "submit": "Send request"
+        },
+        "partners": {
+            "title": "Our Partners"
+        },
+        "usps": {
+            "incoming": {
+                "title": "Complete Incoming",
+                "desc": "Transfers, hotels, excursions: we take care of everything."
+            },
+            "local": {
+                "title": "Local Partners",
+                "desc": "Only the best guides and selected accommodations."
+            },
+            "assistance": {
+                "title": "Rapid Assistance",
+                "desc": "24/7 support for all your travel needs."
+            }
+        },
+        "destinations": {
+            "title": "Featured Destinations",
+            "subtitle": "Discover the pearls of the Mediterranean and beyond."
+        },
+        "services": {
+            "title": "Our Incoming Services",
+            "items": {
+                "transfer": "Airport Transfers",
+                "hotel": "Hotel & Check-in Support",
+                "tours": "Guided Excursions",
+                "thermal": "Thermal Parks",
+                "dinner": "Experiential Dinners"
+            }
+        },
+        "how_it_works": {
+            "title": "How It Works",
+            "step1": "Tell us about your ideal trip",
+            "step2": "Receive a tailor-made itinerary",
+            "step3": "Book and go worry-free"
+        },
+        "testimonials": {
+            "title": "What They Say",
+            "review1": "An unforgettable experience! Ischia is magical and the organization was impeccable.",
+            "author1": "Julia R.",
+            "review2": "Everything perfect, from transfers to boat tours. Highly recommended!",
+            "author2": "Mark & Sarah"
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "q1": "Do you only organize trips to Ischia?",
+            "a1": "No, we cover all of Italy with a special focus on Campania, Rome, and Tuscany.",
+            "q2": "Are transfers included?",
+            "a2": "We can include private transfers from/to airports and stations.",
+            "q3": "Do you offer assistance during the trip?",
+            "a3": "Yes, our team is available 24/7 for any need."
+        },
+        "cta_final": {
+            "title": "Ready to leave?",
+            "subtitle": "Fill out the form below for a free quote.",
+            "button": "Contact Us Now"
+        }
+    },
+    "destinations": {
+        "hero_title": "Our Destinations",
+        "hero_subtitle": "Hidden gems and iconic landmarks of the Mediterranean.",
+        "discover": "Discover"
+    },
+    "contact": {
+        "hero_title": "About Us & Contact",
+        "hero_subtitle": "Ready to start your journey? We\u2019re here to craft the perfect itinerary for you.",
+        "info_title": "Get in Touch",
+        "visit": "Visit Us",
+        "email_us": "Email Us",
+        "call_us": "Call Us",
+        "hours": "Mon – Fri, 9am – 6pm",
+        "form_title": "Send Us a Message",
+        "whatsapp_cta": "Or message us on WhatsApp"
+    },
+    "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "phone_helper": "Optional \u2013 we\u2019ll call you back if you prefer",
+        "destination": "Destination",
+        "destination_placeholder": "Choose a destination\u2026",
+        "message": "Message",
+        "message_helper": "Tell us about your ideal trip",
+        "submit": "Send message",
+        "sending": "Sending\u2026",
+        "success_title": "Thank you!",
+        "success": "Message sent successfully!",
+        "send_another": "Send another message",
+        "error_name": "Name must be at least 2 characters.",
+        "error_email": "Invalid email address.",
+        "error_message": "Message must be at least 10 characters."
+    }
+}
