@@ -59,6 +59,14 @@
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
+
+  --animate-scroll-left-slow: scroll-left 50s linear infinite;
+
+  @keyframes scroll-left {
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 /* ───────────────────────────────────────────
@@ -76,7 +84,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-playfair);
   line-height: 1.2;
 }
@@ -84,12 +97,29 @@ h1, h2, h3, h4, h5, h6 {
 /* ───────────────────────────────────────────
    TYPOGRAPHIC SCALE UTILITIES
    ─────────────────────────────────────────── */
-.text-h1 { font-size: var(--text-h1); }
-.text-h2 { font-size: var(--text-h2); }
-.text-h3 { font-size: var(--text-h3); }
-.text-h4 { font-size: var(--text-h4); }
-.text-body { font-size: var(--text-body); }
-.text-small { font-size: var(--text-small); }
+.text-h1 {
+  font-size: var(--text-h1);
+}
+
+.text-h2 {
+  font-size: var(--text-h2);
+}
+
+.text-h3 {
+  font-size: var(--text-h3);
+}
+
+.text-h4 {
+  font-size: var(--text-h4);
+}
+
+.text-body {
+  font-size: var(--text-body);
+}
+
+.text-small {
+  font-size: var(--text-small);
+}
 
 /* ───────────────────────────────────────────
    BUTTON UTILITIES
@@ -115,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   box-shadow: 0 4px 14px rgba(248, 131, 121, 0.35);
 }
+
 .btn-primary:hover {
   background: var(--color-soft-coral-dark);
   transform: translateY(-2px);
@@ -126,6 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-sea-blue-dark);
   border-color: var(--color-sea-blue);
 }
+
 .btn-secondary:hover {
   background: var(--color-sea-blue);
   color: #fff;
@@ -137,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-midnight);
   border-color: var(--color-midnight);
 }
+
 .btn-ghost:hover {
   background: var(--color-midnight);
   color: #fff;
@@ -153,6 +186,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
+
 .card:hover {
   box-shadow: var(--shadow-card-hover);
   transform: translateY(-4px);
@@ -173,17 +207,21 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   transition: all 0.3s ease;
 }
+
 .form-field:focus {
   border-color: var(--color-sea-blue);
   box-shadow: 0 0 0 3px rgba(169, 214, 229, 0.3);
 }
+
 .form-field-error {
   border-color: #ef4444;
   border-left-width: 4px;
 }
+
 .form-field-error:focus {
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
+
 .form-label {
   display: block;
   font-size: var(--text-small);
@@ -191,11 +229,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-midnight);
   margin-bottom: 0.375rem;
 }
+
 .form-helper {
   font-size: 0.75rem;
   color: #94a3b8;
   margin-top: 0.25rem;
 }
+
 .form-error {
   display: flex;
   align-items: center;
@@ -236,9 +276,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
 }
+
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
+
 .faq-item summary::after {
   content: "+";
   font-size: 1.5rem;
@@ -248,23 +290,36 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
   margin-left: 1rem;
 }
+
 .faq-item[open] summary::after {
   content: "−";
 }
+
 .faq-item .faq-answer {
   overflow: hidden;
   animation: faqOpen 0.3s ease;
 }
+
 @keyframes faqOpen {
-  from { opacity: 0; max-height: 0; }
-  to   { opacity: 1; max-height: 200px; }
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
 }
 
 /* ───────────────────────────────────────────
    ACCESSIBILITY — REDUCED MOTION
    ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

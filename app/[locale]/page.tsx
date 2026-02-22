@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
+import PartnersSection from '@/components/PartnersSection';
 import DestinationCard from '@/components/DestinationCard';
 import ContactForm from '@/components/ContactForm';
 import { destinations } from '@/data/destinations';
@@ -18,7 +19,7 @@ export default async function Home({
     const { locale } = await params;
     const dict = await getDictionary(locale);
 
-    const featuredSlugs = ['ischia', 'capri', 'procida', 'amalfi', 'roma', 'toscana'];
+    const featuredSlugs = ['ischia', 'capri', 'procida', 'amalfi', 'positano', 'roma'];
     const sortedDestinations = featuredSlugs
         .map(slug => destinations.find(d => d.slug === slug))
         .filter(Boolean) as typeof destinations;
@@ -91,20 +92,10 @@ export default async function Home({
                 {/* ═══════════════════════════════════
                     PARTNER STRIP
                    ═══════════════════════════════════ */}
-                <section className="py-8 bg-white border-b border-cream-dark/50">
-                    <div className="container mx-auto px-4">
-                        <p className="text-center text-small text-gray-400 uppercase tracking-widest mb-6">
-                            {dict.home.partners.title}
-                        </p>
-                        <div className="flex justify-center items-center gap-10 md:gap-16 flex-wrap opacity-30">
-                            {['Partner A', 'Partner B', 'Partner C', 'Partner D', 'Partner E'].map(name => (
-                                <div key={name} className="w-24 h-8 bg-gray-300 rounded flex items-center justify-center text-[10px] text-gray-500 font-medium">
-                                    {name}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+                {/* ═══════════════════════════════════
+                    PARTNERS SECTION
+                   ═══════════════════════════════════ */}
+                <PartnersSection title={dict.home.partners.title} />
 
                 {/* ═══════════════════════════════════
                     USP SECTION
@@ -138,7 +129,7 @@ export default async function Home({
                 {/* ═══════════════════════════════════
                     FEATURED DESTINATIONS
                    ═══════════════════════════════════ */}
-                <section style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }} className="bg-cream">
+                <section style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }} className="bg-white">
                     <div className="container mx-auto px-4">
                         <FadeIn>
                             <div className="text-center mb-14">

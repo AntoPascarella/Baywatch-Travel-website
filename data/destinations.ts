@@ -21,7 +21,7 @@ export const destinations: Destination[] = [
         bestSeason: 'Spring / Summer',
         shortDescription: 'Famous for its thermal waters, lush gardens, and the Aragonese Castle.',
         highlights: ['Castello Aragonese', 'Giardini La Mortella', 'Sant\u2019Angelo', 'Terme di Poseidon'],
-        image: '/images/destinations/ischia/cover.svg',
+        image: '/images/destinations/ischia/Ischia.jpg',
         alt: {
             it: 'Vista panoramica di Ischia con il Castello Aragonese',
             en: 'Panoramic view of Ischia with the Aragonese Castle',
@@ -36,7 +36,7 @@ export const destinations: Destination[] = [
         bestSeason: 'Spring / Summer',
         shortDescription: 'Iconic sea stacks, the Blue Grotto, and timeless elegance.',
         highlights: ['Grotta Azzurra', 'Faraglioni', 'Piazzetta', 'Villa San Michele'],
-        image: '/images/destinations/capri/cover.svg',
+        image: '/images/destinations/capri/Capri.jpg',
         alt: {
             it: 'I Faraglioni di Capri al tramonto',
             en: 'Capri\u2019s Faraglioni sea stacks at sunset',
@@ -51,7 +51,7 @@ export const destinations: Destination[] = [
         bestSeason: 'Spring / Autumn',
         shortDescription: 'Colorful fishermen\u2019s houses and a peaceful atmosphere.',
         highlights: ['Corricella', 'Terra Murata', 'Chiaiolella'],
-        image: '/images/destinations/procida/cover.svg',
+        image: '/images/destinations/procida/procida.jpg',
         alt: {
             it: 'Le case colorate di Marina Corricella a Procida',
             en: 'Colorful houses of Marina Corricella in Procida',
@@ -96,7 +96,7 @@ export const destinations: Destination[] = [
         bestSeason: 'Spring / Summer',
         shortDescription: 'A historic powerhouse with stunning coastal views.',
         highlights: ['Duomo di Amalfi', 'Valle delle Ferriere', 'Paper Museum'],
-        image: '/images/destinations/amalfi/cover.svg',
+        image: '/images/destinations/amalfi/Amalfi.jpg',
         alt: {
             it: 'Il Duomo di Amalfi e la costiera',
             en: 'Amalfi Cathedral and the coastline',
@@ -156,7 +156,7 @@ export const destinations: Destination[] = [
         bestSeason: 'Spring / Autumn',
         shortDescription: 'The capital of the world, where history lives.',
         highlights: ['Colosseum', 'Vatican', 'Pantheon', 'Trevi Fountain'],
-        image: '/images/destinations/roma/cover.svg',
+        image: '/images/destinations/roma/Roma.jpg',
         alt: {
             it: 'Il Colosseo di Roma al tramonto',
             en: 'Rome\u2019s Colosseum at sunset',
@@ -175,6 +175,21 @@ export const destinations: Destination[] = [
         alt: {
             it: 'Colline toscane e cipressi della Val d\u2019Orcia',
             en: 'Tuscan hills and cypress trees in Val d\u2019Orcia',
+        },
+    },
+    {
+        slug: 'positano',
+        name: 'Positano',
+        subTitle: 'Love on the cliff',
+        region: 'Campania',
+        types: ['Beach', 'Nature', 'Food'],
+        bestSeason: 'Spring / Summer',
+        shortDescription: 'Breathtaking cliff, sunny beaches, slow life.',
+        highlights: ['Il San Pietro', 'Villa Tre Ville', 'Le Sirenuse'],
+        image: '/images/destinations/positano/Positano.jpg',
+        alt: {
+            it: 'La vista mozzafiato su uno dei borghi più belli della Costiera Amalfitana',
+            en: 'The breathtaking view over Positano',
         },
     },
 ];
