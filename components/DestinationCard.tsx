@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { type Destination } from '@/data/destinations';
@@ -7,78 +9,120 @@ export default function DestinationCard({
     destination,
     lang,
     discoverLabel,
+    description,
 }: {
     destination: Destination;
     lang: Locale;
     discoverLabel?: string;
+    description?: string;
 }) {
     const altText = destination.alt[lang] || destination.name;
-    const ctaText = discoverLabel || 'Discover';
+    const ctaText = discoverLabel || 'Scopri';
+    const descriptionText = description || destination.shortDescription;
+    const href = `/${lang}/destinazioni#${destination.slug}`;
 
     return (
-        <Link href={`/${lang}/destinazioni#${destination.slug}`} className="group block h-full">
-            <div className="card h-full flex flex-col">
-                {/* Image area with gradient overlay */}
-                <div className="relative h-64 overflow-hidden">
-                    <Image
-                        src={destination.image}
-                        alt={altText}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-midnight/10 to-transparent transition-opacity duration-500 group-hover:from-midnight/70" />
+        /**
+         * Outer div: non-Link wrapper — keeps HTML valid (no nested <a>).
+         * Two sibling <Link> elements: one invisible full-card link (z-0, aria-hidden)
+         * and one visible CTA button (z-10). Both point to the same href.
+         */
+        <div className="group relative overflow-hidden border border-black/[0.09] shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-all duration-500 ease-out hover:-translate-y-[6px] hover:shadow-[0_24px_64px_rgba(0,0,0,0.20)] cursor-pointer">
 
-                    {/* Region badge */}
-                    <div className="absolute top-4 left-4 z-10">
-                        <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-sea-blue-dark">
-                            {destination.region}
-                        </span>
-                    </div>
+            {/* ── Full-card invisible link (keyboard-hidden, behind everything) ── */}
+            <Link
+                href={href}
+                className="absolute inset-0 z-0 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white focus-visible:outline-none"
+                tabIndex={-1}
+                aria-hidden="true"
+            />
 
-                    {/* Name overlay on image */}
-                    <div className="absolute bottom-4 left-4 right-4 z-10">
-                        <h3 className="text-h4 font-serif font-bold text-white drop-shadow-lg leading-tight">
-                            {destination.name}
-                        </h3>
-                        <p className="text-small text-white/80 font-medium mt-0.5">
-                            {destination.subTitle}
-                        </p>
-                    </div>
+            {/* ── Image + overlay content ── */}
+            <div className="relative aspect-[3/4]">
+
+                {/* Background image */}
+                <Image
+                    src={destination.image}
+                    alt={altText}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+
+                {/* Top gradient — title readability */}
+                <div
+                    className="absolute inset-x-0 top-0 pointer-events-none"
+                    style={{
+                        height: '55%',
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0) 100%)',
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* Bottom gradient — description + CTA readability */}
+                <div
+                    className="absolute inset-x-0 bottom-0 pointer-events-none"
+                    style={{
+                        height: '55%',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.28) 60%, rgba(0,0,0,0) 100%)',
+                        zIndex: 1,
+                    }}
+                />
+
+                {/* ── Title (top-left, inside image) ── */}
+                <div
+                    className="absolute top-0 inset-x-0 p-7 text-center pointer-events-none"
+                    style={{ zIndex: 2 }}
+                >
+                    <h3
+                        style={{
+                            fontFamily: 'var(--font-futuramed)',
+                            fontSize: 'clamp(1.75rem, 2.8vw, 2.5rem)',
+                            fontWeight: 400,
+                            color: '#ffffff',
+                            lineHeight: 1.1,
+                            letterSpacing: '0.01em',
+                            textShadow: '0 1px 8px rgba(0,0,0,0.25)',
+                        }}
+                    >
+                        {destination.name}
+                    </h3>
                 </div>
 
-                {/* Content area */}
-                <div className="p-5 flex-1 flex flex-col">
-                    {/* Tags */}
-                    <div className="flex gap-1.5 mb-3 flex-wrap">
-                        {destination.types.slice(0, 3).map(type => (
-                            <span
-                                key={type}
-                                className="text-[10px] uppercase tracking-wider bg-cream-dark/60 px-2.5 py-0.5 rounded-full text-midnight/70 font-semibold"
-                            >
-                                {type}
-                            </span>
-                        ))}
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-body text-gray-600 line-clamp-2 mb-4 flex-1">
-                        {destination.shortDescription}
+                {/* ── Bottom: description + CTA ── */}
+                <div
+                    className="absolute bottom-0 left-0 right-0 p-7 flex flex-col items-center gap-5 text-center"
+                    style={{ zIndex: 10 }}
+                >
+                    <p
+                        className="line-clamp-2"
+                        style={{
+                            fontFamily: 'var(--font-inter)',
+                            fontSize: '0.9375rem',
+                            fontWeight: 400,
+                            color: 'rgba(255,255,255,0.85)',
+                            lineHeight: 1.65,
+                            letterSpacing: '0.01em',
+                            textShadow: '0 1px 4px rgba(0,0,0,0.30)',
+                            maxWidth: '22rem',
+                        }}
+                    >
+                        {descriptionText}
                     </p>
 
-                    {/* Footer */}
-                    <div className="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center">
-                        <span className="text-small text-gray-400">{destination.bestSeason}</span>
-                        <span className="text-small text-soft-coral font-semibold group-hover:translate-x-1 transition-transform duration-300 flex items-center gap-1">
-                            {ctaText}
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </span>
-                    </div>
+                    {/*
+                     * CTA button — reuses .bay-btn + .bay-btn-light from globals.css,
+                     * identical to the "CONTATTACI" button in Header.tsx (line 201-204).
+                     */}
+                    <Link
+                        href={href}
+                        className="bay-btn bay-btn-light px-8 py-3 text-xs focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:outline-none"
+                    >
+                        {ctaText}
+                    </Link>
                 </div>
+
             </div>
-        </Link>
+        </div>
     );
 }

@@ -1,108 +1,209 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useSyncExternalStore, useRef } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import LangSwitcher from './LangSwitcher';
-import { Locale } from '@/i18n-config';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { Locale } from '@/i18n-config';
+import { useHeaderState } from './hooks/useHeaderState';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Dict = Record<string, any>;
+const MQ = '(prefers-reduced-motion: reduce)';
+function subscribeRM(cb: () => void) {
+    const mq = window.matchMedia(MQ);
+    mq.addEventListener('change', cb);
+    return () => mq.removeEventListener('change', cb);
+}
+function getRM() { return window.matchMedia(MQ).matches; }
+function getRMServer() { return false; }
 
 export default function Header({
-    dict,
     lang,
 }: {
-    dict: Dict;
+    dict?: Record<string, unknown>;
     lang: Locale;
 }) {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const { state, isCompact } = useHeaderState(60);
+    const prefersReducedMotion = useSyncExternalStore(subscribeRM, getRM, getRMServer);
 
-    const navLinks = [
-        { href: `/${lang}`, label: dict.nav.home },
-        { href: `/${lang}/destinazioni`, label: dict.nav.destinations },
-        { href: `/${lang}/chi-siamo-contatti`, label: dict.nav.contact },
+    const [bouncing, setBouncing] = useState(false);
+    const [logoError, setLogoError] = useState(false);
+    const prevStateRef = useRef(state);
+
+    useEffect(() => {
+        // Subtle bounce only on top → scrolled transition
+        if (state === 'scrolled' && prevStateRef.current === 'top' && !prefersReducedMotion) {
+            const t1 = setTimeout(() => setBouncing(true), 0);
+            const t2 = setTimeout(() => setBouncing(false), 400);
+            return () => { clearTimeout(t1); clearTimeout(t2); };
+        }
+        prevStateRef.current = state;
+    }, [state, prefersReducedMotion]);
+
+    // State B: dark overlay (brief overscroll at top)
+    // State C: white translucent (scrolled into page)
+    const isOverlay = state === 'top-overscroll';
+    const isScrolled = state === 'scrolled';
+
+    // White scrolled bg uses dark text; transparent/overlay states use white text
+    const textColor = isScrolled ? '#1a1a1a' : '#ffffff';
+
+    const links = [
+        { href: `/${lang}`, label: 'HOME' },
+        { href: `/${lang}/destinazioni`, label: 'DESTINAZIONI' },
+        { href: `/${lang}/chi-siamo-contatti`, label: 'CHI SIAMO' },
     ];
 
-    const pathname = usePathname();
-
     return (
-        <header className="sticky top-0 z-50 bg-midnight shadow-md border-b border-white/5 transition-colors duration-300">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                {/* Logo */}
-                <Link href={`/${lang}`} className="flex items-center gap-2 group">
-                    <span className="text-2xl text-white flex items-baseline">
-                        <span className="font-serif italic font-normal text-3xl mr-1">B</span>
-                        <span className="font-serif italic font-normal">Baywatch Travel</span>
-                    </span>
-                </Link>
-
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex gap-8 items-center">
-                    {navLinks.map(link => {
-                        const isActive = pathname === link.href;
-                        return (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`text-sm font-medium tracking-widest uppercase transition-all duration-200 
-                                    ${isActive
-                                        ? 'text-white border-b-2 border-soft-coral pb-1'
-                                        : 'text-white/80 hover:text-white hover:border-b-2 hover:border-white/20 pb-1'
-                                    }`}
-                            >
-                                {link.label}
-                            </Link>
-                        );
-                    })}
-                </nav>
-
-                <div className="flex items-center gap-6">
-                    <LangSwitcher />
-
-                    {/* Mobile Hamburger */}
-                    <button
-                        className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                        aria-expanded={isMenuOpen}
+        <header
+            data-state={state}
+            className={[
+                'bay-header',
+                isCompact ? 'bay-header--compact' : '',
+                bouncing && !prefersReducedMotion ? 'bay-header--bouncing' : '',
+            ].filter(Boolean).join(' ')}
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: isScrolled ? 50 : 4,
+                height: isCompact ? '72px' : '88px',
+                // State A: transparent | State B: dark overlay | State C: white translucent
+                background: isOverlay
+                    ? 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%)'
+                    : isScrolled
+                        ? 'rgba(255,255,255,0.78)'
+                        : 'transparent',
+                backdropFilter: isScrolled ? 'blur(8px)' : 'blur(0px)',
+                WebkitBackdropFilter: isScrolled ? 'blur(8px)' : 'blur(0px)',
+                borderBottom: isScrolled
+                    ? '1px solid rgba(0,0,0,0.1)'
+                    : '1px solid rgba(230,230,230,.65)',
+                transition: prefersReducedMotion
+                    ? 'none'
+                    : 'height .3s ease-in-out, background .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out, backdrop-filter .3s ease-in-out',
+            }}
+        >
+            {/* Inner grid: [logo 1fr] [brand+nav auto] [phone+btn 1fr] — 24px gutters */}
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr auto 1fr',
+                    alignItems: 'center',
+                    height: '100%',
+                    paddingLeft: '24px',
+                    paddingRight: '24px',
+                }}
+            >
+                {/* ── LEFT: Logo icon 28px, -2px margin ── */}
+                <div style={{ marginLeft: '-2px' }}>
+                    <Link
+                        href={`/${lang}`}
+                        style={{ display: 'inline-flex', alignItems: 'center', opacity: 0.9 }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.9'; }}
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            {isMenuOpen ? (
-                                <path strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            ) : (
-                                <path strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                            )}
-                        </svg>
-                    </button>
+                        {logoError ? (
+                            <span style={{
+                                fontFamily: 'var(--font-display)',
+                                fontSize: '18px',
+                                color: textColor,
+                            }}>
+                                BT
+                            </span>
+                        ) : (
+                            <div style={{ position: 'relative', width: '70px', height: '70px', flexShrink: 0 }}>
+                                <Image
+                                    src="/images/logo_header.png"
+                                    alt="Baywatch Travel"
+                                    fill
+                                    className={`object-contain object-left brightness-100${isScrolled ? '' : ' invert'}`}
+                                    sizes="28px"
+                                    onError={() => setLogoError(true)}
+                                />
+                            </div>
+                        )}
+                    </Link>
                 </div>
-            </div>
 
-            {/* Mobile Menu */}
-            {isMenuOpen && (
-                <div className="md:hidden bg-midnight border-t border-white/10 shadow-lg animate-[faqOpen_0.3s_ease]">
-                    <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
-                        {navLinks.map(link => {
-                            const isActive = pathname === link.href;
-                            return (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`text-sm font-medium tracking-widest uppercase py-3 px-4 rounded-lg transition-colors
-                                        ${isActive
-                                            ? 'bg-white/10 text-white'
-                                            : 'text-white/80 hover:text-white hover:bg-white/5'
-                                        }`}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {link.label}
-                                </Link>
-                            );
-                        })}
+                {/* ── CENTER: Brand mark + nav ── */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                    <Link href={`/${lang}`} style={{ textDecoration: 'none', marginTop: '10px' }}>
+                        <span style={{
+                            display: 'block',
+                            fontFamily: 'var(--font-display)',
+                            fontSize: isCompact ? '28px' : '30px',
+                            fontWeight: 400,
+                            textTransform: 'uppercase',
+                            letterSpacing: isCompact ? '0.18em' : '0.22em',
+                            lineHeight: '1.1em',
+                            color: textColor,
+                            whiteSpace: 'nowrap',
+                            transition: prefersReducedMotion
+                                ? 'none'
+                                : 'font-size .3s ease-in-out, letter-spacing .3s ease-in-out, color .3s ease-in-out',
+                        }}>
+                            Baywatch Travel
+                        </span>
+                    </Link>
+
+                    <nav style={{ display: 'flex', alignItems: 'center', gap: '150px' }}>
+                        {links.map(l => (
+                            <Link
+                                key={l.href}
+                                href={l.href}
+                                style={{
+                                    fontFamily: 'var(--font-futura, var(--font-inter))',
+                                    fontWeight: 600,
+                                    fontSize: '15px',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.15em',
+                                    lineHeight: '1em',
+                                    color: textColor,
+                                    opacity: pathname === l.href ? 1 : 0.65,
+                                    transition: prefersReducedMotion
+                                        ? 'none'
+                                        : 'opacity .3s ease-in-out, color .3s ease-in-out',
+                                    textDecoration: 'none',
+                                    whiteSpace: 'nowrap',
+                                }}
+                            >
+                                {l.label}
+                            </Link>
+                        ))}
                     </nav>
                 </div>
-            )}
+
+                {/* ── RIGHT: Phone + CONTATTACI button ── */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '24px' }}>
+                    <a
+                        href="tel:+390811234567"
+                        className="bay-phone hidden lg:block"
+                        style={{
+                            fontFamily: 'var(--font-futura, var(--font-inter))',
+                            fontWeight: 600,
+                            fontSize: '16px',
+                            letterSpacing: '0.1em',
+                            color: textColor,
+                            opacity: isScrolled ? 0.7 : 0.85,
+                            transition: prefersReducedMotion
+                                ? 'none'
+                                : 'opacity .3s ease-in-out, color .3s ease-in-out',
+                            textDecoration: 'none',
+                        }}
+                    >
+                        +39 081 123 4567
+                    </a>
+
+                    <Link
+                        href={`/${lang}/chi-siamo-contatti#contatti`}
+                        className={`bay-btn ${isScrolled ? 'bay-btn-dark' : 'bay-btn-light'}`}
+                    >
+                        CONTATTACI
+                    </Link>
+                </div>
+            </div>
         </header>
     );
 }

@@ -13,20 +13,41 @@
         "hero": {
             "headline": "Signature journeys, from Ischia to all of Italy.",
             "subheadline": "Unique experiences, curated to the smallest detail to let you live the true Dolce Vita.",
-            "cta_quote": "Request a Quote",
-            "cta_whatsapp": "Chat on WhatsApp"
+            "cta_quote": "Explore destinations"
+        },
+        "video_section": {
+            "title": "La Dolce Vita awaits",
+            "body": "With Baywatch Travel you can uncover Italy's hidden gems, live unforgettable experiences, and embrace La Dolce Vita. From the Campanian coast to tucked-away inland villages, every journey becomes a story worth living firsthand."
+        },
+        "partners": {
+            "title": "Our Partners"
+        },
+        "destinations": {
+            "title": "Choose your destination",
+            "subtitle": "Discover the pearls of the Mediterranean and beyond."
+        },
+        "services_about": {
+            "title": "About us",
+            "body": "Baywatch Travel was born in Casamicciola Terme, in the heart of Ischia, with the goal of offering a complete, tailor-made incoming tourism service.\n\nWe handle everything: airport and port transfers, hotel bookings, guided excursions, food and wine experiences, and thermal spa itineraries. We work with a handpicked network of local partners to guarantee quality, authenticity, and attention to every detail.\n\nWhether it's a romantic weekend in Capri or a cultural tour through Rome and Tuscany, our team builds every itinerary by truly listening to what you need.",
+            "image_alt": "Baywatch Travel office in Casamicciola Terme"
+        },
+        "review": {
+            "quote": "A flawlessly organized trip. Every detail was taken care of, from the boat excursions to the seaside dinners. We felt pampered from start to finish.",
+            "author": "Giulia and Marco R. - Milan",
+            "button": "Reviews"
+        },
+        "plan_trip": {
+            "title": "Plan your journey",
+            "body": "Tell us what you'd love to experience and where you'd like to go. You don't need a fully formed idea \u2014 even just a feeling, a wish, a place you spotted in a photo. We'll take care of turning it into a tailor-made itinerary, stress-free and without surprises."
         },
         "quick_request": {
             "title": "Quick Request",
             "name": "Your name",
             "email": "Email",
             "destination": "Destination",
-            "destination_placeholder": "Choose a destination…",
+            "destination_placeholder": "Choose a destination\u2026",
             "message": "Additional notes",
             "submit": "Send request"
-        },
-        "partners": {
-            "title": "Our Partners"
         },
         "usps": {
             "incoming": {
@@ -41,10 +62,6 @@
                 "title": "Rapid Assistance",
                 "desc": "24/7 support for all your travel needs."
             }
-        },
-        "destinations": {
-            "title": "Featured Destinations",
-            "subtitle": "Discover the pearls of the Mediterranean and beyond."
         },
         "services": {
             "title": "Our Incoming Services",
@@ -82,12 +99,21 @@
             "title": "Ready to leave?",
             "subtitle": "Fill out the form below for a free quote.",
             "button": "Contact Us Now"
-        }
+        },
+        "hero_cta_whatsapp": "Chat on WhatsApp"
     },
     "destinations": {
         "hero_title": "Our Destinations",
         "hero_subtitle": "Hidden gems and iconic landmarks of the Mediterranean.",
-        "discover": "Discover"
+        "discover": "Discover",
+        "descriptions": {
+            "ischia": "Famous for its thermal waters, lush gardens, and the Aragonese Castle.",
+            "capri": "Iconic sea stacks, the Blue Grotto, and timeless elegance.",
+            "procida": "Colorful fishermen's houses and a peaceful atmosphere.",
+            "amalfi": "A historic powerhouse with stunning coastal views.",
+            "positano": "Breathtaking cliffs, sunny beaches, and the sweet slow life.",
+            "roma": "The Eternal City, where two thousand years of history await."
+        }
     },
     "contact": {
         "hero_title": "About Us & Contact",
@@ -96,7 +122,7 @@
         "visit": "Visit Us",
         "email_us": "Email Us",
         "call_us": "Call Us",
-        "hours": "Mon – Fri, 9am – 6pm",
+        "hours": "Mon \u2013 Fri, 9am \u2013 6pm",
         "form_title": "Send Us a Message",
         "whatsapp_cta": "Or message us on WhatsApp"
     },
@@ -117,5 +143,21 @@
         "error_name": "Name must be at least 2 characters.",
         "error_email": "Invalid email address.",
         "error_message": "Message must be at least 10 characters."
+    },
+    "footer": {
+        "newsletter_title": "Stay updated",
+        "newsletter_placeholder": "Your email",
+        "newsletter_button": "Subscribe",
+        "col_site": "Site",
+        "col_info": "Information",
+        "col_contact": "Contact",
+        "col_social": "Social",
+        "link_home": "Home",
+        "link_destinations": "Destinations",
+        "link_about": "About us",
+        "link_faq": "FAQs",
+        "link_terms": "Terms and conditions",
+        "contact_email": "info@baywatchtravel.it",
+        "contact_phone": "+39 081 123 4567"
     }
 }
