@@ -11,22 +11,43 @@
     },
     "home": {
         "hero": {
-            "headline": "Viaggi d'autore, da Ischia a tutta l'Italia.",
+            "headline": "VIAGGI D'AUTORE, VERSO ISCHIA E OLTRE.",
             "subheadline": "Esperienze uniche, curate nei minimi dettagli per farti vivere la vera Dolce Vita.",
-            "cta_quote": "Richiedi preventivo",
-            "cta_whatsapp": "Scrivici su WhatsApp"
+            "cta_quote": "Scopri le destinazioni"
+        },
+        "video_section": {
+            "title": "La Dolce Vita ti aspetta",
+            "body": "Con Baywatch Travel puoi scoprire le perle nascoste del nostro paese, vivere esperienze indimenticabili e goderti La Dolce Vita. Dalle coste della Campania ai borghi nascosti dell'entroterra, ogni viaggio diventa un racconto da vivere in prima persona."
+        },
+        "partners": {
+            "title": "I Nostri Partner"
+        },
+        "destinations": {
+            "title": "Scegli la tua destinazione",
+            "subtitle": "Scopri le perle del Mediterraneo e oltre."
+        },
+        "services_about": {
+            "title": "Chi siamo",
+            "body": "Baywatch Travel nasce a Casamicciola Terme, nel cuore di Ischia, con l'obiettivo di offrire un servizio di incoming turistico completo e su misura.\n\nCi occupiamo di tutto: transfer da aeroporti e porti, prenotazioni alberghiere, escursioni guidate, esperienze enogastronomiche e percorsi termali. Collaboriamo con una rete di partner locali selezionati per garantire qualita, autenticita e attenzione ad ogni dettaglio.\n\nChe si tratti di un weekend romantico a Capri o di un tour culturale tra Roma e la Toscana, il nostro team costruisce ogni itinerario ascoltando davvero le tue esigenze.",
+            "image_alt": "Ufficio Baywatch Travel a Casamicciola Terme"
+        },
+        "review": {
+            "quote": "Un viaggio organizzato in modo impeccabile. Ogni dettaglio era curato, dalle escursioni in barca alle cene vista mare. Ci siamo sentiti coccolati dall'inizio alla fine.",
+            "author": "Giulia e Marco R. - Milano",
+            "button": "Recensioni"
+        },
+        "plan_trip": {
+            "title": "Pianifica il tuo viaggio",
+            "body": "Raccontaci cosa ti piacerebbe vivere e dove vorresti andare. Non servono idee precise: basta anche solo un'intuizione, un desiderio, un posto visto in una foto. Pensiamo noi a trasformare tutto in un itinerario su misura, senza stress e senza sorprese."
         },
         "quick_request": {
             "title": "Richiesta Rapida",
             "name": "Il tuo nome",
             "email": "Email",
             "destination": "Destinazione",
-            "destination_placeholder": "Scegli una meta…",
+            "destination_placeholder": "Scegli una meta\u2026",
             "message": "Note aggiuntive",
             "submit": "Invia richiesta"
-        },
-        "partners": {
-            "title": "I Nostri Partner"
         },
         "usps": {
             "incoming": {
@@ -41,10 +62,6 @@
                 "title": "Assistenza Rapida",
                 "desc": "Supporto h24 per ogni tua esigenza in viaggio."
             }
-        },
-        "destinations": {
-            "title": "Mete in Evidenza",
-            "subtitle": "Scopri le perle del Mediterraneo e oltre."
         },
         "services": {
             "title": "I Nostri Servizi Incoming",
@@ -64,7 +81,7 @@
         },
         "testimonials": {
             "title": "Dicono di Noi",
-            "review1": "Un'esperienza indimenticabile! Ischia è magica e l'organizzazione è stata impeccabile.",
+            "review1": "Un'esperienza indimenticabile! Ischia e magica e l'organizzazione e stata impeccabile.",
             "author1": "Giulia R.",
             "review2": "Tutto perfetto, dai transfer alle escursioni in barca. Consigliatissimo!",
             "author2": "Marco & Sara"
@@ -76,18 +93,27 @@
             "q2": "I transfer sono inclusi?",
             "a2": "Possiamo includere transfer privati da/per aeroporti e stazioni.",
             "q3": "Offrite assistenza durante il viaggio?",
-            "a3": "Sì, il nostro team è disponibile h24 per qualsiasi necessità."
+            "a3": "Si, il nostro team e disponibile h24 per qualsiasi necessita."
         },
         "cta_final": {
             "title": "Pronto a partire?",
             "subtitle": "Compila il form qui sotto per un preventivo gratuito.",
             "button": "Contattaci Ora"
-        }
+        },
+        "hero_cta_whatsapp": "Scrivici su WhatsApp"
     },
     "destinations": {
         "hero_title": "Le Nostre Destinazioni",
         "hero_subtitle": "Perle nascoste e mete iconiche del Mediterraneo.",
-        "discover": "Scopri"
+        "discover": "Scopri",
+        "descriptions": {
+            "ischia": "Famosa per le terme, i giardini lussureggianti e il Castello Aragonese.",
+            "capri": "Faraglioni iconici, la Grotta Azzurra e un'eleganza senza tempo.",
+            "procida": "Case colorate dei pescatori e un'atmosfera tranquilla e autentica.",
+            "amalfi": "Un borgo marinaro storico con panorami costieri mozzafiato.",
+            "positano": "Scogliere a picco, spiagge soleggiate e il ritmo lento della vita.",
+            "roma": "La Città Eterna, dove duemila anni di storia ti aspettano."
+        }
     },
     "contact": {
         "hero_title": "Chi Siamo & Contatti",
@@ -96,7 +122,7 @@
         "visit": "Vieni a trovarci",
         "email_us": "Scrivici",
         "call_us": "Chiamaci",
-        "hours": "Lun – Ven, 9:00 – 18:00",
+        "hours": "Lun \u2013 Ven, 9:00 \u2013 18:00",
         "form_title": "Inviaci un Messaggio",
         "whatsapp_cta": "Oppure scrivici su WhatsApp"
     },
@@ -104,18 +130,34 @@
         "name": "Nome",
         "email": "Email",
         "phone": "Telefono",
-        "phone_helper": "Opzionale – ti ricontatteremo se preferisci",
+        "phone_helper": "Opzionale \u2013 ti ricontatteremo se preferisci",
         "destination": "Destinazione",
-        "destination_placeholder": "Scegli una meta…",
+        "destination_placeholder": "Scegli una meta\u2026",
         "message": "Messaggio",
         "message_helper": "Raccontaci il tuo viaggio ideale",
         "submit": "Invia messaggio",
-        "sending": "Invio in corso…",
+        "sending": "Invio in corso\u2026",
         "success_title": "Grazie!",
         "success": "Messaggio inviato con successo!",
         "send_another": "Invia un altro messaggio",
         "error_name": "Il nome deve avere almeno 2 caratteri.",
         "error_email": "Indirizzo email non valido.",
         "error_message": "Il messaggio deve avere almeno 10 caratteri."
+    },
+    "footer": {
+        "newsletter_title": "Resta aggiornato",
+        "newsletter_placeholder": "La tua email",
+        "newsletter_button": "Iscriviti",
+        "col_site": "Sito",
+        "col_info": "Informazioni",
+        "col_contact": "Contatti",
+        "col_social": "Social",
+        "link_home": "Home",
+        "link_destinations": "Destinazioni",
+        "link_about": "Chi siamo",
+        "link_faq": "FAQs",
+        "link_terms": "Terms and conditions",
+        "contact_email": "info@baywatchtravel.it",
+        "contact_phone": "+39 081 123 4567"
     }
 }

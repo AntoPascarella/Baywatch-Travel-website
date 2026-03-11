@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { i18n } from '@/i18n-config';
 
-export default function LangSwitcher() {
+export default function LangSwitcher({ scrolled = false }: { scrolled?: boolean }) {
     const pathname = usePathname();
     const router = useRouter();
 
@@ -17,16 +17,23 @@ export default function LangSwitcher() {
     const currentLocale = pathname?.split('/')[1] || i18n.defaultLocale;
 
     return (
-        <div className="flex bg-sea-blue/10 rounded-full p-1 border border-white/10">
+        <div className={`flex rounded-full p-0.5 border transition-colors duration-300 ${scrolled
+                ? 'bg-black/5 border-black/10'
+                : 'bg-white/10 border-white/20'
+            }`}>
             {i18n.locales.map((locale) => {
                 const isActive = currentLocale === locale;
                 return (
                     <button
                         key={locale}
                         onClick={() => router.push(redirectedPathName(locale))}
-                        className={`uppercase px-3 py-1 text-xs font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-sea-blue ${isActive
-                                ? 'bg-sea-blue text-midnight shadow-sm'
-                                : 'text-white/70 hover:text-white'
+                        className={`uppercase px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-sea-blue ${isActive
+                                ? scrolled
+                                    ? 'bg-midnight text-white shadow-sm'
+                                    : 'bg-white text-midnight shadow-sm'
+                                : scrolled
+                                    ? 'text-midnight/50 hover:text-midnight'
+                                    : 'text-white/60 hover:text-white'
                             }`}
                         aria-label={`Switch to ${locale === 'it' ? 'Italiano' : 'English'}`}
                         aria-current={isActive ? 'true' : undefined}
