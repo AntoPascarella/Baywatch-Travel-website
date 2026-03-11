@@ -108,24 +108,24 @@
 | HOME-08 | Phase 3 | Pending |
 | HOME-09 | Phase 3 | Pending |
 | HOME-10 | Phase 3 | Pending |
+| ABOUT-01 | Phase 3 | Pending |
+| ABOUT-02 | Phase 3 | Pending |
+| QUAL-04 | Phase 3 | Pending |
 | DEST-01 | Phase 4 | Pending |
 | DEST-02 | Phase 4 | Pending |
 | DEST-03 | Phase 4 | Pending |
 | DEST-04 | Phase 4 | Pending |
 | DEST-05 | Phase 4 | Pending |
 | DEST-06 | Phase 4 | Pending |
-| ABOUT-01 | Phase 3 | Pending |
-| ABOUT-02 | Phase 3 | Pending |
 | QUAL-01 | Phase 4 | Pending |
 | QUAL-02 | Phase 4 | Pending |
 | QUAL-03 | Phase 4 | Pending |
-| QUAL-04 | Phase 3 | Pending |
 
 **Coverage:**
-- v1 requirements: 28 total
-- Mapped to phases: 28
+- v1 requirements: 30 total
+- Mapped to phases: 30
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after initial definition*
+*Last updated: 2026-03-11 after roadmap creation*
