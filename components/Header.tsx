@@ -50,6 +50,7 @@ export default function Header({
     const links = [
         { href: `/${lang}`, label: 'HOME' },
         { href: `/${lang}/destinazioni`, label: 'DESTINAZIONI' },
+        { href: `/${lang}/servizi`, label: 'SERVIZI' },
         { href: `/${lang}/chi-siamo-contatti`, label: 'CHI SIAMO' },
     ];
 

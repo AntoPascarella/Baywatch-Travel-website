@@ -52,6 +52,11 @@ export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
                                 </Link>
                             </li>
                             <li>
+                                <Link href={`/${lang}/servizi`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                    {f.link_services ?? 'Servizi'}
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href={`/${lang}/chi-siamo-contatti`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_about}
                                 </Link>
