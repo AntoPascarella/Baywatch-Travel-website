@@ -8,8 +8,8 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Contact Us | Baywatch Travel',
-    description: 'Get in touch with us to plan your dream vacation.',
+    title: 'Chi Siamo & Contatti | Baywatch Travel',
+    description: 'Contattaci per pianificare la tua prossima vacanza in Italia.',
 };
 
 export default async function ContactPage({
@@ -30,7 +30,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.visit,
-            lines: ['Via Roma 123', '80077 Ischia (NA), Italy'],
+            lines: ['Via Roma 123', '80077 Ischia (NA), Italia'],
         },
         {
             icon: (
@@ -64,7 +64,7 @@ export default async function ContactPage({
 
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h1 className="text-h1 font-serif font-bold text-white mb-6 drop-shadow-lg">
+                            <h1 className="text-h1 font-serif font-normal text-white mb-6 drop-shadow-lg">
                                 {dict.contact.hero_title}
                             </h1>
                             <p className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
@@ -82,7 +82,7 @@ export default async function ContactPage({
                             {/* Contact Info Column */}
                             <div className="lg:w-1/2">
                                 <FadeIn>
-                                    <h2 className="text-h3 font-serif font-bold text-midnight mb-8">
+                                    <h2 className="text-h3 font-serif font-normal text-midnight mb-8">
                                         {dict.contact.info_title}
                                     </h2>
 
@@ -130,7 +130,7 @@ export default async function ContactPage({
                             <div className="lg:w-1/2">
                                 <FadeIn delay={200}>
                                     <div className="card p-8">
-                                        <h2 className="text-h3 font-serif font-bold text-midnight mb-6">
+                                        <h2 className="text-h3 font-serif font-normal text-midnight mb-6">
                                             {dict.contact.form_title}
                                         </h2>
                                         <ContactForm labels={formLabels} />

@@ -1,7 +1,14 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import FadeIn from './FadeIn';
+
+const CLIPS = [
+    '/video/ischia.mp4',
+    '/video/amalfi.mp4',
+    '/video/capri.mp4',
+    '/video/tuscany.mp4',
+];
 
 export default function VideoTextSection({
     title,
@@ -11,7 +18,18 @@ export default function VideoTextSection({
     body: string;
 }) {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [index, setIndex] = useState(0);
     const [videoError, setVideoError] = useState(false);
+
+    // On clip end → advance to next; wrap to 0.
+    useEffect(() => {
+        const v = videoRef.current;
+        if (!v) return;
+        v.load();
+        v.play().catch(() => {});
+    }, [index]);
+
+    const onEnded = () => setIndex((i) => (i + 1) % CLIPS.length);
 
     return (
         <section
@@ -19,21 +37,25 @@ export default function VideoTextSection({
             className="bg-white"
         >
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-                    {/* Video placeholder (left) */}
-                    <FadeIn className="lg:w-1/2 w-full">
-                        <div className="relative aspect-video rounded-lg overflow-hidden bg-cream">
+                <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-center max-w-7xl mx-auto">
+                    {/* Video placeholder (left). expanded 1.3× (65%) with sharp corners */}
+                    <FadeIn className="lg:w-[65%] w-full">
+                        <div className="relative aspect-video overflow-hidden bg-cream">
                             {!videoError ? (
                                 <video
                                     ref={videoRef}
+                                    key={CLIPS[index]}
                                     className="w-full h-full object-cover"
                                     autoPlay
                                     muted
-                                    loop
                                     playsInline
+                                    preload="auto"
+                                    poster="/images/destinations/ischia/Ischia.jpg"
+                                    aria-hidden="true"
+                                    onEnded={onEnded}
                                     onError={() => setVideoError(true)}
                                 >
-                                    <source src="/video/intro-placeholder.mp4" type="video/mp4" />
+                                    <source src={CLIPS[index]} type="video/mp4" />
                                 </video>
                             ) : (
                                 <div className="absolute inset-0 flex items-center justify-center bg-cream text-midnight/30">
@@ -50,7 +72,7 @@ export default function VideoTextSection({
                     </FadeIn>
 
                     {/* Text (right) */}
-                    <FadeIn delay={200} className="lg:w-1/2 w-full">
+                    <FadeIn delay={200} className="lg:w-[35%] w-full">
                         <h2 className="text-h2 font-serif text-black mb-6 leading-tight">
                             {title}
                         </h2>

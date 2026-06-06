@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useSyncExternalStore, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Locale } from '@/i18n-config';
 import { useHeaderState } from './hooks/useHeaderState';
+import Logo from './Logo';
 
 const MQ = '(prefers-reduced-motion: reduce)';
 function subscribeRM(cb: () => void) {
@@ -27,7 +27,6 @@ export default function Header({
     const prefersReducedMotion = useSyncExternalStore(subscribeRM, getRM, getRMServer);
 
     const [bouncing, setBouncing] = useState(false);
-    const [logoError, setLogoError] = useState(false);
     const prevStateRef = useRef(state);
 
     useEffect(() => {
@@ -67,7 +66,7 @@ export default function Header({
                 top: 0,
                 left: 0,
                 right: 0,
-                zIndex: isScrolled ? 50 : 4,
+                zIndex: 50,
                 height: isCompact ? '72px' : '88px',
                 // State A: transparent | State B: dark overlay | State C: white translucent
                 background: isOverlay
@@ -85,7 +84,7 @@ export default function Header({
                     : 'height .3s ease-in-out, background .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out, backdrop-filter .3s ease-in-out',
             }}
         >
-            {/* Inner grid: [logo 1fr] [brand+nav auto] [phone+btn 1fr] — 24px gutters */}
+            {/* Inner grid: [logo 1fr] [brand+nav auto] [phone+btn 1fr]. 24px gutters */}
             <div
                 style={{
                     display: 'grid',
@@ -96,34 +95,23 @@ export default function Header({
                     paddingRight: '24px',
                 }}
             >
-                {/* ── LEFT: Logo icon 28px, -2px margin ── */}
+                {/* ── LEFT: Logo (sole sull'orizzonte, eredita textColor via currentColor) ── */}
                 <div style={{ marginLeft: '-2px' }}>
                     <Link
                         href={`/${lang}`}
-                        style={{ display: 'inline-flex', alignItems: 'center', opacity: 0.9 }}
+                        aria-label="Baywatch Travel. Home"
+                        style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            color: textColor,
+                            opacity: 0.92,
+                            transition: prefersReducedMotion ? 'none' : 'opacity .3s ease, color .3s ease',
+                            textDecoration: 'none',
+                        }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
-                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.9'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.92'; }}
                     >
-                        {logoError ? (
-                            <span style={{
-                                fontFamily: 'var(--font-display)',
-                                fontSize: '18px',
-                                color: textColor,
-                            }}>
-                                BT
-                            </span>
-                        ) : (
-                            <div style={{ position: 'relative', width: '70px', height: '70px', flexShrink: 0 }}>
-                                <Image
-                                    src="/images/logo_header.png"
-                                    alt="Baywatch Travel"
-                                    fill
-                                    className={`object-contain object-left brightness-100${isScrolled ? '' : ' invert'}`}
-                                    sizes="28px"
-                                    onError={() => setLogoError(true)}
-                                />
-                            </div>
-                        )}
+                        <Logo variant="mark" size={isCompact ? 26 : 30} title="Baywatch Travel" />
                     </Link>
                 </div>
 

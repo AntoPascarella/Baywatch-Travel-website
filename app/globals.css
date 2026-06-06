@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ───────────────────────────────────────────
-   DESIGN TOKENS — Mediterranean Pastel Palette
+   DESIGN TOKENS. Mediterranean Pastel Palette
    ─────────────────────────────────────────── */
 :root {
   /* Core palette */
@@ -13,16 +13,16 @@
   --color-sea-blue: #A9D6E5;
   --color-sea-blue-dark: #7ABFD4;
   --color-mint: #E8F5E9;
-  --color-midnight: #191970;
+  --color-midnight: #111111;
 
   --background: #ffffff;
-  --foreground: var(--color-midnight);
+  --foreground: #111111;
 
-  /* Font Variables (set by Next.js font loader) */
-  --font-display: "DM Serif Display", serif;
-  --font-inter: "Inter", sans-serif;
-  --font-jost: "Jost", sans-serif;
-  --font-cormorant: "Cormorant Garamond", serif;
+  /* Font Variables (set by Next.js font loader; fallback stacks here) */
+  --font-display: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+  --font-inter: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-jost: "Jost", "Futura", "Helvetica Neue", sans-serif;
+  --font-cormorant: "Cormorant Garamond", "EB Garamond", Georgia, serif;
 
   /* Typographic Scale */
   --text-display: clamp(3rem, 6vw, 5.5rem);
@@ -37,9 +37,9 @@
   --section-py: clamp(5rem, 10vw, 8rem);
 
   /* Shadows */
-  --shadow-card: 0 1px 8px rgba(25, 25, 112, 0.04);
-  --shadow-card-hover: 0 6px 24px rgba(25, 25, 112, 0.10);
-  --shadow-elevated: 0 12px 40px rgba(25, 25, 112, 0.12);
+  --shadow-card: 0 1px 8px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 6px 24px rgba(0, 0, 0, 0.12);
+  --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.14);
 
   /* Header */
   --header-py: 1.25rem;
@@ -63,6 +63,9 @@
 
   --font-display: var(--font-display);
   --font-inter: var(--font-inter);
+  --font-futura: var(--font-jost);
+  --font-cormorant: var(--font-cormorant);
+  --font-jost: var(--font-jost);
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-display);
@@ -98,7 +101,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
+  font-weight: 400;
   line-height: 1.15;
+  letter-spacing: -0.005em;
 }
 
 /* ───────────────────────────────────────────
@@ -167,12 +172,12 @@ h6 {
 
 .btn-secondary {
   background: #fff;
-  color: var(--color-sea-blue-dark);
-  border-color: var(--color-sea-blue);
+  color: #111111;
+  border-color: rgba(17, 17, 17, 0.3);
 }
 
 .btn-secondary:hover {
-  background: var(--color-sea-blue);
+  background: #111111;
   color: #fff;
   transform: translateY(-1px);
 }
@@ -184,7 +189,7 @@ h6 {
 }
 
 .btn-dark:hover {
-  background: #2a2aa0;
+  background: #222222;
   transform: translateY(-1px);
 }
 
@@ -256,8 +261,8 @@ h6 {
 }
 
 .form-field:focus {
-  border-color: var(--color-sea-blue);
-  box-shadow: 0 0 0 3px rgba(169, 214, 229, 0.3);
+  border-color: rgba(17, 17, 17, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
 }
 
 .form-field-error {
@@ -331,7 +336,7 @@ h6 {
   content: "+";
   font-size: 1.5rem;
   font-weight: 300;
-  color: var(--color-sea-blue-dark);
+  color: #111111;
   transition: transform 0.3s ease;
   flex-shrink: 0;
   margin-left: 1rem;
@@ -380,7 +385,7 @@ h6 {
 }
 
 /* ───────────────────────────────────────────
-   BAYWATCH HEADER — EXACT REFERENCE TOKENS
+   BAYWATCH HEADER. EXACT REFERENCE TOKENS
    ─────────────────────────────────────────── */
 
 /* Responsive height (3 breakpoints from reference) */
@@ -403,7 +408,7 @@ h6 {
   }
 }
 
-/* Compact state — triggered after scrolledThreshold */
+/* Compact state. triggered after scrolledThreshold */
 .bay-header--compact {
   height: 52px;
 }
@@ -478,7 +483,7 @@ h6 {
 }
 
 /* ───────────────────────────────────────────
-   MARQUEE — REDUCED MOTION FALLBACK
+   MARQUEE. REDUCED MOTION FALLBACK
    ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
@@ -491,7 +496,7 @@ h6 {
 }
 
 /* ───────────────────────────────────────────
-   ACCESSIBILITY — REDUCED MOTION
+   ACCESSIBILITY. REDUCED MOTION
    ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 
