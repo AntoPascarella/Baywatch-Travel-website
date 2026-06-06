@@ -3,6 +3,19 @@
 import Image from 'next/image';
 import FadeIn from './FadeIn';
 
+/**
+ * "Chi siamo" section.
+ * Background: Ischia aerial (Pexels. Domenico Paolella) with overlay for legibility.
+ * Foreground photo: Ischia harbour scene representing Casamicciola Terme area
+ * (Pexels. Ree A). Pexels does not have a strictly Casamicciola-tagged
+ * high-quality photo at the time of writing, so we use a coherent Ischia
+ * harbour shot and label it accurately in the alt text.
+ */
+const BG_ISCHIA_AERIAL =
+    'https://images.pexels.com/photos/5597694/pexels-photo-5597694.jpeg?auto=compress&cs=tinysrgb&w=2400';
+const PHOTO_CASAMICCIOLA =
+    'https://images.pexels.com/photos/36834243/pexels-photo-36834243.jpeg?auto=compress&cs=tinysrgb&w=2000';
+
 export default function ServicesSection({
     title,
     body,
@@ -15,44 +28,74 @@ export default function ServicesSection({
     return (
         <section
             style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}
-            className="bg-white"
+            className="relative overflow-hidden"
         >
-            <div className="container mx-auto px-4">
+            {/* ── Background: Ischia vista dall'alto ── */}
+            <Image
+                src={BG_ISCHIA_AERIAL}
+                alt=""
+                fill
+                priority={false}
+                sizes="100vw"
+                className="object-cover -z-10"
+            />
+            {/* Overlay per leggibilità: scuro tenue + sfumatura inferiore */}
+            <div
+                className="absolute inset-0 -z-10"
+                style={{
+                    background:
+                        'linear-gradient(180deg, rgba(8,12,18,0.72) 0%, rgba(8,12,18,0.62) 50%, rgba(8,12,18,0.78) 100%)',
+                }}
+            />
+
+            <div className="container mx-auto px-4 relative">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
                     {/* Text (left) */}
                     <FadeIn className="lg:w-1/2 w-full">
-                        <h2 className="text-h2 font-serif text-midnight mb-6 leading-tight">
+                        <p
+                            className="text-white/70 mb-5"
+                            style={{
+                                fontFamily: 'var(--font-futura)',
+                                fontSize: '0.6875rem',
+                                fontWeight: 600,
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.32em',
+                            }}
+                        >
+                            Casamicciola Terme, Ischia
+                        </p>
+                        <h2 className="text-h2 font-serif text-white mb-6 leading-tight">
                             {title}
                         </h2>
-                        <p className="text-lg text-midnight/65 leading-relaxed whitespace-pre-line">
+                        <p className="text-lg text-white/80 leading-relaxed whitespace-pre-line">
                             {body}
                         </p>
                     </FadeIn>
 
-                    {/* Office photo (right) */}
+                    {/* Casamicciola photo (right) */}
                     <FadeIn delay={200} className="lg:w-1/2 w-full">
-                        <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-cream">
+                        <figure className="relative aspect-[4/3] overflow-hidden">
                             <Image
-                                src="/images/office/casamicciola-placeholder.jpg"
+                                src={PHOTO_CASAMICCIOLA}
                                 alt={imageAlt}
                                 fill
                                 className="object-cover"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
-                                onError={(e) => {
-                                    const target = e.currentTarget;
-                                    target.style.display = 'none';
-                                }}
                             />
-                            {/* Fallback if image doesn't load */}
-                            <div className="absolute inset-0 flex items-center justify-center text-midnight/20">
-                                <div className="text-center">
-                                    <svg className="w-16 h-16 mx-auto mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                    <p className="text-sm font-medium">Casamicciola Terme, NA</p>
-                                </div>
-                            </div>
-                        </div>
+                            <figcaption
+                                className="absolute bottom-0 left-0 right-0 px-5 py-3 text-white/85"
+                                style={{
+                                    background:
+                                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%)',
+                                    fontFamily: 'var(--font-futura)',
+                                    fontSize: '0.7rem',
+                                    letterSpacing: '0.18em',
+                                    textTransform: 'uppercase',
+                                }}
+                            >
+                                Casamicciola Terme, dove tutto è iniziato
+                            </figcaption>
+                        </figure>
                     </FadeIn>
                 </div>
             </div>

@@ -19,11 +19,11 @@ export default function DestinationCard({
     const altText = destination.alt[lang] || destination.name;
     const ctaText = discoverLabel || 'Scopri';
     const descriptionText = description || destination.shortDescription;
-    const href = `/${lang}/destinazioni#${destination.slug}`;
+    const href = `/${lang}/destinazioni/${destination.slug}`;
 
     return (
         /**
-         * Outer div: non-Link wrapper — keeps HTML valid (no nested <a>).
+         * Outer div: non-Link wrapper. keeps HTML valid (no nested <a>).
          * Two sibling <Link> elements: one invisible full-card link (z-0, aria-hidden)
          * and one visible CTA button (z-10). Both point to the same href.
          */
@@ -49,7 +49,7 @@ export default function DestinationCard({
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
-                {/* Top gradient — title readability */}
+                {/* Top gradient. title readability */}
                 <div
                     className="absolute inset-x-0 top-0 pointer-events-none"
                     style={{
@@ -59,7 +59,7 @@ export default function DestinationCard({
                     }}
                 />
 
-                {/* Bottom gradient — description + CTA readability */}
+                {/* Bottom gradient. description + CTA readability */}
                 <div
                     className="absolute inset-x-0 bottom-0 pointer-events-none"
                     style={{
@@ -76,7 +76,7 @@ export default function DestinationCard({
                 >
                     <h3
                         style={{
-                            fontFamily: 'var(--font-futuramed)',
+                            fontFamily: 'var(--font-display)',
                             fontSize: 'clamp(1.75rem, 2.8vw, 2.5rem)',
                             fontWeight: 400,
                             color: '#ffffff',
@@ -111,7 +111,7 @@ export default function DestinationCard({
                     </p>
 
                     {/*
-                     * CTA button — reuses .bay-btn + .bay-btn-light from globals.css,
+                     * CTA button. reuses .bay-btn + .bay-btn-light from globals.css,
                      * identical to the "CONTATTACI" button in Header.tsx (line 201-204).
                      */}
                     <Link

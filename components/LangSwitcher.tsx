@@ -27,7 +27,7 @@ export default function LangSwitcher({ scrolled = false }: { scrolled?: boolean 
                     <button
                         key={locale}
                         onClick={() => router.push(redirectedPathName(locale))}
-                        className={`uppercase px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-sea-blue ${isActive
+                        className={`uppercase px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${isActive
                                 ? scrolled
                                     ? 'bg-midnight text-white shadow-sm'
                                     : 'bg-white text-midnight shadow-sm'

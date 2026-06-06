@@ -105,14 +105,21 @@
     "destinations": {
         "hero_title": "Our Destinations",
         "hero_subtitle": "Hidden gems and iconic landmarks of the Mediterranean.",
+        "hero_eyebrow": "Italy, to be lived",
         "discover": "Discover",
         "descriptions": {
-            "ischia": "Famous for its thermal waters, lush gardens, and the Aragonese Castle.",
-            "capri": "Iconic sea stacks, the Blue Grotto, and timeless elegance.",
-            "procida": "Colorful fishermen's houses and a peaceful atmosphere.",
-            "amalfi": "A historic powerhouse with stunning coastal views.",
-            "positano": "Breathtaking cliffs, sunny beaches, and the sweet slow life.",
-            "roma": "The Eternal City, where two thousand years of history await."
+            "ischia": "Steaming thermal waters, lush gardens, and the Aragonese Castle rising from the sea.",
+            "capri": "Legendary sea stacks, the Blue Grotto, and an elegance that never goes out of style.",
+            "procida": "Pastel-coloured houses, fishing boats, and slow rhythms, a daydream come to life.",
+            "napoli": "Pizza, alleyways, Vesuvius on the horizon: a city you breathe in deeply.",
+            "sorrento": "Scented lemons, gulf terraces, and a sweetness that stays with you.",
+            "amalfi": "An ancient maritime republic, postcard views, and a sea that looks painted on.",
+            "pompei": "A Roman city frozen in time, under the silent gaze of Vesuvius.",
+            "sicilia": "Greek temples, baroque towns, a smoking Etna. An island that is already a journey.",
+            "sardegna": "Crystal waters, hidden coves, and a wild hinterland to explore.",
+            "roma": "Two thousand years of history around every corner. The Eternal City still surprises.",
+            "toscana": "Golden hills, cypresses, medieval villages, and wines that tell of the land.",
+            "positano": "Perched on the cliffside, sun-kissed beaches, and the dolce vita you didn’t expect."
         }
     },
     "contact": {

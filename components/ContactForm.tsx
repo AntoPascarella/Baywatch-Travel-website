@@ -67,14 +67,14 @@ export default function ContactForm({
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error('Invio del messaggio fallito');
             }
 
             setIsSuccess(true);
             reset();
         } catch (error) {
             console.error(error);
-            alert('Something went wrong. Please try again.');
+            alert('Qualcosa è andato storto. Riprova più tardi.');
         } finally {
             setIsSubmitting(false);
         }
@@ -86,7 +86,7 @@ export default function ContactForm({
                 <div className="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
                     ✓
                 </div>
-                <h3 className="text-h4 font-serif font-bold mb-2">{labels.success_title}</h3>
+                <h3 className="text-h4 font-serif font-normal mb-2">{labels.success_title}</h3>
                 <p className="text-body text-green-700 mb-4">{labels.success}</p>
                 <button
                     onClick={() => setIsSuccess(false)}

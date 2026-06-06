@@ -8,6 +8,7 @@ import PartnersSection from '@/components/PartnersSection';
 import DestinationCard from '@/components/DestinationCard';
 import VideoTextSection from '@/components/VideoTextSection';
 import ServicesSection from '@/components/ServicesSection';
+import ServizioSection from '@/components/ServizioSection';
 import ReviewSection from '@/components/ReviewSection';
 import PlanTripSection from '@/components/PlanTripSection';
 import { destinations } from '@/data/destinations';
@@ -33,13 +34,13 @@ export default async function Home({
 
             <main className="flex-1">
                 {/* ═══════════════════════════════════
-                    HERO SECTION — Full-screen
+                    HERO SECTION. Full-screen
                    ═══════════════════════════════════ */}
                 <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                     {/* Background image */}
                     <Image
                         src="/images/hero/Spiaggia_dei_Pescatori.jpg"
-                        alt={locale === 'it' ? 'Panorama di Ischia' : 'Ischia panorama'}
+                        alt="Panorama di Ischia"
                         fill
                         className="object-cover"
                         priority
@@ -49,12 +50,12 @@ export default async function Home({
 
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h1 className="text-display font-cormorant-garamond text-white font-light leading-[1.05] mb-6 max-w-4xl mx-auto tracking-widest drop-shadow-sm">
+                            <h1 className="text-display font-cormorant text-white font-light leading-[1.05] mb-6 max-w-4xl mx-auto tracking-widest drop-shadow-sm">
                                 {dict.home.hero.headline}
                             </h1>
                         </FadeIn>
                         <FadeIn delay={200}>
-                            <p className="text-lg md:text-xl font-futuramed text-white/80 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+                            <p className="text-lg md:text-xl font-futura text-white/80 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
                                 {dict.home.hero.subheadline}
                             </p>
                         </FadeIn>
@@ -80,7 +81,7 @@ export default async function Home({
                 />
 
                 {/* ═══════════════════════════════════
-                    DESTINATIONS — "Scegli la tua destinazione"
+                    DESTINATIONS. "Scegli la tua destinazione"
                    ═══════════════════════════════════ */}
                 <section style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }} className="bg-white">
                     <div className="container mx-auto px-4">
@@ -118,7 +119,14 @@ export default async function Home({
                 </section>
 
                 {/* ═══════════════════════════════════
-                    SERVICES / ABOUT SPLIT
+                    SERVIZI. Editorial 4-service section
+                   ═══════════════════════════════════ */}
+                <div className="border-t border-black/5">
+                    <ServizioSection />
+                </div>
+
+                {/* ═══════════════════════════════════
+                    CHI SIAMO / ABOUT SPLIT
                    ═══════════════════════════════════ */}
                 <div className="border-t border-black/5">
                     <ServicesSection
@@ -129,7 +137,7 @@ export default async function Home({
                 </div>
 
                 {/* ═══════════════════════════════════
-                    REVIEW — Full-width
+                    REVIEW. Full-width
                    ═══════════════════════════════════ */}
                 <ReviewSection
                     quote={dict.home.review.quote}
