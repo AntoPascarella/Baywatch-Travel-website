@@ -47,17 +47,18 @@ export const destinationContent: Record<string, DestinationContent> = {
             borghi: 'Sei comuni distinti: Ischia Porto, Casamicciola, Lacco Ameno, Forio, Serrara Fontana e Barano. Ognuno con il suo carattere.',
             vibe: 'Lenta, terapeutica, autentica. Più isola di vita vera che cartolina.',
             stagionalita:
-                'Maggio–giugno e settembre per il clima ideale. Luglio e agosto sono pieni ma vivi.',
+                'Tutto l’anno, con anime diverse. Aprile-giugno e settembre-ottobre per balneare senza folla. Luglio-agosto pieni e vivi. Autunno e inverno per terme, vino, silenzio.',
             idealePer: ['Coppie', 'Famiglie', 'Wellness & terme', 'Soggiorni lunghi', 'Barca'],
         },
         location: {
             dove: 'Golfo di Napoli, a circa 30 km dal capoluogo.',
             area: 'Campania, provincia di Napoli.',
             comeArrivare:
-                'Aliscafo da Napoli Beverello (~50 min) o traghetto da Pozzuoli (~1 h). Aeroporto di riferimento: Napoli Capodichino.',
+                'Aliscafo da Napoli Beverello (~50 min), traghetto da Calata di Massa al Porto di Napoli (~1 h 45 min), traghetto da Pozzuoli (~1 h). Aeroporto di riferimento: Napoli Capodichino.',
         },
         funFacts: [
-            'I Giardini La Mortella furono creati dal compositore inglese William Walton e dalla moglie Susana negli anni ’50.',
+            'I Giardini La Mortella furono creati dal compositore inglese William Walton e dalla moglie Susanna negli anni ’50.',
+            'La Coppa di Nestore, ritrovata a Lacco Ameno, è una delle più antiche iscrizioni in alfabeto greco mai trovate in Occidente (VIII sec. a.C.).',
             'Sorgeto è una baia dove acqua termale e mare si mescolano: si fa il bagno caldo anche d’inverno.',
             'L’Epomeo è un blocco di tufo verde sollevato dal magma, non un cratere classico.',
             'Il vino di Ischia (Biancolella, Forastera) si coltiva su pergole storiche affacciate sul Tirreno.',
@@ -102,16 +103,17 @@ export const destinationContent: Record<string, DestinationContent> = {
             },
         ],
         mustSee: [
-            { title: 'Castello Aragonese', note: 'Migliore al mattino presto, luce e quiete.' },
+            { title: 'Castello Aragonese', note: 'Meglio al mattino presto, luce piena e poca gente.' },
+            { title: 'Villa Arbusto', note: 'Museo archeologico di Lacco Ameno: qui c’è la Coppa di Nestore.' },
             { title: 'Giardini La Mortella', note: 'Botanica rara, concerti d’estate.' },
             { title: 'Sant’Angelo', note: 'Borgo pedonale, ideale per il tramonto.' },
             { title: 'Sorgeto', note: 'Baia termale naturale, costume e ciabatte da scoglio.' },
             { title: 'Monte Epomeo', note: 'Salita facile, vista a 360° sull’arcipelago.' },
         ],
         tips: {
-            periodo: 'Da metà maggio a fine giugno, oppure tutto settembre.',
-            durata: '3–5 notti per assaporarla davvero.',
-            note: 'Macchina utile ma non indispensabile: bus EAV e taxi-microbus coprono tutta l’isola. Le terme aprono in genere da aprile a ottobre.',
+            periodo: 'Da aprile a ottobre.',
+            durata: '3-5 notti per fare le cose con calma.',
+            note: 'Macchina utile ma non obbligatoria: bus EAV e taxi-microbus coprono tutta l’isola. Le terme aprono in genere da aprile a ottobre.',
         },
     },
     capri: {
@@ -127,14 +129,14 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Acque profonde, blu intenso, grotte, faraglioni e calette accessibili solo in barca.',
             borghi: 'Capri (la “città bassa” a 138 m) e Anacapri, più alta, più silenziosa, più genuina.',
             vibe: 'Eleganza naturale, dolce vita, ritmo lento d’estate.',
-            stagionalita: 'Maggio, giugno e settembre per evitare la folla di luglio–agosto.',
+            stagionalita: 'Da aprile a ottobre. Aprile-giugno e settembre per evitare la folla.',
             idealePer: ['Coppie', 'Weekend', 'Barca', 'Cena vista mare'],
         },
         location: {
             dove: 'Sud del Golfo di Napoli, di fronte alla Penisola Sorrentina.',
             area: 'Campania, provincia di Napoli.',
             comeArrivare:
-                'Aliscafo da Napoli (~50 min) o da Sorrento (~25 min). In estate collegamenti diretti anche da Positano e Amalfi.',
+                'Aliscafo da Napoli (~50 min), da Sorrento (~25 min) o da Ischia (~25 min). In estate collegamenti diretti anche da Positano e Amalfi.',
         },
         funFacts: [
             'L’Imperatore Tiberio passò gli ultimi anni di vita a Villa Jovis, sull’estremità est dell’isola.',
@@ -143,15 +145,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             'I sandali capresi sono ancora cuciti a mano in pochi laboratori storici.',
         ],
         itineraries: [
-            {
-                title: 'Mezza giornata',
-                duration: '4 ore',
-                steps: [
-                    'Salita in funicolare alla Piazzetta.',
-                    'Passeggiata fino ai Giardini di Augusto e Via Krupp.',
-                    'Aperitivo prima del rientro.',
-                ],
-            },
             {
                 title: 'Un giorno',
                 duration: '1 giorno',
@@ -167,14 +160,14 @@ export const destinationContent: Record<string, DestinationContent> = {
                 duration: '2 giorni',
                 steps: [
                     'Giorno 1: Capri, Piazzetta, Giardini di Augusto, sentiero del Pizzolungo.',
-                    'Giorno 2: Anacapri, Villa San Michele, Monte Solaro, Faro di Punta Carena.',
+                    'Giorno 2: Anacapri, Villa San Michele, Monte Solaro, Faro di Punta Carena, visita a Villa Lysis.',
                 ],
             },
             {
                 title: 'Via mare',
                 duration: 'Giornata in barca',
                 steps: [
-                    'Periplo dell’isola con guida.',
+                    'Periplo dell’isola con skipper.',
                     'Soste a Grotta Verde, Faraglioni e Grotta Bianca.',
                     'Pranzo a bordo o a Marina Piccola.',
                 ],
@@ -183,14 +176,15 @@ export const destinationContent: Record<string, DestinationContent> = {
         mustSee: [
             { title: 'Faraglioni', note: 'Da terra (Punta Tragara) o da barca, all’ora dorata.' },
             { title: 'Villa San Michele', note: 'Casa-museo di Axel Munthe ad Anacapri.' },
+            { title: 'Villa Lysis', note: 'La villa del barone Fersen, a picco sul mare. Storia + vista a strapiombo.' },
             { title: 'Monte Solaro', note: 'Seggiovia panoramica, vista sull’intero golfo.' },
             { title: 'Via Krupp', note: 'Tornanti scenografici scolpiti nella roccia.' },
             { title: 'Faro di Punta Carena', note: 'Lato ovest, perfetto per il tramonto.' },
         ],
         tips: {
-            periodo: 'Maggio–giugno o tutto settembre.',
-            durata: '1–2 notti consigliate per vivere anche le serate, quando l’isola si svuota.',
-            note: 'Niente auto a noleggio sull’isola. Funicolare, taxi scoperti e a piedi: meglio scarpe comode.',
+            periodo: 'Da aprile a ottobre. Aprile e settembre con clima ottimo e meno gente.',
+            durata: '1-2 notti per vivere anche le serate, quando l’isola si svuota.',
+            note: 'Niente auto a noleggio sull’isola. Funicolare, taxi scoperti e a piedi: scarpe comode obbligatorie.',
         },
     },
     procida: {
@@ -253,6 +247,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         mustSee: [
             { title: 'Marina Corricella', note: 'Il porticciolo dei pescatori, magico al tramonto.' },
             { title: 'Terra Murata', note: 'Borgo medievale fortificato, vista enorme sul golfo.' },
+            { title: 'Lingua di Procida', note: 'Vista panoramica all’estremità nord-est: di sera è uno dei posti più belli dell’isola.' },
             { title: 'Chiaiolella', note: 'Spiaggia lunga sul lato sud, ideale al pomeriggio.' },
             { title: 'Pozzo Vecchio', note: 'Spiaggia del “Postino”, intima e cinematografica.' },
             { title: 'Casale Vascello', note: 'Dedalo di cortili e archi, cuore dell’isola contadina.' },
@@ -283,7 +278,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             dove: 'Costa tirrenica della Campania, sul Golfo omonimo.',
             area: 'Campania, capoluogo di regione.',
             comeArrivare:
-                'Aeroporto Napoli Capodichino. Treno alta velocità da Roma in 1h10. Stazione Centrale di Garibaldi.',
+                'Aeroporto Napoli Capodichino. Treno alta velocità da Roma in 1h10, da Milano in ~4h30. Stazione Centrale di Garibaldi. Bus di linea da Roma, Milano, Torino, Firenze, Bari e altre grandi città.',
         },
         funFacts: [
             'La pizza Margherita nasce nel 1889 in onore della Regina Margherita di Savoia.',
@@ -329,9 +324,9 @@ export const destinationContent: Record<string, DestinationContent> = {
             { title: 'Lungomare Caracciolo', note: 'Tramonto da Castel dell’Ovo verso Mergellina.' },
         ],
         tips: {
-            periodo: 'Aprile–maggio, settembre–ottobre.',
-            durata: '2–3 notti minime per non correre.',
-            note: 'In centro spostati a piedi e in metro (Linea 1, fermate-museo). Attenzione a borse e telefoni nelle zone più affollate.',
+            periodo: 'Aprile-maggio, settembre-ottobre.',
+            durata: '2-3 notti minime per non correre.',
+            note: 'In centro spostati a piedi e in metro (Linea 1, fermate-museo curate come opere d’arte).',
         },
     },
     sorrento: {
@@ -916,8 +911,153 @@ export const destinationContent: Record<string, DestinationContent> = {
         ],
         tips: {
             periodo: 'Maggio, giugno, settembre.',
-            durata: '2–3 notti. Più giorni = ritmo più lento, perfetto.',
+            durata: '2-3 notti. Più giorni = ritmo più lento, perfetto.',
             note: 'Tantissime scale: scarpe comode obbligatorie. Auto inutile, anzi: meglio non averla.',
+        },
+    },
+    puglia: {
+        eyebrow: 'Sud Italia',
+        heroSubtitle:
+            'Trulli, masserie, città bianche e un mare che cambia colore ogni cento metri.',
+        intro: [
+            'La Puglia è lunga: si va dal Gargano al tacco, e nessun tratto somiglia all’altro. Il nord è masserie e pianura, il centro è trulli e città bianche, il Salento è un’altra cosa ancora.',
+            'Si gira meglio in auto. Le distanze ingannano sulla mappa: ci si ferma in continuazione, e va bene così.',
+        ],
+        characteristics: {
+            paesaggio: 'Ulivi secolari, muretti a secco, scogliere calcaree, spiagge lunghe.',
+            mare: 'Adriatico a est, Ionio a sud. Acqua trasparente, fondali bassi, calette nascoste.',
+            borghi: 'Polignano a Mare, Alberobello, Ostuni, Locorotondo, Lecce, Otranto, Gallipoli.',
+            vibe: 'Solare, accogliente, gastronomica. Niente posa: tutto vero.',
+            stagionalita: 'Aprile-giugno e settembre-ottobre per girare senza folla. Luglio-agosto per il mare ma con prezzi alti.',
+            idealePer: ['Coppie', 'Famiglie', 'Tour itineranti', 'Cibo e vino', 'Weekend lunghi'],
+        },
+        location: {
+            dove: 'Sud-est Italia, tra Adriatico e Ionio.',
+            area: 'Capoluogo Bari. Province: Bari, BAT, Brindisi, Foggia, Lecce, Taranto.',
+            comeArrivare:
+                'Voli su Bari e Brindisi. Treni alta velocità da Roma, Milano, Bologna. Bus diretti dalle grandi città.',
+        },
+        funFacts: [
+            'Ad Alberobello ci sono oltre 1.500 trulli, patrimonio UNESCO.',
+            'Il Salento ha la più grande comunità grika d’Italia: nei paesi della Grecìa Salentina si parla ancora un dialetto griko.',
+            'L’olio extravergine pugliese rappresenta circa il 40% della produzione nazionale.',
+            'La Cattedrale di Otranto ha un mosaico pavimentale del XII secolo lungo 16 metri.',
+        ],
+        itineraries: [
+            {
+                title: 'Weekend Valle d’Itria',
+                duration: '3 giorni',
+                steps: [
+                    'Giorno 1: Alberobello e Locorotondo.',
+                    'Giorno 2: Ostuni e Cisternino.',
+                    'Giorno 3: Polignano a Mare e Monopoli.',
+                ],
+            },
+            {
+                title: 'Una settimana classica',
+                duration: '7 giorni',
+                steps: [
+                    'Bari (1 notte).',
+                    'Valle d’Itria (2 notti in masseria).',
+                    'Salento: Lecce (1 notte).',
+                    'Otranto e Santa Maria di Leuca (1 notte).',
+                    'Gallipoli e ritorno (2 notti).',
+                ],
+            },
+            {
+                title: 'Via mare',
+                duration: 'Giornata in barca',
+                steps: [
+                    'Partenza da Polignano o Monopoli.',
+                    'Costeggio delle grotte e calette.',
+                    'Sosta bagno a Lama Monachile.',
+                ],
+            },
+        ],
+        mustSee: [
+            { title: 'Alberobello', note: 'Trulli del rione Monti e Aia Piccola.' },
+            { title: 'Polignano a Mare', note: 'Lama Monachile dall’alto, e poi giù a fare il bagno.' },
+            { title: 'Ostuni', note: 'La Città Bianca, da girare a piedi al tramonto.' },
+            { title: 'Lecce', note: 'Barocco leccese, capitale del Salento.' },
+            { title: 'Otranto', note: 'Cattedrale, castello aragonese, mare turchese.' },
+            { title: 'Gallipoli', note: 'Centro storico su isolotto, vista Ionio.' },
+        ],
+        tips: {
+            periodo: 'Maggio, giugno, settembre, ottobre.',
+            durata: '5-7 notti per una zona, 10+ per attraversarla tutta.',
+            note: 'Auto necessaria. Strade interne lente ma molto scenografiche.',
+        },
+    },
+    calabria: {
+        eyebrow: 'Sud Italia',
+        heroSubtitle:
+            'Tropea, Scilla, scogliere a picco. Il mare più trasparente del Mediterraneo, senza la folla.',
+        intro: [
+            'La Calabria è ancora una sorpresa per molti, e questo è il suo bello. Costa Tirrenica con borghi a strapiombo, Ionica con spiagge infinite, in mezzo montagne che non ti aspetti (Sila, Aspromonte, Pollino).',
+            'È terra di Magna Grecia: passeggi a Locri o Reggio e ti ritrovi tra rovine doriche.',
+        ],
+        characteristics: {
+            paesaggio: 'Costa frastagliata, scogliere bianche, montagne interne, ulivi e bergamotto.',
+            mare: 'Tra i più trasparenti del Mediterraneo. Tropea, Capo Vaticano, Scilla, Soverato.',
+            borghi: 'Tropea, Scilla, Pizzo, Stilo, Gerace, Reggio Calabria.',
+            vibe: 'Genuina, mediterranea, gastronomica. Lontana dal turismo di massa.',
+            stagionalita: 'Giugno-settembre per il mare. Maggio e ottobre splendidi per girare l’entroterra.',
+            idealePer: ['Mare', 'Famiglie', 'Coppie', 'Tour in auto', 'Pesce e cucina povera'],
+        },
+        location: {
+            dove: 'Punta dello stivale, tra Tirreno e Ionio.',
+            area: 'Capoluogo Catanzaro. Province: Catanzaro, Cosenza, Crotone, Reggio Calabria, Vibo Valentia.',
+            comeArrivare:
+                'Voli su Lamezia Terme e Reggio Calabria. Treno alta velocità fino a Salerno, poi InterCity. In auto via A2.',
+        },
+        funFacts: [
+            'I Bronzi di Riace, esposti al Museo di Reggio Calabria, sono due statue greche del V sec. a.C. trovate in mare nel 1972.',
+            'Il bergamotto cresce praticamente solo qui: 90% della produzione mondiale è nella fascia Reggio-Locri.',
+            '‘Nduja, soppressata e capocollo: la salumeria calabrese è una religione.',
+            'Scilla deve il nome al mostro marino dell’Odissea, contrapposto a Cariddi nello stretto di Messina.',
+        ],
+        itineraries: [
+            {
+                title: 'Costa degli Dei',
+                duration: '4-5 giorni',
+                steps: [
+                    'Tropea (2 notti).',
+                    'Capo Vaticano: spiagge di Grotticelle e Praia i Focu.',
+                    'Pizzo per il tartufo (gelato, non il fungo).',
+                ],
+            },
+            {
+                title: 'Tirreno + Ionio',
+                duration: '7 giorni',
+                steps: [
+                    'Tropea e Capo Vaticano (2).',
+                    'Scilla e Costa Viola (1).',
+                    'Reggio Calabria + Bronzi (1).',
+                    'Locri e Gerace (1).',
+                    'Soverato, Costa degli Aranci (2).',
+                ],
+            },
+            {
+                title: 'Via mare',
+                duration: 'Giornata in barca',
+                steps: [
+                    'Partenza da Tropea o Vibo Marina.',
+                    'Costeggio Capo Vaticano, soste in cala.',
+                    'Rientro al tramonto vista isola dei Coniglietti.',
+                ],
+            },
+        ],
+        mustSee: [
+            { title: 'Tropea', note: 'Santuario di Santa Maria dell’Isola al tramonto.' },
+            { title: 'Scilla', note: 'Chianalea, il quartiere dei pescatori sull’acqua.' },
+            { title: 'Capo Vaticano', note: 'Belvedere e spiagge di Grotticelle e Tonicello.' },
+            { title: 'Bronzi di Riace', note: 'Reggio Calabria, due statue greche del V sec. a.C.' },
+            { title: 'Gerace', note: 'Borgo medievale entroterra, una delle perle calabresi.' },
+        ],
+        tips: {
+            periodo: 'Giugno e settembre. Luglio-agosto belli ma più pieni.',
+            durata: '5-7 notti per Costa degli Dei, 10 per coprire tirrenica + ionica.',
+            note: 'Auto indispensabile. Strada panoramica SS18 lungo la Costa Viola: bellissima ma lenta.',
         },
     },
 };

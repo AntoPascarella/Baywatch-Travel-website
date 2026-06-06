@@ -108,18 +108,16 @@
         "hero_eyebrow": "Italia, da vivere",
         "discover": "Scopri",
         "descriptions": {
-            "ischia": "Terme che fumano in spiaggia, giardini fitti e il Castello Aragonese sospeso sull'acqua.",
-            "capri": "Faraglioni, Grotta Azzurra, e un'eleganza che non passa di moda.",
-            "procida": "Case color pastello, barche dei pescatori e ritmi lenti.",
+            "ischia": "Terme che fumano in spiaggia, giardini fitti, il Castello Aragonese sull'acqua.",
+            "capri": "Faraglioni, Grotta Azzurra, Villa Lysis. Eleganza che non passa di moda.",
+            "procida": "Case color confetto, barche di pescatori, ritmi lenti.",
             "napoli": "Pizza, vicoli, Vesuvio sullo sfondo. Una città che non ti chiede permesso.",
-            "sorrento": "Limoneti, terrazze sul golfo, una dolcezza che resta addosso.",
-            "amalfi": "Antica repubblica marinara, scorci verticali e mare che sembra dipinto.",
-            "pompei": "Una città romana ferma nel 79 d.C., sotto lo sguardo del Vesuvio.",
             "sicilia": "Templi greci, borghi barocchi, l'Etna fumante. Un viaggio dentro al viaggio.",
-            "sardegna": "Acque cristalline, calette nascoste, un entroterra ostinato e bellissimo.",
+            "sardegna": "Acque cristalline, calette nascoste, entroterra ostinato.",
+            "puglia": "Trulli, masserie, città bianche e un mare che cambia colore ogni cento metri.",
+            "calabria": "Tropea, Scilla, scogliere a picco e un mare che sembra dei Caraibi.",
             "roma": "Duemila anni di storia ad ogni angolo. La Città Eterna sa ancora sorprendere.",
-            "toscana": "Colline ondulate, cipressi, borghi medievali e vini che sanno di terra.",
-            "positano": "Arroccata sulla scogliera, spiagge baciate dal sole, dolce vita autentica."
+            "toscana": "Colline ondulate, cipressi, borghi medievali, vini che sanno di terra."
         }
     },
     "contact": {

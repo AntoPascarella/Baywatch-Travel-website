@@ -212,7 +212,7 @@ export default async function DestinationDetailPage({
                                             className="text-midnight/80 mb-5"
                                             style={{
                                                 fontFamily: 'var(--font-inter)',
-                                                fontSize: '1.0625rem',
+                                                fontSize: '1.125rem',
                                                 lineHeight: 1.75,
                                             }}
                                         >
@@ -436,7 +436,7 @@ export default async function DestinationDetailPage({
                                                         className="flex gap-4 text-midnight/80"
                                                         style={{
                                                             fontFamily: 'var(--font-inter)',
-                                                            fontSize: '0.9375rem',
+                                                            fontSize: '1.0625rem',
                                                             lineHeight: 1.7,
                                                         }}
                                                     >
@@ -497,7 +497,7 @@ export default async function DestinationDetailPage({
                                                 className="md:col-span-7 text-midnight/75"
                                                 style={{
                                                     fontFamily: 'var(--font-inter)',
-                                                    fontSize: '0.9375rem',
+                                                    fontSize: '1.0625rem',
                                                     lineHeight: 1.7,
                                                 }}
                                             >
@@ -693,7 +693,7 @@ export default async function DestinationDetailPage({
                                 className="text-white/85 max-w-xl mx-auto mb-10"
                                 style={{
                                     fontFamily: 'var(--font-inter)',
-                                    fontSize: '1.0625rem',
+                                    fontSize: '1.125rem',
                                     lineHeight: 1.7,
                                 }}
                             >
@@ -801,7 +801,7 @@ function CharRow({ label, value }: { label: string; value: string }) {
                 className="text-midnight/85"
                 style={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '1.0625rem',
+                    fontSize: '1.125rem',
                     lineHeight: 1.7,
                 }}
             >
@@ -821,7 +821,7 @@ function FactBlock({ label, value }: { label: string; value: string }) {
                 className="text-midnight/85"
                 style={{
                     fontFamily: 'var(--font-inter)',
-                    fontSize: '1.0625rem',
+                    fontSize: '1.125rem',
                     lineHeight: 1.7,
                 }}
             >

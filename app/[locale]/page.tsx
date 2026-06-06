@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
-import PartnersSection from '@/components/PartnersSection';
 import DestinationCard from '@/components/DestinationCard';
 import VideoTextSection from '@/components/VideoTextSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -23,7 +22,7 @@ export default async function Home({
     const { locale } = await params;
     const dict = await getDictionary(locale);
 
-    const featuredSlugs = ['ischia', 'capri', 'procida', 'amalfi', 'positano', 'roma'];
+    const featuredSlugs = ['ischia', 'capri', 'procida', 'puglia', 'calabria', 'roma'];
     const sortedDestinations = featuredSlugs
         .map(slug => destinations.find(d => d.slug === slug))
         .filter(Boolean) as typeof destinations;
@@ -156,12 +155,6 @@ export default async function Home({
                     />
                 </div>
 
-                {/* ═══════════════════════════════════
-                    PARTNERS MARQUEE
-                   ═══════════════════════════════════ */}
-                <div className="border-t border-black/5">
-                    <PartnersSection title={dict.home.partners.title} />
-                </div>
             </main>
 
             <Footer dict={dict} lang={locale} />

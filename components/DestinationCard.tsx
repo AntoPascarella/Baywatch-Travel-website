@@ -54,7 +54,7 @@ export default function DestinationCard({
                     className="absolute inset-x-0 top-0 pointer-events-none"
                     style={{
                         height: '55%',
-                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0) 100%)',
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0) 100%)',
                         zIndex: 1,
                     }}
                 />
@@ -63,8 +63,8 @@ export default function DestinationCard({
                 <div
                     className="absolute inset-x-0 bottom-0 pointer-events-none"
                     style={{
-                        height: '55%',
-                        background: 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.28) 60%, rgba(0,0,0,0) 100%)',
+                        height: '62%',
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0) 100%)',
                         zIndex: 1,
                     }}
                 />
@@ -82,7 +82,7 @@ export default function DestinationCard({
                             color: '#ffffff',
                             lineHeight: 1.1,
                             letterSpacing: '0.01em',
-                            textShadow: '0 1px 8px rgba(0,0,0,0.25)',
+                            textShadow: '0 2px 12px rgba(0,0,0,0.55)',
                         }}
                     >
                         {destination.name}
@@ -95,16 +95,16 @@ export default function DestinationCard({
                     style={{ zIndex: 10 }}
                 >
                     <p
-                        className="line-clamp-2"
+                        className="line-clamp-3"
                         style={{
                             fontFamily: 'var(--font-inter)',
-                            fontSize: '0.9375rem',
-                            fontWeight: 400,
-                            color: 'rgba(255,255,255,0.85)',
-                            lineHeight: 1.65,
-                            letterSpacing: '0.01em',
-                            textShadow: '0 1px 4px rgba(0,0,0,0.30)',
-                            maxWidth: '22rem',
+                            fontSize: 'clamp(1rem, 1.1vw, 1.0625rem)',
+                            fontWeight: 500,
+                            color: 'rgba(255,255,255,0.98)',
+                            lineHeight: 1.55,
+                            letterSpacing: '0.005em',
+                            textShadow: '0 2px 8px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.55)',
+                            maxWidth: '24rem',
                         }}
                     >
                         {descriptionText}

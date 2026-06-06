@@ -29,13 +29,13 @@ const px = (id: number) =>
     `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=2000`;
 
 export const destinationGallery: Record<string, GalleryImage[]> = {
-    // Castello Aragonese · Sant'Angelo · porto · baie · vita di mare
+    // Costa soleggiata · Sant'Angelo · porto · baie · vita di mare
     ischia: [
         {
-            src: px(34536472),
-            alt: 'Castello Aragonese di Ischia al crepuscolo',
-            caption: 'Il Castello Aragonese al calare della luce, il simbolo dell’isola.',
-            credit: 'Foto: Attilio Ummarino / Pexels',
+            src: px(37270135),
+            alt: 'Vista soleggiata della costa di Ischia con architettura locale',
+            caption: 'Ischia in pieno sole, come si vive davvero.',
+            credit: 'Foto: Heinz Klier / Pexels',
         },
         {
             src: px(31976189),
@@ -69,11 +69,11 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
         },
         { src: px(35501916), alt: 'Vista aerea di Capri sulla costa mediterranea', credit: 'Foto: Magda Ehlers / Pexels' },
         { src: px(36701983), alt: 'Vista aerea di Marina Grande, Capri', credit: 'Foto: Vlada Juravliov / Pexels' },
-        { src: px(27064844), alt: 'Barche ormeggiate nel porto di Capri', credit: 'Foto: basiciggy / Pexels' },
-        { src: px(35485497), alt: 'Borgo costiero di Capri affacciato sul mare', credit: 'Foto: Magda Ehlers / Pexels' },
+        { src: px(36368547), alt: 'Colline verdi di Capri, vicino a Villa Lysis', credit: 'Foto: Grisha Besko / Pexels' },
+        { src: px(36717897), alt: 'Giardino lussureggiante a Capri, atmosfera Villa Lysis', credit: 'Foto: Violeta Galeana / Pexels' },
         { src: px(35501915), alt: 'Vista aerea panoramica della costa e del borgo di Capri', credit: 'Foto: Magda Ehlers / Pexels' },
-        { src: px(34973572), alt: 'Capri affacciata sul Mediterraneo blu', credit: 'Foto: Authril Woodland / Pexels' },
-        { src: px(36702050), alt: 'Scogliere iconiche di Capri viste dal mare', credit: 'Foto: Vlada Juravliov / Pexels' },
+        { src: px(35501956), alt: 'Statua antica fra rovine coperte di vite a Capri', credit: 'Foto: Magda Ehlers / Pexels' },
+        { src: px(27064844), alt: 'Barche ormeggiate nel porto di Capri', credit: 'Foto: basiciggy / Pexels' },
         { src: px(15027805), alt: 'Faraglioni di Capri sotto un cielo blu con nuvole', credit: 'Foto: Hessam Vakili / Pexels' },
     ],
 
@@ -101,7 +101,7 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
         { src: px(26976097), alt: 'Motoscafi ormeggiati lungo la riva a Procida', credit: 'Foto: Josh Withers / Pexels' },
     ],
 
-    // Vesuvio · vicoli · Spaccanapoli · Castel Sant'Elmo · lungomare · vita urbana
+    // Vesuvio · Murales Maradona · Certosa · MANN · Cristo Velato · vita urbana
     napoli: [
         {
             src: px(34159696),
@@ -110,19 +110,19 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
             credit: 'Foto: Sam Folls / Pexels',
         },
         {
-            src: px(36754434),
-            alt: 'Vicolo colorato nel centro storico di Napoli',
-            caption: 'Centro storico UNESCO, vicoli densi, vita verticale.',
-            credit: 'Foto: Antonio Vacca / Pexels',
+            src: px(30652770),
+            alt: 'Murales di Maradona nei Quartieri Spagnoli di Napoli',
+            caption: 'Il murales di Maradona ai Quartieri Spagnoli, devozione popolare.',
+            credit: 'Foto: Luca Musella / Pexels',
         },
-        { src: px(36754705), alt: 'Scorcio dei Quartieri Spagnoli di Napoli', credit: 'Foto: Sean Paul Mac / Pexels' },
+        { src: px(36754427), alt: 'Chiostro affrescato di una certosa napoletana', credit: 'Foto: Antonio Vacca / Pexels' },
+        { src: px(12530470), alt: 'Vista aerea della città di Napoli', credit: 'Foto: Kelly / Pexels' },
+        { src: px(30652771), alt: 'Street art colorata su edificio storico di Napoli', credit: 'Foto: Luca Musella / Pexels' },
         { src: px(12530468), alt: 'Vista aerea di Castel Sant’Elmo a Napoli', credit: 'Foto: Kelly / Pexels' },
-        { src: px(37237722), alt: 'Scena di strada vibrante nel centro di Napoli', credit: 'Foto: Sean Paul Mac / Pexels' },
+        { src: px(20697535), alt: 'Chiesa di San Gregorio Armeno in fondo alla strada', credit: 'Foto: Leefinvrede / Pexels' },
+        { src: px(17567462), alt: 'Cityscape di Napoli con la Galleria Umberto I', credit: 'Foto: Luca Musella / Pexels' },
+        { src: px(36754434), alt: 'Vicolo colorato nel centro storico di Napoli', credit: 'Foto: Antonio Vacca / Pexels' },
         { src: px(21739955), alt: 'Costa di Napoli all’orizzonte, vista dal mare', credit: 'Foto: Matteo Roman / Pexels' },
-        { src: px(30204894), alt: 'Strada caratteristica del centro di Napoli', credit: 'Foto: Jiri Dockal / Pexels' },
-        { src: px(35750719), alt: 'Vicolo storico di Napoli', credit: 'Foto: Gabor Balazs / Pexels' },
-        { src: px(36388787), alt: 'Vicolo storico napoletano con bandiere', credit: 'Foto: Andrea Prochilo / Pexels' },
-        { src: px(14686440), alt: 'Città di Napoli sul mare in estate', credit: 'Foto: Ciro Passaro / Pexels' },
     ],
 
     // Aerial · scogliera · limoni (mercato + albero) · marina · porto · vita locale
@@ -315,5 +315,53 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
         { src: px(36426022), alt: 'Costa di Positano in bianco e nero', credit: 'Foto: Allan van Gasbeck / Pexels' },
         { src: px(28580407), alt: 'Spiaggia affollata di Positano in estate', credit: 'Foto: Simeon Theartist / Pexels' },
         { src: px(4155130), alt: 'Paesaggio costiero di Positano', credit: 'Foto: Ana Eva / Pexels' },
+    ],
+
+    // Polignano · Alberobello · Ostuni · Lecce · masserie · mare
+    puglia: [
+        {
+            src: px(17697735),
+            alt: 'Polignano a Mare arroccata sulla scogliera',
+            caption: 'Polignano: città a strapiombo, Lama Monachile sotto.',
+            credit: 'Foto: Josh Withers / Pexels',
+        },
+        {
+            src: px(30099422),
+            alt: 'Trulli storici di Alberobello',
+            caption: 'I trulli di Alberobello, patrimonio UNESCO.',
+            credit: 'Foto: AXP Photography / Pexels',
+        },
+        { src: px(25524426), alt: 'Spiaggia di Lama Monachile a Polignano a Mare', credit: 'Foto: Serban Mihaila / Pexels' },
+        { src: px(37952378), alt: 'Vicoli imbiancati di Ostuni', credit: 'Foto: Merwak Raw / Pexels' },
+        { src: px(30007376), alt: 'Facciata barocca di Lecce', credit: 'Foto: AXP Photography / Pexels' },
+        { src: px(19143328), alt: 'Borgo di mare pugliese visto dall’alto', credit: 'Foto: Kelly / Pexels' },
+        { src: px(30417101), alt: 'Porticciolo di Monopoli', credit: 'Foto: AXP Photography / Pexels' },
+        { src: px(30007433), alt: 'Architettura barocca di Lecce', credit: 'Foto: AXP Photography / Pexels' },
+        { src: px(36600237), alt: 'Strada caratteristica di Ostuni con bicicletta', credit: 'Foto: Carina Ackerman / Pexels' },
+        { src: px(34119017), alt: 'Marina di Bari con barche', credit: 'Foto: Liza Sigareva / Pexels' },
+    ],
+
+    // Tropea · Scilla · Capo Vaticano · vicoli · mare turchese
+    calabria: [
+        {
+            src: px(36681293),
+            alt: 'Tropea, scogliera con architettura sul mare',
+            caption: 'Tropea, scogliera bianca sul blu della Costa degli Dei.',
+            credit: 'Foto: Isabella Pieroni / Pexels',
+        },
+        {
+            src: px(27373540),
+            alt: 'Spiaggia di Tropea con bagnanti',
+            caption: 'Acqua trasparente e sabbia bianca, marchio di fabbrica calabrese.',
+            credit: 'Foto: Luciana Evrard / Pexels',
+        },
+        { src: px(11019940), alt: 'Vista aerea di Scilla, case affacciate sul mare', credit: 'Foto: Walkers / Pexels' },
+        { src: px(34549208), alt: 'Veduta costiera di Capo Vaticano', credit: 'Foto: 0xd1ma / Pexels' },
+        { src: px(36962401), alt: 'Vicolo di Scilla che porta al mare', credit: 'Foto: Domenico Adornato / Pexels' },
+        { src: px(36671321), alt: 'Spiaggia calabrese con ombrelloni colorati', credit: 'Foto: Rey Mart Ramos / Pexels' },
+        { src: px(36781750), alt: 'Costa turchese vista dall’alto', credit: 'Foto: Fedigioia / Pexels' },
+        { src: px(34477139), alt: 'Borgo a strapiombo con antica fortezza', credit: 'Foto: 0xd1ma / Pexels' },
+        { src: px(27373485), alt: 'Chiesa di Tropea sull’isolotto', credit: 'Foto: Luciana Evrard / Pexels' },
+        { src: px(36962393), alt: 'Vicolo verso il mare a Scilla', credit: 'Foto: Domenico Adornato / Pexels' },
     ],
 };
