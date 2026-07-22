@@ -67,7 +67,7 @@ export default async function ContactPage({
                         priority
                         sizes="100vw"
                         className="object-cover"
-                        style={{ objectPosition: 'center 85%' }}
+                        style={{ objectPosition: 'center 55%' }}
                     />
                     {/* Dark overlay for white-text contrast */}
                     <div className="absolute inset-0 bg-gradient-to-br from-sea-blue/60 via-midnight/50 to-midnight/70" />
