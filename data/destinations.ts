@@ -21,10 +21,10 @@ export const destinations: Destination[] = [
         bestSeason: 'Aprile / Ottobre',
         shortDescription: 'Terme che fumano in spiaggia, giardini fitti, il Castello Aragonese sull’acqua.',
         highlights: ['Castello Aragonese', 'Giardini La Mortella', 'Sant’Angelo', 'Terme di Poseidon', 'Villa Arbusto'],
-        image: 'https://images.pexels.com/photos/37270135/pexels-photo-37270135.jpeg?auto=compress&cs=tinysrgb&w=2000',
+        image: 'https://images.pexels.com/photos/38542043/pexels-photo-38542043.jpeg?auto=compress&cs=tinysrgb&w=2000',
         alt: {
-            it: 'Vista soleggiata della costa di Ischia con architettura locale',
-            en: 'Sunny coastal view of Ischia with local architecture',
+            it: 'Ombrelloni sulla spiaggia con il Castello Aragonese di Ischia sullo sfondo',
+            en: 'Beach umbrellas with the Aragonese Castle of Ischia in the background',
         },
     },
     {
