@@ -36,8 +36,8 @@ export default async function Home({
                 <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
                     {/* Background image */}
                     <Image
-                        src="/images/hero/Spiaggia_dei_Pescatori.jpg"
-                        alt="Panorama di Ischia"
+                        src="/images/hero/ischia_castello_aragonese.jpg"
+                        alt="Castello Aragonese di Ischia al tramonto"
                         fill
                         className="object-cover"
                         priority
