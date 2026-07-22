@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'Chi Siamo & Contatti | Baywatch Travel',
@@ -59,8 +60,16 @@ export default async function ContactPage({
             <main className="flex-1">
                 {/* Hero */}
                 <section className="relative overflow-hidden" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-sea-blue via-sea-blue-dark to-midnight" />
-                    <div className="absolute top-10 right-10 w-80 h-80 bg-peach/10 rounded-full blur-3xl" />
+                    <Image
+                        src="https://images.unsplash.com/photo-1622385444566-99dcb428a483?q=80&w=2400&auto=format&fit=crop"
+                        alt="Case bianche e azzurre affacciate sul mare"
+                        fill
+                        priority
+                        sizes="100vw"
+                        className="object-cover"
+                    />
+                    {/* Dark overlay for white-text contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-sea-blue/60 via-midnight/50 to-midnight/70" />
 
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <FadeIn>
