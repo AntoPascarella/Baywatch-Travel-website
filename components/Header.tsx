@@ -68,7 +68,7 @@ export default function Header({
                 left: 0,
                 right: 0,
                 zIndex: 50,
-                height: isCompact ? '72px' : '88px',
+                height: isCompact ? '84px' : '108px',
                 // State A: transparent | State B: dark overlay | State C: white translucent
                 background: isOverlay
                     ? 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%)'
@@ -117,12 +117,12 @@ export default function Header({
                 </div>
 
                 {/* ── CENTER: Brand mark + nav ── */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '18px' }}>
                     <Link href={`/${lang}`} style={{ textDecoration: 'none', marginTop: '10px' }}>
                         <span style={{
                             display: 'block',
                             fontFamily: 'var(--font-display)',
-                            fontSize: isCompact ? '32px' : '34px',
+                            fontSize: isCompact ? '36px' : '39px',
                             fontWeight: 700,
                             textTransform: 'uppercase',
                             letterSpacing: isCompact ? '0.18em' : '0.22em',
