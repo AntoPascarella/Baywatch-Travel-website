@@ -14,7 +14,7 @@ const WhatsAppIcon = () => (
 );
 
 export default function WhatsAppButton() {
-    const phoneNumber = "390811234567"; // Configuration
+    const phoneNumber = "390813331096"; // Configuration
     const message = "Ciao! Vorrei informazioni su un viaggio.";
 
     return (

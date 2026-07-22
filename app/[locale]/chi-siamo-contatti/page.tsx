@@ -48,7 +48,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.call_us,
-            lines: ['+39 081 123 4567', dict.contact.hours],
+            lines: ['+39 081 333 1096', dict.contact.hours],
         },
     ];
 
@@ -112,7 +112,7 @@ export default async function ContactPage({
                                             {dict.contact.whatsapp_cta}
                                         </p>
                                         <Link
-                                            href="https://wa.me/390811234567"
+                                            href="https://wa.me/390813331096"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-3 bg-[#25D366] text-white py-3 px-6 rounded-full font-bold hover:bg-[#20BD5A] transition-all hover:scale-105 shadow-lg"

@@ -77,12 +77,12 @@ export default function DestinationCard({
                     <h3
                         style={{
                             fontFamily: 'var(--font-display)',
-                            fontSize: 'clamp(1.75rem, 2.8vw, 2.5rem)',
-                            fontWeight: 400,
+                            fontSize: 'clamp(1.9rem, 3vw, 2.75rem)',
+                            fontWeight: 700,
                             color: '#ffffff',
                             lineHeight: 1.1,
                             letterSpacing: '0.01em',
-                            textShadow: '0 2px 12px rgba(0,0,0,0.55)',
+                            textShadow: '0 2px 14px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.65)',
                         }}
                     >
                         {destination.name}
@@ -98,12 +98,12 @@ export default function DestinationCard({
                         className="line-clamp-3"
                         style={{
                             fontFamily: 'var(--font-inter)',
-                            fontSize: 'clamp(1rem, 1.1vw, 1.0625rem)',
-                            fontWeight: 500,
-                            color: 'rgba(255,255,255,0.98)',
+                            fontSize: 'clamp(1.0625rem, 1.2vw, 1.1875rem)',
+                            fontWeight: 600,
+                            color: '#ffffff',
                             lineHeight: 1.55,
                             letterSpacing: '0.005em',
-                            textShadow: '0 2px 8px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.55)',
+                            textShadow: '0 2px 10px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.7)',
                             maxWidth: '24rem',
                         }}
                     >

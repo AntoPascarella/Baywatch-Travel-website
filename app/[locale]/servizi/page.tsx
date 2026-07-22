@@ -41,12 +41,12 @@ const services: Service[] = [
         bullets: [
             'Bus Gran Turismo 30-55 posti',
             'Auto private e van per piccoli gruppi',
-            'Aeroporti del Centro-Sud + porti di Napoli, Pozzuoli, Salerno',
+            'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
             'Coordinamento con voli e traghetti',
         ],
-        image: px(28284095),
-        imageAlt: 'Berlina nera per transfer privato',
-        credit: 'Foto: Jonas Alteneder / Pexels',
+        image: px(13012408),
+        imageAlt: 'Autobus su una via soleggiata del Sud Italia',
+        credit: 'Foto: Pexels',
         imageRight: true,
     },
     {

@@ -156,7 +156,7 @@ export default function ContactForm({
                         type="tel"
                         {...register('phone')}
                         className="form-field"
-                        placeholder="+39 081 123 4567"
+                        placeholder="+39 081 333 1096"
                     />
                     <p className="form-helper">{labels.phone_helper}</p>
                 </div>

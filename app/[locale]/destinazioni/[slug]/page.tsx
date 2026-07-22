@@ -107,7 +107,7 @@ export default async function DestinationDetailPage({
                         >
                             <div className="max-w-3xl pb-20 md:pb-28">
                                 <FadeIn>
-                                    <p className="text-white/85 mb-5" style={eyebrowStyle}>
+                                    <p className="text-white mb-5" style={{ ...eyebrowStyle, fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
                                         {content.eyebrow}
                                     </p>
                                 </FadeIn>
@@ -116,8 +116,9 @@ export default async function DestinationDetailPage({
                                         className="font-serif text-white leading-[1.02] mb-6"
                                         style={{
                                             fontSize: 'clamp(3rem, 7vw, 6rem)',
-                                            fontWeight: 400,
+                                            fontWeight: 700,
                                             letterSpacing: '0.005em',
+                                            textShadow: '0 3px 18px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5)',
                                         }}
                                     >
                                         {dest.name}
@@ -125,13 +126,14 @@ export default async function DestinationDetailPage({
                                 </FadeIn>
                                 <FadeIn delay={220}>
                                     <p
-                                        className="text-white/90 max-w-xl"
+                                        className="text-white max-w-xl"
                                         style={{
                                             fontFamily: 'var(--font-cormorant)',
                                             fontStyle: 'italic',
-                                            fontSize: 'clamp(1.25rem, 1.8vw, 1.625rem)',
+                                            fontSize: 'clamp(1.375rem, 2vw, 1.75rem)',
                                             lineHeight: 1.45,
-                                            fontWeight: 300,
+                                            fontWeight: 500,
+                                            textShadow: '0 2px 12px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.5)',
                                         }}
                                     >
                                         {content.heroSubtitle}
@@ -266,7 +268,6 @@ export default async function DestinationDetailPage({
                                 <CharRow label="Paesaggio" value={content.characteristics.paesaggio} />
                                 <CharRow label="Mare e coste" value={content.characteristics.mare} />
                                 <CharRow label="Borghi e città" value={content.characteristics.borghi} />
-                                <CharRow label="Stagionalità" value={content.characteristics.stagionalita} />
                             </div>
                         </div>
                     </div>
@@ -324,14 +325,14 @@ export default async function DestinationDetailPage({
                         <div className="absolute bottom-0 inset-x-0 px-6 pb-10 md:pb-14">
                             <div className="container mx-auto">
                                 <p
-                                    className="text-white/95 max-w-2xl"
+                                    className="text-white max-w-2xl"
                                     style={{
                                         fontFamily: 'var(--font-cormorant)',
                                         fontStyle: 'italic',
-                                        fontSize: 'clamp(1.25rem, 2vw, 1.75rem)',
+                                        fontSize: 'clamp(1.5rem, 2.4vw, 2rem)',
                                         lineHeight: 1.4,
-                                        fontWeight: 300,
-                                        textShadow: '0 1px 8px rgba(0,0,0,0.30)',
+                                        fontWeight: 500,
+                                        textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.55)',
                                     }}
                                 >
                                     {breakImg.caption}
@@ -673,7 +674,7 @@ export default async function DestinationDetailPage({
                     </div>
                     <div className="container mx-auto px-4 text-center text-white">
                         <FadeIn>
-                            <p className="text-white/80 mb-4" style={eyebrowStyle}>
+                            <p className="text-white mb-4" style={{ ...eyebrowStyle, fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
                                 Pronto a partire
                             </p>
                         </FadeIn>
@@ -682,7 +683,8 @@ export default async function DestinationDetailPage({
                                 className="font-serif leading-[1.05] mb-6 max-w-2xl mx-auto"
                                 style={{
                                     fontSize: 'clamp(2.25rem, 4.5vw, 3.5rem)',
-                                    fontWeight: 400,
+                                    fontWeight: 700,
+                                    textShadow: '0 3px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5)',
                                 }}
                             >
                                 Costruiamo insieme il tuo viaggio a {dest.name}.
@@ -690,11 +692,13 @@ export default async function DestinationDetailPage({
                         </FadeIn>
                         <FadeIn delay={180}>
                             <p
-                                className="text-white/85 max-w-xl mx-auto mb-10"
+                                className="text-white max-w-xl mx-auto mb-10"
                                 style={{
                                     fontFamily: 'var(--font-inter)',
-                                    fontSize: '1.125rem',
+                                    fontSize: '1.1875rem',
+                                    fontWeight: 500,
                                     lineHeight: 1.7,
+                                    textShadow: '0 2px 10px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.55)',
                                 }}
                             >
                                 Itinerario su misura, transfer, hotel selezionati ed esperienze locali.

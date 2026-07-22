@@ -89,7 +89,7 @@ export default function Header({
             <div
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr auto 1fr',
+                    gridTemplateColumns: 'minmax(0, 1fr) auto minmax(0, 1fr)',
                     alignItems: 'center',
                     height: '100%',
                     paddingLeft: '24px',
@@ -122,8 +122,8 @@ export default function Header({
                         <span style={{
                             display: 'block',
                             fontFamily: 'var(--font-display)',
-                            fontSize: isCompact ? '28px' : '30px',
-                            fontWeight: 400,
+                            fontSize: isCompact ? '32px' : '34px',
+                            fontWeight: 700,
                             textTransform: 'uppercase',
                             letterSpacing: isCompact ? '0.18em' : '0.22em',
                             lineHeight: '1.1em',
@@ -167,7 +167,7 @@ export default function Header({
                 {/* ── RIGHT: Phone + CONTATTACI button ── */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '24px' }}>
                     <a
-                        href="tel:+390811234567"
+                        href="tel:+390813331096"
                         className="bay-phone hidden lg:block"
                         style={{
                             fontFamily: 'var(--font-futura, var(--font-inter))',
@@ -182,7 +182,7 @@ export default function Header({
                             textDecoration: 'none',
                         }}
                     >
-                        +39 081 123 4567
+                        +39 081 333 1096
                     </a>
 
                     <Link

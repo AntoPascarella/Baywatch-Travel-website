@@ -6,9 +6,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
 import DestinationCard from '@/components/DestinationCard';
 import VideoTextSection from '@/components/VideoTextSection';
-import ServicesSection from '@/components/ServicesSection';
 import ServizioSection from '@/components/ServizioSection';
-import ReviewSection from '@/components/ReviewSection';
 import PlanTripSection from '@/components/PlanTripSection';
 import { destinations } from '@/data/destinations';
 import Link from 'next/link';
@@ -123,27 +121,6 @@ export default async function Home({
                 <div className="border-t border-black/5">
                     <ServizioSection />
                 </div>
-
-                {/* ═══════════════════════════════════
-                    CHI SIAMO / ABOUT SPLIT
-                   ═══════════════════════════════════ */}
-                <div className="border-t border-black/5">
-                    <ServicesSection
-                        title={dict.home.services_about.title}
-                        body={dict.home.services_about.body}
-                        imageAlt={dict.home.services_about.image_alt}
-                    />
-                </div>
-
-                {/* ═══════════════════════════════════
-                    REVIEW. Full-width
-                   ═══════════════════════════════════ */}
-                <ReviewSection
-                    quote={dict.home.review.quote}
-                    author={dict.home.review.author}
-                    buttonLabel={dict.home.review.button}
-                    buttonHref="#"
-                />
 
                 {/* ═══════════════════════════════════
                     PLAN YOUR TRIP

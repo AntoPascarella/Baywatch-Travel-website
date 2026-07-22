@@ -49,7 +49,7 @@ export const destinations: Destination[] = [
         region: 'Campania',
         types: ['Storia', 'Cultura', 'Gastronomia'],
         bestSeason: 'Primavera / Autunno',
-        shortDescription: 'Case color confetto, barche di pescatori, ritmi lenti.',
+        shortDescription: 'Case color confetto, barche di pescatori, giornate senza fretta.',
         highlights: ['Corricella', 'Terra Murata', 'Chiaiolella', 'Lingua di Procida'],
         image: '/images/destinations/procida/procida.jpg',
         alt: {

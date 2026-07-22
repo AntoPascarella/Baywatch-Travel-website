@@ -13,7 +13,6 @@ export type DestinationContent = {
         mare: string;
         borghi: string;
         vibe: string;
-        stagionalita: string;
         idealePer: string[];
     };
     location: {
@@ -46,8 +45,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Calette di sabbia scura e baie come Sant’Angelo, Cartaromana e Sorgeto, dove l’acqua bolle naturalmente.',
             borghi: 'Sei comuni distinti: Ischia Porto, Casamicciola, Lacco Ameno, Forio, Serrara Fontana e Barano. Ognuno con il suo carattere.',
             vibe: 'Lenta, terapeutica, autentica. Più isola di vita vera che cartolina.',
-            stagionalita:
-                'Tutto l’anno, con anime diverse. Aprile-giugno e settembre-ottobre per balneare senza folla. Luglio-agosto pieni e vivi. Autunno e inverno per terme, vino, silenzio.',
             idealePer: ['Coppie', 'Famiglie', 'Wellness & terme', 'Soggiorni lunghi', 'Barca'],
         },
         location: {
@@ -128,15 +125,14 @@ export const destinationContent: Record<string, DestinationContent> = {
             paesaggio: 'Falesie a strapiombo, macchia mediterranea, pini marittimi e ville bianche.',
             mare: 'Acque profonde, blu intenso, grotte, faraglioni e calette accessibili solo in barca.',
             borghi: 'Capri (la “città bassa” a 138 m) e Anacapri, più alta, più silenziosa, più genuina.',
-            vibe: 'Eleganza naturale, dolce vita, ritmo lento d’estate.',
-            stagionalita: 'Da aprile a ottobre. Aprile-giugno e settembre per evitare la folla.',
+            vibe: 'Eleganza naturale, dolce vita, estati distese.',
             idealePer: ['Coppie', 'Weekend', 'Barca', 'Cena vista mare'],
         },
         location: {
             dove: 'Sud del Golfo di Napoli, di fronte alla Penisola Sorrentina.',
             area: 'Campania, provincia di Napoli.',
             comeArrivare:
-                'Aliscafo da Napoli (~50 min), da Sorrento (~25 min) o da Ischia (~25 min). In estate collegamenti diretti anche da Positano e Amalfi.',
+                'Aliscafo da Napoli (~50 min), da Sorrento (~25 min) o da Ischia (~50–60 min). In estate collegamenti diretti anche da Positano e Amalfi.',
         },
         funFacts: [
             'L’Imperatore Tiberio passò gli ultimi anni di vita a Villa Jovis, sull’estremità est dell’isola.',
@@ -176,7 +172,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         mustSee: [
             { title: 'Faraglioni', note: 'Da terra (Punta Tragara) o da barca, all’ora dorata.' },
             { title: 'Villa San Michele', note: 'Casa-museo di Axel Munthe ad Anacapri.' },
-            { title: 'Villa Lysis', note: 'La villa del barone Fersen, a picco sul mare. Storia + vista a strapiombo.' },
+            { title: 'Villa Lysis', note: 'La villa del barone Fersen, a picco sul mare. Storia e vista a strapiombo.' },
             { title: 'Monte Solaro', note: 'Seggiovia panoramica, vista sull’intero golfo.' },
             { title: 'Via Krupp', note: 'Tornanti scenografici scolpiti nella roccia.' },
             { title: 'Faro di Punta Carena', note: 'Lato ovest, perfetto per il tramonto.' },
@@ -190,7 +186,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     procida: {
         eyebrow: 'Golfo di Napoli. Campania',
         heroSubtitle:
-            'Le case color confetto, il porto dei pescatori, la lentezza di un’isola che non ha fretta.',
+            'Case color confetto affacciate sul porticciolo, e un’isola che non ha fretta.',
         intro: [
             'Procida è la più piccola delle isole del Golfo di Napoli, e forse la più sincera. Niente catene di lusso, niente folla travolgente: solo una manciata di case rosa, gialle, blu polvere arrampicate sul porto.',
             'È stata Capitale Italiana della Cultura nel 2022, e da quel momento ha trovato un equilibrio nuovo: più curata, ancora autentica.',
@@ -199,15 +195,14 @@ export const destinationContent: Record<string, DestinationContent> = {
             paesaggio: 'Coste basse, vigneti, limoneti, viste sul Vesuvio e su Ischia.',
             mare: 'Spiagge tranquille (Chiaiolella, Ciraccio), fondali bassi adatti anche ai bambini.',
             borghi: 'Marina Grande, Corricella e Terra Murata sono i tre nuclei storici.',
-            vibe: 'Slow, marittima, vera. Profumo di limoni e barche al sole.',
-            stagionalita: 'Da aprile a ottobre. Bellissima anche in primavera fuori stagione.',
-            idealePer: ['Coppie', 'Weekend lenti', 'Fotografi', 'Lettori', 'Famiglie'],
+            vibe: 'Marinara, genuina, distesa. Profumo di limoni e barche al sole.',
+            idealePer: ['Coppie', 'Weekend senza fretta', 'Fotografi', 'Lettori', 'Famiglie'],
         },
         location: {
             dove: 'Tra Capo Miseno e Ischia, nel Golfo di Napoli.',
             area: 'Campania, provincia di Napoli.',
             comeArrivare:
-                'Aliscafo da Napoli Beverello (~40 min) o da Pozzuoli (~25 min). Si gira a piedi, in microtaxi o in scooter.',
+                'Aliscafo da Napoli Beverello (~40 min) o da Pozzuoli (~35 min). Si gira a piedi, in microtaxi o in scooter.',
         },
         funFacts: [
             'La Corricella è il borgo marinaro raccontato nel film “Il Postino” con Massimo Troisi.',
@@ -271,7 +266,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Lungomare Caracciolo, Castel dell’Ovo, Posillipo: il mare come scenografia.',
             borghi: 'Centro storico UNESCO, Quartieri Spagnoli, Sanità, Chiaia, Posillipo.',
             vibe: 'Energica, teatrale, generosa. Una capitale mediterranea autentica.',
-            stagionalita: 'Tutto l’anno, ma aprile, maggio, ottobre sono i mesi migliori.',
             idealePer: ['City break', 'Cultura', 'Cibo', 'Storia', 'Coppie e amici'],
         },
         location: {
@@ -342,7 +336,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Marina Grande e Marina Piccola, baie raggiungibili in barca lungo la costa.',
             borghi: 'Centro storico di Sorrento, Sant’Agnello, Massa Lubrense, Sant’Agata sui Due Golfi.',
             vibe: 'Elegante, balneare, ben tenuta. Buon equilibrio tra relax e vita serale.',
-            stagionalita: 'Da aprile a ottobre. Maggio e settembre sono ideali.',
             idealePer: ['Coppie', 'Famiglie', 'Base tour Costiera', 'Soggiorni di 4–5 notti'],
         },
         location: {
@@ -413,7 +406,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Spiaggia centrale, calette accessibili in barca, fondali rocciosi.',
             borghi: 'Amalfi, Atrani (la più piccola d’Italia), Pogerola, Scala, Ravello.',
             vibe: 'Storica, raffinata, marittima. Meno mondana, più contemplativa.',
-            stagionalita: 'Da aprile a ottobre.',
             idealePer: ['Coppie', 'Cultura', 'Slow travel', 'Coppie in luna di miele'],
         },
         location: {
@@ -468,7 +460,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             },
         ],
         mustSee: [
-            { title: 'Duomo di Sant’Andrea', note: 'Scalinata frontale + chiostro arabo-normanno.' },
+            { title: 'Duomo di Sant’Andrea', note: 'Scalinata frontale e chiostro arabo-normanno.' },
             { title: 'Valle delle Ferriere', note: 'Trekking facile tra cascate e felci preistoriche.' },
             { title: 'Atrani', note: 'A 10 minuti a piedi, molto più tranquilla.' },
             { title: 'Museo della Carta', note: 'Sull’antica produzione artigianale di carta a mano.' },
@@ -493,7 +485,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Mare a 2 km in linea d’aria, ma il sito è interno.',
             borghi: 'Pompei moderna è una città di 25.000 abitanti accanto agli scavi.',
             vibe: 'Archeologico, denso, evocativo.',
-            stagionalita: 'Primavera e autunno. Estate calda e affollata.',
             idealePer: ['Cultura', 'Storia', 'Famiglie con ragazzi', 'Escursioni da Napoli o Sorrento'],
         },
         location: {
@@ -532,7 +523,7 @@ export const destinationContent: Record<string, DestinationContent> = {
                 duration: '2 giorni',
                 steps: [
                     'Giorno 1: Pompei.',
-                    'Giorno 2: Ercolano (più piccola, meglio conservata) + MANN a Napoli.',
+                    'Giorno 2: Ercolano (più piccola, meglio conservata) e MANN a Napoli.',
                 ],
             },
         ],
@@ -562,7 +553,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Calette di sabbia bianca (San Vito Lo Capo), faraglioni, mare profondo a Taormina.',
             borghi: 'Palermo, Catania, Siracusa, Noto, Modica, Ragusa, Cefalù, Taormina.',
             vibe: 'Calda, generosa, contraddittoria. Mai banale.',
-            stagionalita: 'Aprile–giugno e settembre–ottobre. Estate caldissima nell’interno.',
             idealePer: ['Cultura', 'Cibo e vino', 'Tour itineranti', 'Famiglie', 'Coppie'],
         },
         location: {
@@ -634,8 +624,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             paesaggio: 'Coste di granito e calcare, dune, foreste di sughera, montagne (Gennargentu).',
             mare: 'Tra i più belli del Mediterraneo: Maddalena, Costa Smeralda, Cala Goloritzé, Chia.',
             borghi: 'Cagliari, Alghero, Bosa, Castelsardo, Orgosolo.',
-            vibe: 'Selvaggia, fiera, slow. Diversa da qualsiasi altra regione italiana.',
-            stagionalita: 'Da maggio a ottobre per il mare. Ottobre splendido per l’interno.',
+            vibe: 'Selvaggia, fiera, distesa. Diversa da qualsiasi altra regione italiana.',
             idealePer: ['Mare', 'Famiglie', 'Coppie', 'Barca', 'Trekking'],
         },
         location: {
@@ -707,7 +696,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Ostia e Fregene a 30 km, comodi in treno.',
             borghi: 'Trastevere, Monti, Pigneto, Testaccio, Centro Storico.',
             vibe: 'Disinvolta, imperiale, popolare. Ti ci abitui in due giorni.',
-            stagionalita: 'Tutto l’anno. Ottimi aprile, maggio, ottobre.',
             idealePer: ['City break', 'Cultura', 'Cibo', 'Coppie', 'Famiglie'],
         },
         location: {
@@ -751,9 +739,9 @@ export const destinationContent: Record<string, DestinationContent> = {
             },
         ],
         mustSee: [
-            { title: 'Colosseo + Foro', note: 'Biglietto unico, prima mattina.' },
+            { title: 'Colosseo e Foro', note: 'Biglietto unico, prima mattina.' },
             { title: 'Pantheon', note: 'L’edificio antico meglio conservato al mondo.' },
-            { title: 'Musei Vaticani + Cappella Sistina', note: 'Prenotazione obbligatoria.' },
+            { title: 'Musei Vaticani e Cappella Sistina', note: 'Prenotazione obbligatoria.' },
             { title: 'Galleria Borghese', note: 'Bernini e Caravaggio in sequenza, ingresso a slot.' },
             { title: 'Trastevere al tramonto', note: 'Piazza Santa Maria, vicoli, cena lunga.' },
         ],
@@ -776,7 +764,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Maremma (Castiglione, Argentario), Versilia, Isola d’Elba.',
             borghi: 'Firenze, Siena, Lucca, Pisa, San Gimignano, Pienza, Montepulciano, Volterra.',
             vibe: 'Raffinata e contadina insieme. Lusso discreto.',
-            stagionalita: 'Aprile–giugno e settembre–ottobre. Le vendemmie a settembre sono speciali.',
             idealePer: ['Coppie', 'Slow travel', 'Vino', 'Cultura', 'Famiglie'],
         },
         location: {
@@ -848,7 +835,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Spiaggia Grande, Fornillo (più tranquilla), calette in barca.',
             borghi: 'Positano e la frazione alta di Montepertuso e Nocelle.',
             vibe: 'Romantica, fashion, dolce vita. Più chic che folkloristica.',
-            stagionalita: 'Da aprile a ottobre.',
             idealePer: ['Coppie', 'Lune di miele', 'Weekend romantici', 'Barca'],
         },
         location: {
@@ -911,7 +897,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         ],
         tips: {
             periodo: 'Maggio, giugno, settembre.',
-            durata: '2-3 notti. Più giorni = ritmo più lento, perfetto.',
+            durata: '2-3 notti. Più giorni, più tempo per assaporarla.',
             note: 'Tantissime scale: scarpe comode obbligatorie. Auto inutile, anzi: meglio non averla.',
         },
     },
@@ -928,7 +914,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Adriatico a est, Ionio a sud. Acqua trasparente, fondali bassi, calette nascoste.',
             borghi: 'Polignano a Mare, Alberobello, Ostuni, Locorotondo, Lecce, Otranto, Gallipoli.',
             vibe: 'Solare, accogliente, gastronomica. Niente posa: tutto vero.',
-            stagionalita: 'Aprile-giugno e settembre-ottobre per girare senza folla. Luglio-agosto per il mare ma con prezzi alti.',
             idealePer: ['Coppie', 'Famiglie', 'Tour itineranti', 'Cibo e vino', 'Weekend lunghi'],
         },
         location: {
@@ -984,7 +969,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         ],
         tips: {
             periodo: 'Maggio, giugno, settembre, ottobre.',
-            durata: '5-7 notti per una zona, 10+ per attraversarla tutta.',
+            durata: '5-7 notti per una zona, oltre 10 per attraversarla tutta.',
             note: 'Auto necessaria. Strade interne lente ma molto scenografiche.',
         },
     },
@@ -1001,7 +986,6 @@ export const destinationContent: Record<string, DestinationContent> = {
             mare: 'Tra i più trasparenti del Mediterraneo. Tropea, Capo Vaticano, Scilla, Soverato.',
             borghi: 'Tropea, Scilla, Pizzo, Stilo, Gerace, Reggio Calabria.',
             vibe: 'Genuina, mediterranea, gastronomica. Lontana dal turismo di massa.',
-            stagionalita: 'Giugno-settembre per il mare. Maggio e ottobre splendidi per girare l’entroterra.',
             idealePer: ['Mare', 'Famiglie', 'Coppie', 'Tour in auto', 'Pesce e cucina povera'],
         },
         location: {
@@ -1027,12 +1011,12 @@ export const destinationContent: Record<string, DestinationContent> = {
                 ],
             },
             {
-                title: 'Tirreno + Ionio',
+                title: 'Tirreno e Ionio',
                 duration: '7 giorni',
                 steps: [
                     'Tropea e Capo Vaticano (2).',
                     'Scilla e Costa Viola (1).',
-                    'Reggio Calabria + Bronzi (1).',
+                    'Reggio Calabria e Bronzi (1).',
                     'Locri e Gerace (1).',
                     'Soverato, Costa degli Aranci (2).',
                 ],
@@ -1056,7 +1040,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         ],
         tips: {
             periodo: 'Giugno e settembre. Luglio-agosto belli ma più pieni.',
-            durata: '5-7 notti per Costa degli Dei, 10 per coprire tirrenica + ionica.',
+            durata: '5-7 notti per Costa degli Dei, 10 per coprire tirrenica e ionica.',
             note: 'Auto indispensabile. Strada panoramica SS18 lungo la Costa Viola: bellissima ma lenta.',
         },
     },

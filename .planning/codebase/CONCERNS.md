@@ -11,7 +11,7 @@
 - Fix approach: Implement actual email delivery service (SendGrid, Resend, Nodemailer) or integrate with CMS/CRM backend; add request validation with Zod; implement proper error handling and response codes
 
 **Contact information is hardcoded throughout components:**
-- Issue: Phone numbers (+39 081 123 4567), email addresses (info@baywatchtravel.it), and address strings are duplicated in multiple files as string literals
+- Issue: Phone numbers (+39 081 333 1096), email addresses (info@baywatchtravel.it), and address strings are duplicated in multiple files as string literals
 - Files: `components/Header.tsx` (line 196), `app/[locale]/chi-siamo-contatti/page.tsx` (lines 33, 42, 51), `components/Footer.tsx` (lines 88, 93, 125)
 - Impact: Any business contact change requires updates in 5+ locations; risk of inconsistent information across site
 - Fix approach: Create a centralized configuration file `lib/config/contact.ts` with single source of truth for all contact details; import throughout app

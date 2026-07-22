@@ -39,7 +39,7 @@ The application does not currently integrate with any external APIs or third-par
 **WhatsApp:**
 - Direct messaging link integration
 - Implementation: `components/WhatsAppButton.tsx`
-- Phone number: hardcoded as "390811234567"
+- Phone number: hardcoded as "390813331096"
 - Uses WhatsApp Web deep link: `https://wa.me/{phoneNumber}?text={encodedMessage}`
 - Message: "Ciao! Vorrei informazioni su un viaggio."
 
