@@ -68,7 +68,7 @@ export default function Header({
                 left: 0,
                 right: 0,
                 zIndex: 50,
-                height: isCompact ? '84px' : '108px',
+                height: isCompact ? '94px' : '108px',
                 // State A: transparent | State B: dark overlay | State C: white translucent
                 background: isOverlay
                     ? 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 100%)'
