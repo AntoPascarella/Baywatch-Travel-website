@@ -32,10 +32,10 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
     // Costa soleggiata · Sant'Angelo · porto · baie · vita di mare
     ischia: [
         {
-            src: px(37270135),
-            alt: 'Vista soleggiata della costa di Ischia con architettura locale',
+            src: px(38542043),
+            alt: 'Ombrelloni sulla spiaggia con il Castello Aragonese di Ischia sullo sfondo',
             caption: 'Ischia in pieno sole, come si vive davvero.',
-            credit: 'Foto: Heinz Klier / Pexels',
+            credit: 'Foto: Nati / Pexels',
         },
         {
             src: px(31976189),
