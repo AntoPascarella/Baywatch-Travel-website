@@ -30,7 +30,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.visit,
-            lines: ['Via Roma 123', '80077 Ischia (NA), Italia'],
+            lines: ['Via Castiglione, 36', '80074 Casamicciola Terme (NA), Italia'],
         },
         {
             icon: (
