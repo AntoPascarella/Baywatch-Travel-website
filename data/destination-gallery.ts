@@ -104,25 +104,26 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
     // Vesuvio · Murales Maradona · Certosa · MANN · Cristo Velato · vita urbana
     napoli: [
         {
-            src: px(34159696),
-            alt: 'Il Vesuvio visto dal Golfo di Napoli',
-            caption: 'Il vulcano che sta sempre nello sfondo, anche in cucina.',
-            credit: 'Foto: Sam Folls / Pexels',
+            src: px(17311125),
+            alt: 'Vista aerea del porto di Napoli con il Vesuvio sullo sfondo',
+            caption: 'Napoli e il suo porto, tra traghetti e Vesuvio.',
+            credit: 'Foto: Kelly / Pexels',
         },
         {
-            src: px(30652770),
-            alt: 'Murales di Maradona nei Quartieri Spagnoli di Napoli',
-            caption: 'Il murales di Maradona ai Quartieri Spagnoli, devozione popolare.',
-            credit: 'Foto: Luca Musella / Pexels',
+            src: px(32481196),
+            alt: 'Coppia abbracciata davanti a un murales nei Quartieri Spagnoli di Napoli',
+            caption: 'Il murales di Maradona, un’icona della città.',
+            credit: 'Foto: Hamza Yaich / Pexels',
+            focus: 'center 65%',
         },
         { src: px(36754427), alt: 'Chiostro affrescato di una certosa napoletana', credit: 'Foto: Antonio Vacca / Pexels' },
         { src: px(12530470), alt: 'Vista aerea della città di Napoli', credit: 'Foto: Kelly / Pexels' },
         { src: px(30652771), alt: 'Street art colorata su edificio storico di Napoli', credit: 'Foto: Luca Musella / Pexels' },
-        { src: px(12530468), alt: 'Vista aerea di Castel Sant’Elmo a Napoli', credit: 'Foto: Kelly / Pexels' },
+        { src: px(9692497), alt: 'Piazza del Plebiscito con la Basilica di San Francesco di Paola a Napoli', credit: 'Foto: Daniel Eliashevsky / Pexels' },
         { src: px(20697535), alt: 'Chiesa di San Gregorio Armeno in fondo alla strada', credit: 'Foto: Leefinvrede / Pexels' },
         { src: 'https://images.unsplash.com/photo-1629368901202-0e1fcdec451b?auto=format&fit=crop&w=2000&q=80', alt: 'Due uomini in maglietta bianca in una strada di Napoli', credit: 'Foto: Alberto Sharif Ali Soleiman / Unsplash' },
         { src: px(36754434), alt: 'Vicolo colorato nel centro storico di Napoli', credit: 'Foto: Antonio Vacca / Pexels' },
-        { src: px(36799463), alt: 'Pizza napoletana appena sfornata', credit: 'Foto: Pexels' },
+        { src: 'https://images.unsplash.com/photo-1670275559226-cacd73cdfc32?auto=format&fit=crop&w=2000&q=80', alt: 'Scatole di pizza impilate su un bancone a Napoli', credit: 'Foto: David Tadmor / Unsplash' },
     ],
 
     // Aerial · scogliera · limoni (mercato + albero) · marina · porto · vita locale

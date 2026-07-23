@@ -256,13 +256,13 @@ export const destinationContent: Record<string, DestinationContent> = {
     napoli: {
         eyebrow: 'Campania',
         heroSubtitle:
-            'Una città che non ti chiede permesso: ti entra dentro e te la ricordi per sempre.',
+            'Una città che non chiede permesso: ti entra dentro e la ricordi per sempre.',
         intro: [
-            'Napoli è densa, contraddittoria, viva. Si muove a un ritmo proprio e non chiede di essere capita: chiede solo di essere attraversata.',
-            'Tra Spaccanapoli, i quartieri spagnoli e il lungomare di Mergellina, la città cambia faccia ogni cinque minuti, e ogni volta funziona.',
+            'Napoli è densa, contraddittoria, viva. Si muove ad un ritmo proprio e non chiede di essere capita: chiede solo di essere attraversata.',
+            'Tra Spaccanapoli, i quartieri spagnoli e il lungomare di Mergellina, la città cambia volto ogni cinque minuti, e ogni volta ti stupisce.',
         ],
         characteristics: {
-            paesaggio: 'Golfo, Vesuvio sullo sfondo, colline urbane (Vomero, Posillipo).',
+            paesaggio: 'Golfo di Napoli, Vesuvio sullo sfondo, colline urbane (Vomero, Posillipo).',
             mare: 'Lungomare Caracciolo, Castel dell’Ovo, Posillipo: il mare come scenografia.',
             borghi: 'Centro storico UNESCO, Quartieri Spagnoli, Sanità, Chiaia, Posillipo.',
             vibe: 'Energica, teatrale, generosa. Una capitale mediterranea autentica.',
@@ -278,7 +278,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             'La pizza Margherita nasce nel 1889 in onore della Regina Margherita di Savoia.',
             'Sotto il centro storico si estende Napoli Sotterranea: cisterne greche, gallerie borboniche, rifugi della Seconda Guerra Mondiale.',
             'Il Cristo Velato, nella Cappella Sansevero, è scolpito in un unico blocco di marmo.',
-            'Spaccanapoli è il decumano inferiore della città greco-romana: lo segui ed è ancora lì, dritto.',
+            'Spaccanapoli è il decumano inferiore della città greco-romana.',
         ],
         itineraries: [
             {
@@ -286,7 +286,7 @@ export const destinationContent: Record<string, DestinationContent> = {
                 duration: '4 ore',
                 steps: [
                     'Spaccanapoli da Piazza del Gesù a San Gregorio Armeno.',
-                    'Cappella Sansevero (prenotare).',
+                    'Cappella Sansevero (da prenotare).',
                     'Pizza fritta o a portafoglio per strada.',
                 ],
             },
@@ -295,7 +295,7 @@ export const destinationContent: Record<string, DestinationContent> = {
                 duration: '1 giorno',
                 steps: [
                     'Mattina nel centro storico (Duomo, San Domenico, Cappella Sansevero).',
-                    'Pranzo veloce: pizza a Forcella o cuoppo al porto.',
+                    'Pranzo veloce: pizza a portafoglio o cuoppo al porto.',
                     'Pomeriggio al MANN (Museo Archeologico).',
                     'Tramonto sul lungomare di Mergellina.',
                 ],
@@ -319,8 +319,8 @@ export const destinationContent: Record<string, DestinationContent> = {
         ],
         tips: {
             periodo: 'Aprile-maggio, settembre-ottobre.',
-            durata: '2-3 notti minime per non correre.',
-            note: 'In centro spostati a piedi e in metro (Linea 1, fermate-museo curate come opere d’arte).',
+            durata: '2-3 notti minime per non andare di fretta.',
+            note: 'In centro spostati a piedi e in metro (Linea 1, Linea 2 e vari bus. Le fermate sono vere e proprie opere d’arte.',
         },
     },
     sorrento: {
