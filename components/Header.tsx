@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useSyncExternalStore, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Locale } from '@/i18n-config';
 import { useHeaderState } from './hooks/useHeaderState';
-import Logo from './Logo';
 
 const MQ = '(prefers-reduced-motion: reduce)';
 function subscribeRM(cb: () => void) {
@@ -112,7 +112,20 @@ export default function Header({
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '0.92'; }}
                     >
-                        <Logo variant="mark" size={isCompact ? 26 : 30} title="Baywatch Travel" />
+                        {/* Full lockup. white on transparent/overlay states, colored on scrolled light bg */}
+                        <Image
+                            src={isScrolled ? '/images/logo-colored.png' : '/images/logo-white.png'}
+                            alt="Baywatch Travel"
+                            width={isScrolled ? 509 : 499}
+                            height={isScrolled ? 241 : 229}
+                            priority
+                            style={{
+                                display: 'block',
+                                height: isCompact ? '42px' : '48px',
+                                width: 'auto',
+                                transition: prefersReducedMotion ? 'none' : 'height .3s ease-in-out, opacity .3s ease-in-out',
+                            }}
+                        />
                     </Link>
                 </div>
 
