@@ -34,7 +34,7 @@ export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
                 </div>
 
                 {/* Columns */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
                     {/* Sito */}
                     <div>
                         <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-4">
@@ -97,25 +97,6 @@ export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
                             <li>
                                 <a href={`tel:${f.contact_phone.replace(/\s/g, '')}`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.contact_phone}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Social */}
-                    <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-4">
-                            {f.col_social}
-                        </h4>
-                        <ul className="space-y-2.5">
-                            <li>
-                                <a href="#" className="text-sm text-midnight/50 hover:text-midnight transition-colors">
-                                    Instagram
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-sm text-midnight/50 hover:text-midnight transition-colors">
-                                    Facebook
                                 </a>
                             </li>
                         </ul>
