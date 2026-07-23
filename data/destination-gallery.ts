@@ -1,8 +1,8 @@
 /**
  * Per-destination editorial gallery.
  *
- * All remote images sourced from Pexels under the Pexels License
- * (free for commercial and editorial web use; attribution preserved in `credit`).
+ * Remote images sourced from Pexels (Pexels License) and Unsplash (Unsplash License),
+ * both free for commercial and editorial web use; attribution preserved in `credit`.
  *
  * Selezione editoriale: ogni destinazione copre più soggetti, landmark
  * iconici, scorci secondari, dettagli architettonici, atmosfera locale.
@@ -120,7 +120,7 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
         { src: px(30652771), alt: 'Street art colorata su edificio storico di Napoli', credit: 'Foto: Luca Musella / Pexels' },
         { src: px(12530468), alt: 'Vista aerea di Castel Sant’Elmo a Napoli', credit: 'Foto: Kelly / Pexels' },
         { src: px(20697535), alt: 'Chiesa di San Gregorio Armeno in fondo alla strada', credit: 'Foto: Leefinvrede / Pexels' },
-        { src: px(17567462), alt: 'Cityscape di Napoli con la Galleria Umberto I', credit: 'Foto: Luca Musella / Pexels' },
+        { src: 'https://images.unsplash.com/photo-1629368901202-0e1fcdec451b?auto=format&fit=crop&w=2000&q=80', alt: 'Due uomini in maglietta bianca in una strada di Napoli', credit: 'Foto: Alberto Sharif Ali Soleiman / Unsplash' },
         { src: px(36754434), alt: 'Vicolo colorato nel centro storico di Napoli', credit: 'Foto: Antonio Vacca / Pexels' },
         { src: px(36799463), alt: 'Pizza napoletana appena sfornata', credit: 'Foto: Pexels' },
     ],
