@@ -320,7 +320,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         tips: {
             periodo: 'Aprile-maggio, settembre-ottobre.',
             durata: '2-3 notti minime per non andare di fretta.',
-            note: 'In centro spostati a piedi e in metro (Linea 1, Linea 2 e vari bus. Le fermate sono vere e proprie opere d’arte.',
+            note: 'In centro spostati a piedi e in metro (Linea 1, Linea 2 e vari bus). Le fermate sono vere e proprie opere d’arte.',
         },
     },
     sorrento: {
