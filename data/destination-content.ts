@@ -34,7 +34,7 @@ export const destinationContent: Record<string, DestinationContent> = {
     ischia: {
         eyebrow: 'Golfo di Napoli. Campania',
         heroSubtitle:
-            'Un’isola vulcanica dove le terme sgorgano in spiaggia e il verde scivola dentro al mare.',
+            'Un’isola vulcanica, letto di Tifeo, dove il verde scivola dentro al mare.',
         intro: [
             'Ischia è la più grande delle isole del Golfo di Napoli, un cono vulcanico ancora attivo che ha modellato calette, sorgenti termali e giardini sospesi sul mare.',
             'Non è un’isola da copertina lucida: è ruvida nei punti giusti, dolce in quelli che contano. Si gira piano, si mangia bene, ci si ferma più del previsto.',

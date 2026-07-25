@@ -32,9 +32,9 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
     // Costa soleggiata · Sant'Angelo · porto · baie · vita di mare
     ischia: [
         {
-            src: px(38542043),
-            alt: 'Ombrelloni sulla spiaggia con il Castello Aragonese di Ischia sullo sfondo',
-            caption: 'Ischia in pieno sole, come si vive davvero.',
+            src: px(38542039),
+            alt: 'Charming harbor scene in Ischia, Italy with boats and historic buildings under a clear sky.',
+            caption: 'Ischia Ponte, antico borgo di pescatori.',
             credit: 'Foto: Nati / Pexels',
         },
         {
@@ -257,17 +257,17 @@ export const destinationGallery: Record<string, GalleryImage[]> = {
         {
             src: px(36391026),
             alt: 'Vicolo caratteristico di Trastevere a Roma',
-            caption: 'Trastevere, vicoli, sampietrini, cene lunghe.',
+            caption: 'Trastevere, perdersi tra i vicoli è il miglior modo di scoprirlo.',
             credit: 'Foto: Yuliya Duzhaya / Pexels',
         },
         { src: px(22391732), alt: 'Il Pantheon visto dalla piazza', credit: 'Foto: Henry Acevedo / Pexels' },
         { src: px(32489797), alt: 'Fontana dei Quattro Fiumi in Piazza Navona', credit: 'Foto: Leefinvrede / Pexels' },
         { src: px(32661483), alt: 'Vicolo in pietra di Trastevere', credit: 'Foto: Wai Sing / Pexels' },
-        { src: px(33008947), alt: 'Pantheon e fontana in Piazza della Rotonda', credit: 'Foto: AXP Photography / Pexels' },
-        { src: px(23020602), alt: 'Fontana del Nettuno in Piazza Navona', credit: 'Foto: Masi / Pexels' },
-        { src: px(36445107), alt: 'Pasta fresca in vetrina in una trattoria romana', credit: 'Foto: Pexels' },
-        { src: px(31492108), alt: 'Scena di strada storica nel Trastevere romano', credit: 'Foto: Marija / Pexels' },
-        { src: px(18471732), alt: 'Portico del Pantheon romano', credit: 'Foto: Jovan Vasiljevic / Pexels' },
+        { src: px(28720807), alt: 'Auto d’epoca in una via storica di Roma', credit: 'Foto: Can Alibali / Pexels' },
+        { src: px(29359353), alt: 'Il Tempio di Esculapio a Villa Borghese in autunno', credit: 'Foto: Henry Acevedo / Pexels' },
+        { src: px(36495569), alt: 'Piatti di pasta italiana in una trattoria romana', credit: 'Foto: Valentina Bešker / Pexels' },
+        { src: px(38041941), alt: 'Iconic Colosseum in Rome captured during a sunny day, showcasing its architectural grandeur', credit: 'Foto: Marija / Pexels' },
+        { src: px(38135841), alt: 'Il Vittoriano (Altare della Patria) al tramonto', credit: 'Foto: Ludovic Delot / Pexels' },
     ],
 
     // Val d'Orcia · Firenze · Siena · Chianti · vigneti · castelli
