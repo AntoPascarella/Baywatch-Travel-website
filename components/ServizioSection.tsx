@@ -32,8 +32,8 @@ const services = [
     {
         id: 'termali',
         eyebrow: 'Benessere',
-        title: 'Acque Termali, Tempo Ritrovato',
-        body: 'Le sorgenti termali di Ischia sono tra le più celebrate d\'Europa. Ti guidiamo verso i migliori parchi e strutture wellness dell\'isola per un\'esperienza di rilassamento profondo e rigenerazione autentica. Il lusso lento del benessere, immerso in un paesaggio senza eguali.',
+        title: 'Acque Termali',
+        body: 'Le sorgenti termali di Ischia sono tra le più celebrate d\'Europa. Ti guidiamo verso i migliori parchi e strutture wellness dell\'isola per un\'esperienza di relax profondo.',
         image: '/images/destinations/ischia/Ischia.jpg',
         imageAlt: 'Ischia. parchi termali e benessere',
         imageRight: false,

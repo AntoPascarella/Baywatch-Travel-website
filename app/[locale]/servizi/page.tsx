@@ -44,9 +44,9 @@ const services: Service[] = [
             'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
             'Coordinamento con voli e traghetti',
         ],
-        image: px(13012408),
-        imageAlt: 'Autobus su una via soleggiata del Sud Italia',
-        credit: 'Foto: Pexels',
+        image: px(13232525),
+        imageAlt: 'Man on a ferry looking at coastal town and castle under blue sky.',
+        credit: 'Foto: Nati, Pexels',
         imageRight: true,
     },
     {
@@ -61,9 +61,9 @@ const services: Service[] = [
             'Assistenza multilingue dedicata',
             'Eventi privati, ricorrenze, team building',
         ],
-        image: px(33535399),
-        imageAlt: 'Facciata di hotel europeo elegante',
-        credit: 'Foto: Goszton / Pexels',
+        image: px(16014522),
+        imageAlt: 'Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago.',
+        credit: 'Foto: Pexels',
         imageRight: false,
     },
     {
@@ -109,10 +109,10 @@ type Step = { title: string; body: string };
 const packageSteps: Step[] = [
     { title: 'Pick-up a Capodichino', body: 'Ti aspettiamo all’aeroporto di Napoli con autista assegnato e nome ben visibile.' },
     { title: 'Transfer con assistente fino all’hotel', body: 'Trasferimento accompagnato da una persona del team, che ti aiuta con bagagli, info pratiche, eventuali soste.' },
-    { title: 'Cocktail di benvenuto + info', body: 'In hotel ti offriamo un cocktail di benvenuto e ti raccontiamo brevemente il posto, ritmi, consigli utili.' },
+    { title: 'Cocktail di benvenuto', body: 'In hotel ti offriamo un cocktail di benvenuto e ti raccontiamo brevemente il programma settimanale previsto, con consigli ed informazioni utili al soggiorno.' },
     { title: 'Materiale escursioni e programmi', body: 'Mappa, programma dei giorni, contatti, voucher escursioni. Tutto cartaceo e digitale.' },
     { title: 'Assistenza giornaliera durante il soggiorno', body: 'Una persona di riferimento è raggiungibile tutti i giorni per qualsiasi cosa serva, dal cambio prenotazione al consiglio cena.' },
-    { title: 'Trasferimento al ritorno', body: 'Pick-up dall’hotel e ritorno all’aeroporto in tempo per il volo, senza corse.' },
+    { title: 'Trasferimento al ritorno', body: 'Pick-up dall’hotel e ritorno all’aeroporto.' },
 ];
 
 // Tour packages: destinazioni dove offriamo gite e transfer, non soggiorni

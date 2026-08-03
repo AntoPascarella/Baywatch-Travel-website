@@ -1042,7 +1042,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         tips: {
             periodo: 'Giugno e settembre. Luglio-agosto belli ma più pieni.',
             durata: '5-7 notti per Costa degli Dei, 10 per coprire tirrenica e ionica.',
-            note: 'Auto indispensabile. Strada panoramica SS18 lungo la Costa Viola: bellissima ma lenta.',
+            note: 'Auto indispensabile. Strada panoramica SS18 lungo la Costa Viola.',
         },
     },
 };
