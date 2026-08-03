@@ -686,10 +686,11 @@ export const destinationContent: Record<string, DestinationContent> = {
     roma: {
         eyebrow: 'Lazio',
         heroSubtitle:
-            'Duemilasettecento anni di stratificazione, vissuti in una città che continua a essere quotidiana.',
+            'La città eterna, caotica e affascinante. Ogni vicolo ha una storia da raccontare.',
         intro: [
-            'Roma è una capitale che non si comporta da capitale: è informale, lenta, viva. Tre civiltà sovrapposte, antica, papale, contemporanea, e un’abitudine a passarci sopra senza pensarci.',
-            'Si visita meglio passeggiando senza programma serrato. Le cose importanti capitano fra una via e l’altra.',
+            'Roma è una città caotica, intensa e profondamente affascinante. Il traffico, il rumore e il ritmo disordinato convivono con una storia visibile a ogni angolo: rovine antiche, chiese, palazzi e quartieri popolari si intrecciano con la vita quotidiana.',
+
+            'Visitarla significa accettarne l’imprevedibilità. Tra una piazza affollata, un vicoletto e una trattoria di quartiere, Roma sorprende proprio perché non segue mai un percorso lineare.'
         ],
         characteristics: {
             paesaggio: 'Sette colli, Tevere, pinete del Gianicolo e di Villa Borghese.',
@@ -739,14 +740,14 @@ export const destinationContent: Record<string, DestinationContent> = {
             },
         ],
         mustSee: [
-            { title: 'Colosseo e Foro', note: 'Biglietto unico, prima mattina.' },
+            { title: 'Colosseo e Foro', note: 'Biglietto unico.' },
             { title: 'Pantheon', note: 'L’edificio antico meglio conservato al mondo.' },
-            { title: 'Musei Vaticani e Cappella Sistina', note: 'Prenotazione obbligatoria.' },
+            { title: 'Musei Vaticani e Cappella Sistina', note: 'Da prenotare con molto anticipo.' },
             { title: 'Galleria Borghese', note: 'Bernini e Caravaggio in sequenza, ingresso a slot.' },
-            { title: 'Trastevere al tramonto', note: 'Piazza Santa Maria, vicoli, cena lunga.' },
+            { title: 'Trastevere al tramonto', note: 'Tredicesimo rione di Roma, famoso per i suoi vicoli iconici.' },
         ],
         tips: {
-            periodo: 'Aprile, maggio, ottobre. Inverno è bellissima e meno cara.',
+            periodo: 'Primavera (da aprile a giugno) oppure l’autunno (da metà settembre a ottobre). In questi mesi il clima è mite e ideale per camminare all’aperto, evitando le temperature torride dell’estate e le piogge invernali',
             durata: '3 notti minime, 4–5 ideali.',
             note: 'Scarpe comode (sampietrini ovunque). Metro e tram funzionano ma il centro è da fare a piedi.',
         },
