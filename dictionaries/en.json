@@ -123,6 +123,45 @@
         }
     },
     "contact": {
+        "story": {
+            "eyebrow": "Since 1999, on Ischia",
+            "title": "Our story, our Ischia",
+            "lead": "Tourism has always been our world.",
+            "paragraphs": [
+                "I started out working across different areas of the tourism industry, from hotel hospitality to tour operating, taking care of planning, organisation and customer support along the way. Different roles that let me see tourism from every angle and, above all, understand how much people, listening and attention to detail really matter.",
+                "In 1999 came the big step: turning that experience and that passion into a project of my own. Baywatch Travel was born, back then a small operation with a tiny office and plenty of drive.",
+                "From that moment on we grew step by step, through daily work, the trust of our clients and the many partnerships that have allowed us to grow together over the years. That small agency became an established company, deeply rooted on the island of Ischia.",
+                "Today Baywatch Travel has more than 20 people on the team and is a point of reference in the island\u2019s tourism scene. We are proud of that, but we see it above all as a responsibility: to keep offering professionalism, reliability and care every day.",
+                "In an industry that keeps changing, we hold on to the values we started with: local knowledge, reliability, availability and care for the client.",
+                "Because behind every trip there is not simply a booking, but a person entrusting us with their time, their expectations and the wish to have a good experience.",
+                "That is exactly what we have been doing for more than twenty-five years: knowing this territory, understanding its value and turning our experience into trips organised with care and professionalism.",
+                "Baywatch Travel has grown, but the spirit is the same as back then: do the work properly, keep your word and build relationships based on trust."
+            ],
+            "closing": [
+                "This is our story.",
+                "This is how we do tourism."
+            ],
+            "signature": {
+                "name": "Cira Messina",
+                "role": "Baywatch Travel, Casamicciola Terme"
+            },
+            "stats": [
+                {
+                    "value": "1999",
+                    "label": "Founded"
+                },
+                {
+                    "value": "20+",
+                    "label": "Team members"
+                },
+                {
+                    "value": "25+",
+                    "label": "Years of experience"
+                }
+            ],
+            "image_alt": "The seafront of Casamicciola Terme on Ischia, where our agency is based",
+            "image_caption": "Casamicciola Terme, where it all began"
+        },
         "hero_title": "About Us & Contact",
         "hero_subtitle": "Ready to start your journey? We\u2019re here to craft the perfect itinerary for you.",
         "info_title": "Get in Touch",

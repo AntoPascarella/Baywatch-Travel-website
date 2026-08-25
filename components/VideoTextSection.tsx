@@ -76,7 +76,7 @@ export default function VideoTextSection({
                         <h2 className="text-h2 font-serif text-black mb-6 leading-tight">
                             {title}
                         </h2>
-                        <p className="text-lg text-black/65 leading-relaxed">
+                        <p className="text-lg text-black/65 leading-relaxed text-justify hyphens-auto">
                             {body}
                         </p>
                     </FadeIn>

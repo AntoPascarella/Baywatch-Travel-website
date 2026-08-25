@@ -138,7 +138,7 @@ export const destinations: Destination[] = [
         subTitle: 'La Città Eterna',
         region: 'Lazio',
         types: ['Storia', 'Cultura', 'Gastronomia'],
-        bestSeason: 'Primavera / Autunno',
+        bestSeason: 'Tutto l’anno',
         shortDescription: 'Duemila anni di storia ad ogni angolo. La Città Eterna sa ancora sorprendere.',
         highlights: ['Colosseo', 'Vaticano', 'Pantheon', 'Fontana di Trevi'],
         image: '/images/destinations/roma/Roma.jpg',

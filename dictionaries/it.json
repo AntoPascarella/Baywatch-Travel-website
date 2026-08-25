@@ -17,7 +17,7 @@
         },
         "video_section": {
             "title": "L'Italia, con calma",
-            "body": "Con Baywatch Travel scopri i posti che ami già e quelli che non sapevi di voler vedere. Dalla Campania ai borghi dell'entroterra, ogni viaggio è costruito attorno a te, senza fretta e senza pacchetti standard."
+            "body": "Con Baywatch Travel scopri i posti che ami già e quelli che non sapevi di voler vedere. Dalle meraviglie della costa ai borghi dell'entroterra, ogni viaggio è costruito attorno a te, senza fretta e senza pacchetti standard."
         },
         "partners": {
             "title": "I Nostri Partner"
@@ -121,13 +121,52 @@
         }
     },
     "contact": {
+        "story": {
+            "eyebrow": "Dal 1999, a Ischia",
+            "title": "La nostra storia, la nostra Ischia",
+            "lead": "Da sempre il turismo è il nostro mondo.",
+            "paragraphs": [
+                "Ho iniziato il mio percorso professionale lavorando nei diversi ambiti del settore turistico, dall’ospitalità alberghiera all’attività di tour operator, occupandomi nel tempo di programmazione, organizzazione e assistenza al cliente. Esperienze diverse, che mi hanno permesso di conoscere il turismo da ogni prospettiva e, soprattutto, di capire quanto siano importanti le persone, l’ascolto e l’attenzione ai dettagli.",
+                "Nel 1999 arriva il grande salto: la scelta di trasformare esperienza e passione in un progetto tutto mio. Nasce così Baywatch Travel, allora una piccola realtà, con una sede minuscola e tanta voglia di fare.",
+                "Da quel momento è iniziato un percorso di crescita costruito passo dopo passo, grazie al lavoro quotidiano, alla fiducia dei nostri clienti e alle tante collaborazioni che negli anni ci hanno permesso di crescere insieme. Quella piccola agenzia è diventata una realtà consolidata, profondamente radicata nell’isola di Ischia.",
+                "Oggi Baywatch Travel conta più di 20 collaboratori e rappresenta un punto di riferimento nella realtà turistica isolana. Un risultato di cui siamo orgogliosi, ma che consideriamo soprattutto una responsabilità: quella di continuare a offrire ogni giorno professionalità, serietà e attenzione.",
+                "In un settore che cambia continuamente, ci piace mantenere saldi i valori che ci hanno accompagnato fin dall’inizio: conoscenza, affidabilità, disponibilità e cura del cliente.",
+                "Perché dietro ogni viaggio non c’è semplicemente una prenotazione, ma una persona che ci affida il proprio tempo, le proprie aspettative e il desiderio di vivere una bella esperienza.",
+                "Ed è proprio questo che, da oltre venticinque anni, ci impegniamo a fare: conoscere il territorio, comprenderne il valore e trasformare la nostra esperienza in viaggi organizzati con passione e professionalità.",
+                "Baywatch Travel è cresciuta, ma lo spirito è rimasto quello di allora: lavorare bene, mantenere la parola data e costruire nel tempo rapporti basati sulla fiducia."
+            ],
+            "closing": [
+                "È questa la nostra storia.",
+                "È questo il nostro modo di fare turismo."
+            ],
+            "signature": {
+                "name": "Cira Messina",
+                "role": "Baywatch Travel, Casamicciola Terme"
+            },
+            "stats": [
+                {
+                    "value": "1999",
+                    "label": "Anno di fondazione"
+                },
+                {
+                    "value": "20+",
+                    "label": "Collaboratori"
+                },
+                {
+                    "value": "25+",
+                    "label": "Anni di esperienza"
+                }
+            ],
+            "image_alt": "Il lungomare di Casamicciola Terme, a Ischia, dove ha sede la nostra agenzia",
+            "image_caption": "Casamicciola Terme, dove tutto è iniziato"
+        },
         "hero_title": "Chi Siamo & Contatti",
         "hero_subtitle": "Pronto a partire? Costruiamo insieme l'itinerario che fa per te.",
         "info_title": "Resta in Contatto",
         "visit": "Vieni a trovarci",
         "email_us": "Scrivici",
         "call_us": "Chiamaci",
-        "hours": "Lun – Ven, 9:00 – 18:00",
+        "hours": "Lun – Ven, 9:00 – 19:30",
         "form_title": "Inviaci un Messaggio",
         "whatsapp_cta": "Oppure scrivici su WhatsApp"
     },
