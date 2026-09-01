@@ -130,7 +130,7 @@ type TourPackage = {
 const tourPackages: TourPackage[] = [
     {
         slug: 'amalfi',
-        name: 'Costiera Amalfitana',
+        name: 'Costiera Amalfitana e Sorrentina',
         eyebrow: 'Gita giornaliera',
         tagline: 'Da Amalfi a Positano lungo la SS163, con barca o pullman a seconda di voi.',
         activities: [
@@ -283,7 +283,7 @@ export default async function ServiziPage({
                                             <h2 className="font-serif text-black leading-tight mb-6" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.625rem)', fontWeight: 400 }}>
                                                 {s.title}
                                             </h2>
-                                            <p className="text-black/70 mb-8" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                            <p className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
                                                 {s.body}
                                             </p>
                                             <ul className="space-y-3 border-t border-black/[0.10] pt-6">

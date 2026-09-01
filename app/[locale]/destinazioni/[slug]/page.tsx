@@ -211,7 +211,7 @@ export default async function DestinationDetailPage({
                                 {content.intro.map((para, i) => (
                                     <FadeIn key={i} delay={150 + i * 60}>
                                         <p
-                                            className="text-midnight/80 mb-5"
+                                            className="text-midnight/80 mb-5 text-justify hyphens-auto"
                                             style={{
                                                 fontFamily: 'var(--font-inter)',
                                                 fontSize: '1.125rem',

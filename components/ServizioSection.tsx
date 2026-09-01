@@ -106,7 +106,7 @@ export default function ServizioSection() {
                                     </h2>
 
                                     <p
-                                        className="text-black/60 leading-relaxed"
+                                        className="text-black/60 leading-relaxed text-justify hyphens-auto"
                                         style={{
                                             fontSize: '1.0625rem',
                                             lineHeight: 1.8,

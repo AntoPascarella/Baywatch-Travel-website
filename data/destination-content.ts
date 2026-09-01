@@ -119,7 +119,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             'Roccia bianca, mare cobalto, una piazzetta che è teatro a cielo aperto.',
         intro: [
             'Capri non si visita: la si attraversa. È piccola, verticale, e ogni angolo è già stato fotografato un milione di volte, eppure dal vivo funziona ancora.',
-            'Il segreto è rallentare. Alzarsi presto, sparire dai sentieri principali, tornare in piazzetta solo al calar della sera.',
+            'Il segreto è rallentare. Alzarsi presto, sparire dai percorsi principali, tornare in piazzetta solo al calar della sera.',
         ],
         characteristics: {
             paesaggio: 'Falesie a strapiombo, macchia mediterranea, pini marittimi e ville bianche.',
@@ -176,6 +176,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             { title: 'Monte Solaro', note: 'Seggiovia panoramica, vista sull’intero golfo.' },
             { title: 'Via Krupp', note: 'Tornanti scenografici scolpiti nella roccia.' },
             { title: 'Faro di Punta Carena', note: 'Lato ovest, perfetto per il tramonto.' },
+            {title: 'Piazzetta di Capri', note: 'Il mood che tutto il mondo ci invidia.'},
         ],
         tips: {
             periodo: 'Da aprile a ottobre. Aprile e settembre con clima ottimo e meno gente.',
@@ -189,7 +190,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             'Case color confetto affacciate sul porticciolo, e un’isola che non ha fretta.',
         intro: [
             'Procida è la più piccola delle isole del Golfo di Napoli, e forse la più sincera. Niente catene di lusso, niente folla travolgente: solo una manciata di case rosa, gialle, blu polvere arrampicate sul porto.',
-            'È stata Capitale Italiana della Cultura nel 2022, e da quel momento ha trovato un equilibrio nuovo: più curata, ancora autentica.',
+            'È stata Capitale Italiana della Cultura nel 2022, e da quel momento ha trovato un equilibrio nuovo: più curata ma ancora autentica.',
         ],
         characteristics: {
             paesaggio: 'Coste basse, vigneti, limoneti, viste sul Vesuvio e su Ischia.',
@@ -242,7 +243,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         mustSee: [
             { title: 'Marina Corricella', note: 'Il porticciolo dei pescatori, magico al tramonto.' },
             { title: 'Terra Murata', note: 'Borgo medievale fortificato, vista enorme sul golfo.' },
-            { title: 'Lingua di Procida', note: 'Vista panoramica all’estremità nord-est: di sera è uno dei posti più belli dell’isola.' },
+            { title: 'Lingua di Procida', note: 'La fragranza di una pasta sfoglia che racchiude un cuore di crema profumata al limone. Da non perdere' },
             { title: 'Chiaiolella', note: 'Spiaggia lunga sul lato sud, ideale al pomeriggio.' },
             { title: 'Pozzo Vecchio', note: 'Spiaggia del “Postino”, intima e cinematografica.' },
             { title: 'Casale Vascello', note: 'Dedalo di cortili e archi, cuore dell’isola contadina.' },
@@ -250,7 +251,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         tips: {
             periodo: 'Maggio, giugno, settembre.',
             durata: '1 notte basta, 2 sono perfette per il ritmo dell’isola.',
-            note: 'L’isola è piccolissima: niente auto. Microtaxi e scooter sono i mezzi locali.',
+            note: 'L’isola è piccolissima: l’auto non serve. Taxi e scooter sono i mezzi ideali.',
         },
     },
     napoli: {
@@ -258,7 +259,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         heroSubtitle:
             'Una città che non chiede permesso: ti entra dentro e la ricordi per sempre.',
         intro: [
-            'Napoli è densa, contraddittoria, viva. Si muove ad un ritmo proprio e non chiede di essere capita: chiede solo di essere attraversata.',
+            'Napoli è densa, contraddittoria, viva. Si muove ad un ritmo proprio e non chiede di essere vissuta: chiede solo di essere attraversata.',
             'Tra Spaccanapoli, i quartieri spagnoli e il lungomare di Mergellina, la città cambia volto ogni cinque minuti, e ogni volta ti stupisce.',
         ],
         characteristics: {
@@ -913,7 +914,7 @@ export const destinationContent: Record<string, DestinationContent> = {
         characteristics: {
             paesaggio: 'Ulivi secolari, muretti a secco, scogliere calcaree, spiagge lunghe.',
             mare: 'Adriatico a est, Ionio a sud. Acqua trasparente, fondali bassi, calette nascoste.',
-            borghi: 'Polignano a Mare, Alberobello, Ostuni, Locorotondo, Lecce, Otranto, Gallipoli.',
+            borghi: 'Polignano a Mare, Alberobello, Ostuni, Locorotondo, Vieste, Lecce, Otranto, Gallipoli.',
             vibe: 'Solare, accogliente, gastronomica. Niente posa: tutto vero.',
             idealePer: ['Coppie', 'Famiglie', 'Tour itineranti', 'Cibo e vino', 'Weekend lunghi'],
         },
@@ -921,7 +922,7 @@ export const destinationContent: Record<string, DestinationContent> = {
             dove: 'Sud-est Italia, tra Adriatico e Ionio.',
             area: 'Capoluogo Bari. Province: Bari, BAT, Brindisi, Foggia, Lecce, Taranto.',
             comeArrivare:
-                'Voli su Bari e Brindisi. Treni alta velocità da Roma, Milano, Bologna. Bus diretti dalle grandi città.',
+                'Voli su Bari e Brindisi. Treni alta velocità da Roma, Napoli, Milano, Bologna. Bus diretti dalle grandi città.',
         },
         funFacts: [
             'Ad Alberobello ci sono oltre 1.500 trulli, patrimonio UNESCO.',

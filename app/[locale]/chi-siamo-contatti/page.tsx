@@ -10,7 +10,20 @@ import Image from 'next/image';
 
 export const metadata = {
     title: 'Chi Siamo & Contatti | Baywatch Travel',
-    description: 'Contattaci per pianificare la tua prossima vacanza in Italia.',
+    description: 'Baywatch Travel, agenzia di viaggi a Casamicciola Terme dal 1999. La nostra storia e i contatti per organizzare il tuo viaggio a Ischia e in Italia.',
+};
+
+/** Lungomare di Casamicciola Terme, sede dell'agenzia (Pexels. Ree A). */
+const PHOTO_CASAMICCIOLA =
+    'https://images.pexels.com/photos/36834243/pexels-photo-36834243.jpeg?auto=compress&cs=tinysrgb&w=2000';
+
+const eyebrowStyle = {
+    fontFamily: 'var(--font-futura)',
+    fontSize: '0.6875rem',
+    fontWeight: 600,
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.28em',
+    lineHeight: 1.2,
 };
 
 export default async function ContactPage({
@@ -21,6 +34,7 @@ export default async function ContactPage({
     const { locale } = await params;
     const dict = await getDictionary(locale);
     const formLabels = dict.form;
+    const story = dict.contact.story;
 
     const contactCards = [
         {
@@ -82,6 +96,138 @@ export default async function ContactPage({
                             </p>
                             <div className="section-divider !bg-gradient-to-r !from-peach !to-white/50 mt-6" />
                         </FadeIn>
+                    </div>
+                </section>
+
+                {/* La nostra storia */}
+                <section
+                    className="bg-white border-b border-black/[0.05]"
+                    style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}
+                >
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16">
+                            {/* Titolo, foto e numeri */}
+                            <div className="lg:col-span-5">
+                                <FadeIn>
+                                    <p className="text-midnight/45 mb-5" style={eyebrowStyle}>
+                                        {story.eyebrow}
+                                    </p>
+                                    <h2
+                                        className="font-serif text-midnight leading-tight mb-8"
+                                        style={{ fontSize: 'clamp(1.75rem, 3vw, 2.625rem)', fontWeight: 400 }}
+                                    >
+                                        {story.title}
+                                    </h2>
+
+                                    <figure className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                                        <Image
+                                            src={PHOTO_CASAMICCIOLA}
+                                            alt={story.image_alt}
+                                            fill
+                                            sizes="(max-width: 1024px) 100vw, 40vw"
+                                            className="object-cover"
+                                        />
+                                        <figcaption
+                                            className="absolute bottom-0 left-0 right-0 px-5 py-3 text-white/85"
+                                            style={{
+                                                background:
+                                                    'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%)',
+                                                fontFamily: 'var(--font-futura)',
+                                                fontSize: '0.7rem',
+                                                letterSpacing: '0.18em',
+                                                textTransform: 'uppercase',
+                                            }}
+                                        >
+                                            {story.image_caption}
+                                        </figcaption>
+                                    </figure>
+
+                                    <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-black/[0.10] pt-6">
+                                        {story.stats.map((stat) => (
+                                            <div key={stat.value}>
+                                                <dt
+                                                    className="font-serif text-midnight"
+                                                    style={{ fontSize: '1.75rem', fontWeight: 400, lineHeight: 1.1 }}
+                                                >
+                                                    {stat.value}
+                                                </dt>
+                                                <dd
+                                                    className="text-midnight/50 mt-2"
+                                                    style={{
+                                                        fontFamily: 'var(--font-inter)',
+                                                        fontSize: '0.8125rem',
+                                                        lineHeight: 1.4,
+                                                    }}
+                                                >
+                                                    {stat.label}
+                                                </dd>
+                                            </div>
+                                        ))}
+                                    </dl>
+                                </FadeIn>
+                            </div>
+
+                            {/* Racconto */}
+                            <div className="lg:col-span-7">
+                                <FadeIn delay={150}>
+                                    <p
+                                        className="font-serif text-midnight mb-8"
+                                        style={{ fontSize: 'clamp(1.25rem, 2vw, 1.625rem)', lineHeight: 1.5 }}
+                                    >
+                                        {story.lead}
+                                    </p>
+
+                                    <div className="space-y-6">
+                                        {story.paragraphs.map((paragraph, i) => (
+                                            <p
+                                                key={i}
+                                                className="text-black/70"
+                                                style={{
+                                                    fontFamily: 'var(--font-inter)',
+                                                    fontSize: '1.0625rem',
+                                                    lineHeight: 1.8,
+                                                    textAlign: 'justify',
+                                                    textJustify: 'inter-word',
+                                                    hyphens: 'auto',
+                                                }}
+                                            >
+                                                {paragraph}
+                                            </p>
+                                        ))}
+                                    </div>
+
+                                    <div className="mt-10 pl-6 border-l border-soft-coral/60">
+                                        {story.closing.map((line, i) => (
+                                            <p
+                                                key={i}
+                                                className="font-serif text-midnight"
+                                                style={{ fontSize: '1.25rem', lineHeight: 1.6 }}
+                                            >
+                                                {line}
+                                            </p>
+                                        ))}
+                                    </div>
+
+                                    {/* Firma */}
+                                    <div className="mt-10 flex flex-col items-end text-right">
+                                        <span
+                                            aria-hidden="true"
+                                            className="mb-5"
+                                            style={{ width: '2.5rem', height: '1px', background: 'rgba(0,0,0,0.18)' }}
+                                        />
+                                        <p
+                                            className="font-serif italic text-midnight"
+                                            style={{ fontSize: '1.375rem', lineHeight: 1.2 }}
+                                        >
+                                            {story.signature.name}
+                                        </p>
+                                        <p className="text-midnight/45 mt-3" style={eyebrowStyle}>
+                                            {story.signature.role}
+                                        </p>
+                                    </div>
+                                </FadeIn>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
