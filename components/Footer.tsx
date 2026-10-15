@@ -9,30 +9,30 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
         <footer className="bg-cream border-t border-black/5">
             <div className="container mx-auto px-4 py-14">
                 {/* Columns */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 md:gap-8 max-w-2xl mx-auto">
                     {/* Sito */}
                     <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-4">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-2.5">
                             {f.col_site}
                         </h4>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-0.5">
                             <li>
-                                <Link href={`/${lang}`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_home}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/destinazioni`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}/destinazioni`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_destinations}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/servizi`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}/servizi`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_services}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/chi-siamo-contatti`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}/chi-siamo-contatti`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_about}
                                 </Link>
                             </li>
@@ -41,27 +41,27 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
 
                     {/* Informazioni */}
                     <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-4">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-2.5">
                             {f.col_info}
                         </h4>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-0.5">
                             <li>
-                                <Link href="#" className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href="#" className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_faq}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href="#" className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_terms}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/privacy`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}/privacy`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_privacy}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/cookie`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <Link href={`/${lang}/cookie`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_cookies}
                                 </Link>
                             </li>
@@ -70,17 +70,17 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-4">
+                        <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-midnight mb-2.5">
                             {f.col_contact}
                         </h4>
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-0.5">
                             <li>
-                                <a href={`mailto:${f.contact_email}`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <a href={`mailto:${f.contact_email}`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.contact_email}
                                 </a>
                             </li>
                             <li>
-                                <a href={`tel:${f.contact_phone.replace(/\s/g, '')}`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                <a href={`tel:${f.contact_phone.replace(/\s/g, '')}`} className="inline-block py-1.5 text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.contact_phone}
                                 </a>
                             </li>
@@ -91,7 +91,7 @@ export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale 
 
             {/* Bottom bar */}
             <div className="border-t border-black/5">
-                <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row justify-between items-center text-xs text-midnight/30 gap-2">
+                <div className="container mx-auto px-4 pt-5 pb-24 sm:pb-5 flex flex-col sm:flex-row justify-between items-center text-xs text-midnight/30 gap-2">
                     <p>&copy; {new Date().getFullYear()} Baywatch Travel</p>
                     <p>Casamicciola Terme, Ischia</p>
                 </div>

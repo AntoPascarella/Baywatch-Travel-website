@@ -34,7 +34,7 @@ export default async function Home({
                 {/* ═══════════════════════════════════
                     HERO SECTION. Full-screen
                    ═══════════════════════════════════ */}
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <section className="relative min-h-svh flex items-center justify-center overflow-hidden">
                     {/* Background image */}
                     <Image
                         src="/images/hero/ischia_castello_aragonese.jpg"

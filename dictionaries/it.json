@@ -12,7 +12,10 @@
         "services": "Servizi",
         "about": "Chi siamo",
         "contact": "Contattaci",
-        "language": "Lingua"
+        "language": "Lingua",
+        "menu": "Menu",
+        "open_menu": "Apri il menu",
+        "close_menu": "Chiudi il menu"
     },
     "whatsapp": {
         "label": "Contattaci su WhatsApp",

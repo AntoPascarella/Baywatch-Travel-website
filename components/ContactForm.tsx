@@ -118,6 +118,7 @@ export default function ContactForm({
                 </label>
                 <input
                     id="contact-name"
+                    autoComplete="name"
                     {...register('name')}
                     className={`form-field ${errors.name ? 'form-field-error' : ''}`}
                     placeholder={labels.name_placeholder}
@@ -140,6 +141,8 @@ export default function ContactForm({
                 <input
                     id="contact-email"
                     type="email"
+                    inputMode="email"
+                    autoComplete="email"
                     {...register('email')}
                     className={`form-field ${errors.email ? 'form-field-error' : ''}`}
                     placeholder={labels.email_placeholder}
@@ -163,6 +166,8 @@ export default function ContactForm({
                     <input
                         id="contact-phone"
                         type="tel"
+                        inputMode="tel"
+                        autoComplete="tel"
                         {...register('phone')}
                         className="form-field"
                         placeholder="+39 081 333 1096"
@@ -228,7 +233,7 @@ export default function ContactForm({
                         id="contact-privacy"
                         type="checkbox"
                         {...register('privacy')}
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 accent-midnight"
+                        className="mt-0.5 h-5 w-5 flex-shrink-0 accent-midnight"
                     />
                     <span>
                         {consentBefore}

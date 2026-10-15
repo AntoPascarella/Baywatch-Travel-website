@@ -34,7 +34,7 @@
   --text-small: 0.875rem;
 
   /* Spacing scale */
-  --section-py: clamp(5rem, 10vw, 8rem);
+  --section-py: clamp(4rem, 10vw, 8rem);
 
   /* Shadows */
   --shadow-card: 0 1px 8px rgba(0, 0, 0, 0.06);
@@ -44,6 +44,14 @@
   /* Header */
   --header-py: 1.25rem;
   --header-py-scrolled: 0.75rem;
+  /* Height of the fixed header at the top of the page; content that must clear it uses this. */
+  --header-h: 64px;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --header-h: 108px;
+  }
 }
 
 /* Tailwind v4 @theme */
@@ -104,6 +112,8 @@ h6 {
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.005em;
+  /* Long German compounds must wrap rather than push past a phone screen */
+  overflow-wrap: break-word;
 }
 
 /* ───────────────────────────────────────────
@@ -164,10 +174,12 @@ h6 {
   box-shadow: 0 4px 14px rgba(248, 131, 121, 0.25);
 }
 
-.btn-primary:hover {
-  background: var(--color-soft-coral-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(248, 131, 121, 0.35);
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: var(--color-soft-coral-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(248, 131, 121, 0.35);
+  }
 }
 
 .btn-secondary {
@@ -176,10 +188,12 @@ h6 {
   border-color: rgba(17, 17, 17, 0.3);
 }
 
-.btn-secondary:hover {
-  background: #111111;
-  color: #fff;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background: #111111;
+    color: #fff;
+    transform: translateY(-1px);
+  }
 }
 
 .btn-dark {
@@ -188,9 +202,11 @@ h6 {
   border-color: var(--color-midnight);
 }
 
-.btn-dark:hover {
-  background: #222222;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .btn-dark:hover {
+    background: #222222;
+    transform: translateY(-1px);
+  }
 }
 
 .btn-outline {
@@ -199,10 +215,12 @@ h6 {
   border-color: var(--color-midnight);
 }
 
-.btn-outline:hover {
-  background: var(--color-midnight);
-  color: #fff;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .btn-outline:hover {
+    background: var(--color-midnight);
+    color: #fff;
+    transform: translateY(-1px);
+  }
 }
 
 .btn-outline-white {
@@ -211,9 +229,11 @@ h6 {
   border-color: rgba(255, 255, 255, 0.6);
 }
 
-.btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #fff;
+@media (hover: hover) {
+  .btn-outline-white:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+  }
 }
 
 .btn-ghost {
@@ -222,10 +242,12 @@ h6 {
   border-color: var(--color-midnight);
 }
 
-.btn-ghost:hover {
-  background: var(--color-midnight);
-  color: #fff;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .btn-ghost:hover {
+    background: var(--color-midnight);
+    color: #fff;
+    transform: translateY(-1px);
+  }
 }
 
 /* ───────────────────────────────────────────
@@ -239,9 +261,11 @@ h6 {
   overflow: hidden;
 }
 
-.card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
 }
 
 /* ───────────────────────────────────────────
@@ -388,40 +412,19 @@ h6 {
    BAYWATCH HEADER. EXACT REFERENCE TOKENS
    ─────────────────────────────────────────── */
 
-/* Responsive height (3 breakpoints from reference) */
+/* Mobile/tablet bar below 1280px (logo + menu button), full desktop header from 1280px */
 .bay-header {
-  /* ≤767px */
-  height: 64px;
-}
-
-@media (min-width: 768px) {
-  .bay-header {
-    /* 768–1023px */
-    height: 76px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .bay-header {
-    /* ≥1024px */
-    height: 88px;
-  }
+  height: var(--header-h);
 }
 
 /* Compact state. triggered after scrolledThreshold */
 .bay-header--compact {
-  height: 52px;
+  height: 56px;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1280px) {
   .bay-header--compact {
-    height: 46px;
-  }
-}
-
-@media (max-width: 767px) {
-  .bay-header--compact {
-    height: 48px;
+    height: 94px;
   }
 }
 
@@ -463,10 +466,12 @@ h6 {
   background: transparent;
 }
 
-.bay-btn-dark:hover {
-  background: #111111;
-  color: #ffffff;
-  border-color: #111111;
+@media (hover: hover) {
+  .bay-btn-dark:hover {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+  }
 }
 
 /* States B / C: overlay (white text on dark gradient) */
@@ -476,10 +481,12 @@ h6 {
   background: transparent;
 }
 
-.bay-btn-light:hover {
-  background: #ffffff;
-  color: #111111;
-  border-color: #ffffff;
+@media (hover: hover) {
+  .bay-btn-light:hover {
+    background: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+  }
 }
 
 /* ───────────────────────────────────────────

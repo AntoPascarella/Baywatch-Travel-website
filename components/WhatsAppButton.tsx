@@ -22,7 +22,7 @@ export default function WhatsAppButton({ labels }: { labels: { label: string; me
             href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20bd5a] transition-transform hover:scale-110 z-50 flex items-center justify-center"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20bd5a] transition-transform hover:scale-110 z-50 flex items-center justify-center"
             aria-label={label}
         >
             <WhatsAppIcon />

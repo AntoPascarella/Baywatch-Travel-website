@@ -41,7 +41,7 @@ export default async function DestinationsPage({
                     HERO. Italy photo background
                    ═══════════════════════════════════ */}
                 <section className="relative overflow-hidden">
-                    <div className="relative w-full" style={{ minHeight: '70vh' }}>
+                    <div className="relative w-full" style={{ minHeight: '70svh' }}>
                         <Image
                             src="/images/hero/Italia_Destinazioni.jpg"
                             alt={dict.destinations.hero_image_alt}
@@ -59,7 +59,7 @@ export default async function DestinationsPage({
                             }}
                         />
 
-                        <div className="relative container mx-auto px-4 flex items-center justify-center" style={{ minHeight: '70vh' }}>
+                        <div className="relative container mx-auto px-4 flex items-center justify-center" style={{ minHeight: '70svh' }}>
                             <div className="text-center max-w-3xl py-24">
                                 <FadeIn>
                                     <p
