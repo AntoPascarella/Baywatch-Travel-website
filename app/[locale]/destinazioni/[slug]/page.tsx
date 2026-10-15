@@ -71,10 +71,11 @@ export default async function DestinationDetailPage({
     const otherDestinations = allDestinations.filter((d) => d.slug !== slug).slice(0, 3);
     const descriptions = (dict.destinations.descriptions ?? {}) as Record<string, string>;
 
-    // Gallery text is Italian at the top level; swap in the English alt/caption when available.
-    const gallery: GalleryImage[] = (destinationGallery[slug] ?? []).map((img) =>
-        locale === 'en' && img.en ? { ...img, ...img.en } : img,
-    );
+    // Gallery text is Italian at the top level; swap in the translated alt/caption when available.
+    const gallery: GalleryImage[] = (destinationGallery[slug] ?? []).map((img) => {
+        const translated = locale === 'it' ? undefined : img[locale];
+        return translated ? { ...img, ...translated } : img;
+    });
     const fallback: GalleryImage = { src: dest.image, alt: altText };
     const g = (i: number): GalleryImage => gallery[i] ?? fallback;
     const heroImg = g(0);

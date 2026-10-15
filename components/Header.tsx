@@ -186,8 +186,9 @@ export default function Header({
 
                     <a
                         href="tel:+390813331096"
-                        className="bay-phone hidden lg:block"
+                        className="bay-phone hidden min-[1800px]:block"
                         style={{
+                            whiteSpace: 'nowrap',
                             fontFamily: 'var(--font-futura, var(--font-inter))',
                             fontWeight: 600,
                             fontSize: '16px',

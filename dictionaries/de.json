@@ -1,0 +1,525 @@
+{
+    "common": {
+        "title": "Baywatch Travel",
+        "description": "Reisebüro auf Ischia. Aufenthalte, Ausflüge, Transfers.",
+        "meta_description": "Ihr Reisebüro auf Ischia",
+        "cta": "Kontaktieren Sie uns",
+        "photo": "Foto"
+    },
+    "nav": {
+        "home": "Startseite",
+        "destinations": "Reiseziele",
+        "services": "Leistungen",
+        "about": "Über uns",
+        "contact": "Kontakt",
+        "language": "Sprache"
+    },
+    "whatsapp": {
+        "label": "Kontaktieren Sie uns über WhatsApp",
+        "message": "Hallo! Ich hätte gerne Informationen zu einer Reise."
+    },
+    "home": {
+        "hero": {
+            "headline": "REISEN MIT HANDSCHRIFT, NACH ISCHIA UND DARÜBER HINAUS.",
+            "subheadline": "Bis ins Detail durchdachte Reiserouten, damit Sie Italien in Ruhe genießen können.",
+            "cta_quote": "Reiseziele entdecken",
+            "image_alt": "Das Castello Aragonese auf Ischia bei Sonnenuntergang"
+        },
+        "video_section": {
+            "title": "Italien, in aller Ruhe",
+            "body": "Mit Baywatch Travel entdecken Sie die Orte, die Sie schon lieben, und jene, von denen Sie noch nicht wussten, dass Sie sie sehen möchten. Von den Schönheiten der Küste bis zu den Dörfern im Hinterland: Jede Reise wird um Sie herum gestaltet, ohne Eile und ohne Standardpakete."
+        },
+        "partners": {
+            "title": "Unsere Partner"
+        },
+        "destinations": {
+            "title": "Wählen Sie Ihr Reiseziel",
+            "subtitle": "Berühmte Ziele und Ecken, von denen man seltener hört."
+        },
+        "servizi": {
+            "label": "Leistungen",
+            "items": {
+                "trasferimenti": {
+                    "eyebrow": "Logistik",
+                    "title": "Private Transfers",
+                    "body": "Jede Reise beginnt und endet mit derselben Sorgfalt. Unsere privaten Transfers von und zu den Flughäfen garantieren absoluten Komfort, tadellose Pünktlichkeit und eine entspannte Atmosphäre vom ersten Moment an. Wir kümmern uns um jedes Detail, damit Sie sich ganz auf die Freude am Ankommen konzentrieren können.",
+                    "image_alt": "Amalfiküste, private Transfers"
+                },
+                "soggiorni": {
+                    "eyebrow": "Gastfreundschaft",
+                    "title": "Aufenthalte nach Maß",
+                    "body": "Ob ein romantischer Kurzurlaub von wenigen Tagen oder ein längerer Aufenthalt, um die Insel gründlich kennenzulernen: Wir wählen für Sie die authentischsten und stilvollsten Unterkünfte aus. Jedes Angebot ist bis ins kleinste Detail durchdacht, für ein Erlebnis, das lange nachwirkt.",
+                    "image_alt": "Positano, Aufenthalte nach Maß"
+                },
+                "escursioni": {
+                    "eyebrow": "Land und Region",
+                    "title": "Ausflüge ins Herz der Landschaft",
+                    "body": "Erfahrene, ortskundige Guides begleiten Sie zu versteckten Wegen, atemberaubenden Ausblicken und verborgenen Winkeln, die nur Menschen zeigen können, die hier leben. Jeder Ausflug ist eine authentische Geschichte: sicher, eindrucksvoll und etwas, das Sie für immer mitnehmen.",
+                    "image_alt": "Capri, geführte Ausflüge in die Natur"
+                },
+                "termali": {
+                    "eyebrow": "Wohlbefinden",
+                    "title": "Thermalwasser",
+                    "body": "Die Thermalquellen von Ischia gehören zu den berühmtesten Europas. Wir führen Sie zu den besten Thermalparks und Wellnesseinrichtungen der Insel, für tiefe Entspannung.",
+                    "image_alt": "Ischia, Thermalparks und Wellness"
+                }
+            }
+        },
+        "services_about": {
+            "title": "Über uns",
+            "body": "Baywatch Travel wurde in Casamicciola Terme auf der Insel Ischia gegründet. Wir decken den gesamten Incoming-Bereich ab: Transfers von Flughäfen und Häfen, Hotels, geführte Ausflüge, Genusserlebnisse rund um Küche und Wein sowie Thermalprogramme.\n\nWir arbeiten mit einem Netzwerk lokaler Partner, die wir über die Jahre einzeln ausgewählt haben. Keine Ketten, keine versteckten Zwischenhändler.\n\nOb ein Wochenende auf Capri oder eine Rundreise durch Rom und die Toskana: Wir planen die Reiseroute ausgehend von dem, was Sie uns erzählen, nicht nach Katalog.",
+            "image_alt": "Blick auf die Uferpromenade von Ischia, nahe unserem Büro in Casamicciola Terme"
+        },
+        "review": {
+            "quote": "Bis ins letzte Detail organisiert. Die Bootsausflüge, die Abendessen mit Meerblick, sogar die kleinen Zwischenfälle wurden geregelt, ohne dass wir etwas davon gemerkt haben. Wir kommen wieder.",
+            "author": "Giulia und Marco R., Mailand",
+            "button": "Bewertungen"
+        },
+        "plan_trip": {
+            "title": "Planen Sie Ihre Reise",
+            "body": "Erzählen Sie uns, wohin Sie reisen und was Sie erleben möchten. Sie müssen noch keine genauen Vorstellungen haben: Eine Ahnung genügt, ein Foto, das Sie irgendwo gesehen haben. Um den Rest kümmern wir uns."
+        },
+        "quick_request": {
+            "title": "Schnellanfrage",
+            "name": "Ihr Name",
+            "email": "E-Mail",
+            "destination": "Reiseziel",
+            "destination_placeholder": "Reiseziel wählen…",
+            "message": "Zusätzliche Anmerkungen",
+            "submit": "Anfrage senden"
+        },
+        "usps": {
+            "incoming": {
+                "title": "Incoming aus einer Hand",
+                "desc": "Transfer, Hotel, Ausflüge: Wir kümmern uns um alles."
+            },
+            "local": {
+                "title": "Lokale Partner",
+                "desc": "Nur Guides und Unterkünfte, die wir persönlich kennen."
+            },
+            "assistance": {
+                "title": "Schnelle Hilfe",
+                "desc": "Unterstützung rund um die Uhr, für alles, was Sie unterwegs brauchen."
+            }
+        },
+        "services": {
+            "title": "Unsere Incoming-Leistungen",
+            "items": {
+                "transfer": "Flughafentransfers",
+                "hotel": "Hotel- & Check-in-Service",
+                "tours": "Geführte Ausflüge",
+                "thermal": "Thermalparks",
+                "dinner": "Erlebnisdinner"
+            }
+        },
+        "how_it_works": {
+            "title": "So funktioniert es",
+            "step1": "Erzählen Sie uns von Ihrer Wunschreise",
+            "step2": "Erhalten Sie eine maßgeschneiderte Reiseroute",
+            "step3": "Buchen Sie und reisen Sie sorgenfrei los"
+        },
+        "testimonials": {
+            "title": "Das sagen unsere Gäste",
+            "review1": "Wirklich ein schönes Erlebnis. Ischia überzeugt, und die Organisation war tadellos.",
+            "author1": "Giulia R.",
+            "review2": "Alles pünktlich, von den Transfers bis zu den Ausflügen. Empfehlenswert.",
+            "author2": "Marco & Sara"
+        },
+        "faq": {
+            "title": "Häufige Fragen",
+            "q1": "Organisieren Sie nur Reisen nach Ischia?",
+            "a1": "Nein. Wir decken ganz Italien ab, mit Schwerpunkt auf Kampanien, Rom und der Toskana.",
+            "q2": "Sind die Transfers inbegriffen?",
+            "a2": "Auf Wunsch ja. Wir können private Transfers von und zu Flughäfen und Bahnhöfen hinzufügen.",
+            "q3": "Bieten Sie Betreuung während der Reise?",
+            "a3": "Ja, unser Team ist rund um die Uhr für jedes Anliegen erreichbar."
+        },
+        "cta_final": {
+            "title": "Bereit für die Reise?",
+            "subtitle": "Füllen Sie das Formular unten aus, wir antworten Ihnen mit einem Angebot.",
+            "button": "Jetzt Kontakt aufnehmen"
+        },
+        "hero_cta_whatsapp": "Schreiben Sie uns auf WhatsApp"
+    },
+    "destinations": {
+        "meta_title": "Reiseziele | Baywatch Travel",
+        "meta_description": "Unsere Reiseziele in Italien: Ischia, Capri, die Amalfiküste, Rom, die Toskana und vieles mehr.",
+        "hero_title": "Unsere Reiseziele",
+        "hero_subtitle": "Berühmte Ziele und atemberaubende Ausblicke am Mittelmeer.",
+        "hero_eyebrow": "Italien erleben",
+        "hero_image_alt": "Italienische Küste, Positano bei Sonnenuntergang",
+        "discover": "Entdecken",
+        "descriptions": {
+            "ischia": "Dampfende Thermalquellen am Strand, üppige Gärten, das Castello Aragonese über dem Wasser.",
+            "capri": "Faraglioni, Blaue Grotte, Villa Lysis. Eleganz, die nie aus der Mode kommt.",
+            "procida": "Bonbonfarbene Häuser, Fischerboote, Tage ohne Eile.",
+            "napoli": "Pizza, enge Gassen, der Vesuv im Hintergrund. Eine Stadt, die Sie nicht um Erlaubnis fragt.",
+            "sicilia": "Griechische Tempel, barocke Städtchen, der rauchende Ätna. Eine Reise in der Reise.",
+            "sardegna": "Kristallklares Wasser, versteckte Buchten, ein eigenwilliges Hinterland.",
+            "puglia": "Trulli, Masserie, weiße Städte und ein Meer, das alle hundert Meter seine Farbe wechselt.",
+            "calabria": "Tropea, Scilla, steil abfallende Klippen und ein Meer wie in der Karibik.",
+            "roma": "Zweitausend Jahre Geschichte an jeder Ecke. Die Ewige Stadt kann immer noch überraschen.",
+            "toscana": "Sanfte Hügel, Zypressen, mittelalterliche Dörfer, Weine, die nach ihrem Boden schmecken."
+        }
+    },
+    "destination_page": {
+        "breadcrumb_label": "Navigationspfad",
+        "overview": "Überblick",
+        "at_a_glance": "Auf einen Blick",
+        "region": "Region",
+        "best_season": "Beste Reisezeit",
+        "ideal_for": "Ideal für",
+        "vibe": "Atmosphäre",
+        "character_eyebrow": "Charakter des Ortes",
+        "character_title": "Was Sie erwartet",
+        "landscape": "Landschaft",
+        "sea": "Meer und Küste",
+        "towns": "Dörfer und Städte",
+        "location_eyebrow": "Wo es liegt",
+        "location_title": "Lage & Anreise",
+        "where": "Wo",
+        "area": "Gebiet",
+        "getting_there": "Anreise",
+        "facts_eyebrow": "Interessantes",
+        "facts_title": "Wussten Sie, dass…",
+        "itineraries_eyebrow": "Reiserouten",
+        "itineraries_title": "So können Sie es erleben",
+        "must_see_eyebrow": "Nicht verpassen",
+        "must_see_title": "Orte und Erlebnisse",
+        "gallery_eyebrow": "Etwas fürs Auge",
+        "gallery_title": "{name} in Bildern",
+        "highlights_eyebrow": "Highlights",
+        "highlights_title": "Die Wahrzeichen von {name}",
+        "tips_eyebrow": "Praktische Tipps",
+        "tips_title": "Vor der Abreise",
+        "best_period": "Beste Zeit",
+        "ideal_length": "Ideale Aufenthaltsdauer",
+        "good_to_know": "Gut zu wissen",
+        "more_eyebrow": "Weiter entdecken",
+        "more_title": "Weitere Reiseziele",
+        "see_all": "Alle ansehen"
+    },
+    "services_page": {
+        "meta_title": "Leistungen | Baywatch Travel",
+        "meta_description": "Gruppen- und Privattransfers, Aufenthalte mit mehrsprachiger Betreuung, Ausflüge, Genusstouren, Wandern und Thermen: die Leistungen von Baywatch Travel.",
+        "hero": {
+            "eyebrow": "Was wir tun",
+            "title": "Unsere Leistungen",
+            "subtitle": "Transfers, Aufenthalte, Touren und Ausflüge, Reisen nach Maß.",
+            "image_alt": "Die Küste von Ischia, wo Baywatch Travel seinen Sitz hat"
+        },
+        "intro": [
+            "Wir sind ein Reiseveranstalter mit langjähriger Erfahrung in der Tourismusbranche, spezialisiert auf die Organisation von Aufenthalten, Touren und Erlebnissen für Einzelreisende ebenso wie für Gruppen jeder Größe.",
+            "Unsere Philosophie verbindet attraktive Preise, Professionalität und Aufmerksamkeit für unsere Kunden: Wir bieten besonders günstige Reiseangebote, die auf unterschiedliche Bedürfnisse zugeschnitten sind, ohne je auf die Qualität unserer Leistungen, die Liebe zum Detail und die Zufriedenheit derer zu verzichten, die mit uns reisen."
+        ],
+        "index_label": "Übersicht der Leistungen",
+        "request_info": "Informationen anfordern",
+        "services": {
+            "transfer": {
+                "index_label": "Transfers",
+                "eyebrow": "Unsere Stärke",
+                "title": "Transferservice: unser Aushängeschild",
+                "body": [
+                    "Wir bieten Einzel- und Gruppentransfers an, die Ihnen in jeder Phase der Fahrt größtmöglichen Komfort, Pünktlichkeit und Betreuung garantieren.",
+                    "Wir organisieren Transfers ganz nach Ihren Wünschen und kümmern uns um jedes Detail, von der Ankunft bis zu Ihrem Zielort."
+                ],
+                "subsections": [
+                    {
+                        "title": "Empfang am Flughafen",
+                        "body": [
+                            "Der Service beginnt direkt am Flughafen, wo Sie von einem unserer mehrsprachigen Mitarbeiter in Empfang genommen werden. Unser Team sorgt für einen professionellen und aufmerksamen Empfang, gibt Ihnen alle nötigen Informationen und begleitet Sie durch die vorgesehenen Abläufe."
+                        ]
+                    },
+                    {
+                        "title": "Transfers zum Abfahrtshafen",
+                        "body": [
+                            "Wir bieten verschiedene Transportlösungen an, je nach Anzahl der Fahrgäste und Ihren besonderen Anforderungen:",
+                            [
+                                "Privatwagen für Einzeltransfers oder kleine Gruppen;",
+                                "Minivans für mittelgroße Gruppen;",
+                                "Reisebusse für große Gruppen."
+                            ],
+                            "Jeder Transfer wird mit besonderem Augenmerk auf Pünktlichkeit, Komfort und Zeitplanung organisiert und sorgt für eine reibungslose Abstimmung zwischen dem Flughafen, den Schiffsverbindungen und den gewählten Unterkünften."
+                        ]
+                    },
+                    {
+                        "title": "Abwicklung der Formalitäten und Bereitstellung der Tickets",
+                        "body": [
+                            "Sofern im Service vorgesehen, kümmern wir uns auch um die notwendigen Formalitäten und stellen die entsprechenden Tickets bereit, damit Ihre Reise so einfach und gut organisiert wie möglich verläuft."
+                        ]
+                    },
+                    {
+                        "title": "Betreuung während des gesamten Service",
+                        "body": [
+                            "Unsere Unterstützung beschränkt sich nicht auf den reinen Transfer. Wir betreuen Sie während der gesamten Dauer des Service und bieten Ihnen einen festen Ansprechpartner für alle Anliegen, Fragen oder Wünsche, die unterwegs aufkommen.",
+                            "Unser Ziel ist ein umfassender, zuverlässiger und persönlicher Service, bei dem Sie sich jederzeit gut begleitet und betreut fühlen.",
+                            "Professionalität, Organisation und Kundenorientierung sind die Grundlage jedes unserer Transfers."
+                        ]
+                    }
+                ],
+                "bullets": [
+                    "Gran-Turismo-Reisebusse mit 30–55 Plätzen",
+                    "Flughäfen in Mittel- und Süditalien sowie die Häfen von Neapel, Pozzuoli und Salerno"
+                ],
+                "image_alt": "Mann auf einer Fähre mit Blick auf einen Küstenort mit Burg unter blauem Himmel"
+            },
+            "soggiorni": {
+                "index_label": "Aufenthalte",
+                "eyebrow": "Unser Markenzeichen",
+                "title": "Aufenthalte",
+                "subsections": [
+                    {
+                        "title": "Badeurlaub",
+                        "body": [
+                            "Wenn Sie dem Alltag entfliehen und sich ruhige Momente gönnen möchten, bieten wir Ihnen erholsame Badeaufenthalte, um Meer, Sonne und freie Zeit ganz entspannt zu genießen."
+                        ]
+                    },
+                    {
+                        "title": "Gruppenaufenthalte nach Maß",
+                        "body": [
+                            "Die Betreuung von Gruppen ist die große Stärke unserer Arbeit. Wir arbeiten mit Hotels jeder Kategorie zusammen, für Familien ebenso wie für Agenturen. Wir stellen individuelle Pakete zusammen, mit mehrsprachiger Betreuung in jeder Phase der Reise."
+                        ]
+                    }
+                ],
+                "image_alt": "Entspannter Blick auf ein mediterranes Resort auf Capri, Italien, mit Liegen und Sonnenschirmen am Pool, ideal für alle, die Reisen und Erholung suchen."
+            },
+            "escursioni": {
+                "index_label": "Touren und Ausflüge",
+                "title": "Touren und Erlebnisse",
+                "body": [
+                    "Wir organisieren begleitete Touren und individuelle Reiserouten mit erfahrenen Reiseleitern und professionellen Guides, die jede Reise zu einem authentischen und mitreißenden Erlebnis machen.",
+                    "Von kulturellen Besichtigungen bis zu Ausflügen, von lokalen Traditionen bis zu den eindrucksvollsten Orten: Wir bieten unvergessliche Erlebnisse, mit denen Sie jedes Reiseziel umfassend und auf originelle Weise kennenlernen und erleben können.",
+                    "Eine große Auswahl an Ausflügen und Erlebnissen für jeden Geschmack, um die Region über immer neue Routen, Landschaften und Stimmungen zu entdecken.",
+                    "Ob Sie eine Panoramatour bevorzugen, Geschichte und Kultur, Meer und Schifffahrt oder den direkten Kontakt mit der Natur: Wir haben den passenden Ausflug für Sie."
+                ],
+                "subsections": [
+                    {
+                        "title": "Die Insel entdecken",
+                        "body": [
+                            "Am besten lernen Sie die Insel bei der klassischen Inselrundfahrt kennen, die per Minibus, Bus, Boot und/oder Segelschiff möglich ist.",
+                            "Eine Route, auf der Sie eindrucksvolle Ausblicke genießen, die typischsten Orte kennenlernen und bequem begleitet die vielen Facetten der Insel entdecken: Dörfer, Küsten, Landschaften und Traditionen."
+                        ]
+                    },
+                    {
+                        "title": "Bootsausflüge: der Reiz der Inseln",
+                        "body": [
+                            "Das Meer steht auch bei unseren Bootsausflügen im Mittelpunkt, die zu den benachbarten Inseln führen, jede mit eigenem Charakter und eigenem Reiz.",
+                            "Sie können nach Capri und Procida fahren, die Inseln aus einer besonderen Perspektive bewundern und einen Tag auf dem Meer genießen, mit weiten Ausblicken, kristallklarem Wasser und unvergesslichen Eindrücken."
+                        ]
+                    },
+                    {
+                        "title": "Trekking und Natur: wenn die Reise berührt",
+                        "body": [
+                            "Und wenn Sie eher Wege, Natur und Abenteuer suchen, dann packen Sie die richtigen Schuhe ein!",
+                            "Wir begleiten Sie auf Routen, auf denen die Natur das Sagen hat, mit Panoramawegen, dem Duft der mediterranen Vegetation und Ausblicken aufs Meer.",
+                            "Hier treffen sich Land und Meer, und alle Elemente des Lebens scheinen zu einer einzigen Landschaft zu verschmelzen."
+                        ]
+                    }
+                ],
+                "bullets": [
+                    "Inselrundfahrt auf Ischia (~3 Std. 30 Min. mit Stopps)",
+                    "Thermalparks (ganzer oder halber Tag)",
+                    "Pompeji, Vesuv, Königspalast von Caserta",
+                    "Wein- und Genusstouren, Besuche von Weingütern",
+                    "Wandern auf den Wegen des Epomeo und dem Sentiero degli Dei"
+                ],
+                "image_alt": "Gruppe bei einer Wanderung auf einem Weg in Kampanien"
+            },
+            "su_misura": {
+                "index_label": "Reisen nach Maß",
+                "eyebrow": "Nach Maß",
+                "title": "Reisen nach Maß für jeden Anspruch",
+                "body": [
+                    "Wir sind überzeugt, dass jeder Reisende andere Bedürfnisse, Erwartungen und Wünsche hat. Deshalb bieten wir nicht einfach Standardpakete an, sondern planen und organisieren Reisen nach Maß, die auf die Anforderungen jedes einzelnen Kunden zugeschnitten sind.",
+                    "Ob Sie allein reisen, als Familie, mit Freunden, als Verein oder als Schulklasse: Wir erarbeiten gemeinsam die passende Reise, übernehmen die Organisation und koordinieren jeden Aspekt des Erlebnisses.",
+                    "Vom ersten Kontakt bis zur Rückkehr haben wir nur ein Ziel: jede Reise zu einem Erlebnis zu machen, an das Sie sich gerne erinnern.",
+                    "Kompetenz, faire Preise, Liebe zum Detail und Aufmerksamkeit für die Menschen sind die Werte, die in jedes unserer Angebote einfließen, denn für uns ist die Zufriedenheit unserer Kunden fester Bestandteil der Reise."
+                ],
+                "bullets": [
+                    "Schriftliches Angebot mit klaren Posten und Preisen",
+                    "Änderungen, bis das Programm passt"
+                ],
+                "image_alt": "Hand auf einer Landkarte mit Reisenotizen"
+            }
+        },
+        "package": {
+            "eyebrow": "Beispielpaket",
+            "title": "So läuft ein Aufenthalt mit uns ab",
+            "intro": "Ein Beispiel für ein Komplettpaket. Wir passen es an Gruppe, Dauer und Reiseziel an.",
+            "steps": [
+                { "title": "Abholung in Capodichino", "body": "Wir erwarten Sie am Flughafen Neapel mit einem festen Fahrer und gut sichtbarem Namensschild." },
+                { "title": "Transfer mit Begleitung bis zum Hotel", "body": "Transfer in Begleitung eines Teammitglieds, das Ihnen beim Gepäck hilft, praktische Informationen gibt und bei Bedarf Zwischenstopps einlegt." },
+                { "title": "Begrüßungscocktail", "body": "Im Hotel servieren wir Ihnen einen Begrüßungscocktail und stellen Ihnen kurz das geplante Wochenprogramm vor, mit Tipps und nützlichen Informationen für Ihren Aufenthalt." },
+                { "title": "Unterlagen zu Ausflügen und Programm", "body": "Karte, Tagesprogramm, Kontakte, Ausflugsgutscheine. Alles in Papierform und digital." },
+                { "title": "Tägliche Betreuung während des Aufenthalts", "body": "Eine feste Ansprechperson ist jeden Tag für alles erreichbar, was Sie brauchen, von der Umbuchung bis zum Tipp fürs Abendessen." },
+                { "title": "Rücktransfer", "body": "Abholung im Hotel und Rückfahrt zum Flughafen." }
+            ]
+        },
+        "tours": {
+            "eyebrow": "Ziele für Tagesausflüge",
+            "title": "Touren und Ausflüge an Orte, die wir lieben",
+            "intro": "Amalfiküste, Positano, Pompeji und Sorrent sind Ziele, für die wir Tagesausflüge und Transfers anbieten. Keine Aufenthalte, sondern Erlebnisse nach Maß.",
+            "packages": {
+                "amalfi": {
+                    "name": "Amalfiküste und Sorrentinische Küste",
+                    "eyebrow": "Tagesausflug",
+                    "tagline": "Von Amalfi nach Positano entlang der SS163, je nach Wunsch per Boot oder Reisebus.",
+                    "activities": [
+                        "Bootstour Amalfi, Furore, Conca dei Marini",
+                        "Besichtigung des Doms von Amalfi + Atrani zu Fuß",
+                        "Panoramafahrt im Reisebus auf der SS163 mit Fotostopps",
+                        "Mittagessen im Agriturismo mit Blick auf den Golf"
+                    ],
+                    "image_alt": "Panoramablick auf die Amalfiküste"
+                },
+                "positano": {
+                    "name": "Positano",
+                    "eyebrow": "Halber oder ganzer Tag",
+                    "tagline": "Steil, fotogen, eine natürliche Kulisse, die immer noch wirkt.",
+                    "activities": [
+                        "Bootstour mit Badestopp bei Li Galli und Praiano",
+                        "Spiaggia Grande + Besuch des Ortes",
+                        "Geführte Wanderung auf dem Sentiero degli Dei (Bomerano–Nocelle)",
+                        "Sonnenuntergang auf einer Terrasse mit Aperitif"
+                    ],
+                    "image_alt": "Häuser von Positano am Hang über dem Strand"
+                },
+                "pompei": {
+                    "name": "Pompeji",
+                    "eyebrow": "Halber oder ganzer Tag",
+                    "tagline": "Eine römische Stadt, im Jahr 79 n. Chr. erstarrt. Immer mit lizenziertem Guide.",
+                    "activities": [
+                        "Besichtigung der Ausgrabungen von Pompeji mit lizenziertem Guide (~3 Std.)",
+                        "Herculaneum + MAV Virtuelles Archäologisches Museum",
+                        "Verlängerung zum Vesuv: zu Fuß zum Krater (45 Min. Hinweg)",
+                        "Mittagessen im Agriturismo + Verkostung von Vesuvweinen"
+                    ],
+                    "image_alt": "Ruinen von Pompeji mit Säulen und Statue"
+                },
+                "sorrento": {
+                    "name": "Sorrent",
+                    "eyebrow": "Halber oder ganzer Tag",
+                    "tagline": "Ausgangspunkt für die Küste oder Ziel für sich. Zitronenhaine, Blick auf den Golf, Leben im langsamen Takt.",
+                    "activities": [
+                        "Führung durch die Altstadt, Kreuzgang San Francesco",
+                        "Vallone dei Mulini und Marina Grande",
+                        "Zitronentour: Besuch eines Zitrushains + Limoncello-Verkostung",
+                        "Bagni della Regina Giovanna: Naturbecken zwischen römischen Ruinen"
+                    ],
+                    "image_alt": "Luftaufnahme von Sorrent und der Villa Comunale"
+                }
+            }
+        },
+        "cta": {
+            "eyebrow": "Bereit für die Reise",
+            "title": "Erzählen Sie uns, welche Reise Sie im Sinn haben",
+            "body": "Schreiben Sie uns, wohin Sie reisen möchten, mit wem und für wie viele Tage. Wir melden uns mit einem konkreten Vorschlag, ohne Umschweife.",
+            "primary": "Informationen anfordern",
+            "secondary": "Reiseziele ansehen"
+        }
+    },
+    "contact": {
+        "meta_title": "Über uns & Kontakt | Baywatch Travel",
+        "meta_description": "Baywatch Travel, Reisebüro in Casamicciola Terme seit 1999. Unsere Geschichte und unsere Kontaktdaten für Ihre Reise nach Ischia und durch Italien.",
+        "hero_image_alt": "Weiße und blaue Häuser mit Blick aufs Meer",
+        "story": {
+            "eyebrow": "Seit 1999 auf Ischia",
+            "title": "Unsere Geschichte, unser Ischia",
+            "lead": "Der Tourismus war schon immer unsere Welt.",
+            "paragraphs": [
+                "Meinen beruflichen Weg habe ich in ganz verschiedenen Bereichen der Tourismusbranche begonnen, von der Hotellerie bis zur Arbeit als Reiseveranstalter, und mich im Laufe der Zeit um Planung, Organisation und Kundenbetreuung gekümmert. Unterschiedliche Erfahrungen, durch die ich den Tourismus aus jeder Perspektive kennenlernen durfte und vor allem verstanden habe, wie wichtig die Menschen sind, das Zuhören und die Liebe zum Detail.",
+                "1999 kam dann der große Schritt: die Entscheidung, Erfahrung und Leidenschaft in ein ganz eigenes Projekt zu verwandeln. So entstand Baywatch Travel, damals ein kleines Unternehmen mit einem winzigen Büro und viel Tatendrang.",
+                "Von diesem Moment an sind wir Schritt für Schritt gewachsen, getragen von der täglichen Arbeit, dem Vertrauen unserer Kunden und den vielen Kooperationen, die uns über die Jahre gemeinsam vorangebracht haben. Aus dem kleinen Reisebüro ist ein etabliertes Unternehmen geworden, tief verwurzelt auf der Insel Ischia.",
+                "Heute zählt Baywatch Travel mehr als 20 Mitarbeiter und ist eine feste Größe im Tourismus der Insel. Ein Ergebnis, auf das wir stolz sind, das wir aber vor allem als Verantwortung sehen: jeden Tag aufs Neue Professionalität, Seriosität und Aufmerksamkeit zu bieten.",
+                "In einer Branche, die sich ständig verändert, halten wir gerne an den Werten fest, die uns von Anfang an begleitet haben: Fachwissen, Zuverlässigkeit, Hilfsbereitschaft und Fürsorge für unsere Kunden.",
+                "Denn hinter jeder Reise steht nicht einfach eine Buchung, sondern ein Mensch, der uns seine Zeit, seine Erwartungen und den Wunsch nach einem schönen Erlebnis anvertraut.",
+                "Und genau dafür setzen wir uns seit über fünfundzwanzig Jahren ein: die Region zu kennen, ihren Wert zu verstehen und unsere Erfahrung in Reisen zu verwandeln, die mit Leidenschaft und Professionalität organisiert sind.",
+                "Baywatch Travel ist gewachsen, aber der Geist ist derselbe geblieben wie damals: gute Arbeit leisten, Wort halten und mit der Zeit Beziehungen aufbauen, die auf Vertrauen beruhen."
+            ],
+            "closing": [
+                "Das ist unsere Geschichte.",
+                "So verstehen wir Tourismus."
+            ],
+            "signature": {
+                "name": "Cira Messina",
+                "role": "Baywatch Travel, Casamicciola Terme"
+            },
+            "stats": [
+                {
+                    "value": "1999",
+                    "label": "Gründungsjahr"
+                },
+                {
+                    "value": "20+",
+                    "label": "Mitarbeiter"
+                },
+                {
+                    "value": "25+",
+                    "label": "Jahre Erfahrung"
+                }
+            ],
+            "image_alt": "Die Uferpromenade von Casamicciola Terme auf Ischia, wo unser Reisebüro seinen Sitz hat",
+            "image_caption": "Casamicciola Terme, wo alles begann"
+        },
+        "hero_title": "Über uns & Kontakt",
+        "hero_subtitle": "Bereit für die Reise? Gestalten wir gemeinsam die Reiseroute, die zu Ihnen passt.",
+        "info_title": "Bleiben Sie in Kontakt",
+        "visit": "Besuchen Sie uns",
+        "address": ["Via Castiglione, 36", "80074 Casamicciola Terme (NA), Italien"],
+        "email_us": "Schreiben Sie uns",
+        "call_us": "Rufen Sie uns an",
+        "hours": "Mo – Fr, 9:00 – 19:30 Uhr",
+        "form_title": "Senden Sie uns eine Nachricht",
+        "whatsapp_cta": "Oder schreiben Sie uns auf WhatsApp"
+    },
+    "form": {
+        "name": "Name",
+        "name_placeholder": "Max Mustermann",
+        "email": "E-Mail",
+        "email_placeholder": "max@example.com",
+        "phone": "Telefon",
+        "phone_helper": "Optional, wir rufen Sie gerne zurück, wenn Sie möchten",
+        "destination": "Reiseziel",
+        "destination_placeholder": "Reiseziel wählen…",
+        "message": "Nachricht",
+        "message_helper": "Erzählen Sie uns von der Reise, die Sie im Sinn haben",
+        "submit": "Nachricht senden",
+        "sending": "Wird gesendet…",
+        "success_title": "Vielen Dank!",
+        "success": "Nachricht gesendet.",
+        "send_another": "Weitere Nachricht senden",
+        "error_name": "Der Name muss mindestens 2 Zeichen lang sein.",
+        "error_email": "Ungültige E-Mail-Adresse.",
+        "error_message": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+        "privacy_consent": "Ich habe die {link} gelesen.",
+        "privacy_link": "Datenschutzerklärung",
+        "error_privacy": "Bitte bestätigen Sie, dass Sie die Datenschutzerklärung gelesen haben, um die Nachricht zu senden.",
+        "error_send": "Die Nachricht wurde nicht gesendet. Bitte versuchen Sie es in einigen Minuten erneut oder schreiben Sie uns an info@baywatchtravel.it."
+    },
+    "footer": {
+        "col_site": "Website",
+        "col_info": "Informationen",
+        "col_contact": "Kontakt",
+        "col_social": "Social Media",
+        "link_home": "Startseite",
+        "link_destinations": "Reiseziele",
+        "link_services": "Leistungen",
+        "link_about": "Über uns",
+        "link_faq": "Häufige Fragen",
+        "link_terms": "AGB",
+        "contact_email": "info@baywatchtravel.it",
+        "contact_phone": "+39 081 333 1096",
+        "link_privacy": "Datenschutzerklärung",
+        "link_cookies": "Cookie-Richtlinie"
+    },
+    "legal": {
+        "last_updated": "Zuletzt aktualisiert",
+        "updated_on": "15. Oktober 2026"
+    },
+    "cookie_notice": {
+        "label": "Cookie-Hinweis",
+        "text": "Diese Website verwendet keine Profiling- oder Analyse-Cookies.",
+        "link": "Cookie-Richtlinie",
+        "dismiss": "Verstanden"
+    }
+}

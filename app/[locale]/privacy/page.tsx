@@ -17,6 +17,12 @@ const META: Record<Locale, { title: string; heading: string; description: string
         description:
             'How Baywatch Travel handles the data you send us through the contact form, how long we keep it and how you can exercise your rights.',
     },
+    de: {
+        title: 'Datenschutzerklärung | Baywatch Travel',
+        heading: 'Datenschutzerklärung',
+        description:
+            'Wie Baywatch Travel die Daten verarbeitet, die Sie uns über das Kontaktformular senden, wie lange wir sie speichern und wie Sie Ihre Rechte ausüben können.',
+    },
 };
 
 export async function generateMetadata({
@@ -38,7 +44,13 @@ export default async function PrivacyPage({
 
     return (
         <LegalPage dict={dict} lang={locale} eyebrow="Privacy" title={META[locale].heading}>
-            {locale === 'en' ? <PrivacyEn locale={locale} /> : <PrivacyIt locale={locale} />}
+            {locale === 'en' ? (
+                <PrivacyEn locale={locale} />
+            ) : locale === 'de' ? (
+                <PrivacyDe locale={locale} />
+            ) : (
+                <PrivacyIt locale={locale} />
+            )}
         </LegalPage>
     );
 }
@@ -315,6 +327,157 @@ function PrivacyEn({ locale }: { locale: Locale }) {
             <p>
                 If we change the way we process data, we will update this page and the date shown at the
                 top.
+            </p>
+        </>
+    );
+}
+
+function PrivacyDe({ locale }: { locale: Locale }) {
+    return (
+        <>
+            <p>
+                Diese Seite erläutert, welche Daten wir über diese Website erheben, warum wir sie verwenden
+                und welche Rechte Sie haben. Sie wurde gemäß Art. 13 und 14 der Verordnung (EU) 2016/679
+                (Datenschutz-Grundverordnung, DSGVO) sowie dem italienischen Gesetzesdekret Nr. 196/2003
+                (Datenschutzkodex, „Codice privacy“) erstellt.
+            </p>
+
+            <h2>Wer Ihre Daten verarbeitet</h2>
+            <p>
+                Verantwortlicher für die Verarbeitung ist <strong>{CONTROLLER.name}</strong>,{' '}
+                {CONTROLLER.address.de}.
+            </p>
+            <p>
+                Bei allen Fragen zu Ihren Daten können Sie uns an{' '}
+                <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a> schreiben oder unter{' '}
+                <a href={`tel:${CONTROLLER.phone.replace(/\s/g, '')}`}>{CONTROLLER.phone}</a> anrufen.
+            </p>
+
+            <h2>Welche Daten wir erheben</h2>
+            <p>
+                <strong>Daten, die Sie uns übermitteln.</strong> Wenn Sie das Kontaktformular nutzen,
+                teilen Sie uns Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht mit. Telefonnummer und
+                Reiseziel sind freiwillige Angaben. Wenn Sie uns per E-Mail, Telefon oder WhatsApp
+                kontaktieren, verarbeiten wir die Daten, die Sie uns im Rahmen dieses Kontakts mitteilen
+                möchten.
+            </p>
+            <p>
+                <strong>Zugriffsdaten.</strong> Wie bei jeder Website zeichnen die Server, auf denen sie
+                gehostet wird, bestimmte technische Informationen auf: IP-Adresse, Browsertyp, aufgerufene
+                Seiten, Datum und Uhrzeit. Diese Daten dienen dazu, den Betrieb der Website zu
+                gewährleisten und sie vor Missbrauch zu schützen; wir verwenden sie nicht, um Sie zu
+                identifizieren.
+            </p>
+
+            <h2>Wozu wir sie verwenden</h2>
+            <ul>
+                <li>
+                    <strong>Um Ihre Anfrage zu beantworten und Ihnen ein Reiseangebot zu erstellen.</strong>{' '}
+                    Rechtsgrundlage: vorvertragliche Maßnahmen, die auf Ihre Anfrage hin erfolgen (Art. 6
+                    Abs. 1 lit. b DSGVO).
+                </li>
+                <li>
+                    <strong>Um die Buchung abzuwickeln, falls Sie sich dafür entscheiden</strong>, und um
+                    die damit verbundenen buchhalterischen und steuerlichen Pflichten zu erfüllen.
+                    Rechtsgrundlage: Vertragserfüllung und rechtliche Verpflichtung (Art. 6 Abs. 1 lit. b
+                    und lit. c DSGVO).
+                </li>
+                <li>
+                    <strong>Um die Sicherheit der Website zu gewährleisten.</strong> Rechtsgrundlage: unser
+                    berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).
+                </li>
+            </ul>
+            <p>
+                Wir verwenden Ihre Daten nicht, um Ihnen Newsletter oder Werbemitteilungen zu senden, und
+                wir verkaufen sie an niemanden.
+            </p>
+
+            <h2>Was geschieht, wenn Sie uns die Daten nicht bereitstellen</h2>
+            <p>
+                Name, E-Mail-Adresse und Nachricht benötigen wir, um Ihnen zu antworten: Ohne diese Angaben
+                kann das Formular nicht gesendet werden. Telefonnummer und Reiseziel sind freiwillig und
+                helfen uns lediglich, eine genauere Antwort vorzubereiten.
+            </p>
+
+            <h2>Wer sie einsehen kann</h2>
+            <ul>
+                <li>Das Personal von Baywatch Travel, das Ihre Anfrage bearbeitet.</li>
+                <li>
+                    Die technischen Dienstleister, die in unserem Auftrag das Hosting der Website und den
+                    E-Mail-Verkehr betreuen und als Auftragsverarbeiter benannt sind (Art. 28 DSGVO).
+                </li>
+                <li>
+                    Falls Sie buchen, die Partner, die zur Erbringung der gewünschten Leistungen
+                    erforderlich sind (zum Beispiel Unterkünfte, Transferunternehmen, Guides), beschränkt
+                    auf die Daten, die sie benötigen.
+                </li>
+                <li>Behörden, nur wenn dies gesetzlich vorgeschrieben ist.</li>
+            </ul>
+
+            <h2>Übermittlungen außerhalb der Europäischen Union</h2>
+            <p>
+                Verarbeitet ein Dienstleister Daten außerhalb des Europäischen Wirtschaftsraums, erfolgt
+                die Übermittlung nur mit den in Art. 44–49 DSGVO vorgesehenen Garantien, etwa einem
+                Angemessenheitsbeschluss der Europäischen Kommission oder den Standardvertragsklauseln.
+            </p>
+
+            <h2>Wie lange wir sie speichern</h2>
+            <ul>
+                <li>
+                    <strong>Anfragen, auf die keine Buchung folgt:</strong> bis zu 24 Monate nach dem
+                    letzten Kontakt, damit wir den Austausch wiederfinden können, wenn Sie uns erneut
+                    schreiben.
+                </li>
+                <li>
+                    <strong>Daten im Zusammenhang mit einer Buchung:</strong> 10 Jahre lang, wie es die
+                    zivil- und steuerrechtlichen Vorschriften zur Aufbewahrung von Buchhaltungsunterlagen
+                    vorsehen.
+                </li>
+                <li>
+                    <strong>Zugriffsdaten:</strong> so lange, wie es für die Sicherheit der Website
+                    unbedingt erforderlich ist, es sei denn, sie werden zur Feststellung der
+                    Verantwortlichkeit im Falle von Missbrauch benötigt.
+                </li>
+            </ul>
+
+            <h2>Ihre Rechte</h2>
+            <p>Sie können sich jederzeit an uns wenden, um:</p>
+            <ul>
+                <li>zu erfahren, welche Daten wir über Sie haben, und eine Kopie davon zu erhalten (Art. 15);</li>
+                <li>sie berichtigen oder vervollständigen zu lassen (Art. 16);</li>
+                <li>sie löschen zu lassen, sofern wir nicht zu ihrer Aufbewahrung verpflichtet sind (Art. 17);</li>
+                <li>ihre Verarbeitung einschränken zu lassen (Art. 18);</li>
+                <li>sie in einem maschinenlesbaren Format zu erhalten (Art. 20);</li>
+                <li>der Verarbeitung auf Grundlage unseres berechtigten Interesses zu widersprechen (Art. 21).</li>
+            </ul>
+            <p>
+                Schreiben Sie dazu einfach an <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a>.
+                Wenn Sie der Ansicht sind, dass die Verarbeitung nicht den gesetzlichen Vorschriften
+                entspricht, können Sie bei der italienischen Datenschutzbehörde, dem Garante per la
+                protezione dei dati personali, Beschwerde einlegen (
+                <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
+                    www.garanteprivacy.it
+                </a>
+                ).
+            </p>
+
+            <h2>WhatsApp</h2>
+            <p>
+                Die WhatsApp-Schaltfläche öffnet eine Unterhaltung mit uns in der App oder auf der Website
+                von WhatsApp. WhatsApp verarbeitet die Daten gemäß seiner eigenen Datenschutzerklärung. Die
+                Nachrichten, die Sie uns senden, behandeln wir wie auf dieser Seite beschrieben.
+            </p>
+
+            <h2>Cookies</h2>
+            <p>
+                Wie die Website Cookies und ähnliche Technologien verwendet, erfahren Sie in der{' '}
+                <Link href={`/${locale}/cookie`}>Cookie-Richtlinie</Link>.
+            </p>
+
+            <h2>Änderungen</h2>
+            <p>
+                Wenn wir die Art und Weise ändern, wie wir Daten verarbeiten, aktualisieren wir diese Seite
+                und das oben angegebene Datum.
             </p>
         </>
     );

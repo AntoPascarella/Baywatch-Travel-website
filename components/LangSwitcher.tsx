@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { i18n, type Locale } from '@/i18n-config';
 
 // Each language is named in its own language, so it is recognisable whatever the current page is in.
-const LANGUAGE_NAMES: Record<Locale, string> = { it: 'Italiano', en: 'English' };
+const LANGUAGE_NAMES: Record<Locale, string> = { it: 'Italiano', en: 'English', de: 'Deutsch' };
 
 export default function LangSwitcher({ scrolled = false, label }: { scrolled?: boolean; label: string }) {
     const pathname = usePathname();

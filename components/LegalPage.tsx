@@ -10,6 +10,7 @@ export const CONTROLLER = {
     address: {
         it: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italia',
         en: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italy',
+        de: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italien',
     } satisfies Record<Locale, string>,
     email: 'info@baywatchtravel.it',
     phone: '+39 081 333 1096',
