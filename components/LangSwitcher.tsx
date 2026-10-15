@@ -1,14 +1,18 @@
 'use client';
 
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { i18n } from '@/i18n-config';
+import { i18n, type Locale } from '@/i18n-config';
 
-export default function LangSwitcher({ scrolled = false }: { scrolled?: boolean }) {
+// Each language is named in its own language, so it is recognisable whatever the current page is in.
+const LANGUAGE_NAMES: Record<Locale, string> = { it: 'Italiano', en: 'English' };
+
+export default function LangSwitcher({ scrolled = false, label }: { scrolled?: boolean; label: string }) {
     const pathname = usePathname();
     const router = useRouter();
 
     const redirectedPathName = (locale: string) => {
-        if (!pathname) return '/';
+        if (!pathname) return `/${locale}`;
         const segments = pathname.split('/');
         segments[1] = locale;
         return segments.join('/');
@@ -17,16 +21,29 @@ export default function LangSwitcher({ scrolled = false }: { scrolled?: boolean 
     const currentLocale = pathname?.split('/')[1] || i18n.defaultLocale;
 
     return (
-        <div className={`flex rounded-full p-0.5 border transition-colors duration-300 ${scrolled
+        <nav
+            aria-label={label}
+            className={`flex rounded-full p-0.5 border transition-colors duration-300 ${scrolled
                 ? 'bg-black/5 border-black/10'
                 : 'bg-white/10 border-white/20'
-            }`}>
+            }`}
+        >
             {i18n.locales.map((locale) => {
                 const isActive = currentLocale === locale;
+                const href = redirectedPathName(locale);
                 return (
-                    <button
+                    <Link
                         key={locale}
-                        onClick={() => router.push(redirectedPathName(locale))}
+                        href={href}
+                        hrefLang={locale}
+                        lang={locale}
+                        onClick={(e) => {
+                            // Keep the visitor on the same section (e.g. #contatti) in the other language.
+                            const { hash } = window.location;
+                            if (!hash) return;
+                            e.preventDefault();
+                            router.push(href + hash);
+                        }}
                         className={`uppercase px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${isActive
                                 ? scrolled
                                     ? 'bg-midnight text-white shadow-sm'
@@ -35,13 +52,13 @@ export default function LangSwitcher({ scrolled = false }: { scrolled?: boolean 
                                     ? 'text-midnight/50 hover:text-midnight'
                                     : 'text-white/60 hover:text-white'
                             }`}
-                        aria-label={`Switch to ${locale === 'it' ? 'Italiano' : 'English'}`}
+                        aria-label={LANGUAGE_NAMES[locale]}
                         aria-current={isActive ? 'true' : undefined}
                     >
                         {locale}
-                    </button>
+                    </Link>
                 );
             })}
-        </div>
+        </nav>
     );
 }

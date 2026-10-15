@@ -1,3 +1,6 @@
+import type { Locale } from '@/i18n-config';
+import { destinationContentEn } from './destination-content.en';
+
 export type Itinerary = {
     title: string;
     duration: string;
@@ -1047,3 +1050,8 @@ export const destinationContent: Record<string, DestinationContent> = {
         },
     },
 };
+
+/** Content for a destination in the requested language, falling back to Italian. */
+export function getDestinationContent(slug: string, locale: Locale): DestinationContent | undefined {
+    return (locale === 'en' ? destinationContentEn[slug] : undefined) ?? destinationContent[slug];
+}

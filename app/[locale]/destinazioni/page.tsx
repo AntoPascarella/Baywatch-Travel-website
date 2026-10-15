@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { Locale } from '@/i18n-config';
 import Header from '@/components/Header';
@@ -6,13 +7,20 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
 import DestinationCard from '@/components/DestinationCard';
-import { destinations } from '@/data/destinations';
+import { getDestinations } from '@/data/destinations';
 
-export const metadata = {
-    title: 'Destinazioni | Baywatch Travel',
-    description:
-        'Le nostre destinazioni in Italia: Ischia, Capri, Costiera Amalfitana, Roma, Toscana e molto altro.',
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const dict = await getDictionary(locale);
+    return {
+        title: dict.destinations.meta_title,
+        description: dict.destinations.meta_description,
+    };
+}
 
 export default async function DestinationsPage({
     params,
@@ -22,10 +30,11 @@ export default async function DestinationsPage({
     const { locale } = await params;
     const dict = await getDictionary(locale);
     const descriptions = dict.destinations.descriptions as Record<string, string>;
+    const destinations = getDestinations(locale);
 
     return (
         <div className="min-h-screen flex flex-col bg-white">
-            <Header dict={dict} lang={locale} />
+            <Header labels={dict.nav} lang={locale} />
 
             <main className="flex-1">
                 {/* ═══════════════════════════════════
@@ -35,7 +44,7 @@ export default async function DestinationsPage({
                     <div className="relative w-full" style={{ minHeight: '70vh' }}>
                         <Image
                             src="/images/hero/Italia_Destinazioni.jpg"
-                            alt="Costiera italiana. Positano al tramonto"
+                            alt={dict.destinations.hero_image_alt}
                             fill
                             priority
                             className="object-cover"
@@ -129,7 +138,7 @@ export default async function DestinationsPage({
             </main>
 
             <Footer dict={dict} lang={locale} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }

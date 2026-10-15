@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { Locale } from '@/i18n-config';
+import type { Dictionary } from '@/lib/i18n/types';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Dict = Record<string, any>;
-
-export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
+export default function Footer({ dict, lang }: { dict: Dictionary; lang: Locale }) {
     const f = dict.footer;
 
     return (
@@ -30,7 +28,7 @@ export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
                             </li>
                             <li>
                                 <Link href={`/${lang}/servizi`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
-                                    {f.link_services ?? 'Servizi'}
+                                    {f.link_services}
                                 </Link>
                             </li>
                             <li>

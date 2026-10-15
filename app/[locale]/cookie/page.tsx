@@ -1,14 +1,33 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { Locale } from '@/i18n-config';
 import LegalPage, { CONTROLLER } from '@/components/LegalPage';
 import { COOKIE_NOTICE_KEY } from '@/lib/cookie-notice';
 
-export const metadata = {
-    title: 'Informativa sui cookie | Baywatch Travel',
-    description:
-        'Il sito di Baywatch Travel non usa cookie di profilazione né di analisi. Qui trovi cosa memorizza il browser e come gestirlo.',
+const META: Record<Locale, { title: string; heading: string; description: string }> = {
+    it: {
+        title: 'Informativa sui cookie | Baywatch Travel',
+        heading: 'Informativa sui cookie',
+        description:
+            'Il sito di Baywatch Travel non usa cookie di profilazione né di analisi. Qui trovi cosa memorizza il browser e come gestirlo.',
+    },
+    en: {
+        title: 'Cookie policy | Baywatch Travel',
+        heading: 'Cookie policy',
+        description:
+            'The Baywatch Travel website uses no profiling or analytics cookies. Here is what your browser stores and how to manage it.',
+    },
 };
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    return { title: META[locale].title, description: META[locale].description };
+}
 
 export default async function CookiePage({
     params,
@@ -17,9 +36,21 @@ export default async function CookiePage({
 }) {
     const { locale } = await params;
     const dict = await getDictionary(locale);
+    // Quote the notice's real button label, so the policy and the notice never disagree.
+    const dismissLabel = dict.cookie_notice.dismiss;
 
     return (
-        <LegalPage dict={dict} lang={locale} eyebrow="Cookie" title="Informativa sui cookie">
+        <LegalPage dict={dict} lang={locale} eyebrow="Cookie" title={META[locale].heading}>
+            {locale === 'en'
+                ? <CookieEn locale={locale} dismissLabel={dismissLabel} />
+                : <CookieIt locale={locale} dismissLabel={dismissLabel} />}
+        </LegalPage>
+    );
+}
+
+function CookieIt({ locale, dismissLabel }: { locale: Locale; dismissLabel: string }) {
+    return (
+        <>
             <p>
                 I cookie sono piccoli file di testo che un sito salva nel browser di chi lo visita. Alcuni
                 servono a far funzionare il sito, altri a misurarne l&apos;uso o a mostrare pubblicità
@@ -35,7 +66,7 @@ export default async function CookiePage({
 
             <h2>Cosa memorizza il browser</h2>
             <p>
-                Quando chiudi l&apos;avviso sui cookie con &laquo;Ho capito&raquo;, il browser salva
+                Quando chiudi l&apos;avviso sui cookie con &laquo;{dismissLabel}&raquo;, il browser salva
                 questa scelta nella memoria locale (localStorage), con il nome{' '}
                 <code>{COOKIE_NOTICE_KEY}</code>, per non mostrarti di nuovo l&apos;avviso. È
                 un&apos;informazione tecnica: non contiene dati personali, non ha scadenza e non viene
@@ -68,6 +99,60 @@ export default async function CookiePage({
                 <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a>. Per sapere come trattiamo i
                 dati che ci invii, leggi l&apos;<Link href={`/${locale}/privacy`}>informativa sulla privacy</Link>.
             </p>
-        </LegalPage>
+        </>
+    );
+}
+
+function CookieEn({ locale, dismissLabel }: { locale: Locale; dismissLabel: string }) {
+    return (
+        <>
+            <p>
+                Cookies are small text files that a website saves in the browser of the person visiting it.
+                Some are needed for the site to work, others measure how it is used or show targeted
+                advertising. This page explains what happens when you visit the {CONTROLLER.name} website.
+            </p>
+
+            <h2>In short</h2>
+            <p>
+                <strong>This site does not set any cookies</strong>: no profiling, analytics or technical
+                cookies. We do not use statistics tools, advertising pixels or third-party content that
+                tracks you. Fonts and images are served directly from our servers.
+            </p>
+
+            <h2>What your browser stores</h2>
+            <p>
+                When you close the cookie notice with &ldquo;{dismissLabel}&rdquo;, your browser saves this
+                choice in its local storage (localStorage), under the name{' '}
+                <code>{COOKIE_NOTICE_KEY}</code>, so the notice is not shown to you again. It is technical
+                information: it contains no personal data, does not expire and is not sent to us or to
+                anyone else. You can delete it at any time from your browser settings.
+            </p>
+
+            <h2>Links to other sites</h2>
+            <p>
+                The WhatsApp button and other external links take you to sites we do not manage, which may
+                use their own cookies. In that case, those sites&apos; policies apply.
+            </p>
+
+            <h2>How to manage cookies in your browser</h2>
+            <p>
+                Every browser lets you view, block and delete cookies and site data. You will usually find
+                these options in the settings, under Privacy or Security; your browser&apos;s help pages
+                explain the exact steps.
+            </p>
+
+            <h2>If anything changes</h2>
+            <p>
+                If we add analytics tools or other non-technical cookies in the future, we will update this
+                page and ask for your consent before enabling them.
+            </p>
+
+            <h2>Contact</h2>
+            <p>
+                For questions about this policy, write to{' '}
+                <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a>. To find out how we handle the
+                data you send us, read the <Link href={`/${locale}/privacy`}>privacy policy</Link>.
+            </p>
+        </>
     );
 }

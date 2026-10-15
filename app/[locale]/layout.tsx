@@ -3,6 +3,7 @@ import { getDictionary } from '@/lib/i18n/get-dictionary';
 import CookieNotice from '@/components/CookieNotice';
 import '@/app/globals.css';
 import { Inter, EB_Garamond, Cormorant_Garamond, Jost } from 'next/font/google';
+import type { Metadata } from 'next';
 
 
 // Body. Inter, neutral sans
@@ -39,10 +40,18 @@ const jost = Jost({
     display: 'swap',
 });
 
-export const metadata = {
-    title: 'Baywatch Travel',
-    description: 'La tua agenzia di viaggi a Ischia',
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const dict = await getDictionary(locale as Locale);
+    return {
+        title: dict.common.title,
+        description: dict.common.meta_description,
+    };
+}
 
 export async function generateStaticParams() {
     return i18n.locales.map((locale) => ({ locale }));

@@ -1,14 +1,21 @@
-export type Destination = {
-    slug: string;
+import type { Locale } from '@/i18n-config';
+
+type TranslatedFields = {
     name: string;
     subTitle: string;
     region: string;
-    types: ('Mare' | 'Cultura' | 'Natura' | 'Gastronomia' | 'Storia')[];
     bestSeason: string;
     shortDescription: string;
     highlights: string[];
+};
+
+// Top-level text fields are Italian; `en` holds the English version of the same fields.
+export type Destination = TranslatedFields & {
+    slug: string;
+    types: ('Mare' | 'Cultura' | 'Natura' | 'Gastronomia' | 'Storia')[];
     image: string;
     alt: { it: string; en: string };
+    en: TranslatedFields;
 };
 
 export const destinations: Destination[] = [
@@ -26,6 +33,14 @@ export const destinations: Destination[] = [
             it: 'Ombrelloni sulla spiaggia con il Castello Aragonese di Ischia sullo sfondo',
             en: 'Beach umbrellas with the Aragonese Castle of Ischia in the background',
         },
+        en: {
+            name: 'Ischia',
+            subTitle: 'The Green Island',
+            region: 'Campania',
+            bestSeason: 'April to October',
+            shortDescription: 'Thermal springs steaming on the beach, lush gardens, the Aragonese Castle rising from the water.',
+            highlights: ['Aragonese Castle', 'La Mortella Gardens', 'Sant’Angelo', 'Poseidon Gardens', 'Villa Arbusto'],
+        },
     },
     {
         slug: 'capri',
@@ -40,6 +55,14 @@ export const destinations: Destination[] = [
         alt: {
             it: 'I Faraglioni di Capri al tramonto',
             en: 'Capri’s Faraglioni sea stacks at sunset',
+        },
+        en: {
+            name: 'Capri',
+            subTitle: 'Timeless elegance',
+            region: 'Campania',
+            bestSeason: 'April to October',
+            shortDescription: 'The Faraglioni, the Blue Grotto, Villa Lysis. Elegance that never goes out of style.',
+            highlights: ['Blue Grotto', 'Faraglioni', 'The Piazzetta', 'Villa San Michele', 'Villa Lysis'],
         },
     },
     {
@@ -56,6 +79,14 @@ export const destinations: Destination[] = [
             it: 'Le case colorate di Marina Corricella a Procida',
             en: 'Colorful houses of Marina Corricella in Procida',
         },
+        en: {
+            name: 'Procida',
+            subTitle: 'Capital of Culture',
+            region: 'Campania',
+            bestSeason: 'Spring / Autumn',
+            shortDescription: 'Pastel houses, fishing boats, unhurried days.',
+            highlights: ['Corricella', 'Terra Murata', 'Chiaiolella', 'Lingua di Procida'],
+        },
     },
     {
         slug: 'napoli',
@@ -70,6 +101,14 @@ export const destinations: Destination[] = [
         alt: {
             it: 'Il lungomare di Napoli con il Vesuvio sullo sfondo',
             en: 'Naples waterfront with Vesuvius in the background',
+        },
+        en: {
+            name: 'Naples',
+            subTitle: 'A thousand faces, one city',
+            region: 'Campania',
+            bestSeason: 'All year round',
+            shortDescription: 'Pizza, narrow alleys, Vesuvius in the background. A city that doesn’t ask your permission.',
+            highlights: ['Spaccanapoli', 'Vesuvius', 'MANN', 'Veiled Christ', 'Maradona mural', 'Certosa di San Martino'],
         },
     },
     {
@@ -86,6 +125,14 @@ export const destinations: Destination[] = [
             it: 'Il teatro greco di Taormina con l’Etna',
             en: 'Greek theatre of Taormina with Mount Etna',
         },
+        en: {
+            name: 'Sicily',
+            subTitle: 'The Island of the Sun',
+            region: 'Sicily',
+            bestSeason: 'Spring / Autumn',
+            shortDescription: 'Greek temples, Baroque towns, smoking Etna. A journey within a journey.',
+            highlights: ['Etna', 'Taormina', 'Valley of the Temples', 'Palermo', 'Ortigia'],
+        },
     },
     {
         slug: 'sardegna',
@@ -100,6 +147,14 @@ export const destinations: Destination[] = [
         alt: {
             it: 'Acque cristalline della Costa Smeralda in Sardegna',
             en: 'Crystal clear waters of Costa Smeralda in Sardinia',
+        },
+        en: {
+            name: 'Sardinia',
+            subTitle: 'Costa Smeralda',
+            region: 'Sardinia',
+            bestSeason: 'Summer',
+            shortDescription: 'Crystal-clear water, hidden coves, a stubborn interior.',
+            highlights: ['Costa Smeralda', 'La Maddalena', 'Su Nuraxi nuraghe', 'Alghero'],
         },
     },
     {
@@ -116,6 +171,14 @@ export const destinations: Destination[] = [
             it: 'Polignano a Mare arroccata sulla scogliera della Puglia',
             en: 'Polignano a Mare perched on Puglia’s cliffs',
         },
+        en: {
+            name: 'Puglia',
+            subTitle: 'White on blue',
+            region: 'Puglia',
+            bestSeason: 'Spring / Summer / Autumn',
+            shortDescription: 'Trulli, masserie, white towns and a sea that changes colour every hundred metres.',
+            highlights: ['Alberobello', 'Polignano a Mare', 'Ostuni', 'Lecce', 'Salento'],
+        },
     },
     {
         slug: 'calabria',
@@ -130,6 +193,14 @@ export const destinations: Destination[] = [
         alt: {
             it: 'Tropea, scogliera e mare turchese della Costa degli Dei',
             en: 'Tropea, cliffs and turquoise sea of the Coast of the Gods',
+        },
+        en: {
+            name: 'Calabria',
+            subTitle: 'The Coast of the Gods',
+            region: 'Calabria',
+            bestSeason: 'Summer / Early autumn',
+            shortDescription: 'Tropea, Scilla, sheer cliffs and a sea that looks like the Caribbean.',
+            highlights: ['Tropea', 'Scilla', 'Capo Vaticano', 'Pizzo', 'Coast of the Gods'],
         },
     },
     {
@@ -146,6 +217,14 @@ export const destinations: Destination[] = [
             it: 'Il Colosseo di Roma al tramonto',
             en: 'Rome’s Colosseum at sunset',
         },
+        en: {
+            name: 'Rome',
+            subTitle: 'The Eternal City',
+            region: 'Lazio',
+            bestSeason: 'All year round',
+            shortDescription: 'Two thousand years of history around every corner. The Eternal City can still surprise you.',
+            highlights: ['Colosseum', 'Vatican', 'Pantheon', 'Trevi Fountain'],
+        },
     },
     {
         slug: 'toscana',
@@ -161,5 +240,19 @@ export const destinations: Destination[] = [
             it: 'Colline toscane e cipressi della Val d’Orcia',
             en: 'Tuscan hills and cypress trees in Val d’Orcia',
         },
+        en: {
+            name: 'Tuscany',
+            subTitle: 'Renaissance and vineyards',
+            region: 'Tuscany',
+            bestSeason: 'Spring / Autumn',
+            shortDescription: 'Rolling hills, cypresses, medieval villages, wines that taste of the land.',
+            highlights: ['Florence', 'Siena', 'Val d’Orcia', 'Pisa'],
+        },
     },
 ];
+
+/** Destinations with their text fields in the requested language. */
+export function getDestinations(locale: Locale): Destination[] {
+    if (locale === 'it') return destinations;
+    return destinations.map((d) => ({ ...d, ...d[locale] }));
+}

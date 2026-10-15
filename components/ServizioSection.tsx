@@ -1,46 +1,20 @@
 import Image from 'next/image';
 import FadeIn from './FadeIn';
+import type { Dictionary } from '@/lib/i18n/types';
 
-const services = [
-    {
-        id: 'trasferimenti',
-        eyebrow: 'Logistica',
-        title: 'Trasferimenti Privati',
-        body: 'Ogni viaggio inizia e finisce con la stessa cura. I nostri trasferimenti privati da e verso gli aeroporti garantiscono comfort assoluto, puntualità impeccabile e un\'atmosfera serena fin dal primo momento. Ci occupiamo di ogni dettaglio affinché tu possa concentrarti solo sul piacere di arrivare.',
-        image: '/images/destinations/amalfi/Amalfi.jpg',
-        imageAlt: 'Costiera Amalfitana. trasferimenti privati',
-        imageRight: true,
-    },
-    {
-        id: 'soggiorni',
-        eyebrow: 'Ospitalità',
-        title: 'Soggiorni Su Misura',
-        body: 'Che si tratti di una fuga romantica di pochi giorni o di un soggiorno prolungato per scoprire l\'isola in profondità, selezioniamo per te le sistemazioni più autentiche e raffinate. Ogni proposta è curata nei minimi dettagli per un\'esperienza che resti nel tempo.',
-        image: '/images/destinations/positano/Positano.jpg',
-        imageAlt: 'Positano. soggiorni su misura',
-        imageRight: false,
-    },
-    {
-        id: 'escursioni',
-        eyebrow: 'Territorio',
-        title: 'Escursioni Nel Cuore del Paesaggio',
-        body: 'Guide esperte del territorio ti accompagnano alla scoperta di sentieri nascosti, panorami mozzafiato e angoli segreti che solo chi vive questi luoghi può rivelare. Ogni escursione è un racconto autentico. sicuro, memorabile, da portare con sé per sempre.',
-        image: '/images/destinations/capri/Capri.jpg',
-        imageAlt: 'Capri. escursioni guidate nella natura',
-        imageRight: true,
-    },
-    {
-        id: 'termali',
-        eyebrow: 'Benessere',
-        title: 'Acque Termali',
-        body: 'Le sorgenti termali di Ischia sono tra le più celebrate d\'Europa. Ti guidiamo verso i migliori parchi e strutture wellness dell\'isola per un\'esperienza di relax profondo.',
-        image: '/images/destinations/ischia/Ischia.jpg',
-        imageAlt: 'Ischia. parchi termali e benessere',
-        imageRight: false,
-    },
+type Copy = Dictionary['home']['servizi'];
+
+// Text comes from the dictionary (home.servizi.items), keyed by id.
+const media: { id: keyof Copy['items']; image: string; imageRight: boolean }[] = [
+    { id: 'trasferimenti', image: '/images/destinations/amalfi/Amalfi.jpg', imageRight: true },
+    { id: 'soggiorni', image: '/images/destinations/positano/Positano.jpg', imageRight: false },
+    { id: 'escursioni', image: '/images/destinations/capri/Capri.jpg', imageRight: true },
+    { id: 'termali', image: '/images/destinations/ischia/Ischia.jpg', imageRight: false },
 ];
 
-export default function ServizioSection() {
+export default function ServizioSection({ copy }: { copy: Copy }) {
+    const services = media.map((m) => ({ ...m, ...copy.items[m.id] }));
+
     return (
         <section
             style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}
@@ -62,7 +36,7 @@ export default function ServizioSection() {
                                 lineHeight: 1.2,
                             }}
                         >
-                            Servizi
+                            {copy.label}
                         </p>
                     </div>
                 </FadeIn>
@@ -135,7 +109,7 @@ export default function ServizioSection() {
                                     >
                                         <Image
                                             src={service.image}
-                                            alt={service.imageAlt}
+                                            alt={service.image_alt}
                                             fill
                                             className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
                                             sizes="(max-width: 1024px) 100vw, 50vw"
