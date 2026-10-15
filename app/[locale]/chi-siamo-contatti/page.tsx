@@ -7,11 +7,20 @@ import FadeIn from '@/components/FadeIn';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 
-export const metadata = {
-    title: 'Chi Siamo & Contatti | Baywatch Travel',
-    description: 'Baywatch Travel, agenzia di viaggi a Casamicciola Terme dal 1999. La nostra storia e i contatti per organizzare il tuo viaggio a Ischia e in Italia.',
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const dict = await getDictionary(locale);
+    return {
+        title: dict.contact.meta_title,
+        description: dict.contact.meta_description,
+    };
+}
 
 /** Lungomare di Casamicciola Terme, sede dell'agenzia (Pexels. Ree A). */
 const PHOTO_CASAMICCIOLA =
@@ -45,7 +54,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.visit,
-            lines: ['Via Castiglione, 36', '80074 Casamicciola Terme (NA), Italia'],
+            lines: dict.contact.address,
         },
         {
             icon: (
@@ -69,14 +78,14 @@ export default async function ContactPage({
 
     return (
         <div className="min-h-screen flex flex-col bg-cream">
-            <Header dict={dict} lang={locale} />
+            <Header labels={dict.nav} lang={locale} />
 
             <main className="flex-1">
                 {/* Hero */}
                 <section className="relative overflow-hidden" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <Image
                         src="https://images.unsplash.com/photo-1622385444566-99dcb428a483?q=80&w=2400&auto=format&fit=crop"
-                        alt="Case bianche e azzurre affacciate sul mare"
+                        alt={dict.contact.hero_image_alt}
                         fill
                         priority
                         sizes="100vw"
@@ -289,7 +298,7 @@ export default async function ContactPage({
                                         <h2 className="text-h3 font-serif font-normal text-midnight mb-6">
                                             {dict.contact.form_title}
                                         </h2>
-                                        <ContactForm labels={formLabels} privacyHref={`/${locale}/privacy`} />
+                                        <ContactForm labels={formLabels} lang={locale} privacyHref={`/${locale}/privacy`} />
                                     </div>
                                 </FadeIn>
                             </div>
@@ -299,7 +308,7 @@ export default async function ContactPage({
             </main>
 
             <Footer dict={dict} lang={locale} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }

@@ -2,18 +2,28 @@
     "common": {
         "title": "Baywatch Travel",
         "description": "Agenzia viaggi a Ischia. Soggiorni, escursioni, trasferimenti.",
-        "cta": "Contattaci"
+        "meta_description": "La tua agenzia di viaggi a Ischia",
+        "cta": "Contattaci",
+        "photo": "Foto"
     },
     "nav": {
         "home": "Home",
         "destinations": "Destinazioni",
-        "contact": "Chi Siamo / Contatti"
+        "services": "Servizi",
+        "about": "Chi siamo",
+        "contact": "Contattaci",
+        "language": "Lingua"
+    },
+    "whatsapp": {
+        "label": "Contattaci su WhatsApp",
+        "message": "Ciao! Vorrei informazioni su un viaggio."
     },
     "home": {
         "hero": {
             "headline": "VIAGGI D'AUTORE, VERSO ISCHIA E OLTRE.",
             "subheadline": "Itinerari pensati nei dettagli, per goderti l'Italia con calma.",
-            "cta_quote": "Scopri le destinazioni"
+            "cta_quote": "Scopri le destinazioni",
+            "image_alt": "Castello Aragonese di Ischia al tramonto"
         },
         "video_section": {
             "title": "L'Italia, con calma",
@@ -25,6 +35,35 @@
         "destinations": {
             "title": "Scegli la tua destinazione",
             "subtitle": "Mete iconiche e angoli meno raccontati."
+        },
+        "servizi": {
+            "label": "Servizi",
+            "items": {
+                "trasferimenti": {
+                    "eyebrow": "Logistica",
+                    "title": "Trasferimenti Privati",
+                    "body": "Ogni viaggio inizia e finisce con la stessa cura. I nostri trasferimenti privati da e verso gli aeroporti garantiscono comfort assoluto, puntualità impeccabile e un'atmosfera serena fin dal primo momento. Ci occupiamo di ogni dettaglio affinché tu possa concentrarti solo sul piacere di arrivare.",
+                    "image_alt": "Costiera Amalfitana. trasferimenti privati"
+                },
+                "soggiorni": {
+                    "eyebrow": "Ospitalità",
+                    "title": "Soggiorni Su Misura",
+                    "body": "Che si tratti di una fuga romantica di pochi giorni o di un soggiorno prolungato per scoprire l'isola in profondità, selezioniamo per te le sistemazioni più autentiche e raffinate. Ogni proposta è curata nei minimi dettagli per un'esperienza che resti nel tempo.",
+                    "image_alt": "Positano. soggiorni su misura"
+                },
+                "escursioni": {
+                    "eyebrow": "Territorio",
+                    "title": "Escursioni Nel Cuore del Paesaggio",
+                    "body": "Guide esperte del territorio ti accompagnano alla scoperta di sentieri nascosti, panorami mozzafiato e angoli segreti che solo chi vive questi luoghi può rivelare. Ogni escursione è un racconto autentico. sicuro, memorabile, da portare con sé per sempre.",
+                    "image_alt": "Capri. escursioni guidate nella natura"
+                },
+                "termali": {
+                    "eyebrow": "Benessere",
+                    "title": "Acque Termali",
+                    "body": "Le sorgenti termali di Ischia sono tra le più celebrate d'Europa. Ti guidiamo verso i migliori parchi e strutture wellness dell'isola per un'esperienza di relax profondo.",
+                    "image_alt": "Ischia. parchi termali e benessere"
+                }
+            }
         },
         "services_about": {
             "title": "Chi siamo",
@@ -103,9 +142,12 @@
         "hero_cta_whatsapp": "Scrivici su WhatsApp"
     },
     "destinations": {
+        "meta_title": "Destinazioni | Baywatch Travel",
+        "meta_description": "Le nostre destinazioni in Italia: Ischia, Capri, Costiera Amalfitana, Roma, Toscana e molto altro.",
         "hero_title": "Le Nostre Destinazioni",
         "hero_subtitle": "Mete iconiche e scorci mozzafiato del Mediterraneo.",
         "hero_eyebrow": "Italia, da vivere",
+        "hero_image_alt": "Costiera italiana. Positano al tramonto",
         "discover": "Scopri",
         "descriptions": {
             "ischia": "Terme che fumano in spiaggia, giardini fitti, il Castello Aragonese sull'acqua.",
@@ -120,7 +162,266 @@
             "toscana": "Colline ondulate, cipressi, borghi medievali, vini che sanno di terra."
         }
     },
+    "destination_page": {
+        "breadcrumb_label": "Percorso di navigazione",
+        "overview": "Panoramica",
+        "at_a_glance": "In sintesi",
+        "region": "Regione",
+        "best_season": "Stagione consigliata",
+        "ideal_for": "Ideale per",
+        "vibe": "Vibe",
+        "character_eyebrow": "Carattere del luogo",
+        "character_title": "Cosa aspettarsi",
+        "landscape": "Paesaggio",
+        "sea": "Mare e coste",
+        "towns": "Borghi e città",
+        "location_eyebrow": "Dove si trova",
+        "location_title": "Posizione & arrivo",
+        "where": "Dove",
+        "area": "Area",
+        "getting_there": "Come arrivare",
+        "facts_eyebrow": "Curiosità",
+        "facts_title": "Lo sapevi che…",
+        "itineraries_eyebrow": "Itinerari",
+        "itineraries_title": "Come la puoi vivere",
+        "must_see_eyebrow": "Cosa non perdere",
+        "must_see_title": "I luoghi e le esperienze",
+        "gallery_eyebrow": "Un assaggio per gli occhi",
+        "gallery_title": "{name} in immagini",
+        "highlights_eyebrow": "Highlights",
+        "highlights_title": "Le icone di {name}",
+        "tips_eyebrow": "Consigli pratici",
+        "tips_title": "Prima di partire",
+        "best_period": "Periodo migliore",
+        "ideal_length": "Tempo ideale",
+        "good_to_know": "Buono a sapersi",
+        "more_eyebrow": "Continua a esplorare",
+        "more_title": "Altre destinazioni",
+        "see_all": "Vedi tutte"
+    },
+    "services_page": {
+        "meta_title": "Servizi | Baywatch Travel",
+        "meta_description": "Transfer di gruppo e privati, soggiorni con assistenza multilingue, escursioni, tour enogastronomici, hiking e termali. I servizi di Baywatch Travel.",
+        "hero": {
+            "eyebrow": "Cosa facciamo",
+            "title": "I nostri servizi",
+            "subtitle": "Transfer, soggiorni, tour ed escursioni, viaggi su misura.",
+            "image_alt": "Costa di Ischia, dove ha sede Baywatch Travel"
+        },
+        "intro": [
+            "Siamo un Tour Operator con una consolidata esperienza nel settore turistico, specializzato nell’organizzazione di soggiorni, tour ed esperienze dedicati sia alla clientela individuale sia a gruppi di ogni dimensione.",
+            "La nostra filosofia nasce dall’unione di competitività, professionalità e attenzione al cliente: proponiamo offerte turistiche particolarmente vantaggiose e studiate per rispondere alle diverse esigenze, senza mai rinunciare alla qualità dei servizi, alla cura dei dettagli e alla soddisfazione di chi sceglie di viaggiare con noi."
+        ],
+        "index_label": "Indice dei servizi",
+        "request_info": "Richiedi informazioni",
+        "services": {
+            "transfer": {
+                "index_label": "Transfer",
+                "eyebrow": "Punto di forza",
+                "title": "Servizi di Transfer: il nostro fiore all’occhiello",
+                "body": [
+                    "Offriamo un servizio di transfer individuale e di gruppo, pensato per garantirti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.",
+                    "Organizziamo trasferimenti personalizzati in base alle tue esigenze, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale."
+                ],
+                "subsections": [
+                    {
+                        "title": "Accoglienza in aeroporto",
+                        "body": [
+                            "Il servizio inizia direttamente in aeroporto, dove verrai preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendoti tutte le indicazioni necessarie e accompagnandoti durante le procedure previste."
+                        ]
+                    },
+                    {
+                        "title": "Trasferimenti verso il porto d’imbarco",
+                        "body": [
+                            "Mettiamo a disposizione diverse soluzioni di trasporto, in funzione del numero di passeggeri e delle specifiche necessità:",
+                            [
+                                "Auto private per trasferimenti individuali o di piccoli gruppi;",
+                                "Minivan per gruppi di dimensioni intermedie;",
+                                "Bus per gruppi numerosi."
+                            ],
+                            "Ogni trasferimento viene organizzato con particolare attenzione alla puntualità, al comfort e alla gestione dei tempi, assicurando un coordinamento efficiente tra l’aeroporto e i collegamenti marittimi e le strutture ricettive prescelte."
+                        ]
+                    },
+                    {
+                        "title": "Gestione delle procedure e fornitura dei ticket",
+                        "body": [
+                            "Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere la tua esperienza il più semplice e organizzata possibile."
+                        ]
+                    },
+                    {
+                        "title": "Assistenza durante tutto il servizio",
+                        "body": [
+                            "Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendoti un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.",
+                            "L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale tu possa sentirti seguito e assistito in ogni momento.",
+                            "Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer."
+                        ]
+                    }
+                ],
+                "bullets": [
+                    "Bus Gran Turismo 30-55 posti",
+                    "Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno"
+                ],
+                "image_alt": "Uomo su un traghetto che guarda un borgo costiero con un castello, sotto il cielo azzurro"
+            },
+            "soggiorni": {
+                "index_label": "Soggiorni",
+                "eyebrow": "La nostra firma",
+                "title": "Soggiorni",
+                "subsections": [
+                    {
+                        "title": "Soggiorni balneari",
+                        "body": [
+                            "Se desideri staccare dalla quotidianità e concederti momenti di tranquillità, ti proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità."
+                        ]
+                    },
+                    {
+                        "title": "Soggiorni di gruppo, gestiti su misura",
+                        "body": [
+                            "La gestione dei gruppi è il punto forte della nostra vita professionale. Lavoriamo con strutture alberghiere di ogni livello, dalle famiglie alle agenzie. Costruiamo pacchetti ad hoc, con assistenza multilingue in ogni fase del viaggio."
+                        ]
+                    }
+                ],
+                "image_alt": "Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago."
+            },
+            "escursioni": {
+                "index_label": "Tour ed escursioni",
+                "title": "Tour ed esperienze",
+                "body": [
+                    "Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.",
+                    "Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permetterti di conoscere e vivere ogni destinazione in modo completo e originale.",
+                    "Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.",
+                    "Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te."
+                ],
+                "subsections": [
+                    {
+                        "title": "Alla scoperta dell’Isola",
+                        "body": [
+                            "Il modo ideale per iniziare a conoscere l’isola è attraverso il classico giro dell’isola, disponibile in minibus, bus, battello e/o veliero.",
+                            "Un itinerario che permette di ammirare panorami suggestivi, conoscere i luoghi più caratteristici e scoprire, comodamente accompagnati, le diverse anime dell’isola, tra borghi, coste, paesaggi e tradizioni."
+                        ]
+                    },
+                    {
+                        "title": "Escursioni in barca: il fascino delle isole",
+                        "body": [
+                            "Il mare è protagonista anche delle nostre escursioni in barca, alla scoperta delle isole vicine, ognuna con la propria identità e il proprio fascino.",
+                            "Potrai navigare verso Capri e Procida, ammirandole da una prospettiva privilegiata e vivendo il piacere di una giornata sul mare, tra panorami, acque cristalline e scorci indimenticabili."
+                        ]
+                    },
+                    {
+                        "title": "Trekking e natura: quando il viaggio diventa emozione",
+                        "body": [
+                            "E se invece sei alla ricerca di sentieri, natura e avventura, allora porta con te le scarpe giuste!",
+                            "Ti accompagneremo lungo percorsi dove è la Natura a fare da padrona, tra sentieri panoramici, profumi della vegetazione mediterranea e scorci sul mare.",
+                            "Qui terra e mare si incontrano, e tutti gli elementi della Vita sembrano fondersi in un unico paesaggio."
+                        ]
+                    }
+                ],
+                "bullets": [
+                    "Giro dell’isola di Ischia (~3h30 con soste)",
+                    "Parchi termali (giornata o mezza giornata)",
+                    "Pompei, Vesuvio, Reggia di Caserta",
+                    "Tour enogastronomici e cantine",
+                    "Hiking sui sentieri Epomeo, Sentiero degli Dei"
+                ],
+                "image_alt": "Gruppo in escursione su un sentiero in Campania"
+            },
+            "su_misura": {
+                "index_label": "Viaggi su misura",
+                "eyebrow": "Su misura",
+                "title": "Viaggi su misura per ogni esigenza",
+                "body": [
+                    "Crediamo che ogni viaggiatore abbia esigenze, aspettative e desideri differenti. Per questo non proponiamo semplicemente pacchetti standard, ma siamo in grado di progettare e organizzare viaggi su misura, costruiti attorno alle necessità di ogni cliente.",
+                    "Che tu sia un viaggiatore solitario, una famiglia, un gruppo di amici, un’associazione o una scolaresca, studiamo insieme il viaggio più adatto, occupandoci dell’organizzazione e coordinando ogni aspetto dell’esperienza.",
+                    "Dal primo contatto al rientro, il nostro obiettivo è uno solo: trasformare ogni viaggio in un’esperienza da ricordare.",
+                    "Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio."
+                ],
+                "bullets": [
+                    "Proposta scritta con voci e prezzi chiari",
+                    "Modifiche fino a quando il programma è giusto"
+                ],
+                "image_alt": "Mano su una mappa con appunti di viaggio"
+            }
+        },
+        "package": {
+            "eyebrow": "Pacchetto tipo",
+            "title": "Come funziona un soggiorno con noi",
+            "intro": "Un esempio di pacchetto completo. Lo personalizziamo in base al gruppo, alla durata, alla destinazione.",
+            "steps": [
+                { "title": "Pick-up a Capodichino", "body": "Ti aspettiamo all’aeroporto di Napoli con autista assegnato e nome ben visibile." },
+                { "title": "Transfer con assistente fino all’hotel", "body": "Trasferimento accompagnato da una persona del team, che ti aiuta con bagagli, info pratiche, eventuali soste." },
+                { "title": "Cocktail di benvenuto", "body": "In hotel ti offriamo un cocktail di benvenuto e ti raccontiamo brevemente il programma settimanale previsto, con consigli ed informazioni utili al soggiorno." },
+                { "title": "Materiale escursioni e programmi", "body": "Mappa, programma dei giorni, contatti, voucher escursioni. Tutto cartaceo e digitale." },
+                { "title": "Assistenza giornaliera durante il soggiorno", "body": "Una persona di riferimento è raggiungibile tutti i giorni per qualsiasi cosa serva, dal cambio prenotazione al consiglio cena." },
+                { "title": "Trasferimento al ritorno", "body": "Pick-up dall’hotel e ritorno all’aeroporto." }
+            ]
+        },
+        "tours": {
+            "eyebrow": "Destinazioni per le gite",
+            "title": "Tour ed escursioni nelle mete che amiamo",
+            "intro": "Costiera Amalfitana, Positano, Pompei e Sorrento sono mete dove offriamo gite di una giornata e transfer. Non soggiorni, ma esperienze su misura.",
+            "packages": {
+                "amalfi": {
+                    "name": "Costiera Amalfitana e Sorrentina",
+                    "eyebrow": "Gita giornaliera",
+                    "tagline": "Da Amalfi a Positano lungo la SS163, con barca o pullman a seconda delle tue preferenze.",
+                    "activities": [
+                        "Tour in barca Amalfi, Furore, Conca dei Marini",
+                        "Visita Duomo di Amalfi + Atrani a piedi",
+                        "Pullman panoramico SS163 con soste fotografiche",
+                        "Pranzo in agriturismo con vista golfo"
+                    ],
+                    "image_alt": "Vista panoramica della Costiera Amalfitana"
+                },
+                "positano": {
+                    "name": "Positano",
+                    "eyebrow": "Mezza giornata o giornata",
+                    "tagline": "Verticale, fotogenica, una scenografia naturale che funziona ancora.",
+                    "activities": [
+                        "Tour in barca con sosta bagno a Li Galli e Praiano",
+                        "Spiaggia Grande + visita al borgo",
+                        "Hiking Sentiero degli Dei (Bomerano-Nocelle) con guida",
+                        "Tramonto in terrazza con aperitivo"
+                    ],
+                    "image_alt": "Case di Positano sulla collina, sopra la spiaggia"
+                },
+                "pompei": {
+                    "name": "Pompei",
+                    "eyebrow": "Mezza giornata o giornata",
+                    "tagline": "Una città romana ferma nel 79 d.C. Sempre con guida abilitata.",
+                    "activities": [
+                        "Visita scavi di Pompei con guida abilitata (~3h)",
+                        "Ercolano + MAV Museo Archeologico Virtuale",
+                        "Estensione Vesuvio: cratere a piedi (45 min andata)",
+                        "Pranzo in agriturismo + degustazione vini del Vesuvio"
+                    ],
+                    "image_alt": "Rovine di Pompei con colonne e statua"
+                },
+                "sorrento": {
+                    "name": "Sorrento",
+                    "eyebrow": "Mezza giornata o giornata",
+                    "tagline": "Base per la Costiera o tappa singola. Limoneti, vista golfo, vita lenta.",
+                    "activities": [
+                        "Visita guidata centro storico, Chiostro San Francesco",
+                        "Vallone dei Mulini e Marina Grande",
+                        "Tour limoni: visita agrumeto + degustazione limoncello",
+                        "Bagni della Regina Giovanna: piscina naturale tra rovine romane"
+                    ],
+                    "image_alt": "Vista aerea di Sorrento e Villa Comunale"
+                }
+            }
+        },
+        "cta": {
+            "eyebrow": "Pronto a partire",
+            "title": "Raccontaci che viaggio hai in mente",
+            "body": "Scrivici dove vorresti andare, con chi, quanti giorni. Ti torniamo con una proposta concreta, senza giri di parole.",
+            "primary": "Richiedi informazioni",
+            "secondary": "Vedi le destinazioni"
+        }
+    },
     "contact": {
+        "meta_title": "Chi Siamo & Contatti | Baywatch Travel",
+        "meta_description": "Baywatch Travel, agenzia di viaggi a Casamicciola Terme dal 1999. La nostra storia e i contatti per organizzare il tuo viaggio a Ischia e in Italia.",
+        "hero_image_alt": "Case bianche e azzurre affacciate sul mare",
         "story": {
             "eyebrow": "Dal 1999, a Ischia",
             "title": "La nostra storia, la nostra Ischia",
@@ -164,6 +465,7 @@
         "hero_subtitle": "Pronto a partire? Costruiamo insieme l'itinerario che fa per te.",
         "info_title": "Resta in Contatto",
         "visit": "Vieni a trovarci",
+        "address": ["Via Castiglione, 36", "80074 Casamicciola Terme (NA), Italia"],
         "email_us": "Scrivici",
         "call_us": "Chiamaci",
         "hours": "Lun – Ven, 9:00 – 19:30",
@@ -172,7 +474,9 @@
     },
     "form": {
         "name": "Nome",
+        "name_placeholder": "Mario Rossi",
         "email": "Email",
+        "email_placeholder": "mario@example.com",
         "phone": "Telefono",
         "phone_helper": "Opzionale, ti ricontattiamo se preferisci",
         "destination": "Destinazione",
@@ -207,6 +511,10 @@
         "contact_phone": "+39 081 333 1096",
         "link_privacy": "Informativa sulla privacy",
         "link_cookies": "Informativa sui cookie"
+    },
+    "legal": {
+        "last_updated": "Ultimo aggiornamento",
+        "updated_on": "15 ottobre 2026"
     },
     "cookie_notice": {
         "label": "Avviso sui cookie",

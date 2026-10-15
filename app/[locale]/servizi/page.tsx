@@ -3,272 +3,74 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/i18n/get-dictionary';
 import { Locale } from '@/i18n-config';
+import type { Dictionary } from '@/lib/i18n/types';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
 
-export const metadata: Metadata = {
-    title: 'Servizi | Baywatch Travel',
-    description:
-        'Transfer di gruppo e privati, soggiorni con assistenza multilingue, escursioni, tour enogastronomici, hiking e termali. I servizi di Baywatch Travel.',
-};
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const dict = await getDictionary(locale);
+    return {
+        title: dict.services_page.meta_title,
+        description: dict.services_page.meta_description,
+    };
+}
 
 const px = (id: number, w = 2000) =>
     `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 const HERO = px(37270135, 2400); // Ischia soleggiata, Heinz Klier / Pexels
 
-type Service = {
-    id: string;
+type Copy = Dictionary['services_page'];
+
+// Testi del servizio, dal dizionario (services_page.services).
+type ServiceCopy = {
+    index_label: string;
     eyebrow?: string;
     title: string;
     body?: string[];
     // Ogni elemento di body è un paragrafo; un array annidato diventa un elenco puntato.
     subsections?: { title: string; body: (string | string[])[] }[];
     bullets?: string[];
+    image_alt: string;
+};
+
+type Service = ServiceCopy & {
+    id: string;
     image: string;
-    imageAlt: string;
     credit: string;
     imageRight: boolean;
 };
 
-const transfer: Service = {
-    id: 'transfer',
-    eyebrow: 'Punto di forza',
-    title: 'Servizi di Transfer: il nostro fiore all’occhiello',
-    body: [
-        'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantirti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
-        'Organizziamo trasferimenti personalizzati in base alle tue esigenze, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
-    ],
-    subsections: [
-        {
-            title: 'Accoglienza in aeroporto',
-            body: [
-                'Il servizio inizia direttamente in aeroporto, dove verrai preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendoti tutte le indicazioni necessarie e accompagnandoti durante le procedure previste.',
-            ],
-        },
-        {
-            title: 'Trasferimenti verso il porto d’imbarco',
-            body: [
-                'Mettiamo a disposizione diverse soluzioni di trasporto, in funzione del numero di passeggeri e delle specifiche necessità:',
-                [
-                    'Auto private per trasferimenti individuali o di piccoli gruppi;',
-                    'Minivan per gruppi di dimensioni intermedie;',
-                    'Bus per gruppi numerosi.',
-                ],
-                'Ogni trasferimento viene organizzato con particolare attenzione alla puntualità, al comfort e alla gestione dei tempi, assicurando un coordinamento efficiente tra l’aeroporto e i collegamenti marittimi e le strutture ricettive prescelte.',
-            ],
-        },
-        {
-            title: 'Gestione delle procedure e fornitura dei ticket',
-            body: [
-                'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere la tua esperienza il più semplice e organizzata possibile.',
-            ],
-        },
-        {
-            title: 'Assistenza durante tutto il servizio',
-            body: [
-                'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendoti un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
-                'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale tu possa sentirti seguito e assistito in ogni momento.',
-                'Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer.',
-            ],
-        },
-    ],
-    bullets: [
-        'Bus Gran Turismo 30-55 posti',
-        'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
-    ],
-    image: px(13232525),
-    imageAlt: 'Man on a ferry looking at coastal town and castle under blue sky.',
-    credit: 'Foto: Nati, Pexels',
-    imageRight: true,
-};
+// Immagini e layout dei servizi, con le stesse chiavi dei testi nel dizionario; `id` è l'ancora in pagina.
+const serviceMedia = {
+    transfer: { id: 'transfer', image: px(13232525), credit: 'Nati, Pexels', imageRight: true },
+    // Soggiorni balneari + soggiorni di gruppo in un unico blocco
+    soggiorni: { id: 'soggiorni', image: px(16014522), credit: 'Pexels', imageRight: false },
+    // Tour ed esperienze + escursioni in un unico blocco
+    escursioni: { id: 'escursioni', image: px(8206930), credit: 'Michele Busce / Pexels', imageRight: true },
+    su_misura: { id: 'su-misura', image: px(7634231), credit: 'Marina Zasorina / Pexels', imageRight: false },
+} satisfies Record<keyof Copy['services'], Omit<Service, keyof ServiceCopy>>;
 
-// Soggiorni balneari + soggiorni di gruppo in un unico blocco
-const soggiorni: Service = {
-    id: 'soggiorni',
-    eyebrow: 'La nostra firma',
-    title: 'Soggiorni',
-    subsections: [
-        {
-            title: 'Soggiorni balneari',
-            body: [
-                'Se desideri staccare dalla quotidianità e concederti momenti di tranquillità, ti proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
-            ],
-        },
-        {
-            title: 'Soggiorni di gruppo, gestiti su misura',
-            body: [
-                'La gestione dei gruppi è il punto forte della nostra vita professionale. Lavoriamo con strutture alberghiere di ogni livello, dalle famiglie alle agenzie. Costruiamo pacchetti ad hoc, con assistenza multilingue in ogni fase del viaggio.',
-            ],
-        },
-    ],
-    image: px(16014522),
-    imageAlt: 'Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago.',
-    credit: 'Foto: Pexels',
-    imageRight: false,
-};
-
-// Tour ed esperienze + escursioni in un unico blocco
-const escursioni: Service = {
-    id: 'escursioni',
-    title: 'Tour ed esperienze',
-    body: [
-        'Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.',
-        'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permetterti di conoscere e vivere ogni destinazione in modo completo e originale.',
-        'Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.',
-        'Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te.',
-    ],
-    subsections: [
-        {
-            title: 'Alla scoperta dell’Isola',
-            body: [
-                'Il modo ideale per iniziare a conoscere l’isola è attraverso il classico giro dell’isola, disponibile in minibus, bus, battello e/o veliero.',
-                'Un itinerario che permette di ammirare panorami suggestivi, conoscere i luoghi più caratteristici e scoprire, comodamente accompagnati, le diverse anime dell’isola, tra borghi, coste, paesaggi e tradizioni.',
-            ],
-        },
-        {
-            title: 'Escursioni in barca: il fascino delle isole',
-            body: [
-                'Il mare è protagonista anche delle nostre escursioni in barca, alla scoperta delle isole vicine, ognuna con la propria identità e il proprio fascino.',
-                'Potrai navigare verso Capri e Procida, ammirandole da una prospettiva privilegiata e vivendo il piacere di una giornata sul mare, tra panorami, acque cristalline e scorci indimenticabili.',
-            ],
-        },
-        {
-            title: 'Trekking e natura: quando il viaggio diventa emozione',
-            body: [
-                'E se invece sei alla ricerca di sentieri, natura e avventura, allora porta con te le scarpe giuste!',
-                'Ti accompagneremo lungo percorsi dove è la Natura a fare da padrona, tra sentieri panoramici, profumi della vegetazione mediterranea e scorci sul mare.',
-                'Qui terra e mare si incontrano, e tutti gli elementi della Vita sembrano fondersi in un unico paesaggio.',
-            ],
-        },
-    ],
-    bullets: [
-        'Giro dell’isola di Ischia (~3h30 con soste)',
-        'Parchi termali (giornata o mezza giornata)',
-        'Pompei, Vesuvio, Reggia di Caserta',
-        'Tour enogastronomici e cantine',
-        'Hiking sui sentieri Epomeo, Sentiero degli Dei',
-    ],
-    image: px(8206930),
-    imageAlt: 'Gruppo in escursione su un sentiero in Campania',
-    credit: 'Foto: Michele Busce / Pexels',
-    imageRight: true,
-};
-
-const suMisura: Service = {
-    id: 'su-misura',
-    eyebrow: 'Su misura',
-    title: 'Viaggi su misura per ogni esigenza',
-    body: [
-        'Crediamo che ogni viaggiatore abbia esigenze, aspettative e desideri differenti. Per questo non proponiamo semplicemente pacchetti standard, ma siamo in grado di progettare e organizzare viaggi su misura, costruiti attorno alle necessità di ogni cliente.',
-        'Che tu sia un viaggiatore solitario, una famiglia, un gruppo di amici, un’associazione o una scolaresca, studiamo insieme il viaggio più adatto, occupandoci dell’organizzazione e coordinando ogni aspetto dell’esperienza.',
-        'Dal primo contatto al rientro, il nostro obiettivo è uno solo: trasformare ogni viaggio in un’esperienza da ricordare.',
-        'Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio.',
-    ],
-    bullets: [
-        'Proposta scritta con voci e prezzi chiari',
-        'Modifiche fino a quando il programma è giusto',
-    ],
-    image: px(7634231),
-    imageAlt: 'Mano su una mappa con appunti di viaggio',
-    credit: 'Foto: Marina Zasorina / Pexels',
-    imageRight: false,
-};
-
-// Indice in testa alla pagina, nell'ordine in cui compaiono i servizi
-const serviceIndex = [
-    { id: transfer.id, label: 'Transfer' },
-    { id: soggiorni.id, label: 'Soggiorni' },
-    { id: escursioni.id, label: 'Tour ed escursioni' },
-    { id: suMisura.id, label: 'Viaggi su misura' },
-];
-
-// Pacchetto tipo (lavorazione completa). Mostrato come timeline.
-type Step = { title: string; body: string };
-const packageSteps: Step[] = [
-    { title: 'Pick-up a Capodichino', body: 'Ti aspettiamo all’aeroporto di Napoli con autista assegnato e nome ben visibile.' },
-    { title: 'Transfer con assistente fino all’hotel', body: 'Trasferimento accompagnato da una persona del team, che ti aiuta con bagagli, info pratiche, eventuali soste.' },
-    { title: 'Cocktail di benvenuto', body: 'In hotel ti offriamo un cocktail di benvenuto e ti raccontiamo brevemente il programma settimanale previsto, con consigli ed informazioni utili al soggiorno.' },
-    { title: 'Materiale escursioni e programmi', body: 'Mappa, programma dei giorni, contatti, voucher escursioni. Tutto cartaceo e digitale.' },
-    { title: 'Assistenza giornaliera durante il soggiorno', body: 'Una persona di riferimento è raggiungibile tutti i giorni per qualsiasi cosa serva, dal cambio prenotazione al consiglio cena.' },
-    { title: 'Trasferimento al ritorno', body: 'Pick-up dall’hotel e ritorno all’aeroporto.' },
-];
+function getServices(copy: Copy): Record<keyof Copy['services'], Service> {
+    const keys = Object.keys(serviceMedia) as (keyof Copy['services'])[];
+    return Object.fromEntries(
+        keys.map((key) => [key, { ...(copy.services[key] as ServiceCopy), ...serviceMedia[key] }]),
+    ) as Record<keyof Copy['services'], Service>;
+}
 
 // Tour packages: destinazioni dove offriamo gite e transfer, non soggiorni
-type TourPackage = {
-    slug: string;
-    name: string;
-    eyebrow: string;
-    tagline: string;
-    activities: string[];
-    image: string;
-    imageAlt: string;
-    credit: string;
-};
-
-const tourPackages: TourPackage[] = [
-    {
-        slug: 'amalfi',
-        name: 'Costiera Amalfitana e Sorrentina',
-        eyebrow: 'Gita giornaliera',
-        tagline: 'Da Amalfi a Positano lungo la SS163, con barca o pullman a seconda delle tue preferenze.',
-        activities: [
-            'Tour in barca Amalfi, Furore, Conca dei Marini',
-            'Visita Duomo di Amalfi + Atrani a piedi',
-            'Pullman panoramico SS163 con soste fotografiche',
-            'Pranzo in agriturismo con vista golfo',
-        ],
-        image: px(29172648),
-        imageAlt: 'Vista panoramica della Costiera Amalfitana',
-        credit: 'Foto: Rishabh Lakra / Pexels',
-    },
-    {
-        slug: 'positano',
-        name: 'Positano',
-        eyebrow: 'Mezza giornata o giornata',
-        tagline: 'Verticale, fotogenica, una scenografia naturale che funziona ancora.',
-        activities: [
-            'Tour in barca con sosta bagno a Li Galli e Praiano',
-            'Spiaggia Grande + visita al borgo',
-            'Hiking Sentiero degli Dei (Bomerano-Nocelle) con guida',
-            'Tramonto in terrazza con aperitivo',
-        ],
-        image: px(19390872),
-        imageAlt: 'Case di Positano sulla collina, sopra la spiaggia',
-        credit: 'Foto: Lucia Manes / Pexels',
-    },
-    {
-        slug: 'pompei',
-        name: 'Pompei',
-        eyebrow: 'Mezza giornata o giornata',
-        tagline: 'Una città romana ferma nel 79 d.C. Sempre con guida abilitata.',
-        activities: [
-            'Visita scavi di Pompei con guida abilitata (~3h)',
-            'Ercolano + MAV Museo Archeologico Virtuale',
-            'Estensione Vesuvio: cratere a piedi (45 min andata)',
-            'Pranzo in agriturismo + degustazione vini del Vesuvio',
-        ],
-        image: px(35626653),
-        imageAlt: 'Rovine di Pompei con colonne e statua',
-        credit: 'Foto: Alex Revilla / Pexels',
-    },
-    {
-        slug: 'sorrento',
-        name: 'Sorrento',
-        eyebrow: 'Mezza giornata o giornata',
-        tagline: 'Base per la Costiera o tappa singola. Limoneti, vista golfo, vita lenta.',
-        activities: [
-            'Visita guidata centro storico, Chiostro San Francesco',
-            'Vallone dei Mulini e Marina Grande',
-            'Tour limoni: visita agrumeto + degustazione limoncello',
-            'Bagni della Regina Giovanna: piscina naturale tra rovine romane',
-        ],
-        image: px(9940305),
-        imageAlt: 'Vista aerea di Sorrento e Villa Comunale',
-        credit: 'Foto: Daniel Eliashevsky / Pexels',
-    },
+const tourPackageMedia: { slug: keyof Copy['tours']['packages']; image: string }[] = [
+    { slug: 'amalfi', image: px(29172648) }, // Rishabh Lakra / Pexels
+    { slug: 'positano', image: px(19390872) }, // Lucia Manes / Pexels
+    { slug: 'pompei', image: px(35626653) }, // Alex Revilla / Pexels
+    { slug: 'sorrento', image: px(9940305) }, // Daniel Eliashevsky / Pexels
 ];
 
 const eyebrowStyle = {
@@ -289,7 +91,7 @@ function ListDash({ width = 14 }: { width?: number }) {
     );
 }
 
-function ServiceBlock({ s, locale }: { s: Service; locale: Locale }) {
+function ServiceBlock({ s, locale, copy, photoLabel }: { s: Service; locale: Locale; copy: Copy; photoLabel: string }) {
     return (
         <article
             id={s.id}
@@ -343,21 +145,21 @@ function ServiceBlock({ s, locale }: { s: Service; locale: Locale }) {
                     className="inline-block mt-8 pb-1 border-b border-black/30 text-midnight hover:border-midnight transition-colors"
                     style={eyebrowStyle}
                 >
-                    Richiedi informazioni
+                    {copy.request_info}
                 </Link>
             </div>
             <div className="w-full lg:w-1/2 order-first lg:order-none lg:sticky lg:top-32">
                 <figure className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
                     <Image
                         src={s.image}
-                        alt={s.imageAlt}
+                        alt={s.image_alt}
                         fill
                         loading="lazy"
                         className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                 </figure>
-                {s.credit && <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{s.credit}</p>}
+                {s.credit && <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{photoLabel}: {s.credit}</p>}
             </div>
         </article>
     );
@@ -370,10 +172,15 @@ export default async function ServiziPage({
 }) {
     const { locale } = await params;
     const dict = await getDictionary(locale);
+    const copy = dict.services_page;
+    const { transfer, soggiorni, escursioni, su_misura: suMisura } = getServices(copy);
+    // Indice in testa alla pagina, nell'ordine in cui compaiono i servizi
+    const serviceIndex = [transfer, soggiorni, escursioni, suMisura].map((s) => ({ id: s.id, label: s.index_label }));
+    const tourPackages = tourPackageMedia.map((m) => ({ ...m, ...copy.tours.packages[m.slug] }));
 
     return (
         <div className="min-h-screen flex flex-col bg-white">
-            <Header dict={dict} lang={locale} />
+            <Header labels={dict.nav} lang={locale} />
 
             <main className="flex-1">
                 {/* ── HERO ── */}
@@ -381,7 +188,7 @@ export default async function ServiziPage({
                     <div className="relative w-full" style={{ minHeight: '70vh' }}>
                         <Image
                             src={HERO}
-                            alt="Costa di Ischia, dove ha sede Baywatch Travel"
+                            alt={copy.hero.image_alt}
                             fill
                             priority
                             className="object-cover"
@@ -398,7 +205,7 @@ export default async function ServiziPage({
                             <div className="text-center max-w-3xl py-24">
                                 <FadeIn>
                                     <p className="text-white/85 mb-6" style={eyebrowStyle}>
-                                        Cosa facciamo
+                                        {copy.hero.eyebrow}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={120}>
@@ -409,7 +216,7 @@ export default async function ServiziPage({
                                             fontWeight: 400,
                                         }}
                                     >
-                                        I nostri servizi
+                                        {copy.hero.title}
                                     </h1>
                                 </FadeIn>
                                 <FadeIn delay={220}>
@@ -421,7 +228,7 @@ export default async function ServiziPage({
                                             lineHeight: 1.7,
                                         }}
                                     >
-                                        Transfer, soggiorni, tour ed escursioni, viaggi su misura.
+                                        {copy.hero.subtitle}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={320}>
@@ -437,10 +244,7 @@ export default async function ServiziPage({
                     <div className="container mx-auto px-4">
                         <FadeIn>
                             <div className="max-w-3xl mx-auto mb-12">
-                                {[
-                                    'Siamo un Tour Operator con una consolidata esperienza nel settore turistico, specializzato nell’organizzazione di soggiorni, tour ed esperienze dedicati sia alla clientela individuale sia a gruppi di ogni dimensione.',
-                                    'La nostra filosofia nasce dall’unione di competitività, professionalità e attenzione al cliente: proponiamo offerte turistiche particolarmente vantaggiose e studiate per rispondere alle diverse esigenze, senza mai rinunciare alla qualità dei servizi, alla cura dei dettagli e alla soddisfazione di chi sceglie di viaggiare con noi.',
-                                ].map((para) => (
+                                {copy.intro.map((para) => (
                                     <p key={para} className="text-black/70 mb-6 last:mb-0 md:text-justify md:hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.1875rem', lineHeight: 1.8 }}>
                                         {para}
                                     </p>
@@ -448,7 +252,7 @@ export default async function ServiziPage({
                             </div>
                         </FadeIn>
                         <FadeIn delay={80}>
-                            <nav aria-label="Indice dei servizi" className="max-w-3xl mx-auto mb-24 lg:mb-36 border-y border-black/[0.10] py-5">
+                            <nav aria-label={copy.index_label} className="max-w-3xl mx-auto mb-24 lg:mb-36 border-y border-black/[0.10] py-5">
                                 <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
                                     {serviceIndex.map((item) => (
                                         <li key={item.id}>
@@ -462,10 +266,10 @@ export default async function ServiziPage({
                         </FadeIn>
                         <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
                             <FadeIn threshold={0}>
-                                <ServiceBlock s={transfer} locale={locale} />
+                                <ServiceBlock s={transfer} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
                             <FadeIn threshold={0}>
-                                <ServiceBlock s={soggiorni} locale={locale} />
+                                <ServiceBlock s={soggiorni} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
                         </div>
                     </div>
@@ -476,21 +280,21 @@ export default async function ServiziPage({
                     <div className="container mx-auto px-4">
                         <div className="max-w-5xl mx-auto">
                             <FadeIn>
-                                <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>Pacchetto tipo</p>
+                                <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>{copy.package.eyebrow}</p>
                             </FadeIn>
                             <FadeIn delay={100}>
                                 <h2 className="font-serif text-midnight text-center leading-[1.1] mb-6" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 400 }}>
-                                    Come funziona un soggiorno con noi
+                                    {copy.package.title}
                                 </h2>
                             </FadeIn>
                             <FadeIn delay={180}>
                                 <p className="text-midnight/70 text-center max-w-2xl mx-auto mb-14" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.7 }}>
-                                    Un esempio di pacchetto completo. Lo personalizziamo in base al gruppo, alla durata, alla destinazione.
+                                    {copy.package.intro}
                                 </p>
                             </FadeIn>
 
                             <ol className="space-y-8">
-                                {packageSteps.map((step, i) => (
+                                {copy.package.steps.map((step, i) => (
                                     <FadeIn key={step.title} delay={80 + i * 50}>
                                         <li className="grid md:grid-cols-12 gap-6 border-t border-black/[0.10] pt-7">
                                             <div className="md:col-span-1 text-midnight/40 font-serif" style={{ fontSize: '1.5rem' }}>
@@ -517,21 +321,21 @@ export default async function ServiziPage({
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                             <FadeIn threshold={0}>
-                                <ServiceBlock s={escursioni} locale={locale} />
+                                <ServiceBlock s={escursioni} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
                         </div>
                         <div className="max-w-6xl mx-auto mt-24 lg:mt-36">
                             <FadeIn>
-                                <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>Destinazioni per le gite</p>
+                                <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>{copy.tours.eyebrow}</p>
                             </FadeIn>
                             <FadeIn delay={100}>
                                 <h2 className="font-serif text-midnight text-center leading-[1.1] mb-6" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 400 }}>
-                                    Tour ed escursioni nelle mete che amiamo
+                                    {copy.tours.title}
                                 </h2>
                             </FadeIn>
                             <FadeIn delay={180}>
                                 <p className="text-midnight/70 text-center max-w-2xl mx-auto mb-16" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.7 }}>
-                                    Costiera Amalfitana, Positano, Pompei e Sorrento sono mete dove offriamo gite di una giornata e transfer. Non soggiorni, ma esperienze su misura.
+                                    {copy.tours.intro}
                                 </p>
                             </FadeIn>
 
@@ -542,7 +346,7 @@ export default async function ServiziPage({
                                             <figure className="relative overflow-hidden mb-6" style={{ aspectRatio: '4/3' }}>
                                                 <Image
                                                     src={t.image}
-                                                    alt={t.imageAlt}
+                                                    alt={t.image_alt}
                                                     fill
                                                     loading="lazy"
                                                     className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
@@ -577,7 +381,7 @@ export default async function ServiziPage({
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
                             <FadeIn threshold={0}>
-                                <ServiceBlock s={suMisura} locale={locale} />
+                                <ServiceBlock s={suMisura} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
                         </div>
                     </div>
@@ -587,29 +391,29 @@ export default async function ServiziPage({
                 <section className="bg-[#FBFAF7] border-t border-black/[0.05]" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4 text-center max-w-3xl">
                         <FadeIn>
-                            <p className="text-midnight/55 mb-4" style={eyebrowStyle}>Pronto a partire</p>
+                            <p className="text-midnight/55 mb-4" style={eyebrowStyle}>{copy.cta.eyebrow}</p>
                         </FadeIn>
                         <FadeIn delay={100}>
                             <h2 className="font-serif text-midnight leading-[1.1] mb-6" style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 400 }}>
-                                Raccontaci che viaggio hai in mente
+                                {copy.cta.title}
                             </h2>
                         </FadeIn>
                         <FadeIn delay={180}>
                             <p className="text-midnight/70 mb-10" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.7 }}>
-                                Scrivici dove vorresti andare, con chi, quanti giorni. Ti torniamo con una proposta concreta, senza giri di parole.
+                                {copy.cta.body}
                             </p>
                         </FadeIn>
                         <FadeIn delay={260}>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <Link href={`/${locale}/chi-siamo-contatti`} className="bay-btn bay-btn-dark px-8 py-3 text-xs">
-                                    Richiedi informazioni
+                                    {copy.cta.primary}
                                 </Link>
                                 <Link
                                     href={`/${locale}/destinazioni`}
                                     className="bay-btn bay-btn-dark px-8 py-3 text-xs"
                                     style={{ background: 'transparent', color: '#111' }}
                                 >
-                                    Vedi le destinazioni
+                                    {copy.cta.secondary}
                                 </Link>
                             </div>
                         </FadeIn>
@@ -618,7 +422,7 @@ export default async function ServiziPage({
             </main>
 
             <Footer dict={dict} lang={locale} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }

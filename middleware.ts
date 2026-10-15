@@ -13,7 +13,12 @@ function getLocale(request: NextRequest): string | undefined {
     const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
     // @ts-expect-error locales are readonly
     const locales: string[] = i18n.locales;
-    return matchLocale(languages, locales, i18n.defaultLocale);
+    try {
+        return matchLocale(languages, locales, i18n.defaultLocale);
+    } catch {
+        // No usable Accept-Language (e.g. "*" from crawlers): matchLocale throws a RangeError.
+        return i18n.defaultLocale;
+    }
 }
 
 export function middleware(request: NextRequest) {

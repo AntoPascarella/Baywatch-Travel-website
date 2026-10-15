@@ -4,12 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { destinations } from '@/data/destinations';
+import { getDestinations } from '@/data/destinations';
 import { contactSchema, type ContactValues } from '@/lib/contact-schema';
+import type { Locale } from '@/i18n-config';
 
 type FormLabels = {
     name: string;
+    name_placeholder: string;
     email: string;
+    email_placeholder: string;
     phone: string;
     phone_helper: string;
     destination: string;
@@ -32,10 +35,12 @@ type FormLabels = {
 
 export default function ContactForm({
     labels,
+    lang,
     privacyHref,
     variant = 'default',
 }: {
     labels: FormLabels;
+    lang: Locale;
     privacyHref: string;
     variant?: 'default' | 'compact';
 }) {
@@ -115,7 +120,7 @@ export default function ContactForm({
                     id="contact-name"
                     {...register('name')}
                     className={`form-field ${errors.name ? 'form-field-error' : ''}`}
-                    placeholder="Mario Rossi"
+                    placeholder={labels.name_placeholder}
                 />
                 {errors.name && (
                     <p className="form-error">
@@ -137,7 +142,7 @@ export default function ContactForm({
                     type="email"
                     {...register('email')}
                     className={`form-field ${errors.email ? 'form-field-error' : ''}`}
-                    placeholder="mario@example.com"
+                    placeholder={labels.email_placeholder}
                 />
                 {errors.email && (
                     <p className="form-error">
@@ -179,7 +184,7 @@ export default function ContactForm({
                         defaultValue=""
                     >
                         <option value="" disabled>{labels.destination_placeholder}</option>
-                        {destinations.map(d => (
+                        {getDestinations(lang).map(d => (
                             <option key={d.slug} value={d.slug}>{d.name}</option>
                         ))}
                     </select>

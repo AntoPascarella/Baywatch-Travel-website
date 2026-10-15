@@ -13,9 +13,9 @@ const WhatsAppIcon = () => (
     </svg>
 );
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ labels }: { labels: { label: string; message: string } }) {
     const phoneNumber = "390813331096"; // Configuration
-    const message = "Ciao! Vorrei informazioni su un viaggio.";
+    const { message, label } = labels;
 
     return (
         <Link
@@ -23,7 +23,7 @@ export default function WhatsAppButton() {
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20bd5a] transition-transform hover:scale-110 z-50 flex items-center justify-center"
-            aria-label="Contattaci su WhatsApp"
+            aria-label={label}
         >
             <WhatsAppIcon />
         </Link>

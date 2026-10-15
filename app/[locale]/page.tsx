@@ -8,7 +8,7 @@ import DestinationCard from '@/components/DestinationCard';
 import VideoTextSection from '@/components/VideoTextSection';
 import ServizioSection from '@/components/ServizioSection';
 import PlanTripSection from '@/components/PlanTripSection';
-import { destinations } from '@/data/destinations';
+import { getDestinations } from '@/data/destinations';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -20,6 +20,7 @@ export default async function Home({
     const { locale } = await params;
     const dict = await getDictionary(locale);
 
+    const destinations = getDestinations(locale);
     const featuredSlugs = ['ischia', 'capri', 'procida', 'puglia', 'calabria', 'roma'];
     const sortedDestinations = featuredSlugs
         .map(slug => destinations.find(d => d.slug === slug))
@@ -27,7 +28,7 @@ export default async function Home({
 
     return (
         <div className="min-h-screen flex flex-col bg-white font-sans">
-            <Header dict={dict} lang={locale} />
+            <Header labels={dict.nav} lang={locale} />
 
             <main className="flex-1">
                 {/* ═══════════════════════════════════
@@ -37,7 +38,7 @@ export default async function Home({
                     {/* Background image */}
                     <Image
                         src="/images/hero/ischia_castello_aragonese.jpg"
-                        alt="Castello Aragonese di Ischia al tramonto"
+                        alt={dict.home.hero.image_alt}
                         fill
                         className="object-cover"
                         priority
@@ -119,7 +120,7 @@ export default async function Home({
                     SERVIZI. Editorial 4-service section
                    ═══════════════════════════════════ */}
                 <div className="border-t border-black/5">
-                    <ServizioSection />
+                    <ServizioSection copy={dict.home.servizi} />
                 </div>
 
                 {/* ═══════════════════════════════════
@@ -135,7 +136,7 @@ export default async function Home({
             </main>
 
             <Footer dict={dict} lang={locale} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }

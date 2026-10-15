@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FadeIn from '@/components/FadeIn';
 import DestinationCard from '@/components/DestinationCard';
-import { destinations } from '@/data/destinations';
-import { destinationContent } from '@/data/destination-content';
+import { destinations, getDestinations } from '@/data/destinations';
+import { getDestinationContent } from '@/data/destination-content';
 import { destinationGallery, type GalleryImage } from '@/data/destination-gallery';
 
 export async function generateStaticParams() {
@@ -28,10 +28,10 @@ export async function generateMetadata({
 }: {
     params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
-    const { slug } = await params;
-    const dest = destinations.find((d) => d.slug === slug);
+    const { locale, slug } = await params;
+    const dest = getDestinations(locale).find((d) => d.slug === slug);
     if (!dest) return {};
-    const content = destinationContent[slug];
+    const content = getDestinationContent(slug, locale);
     return {
         title: `${dest.name} | Baywatch Travel`,
         description: content?.heroSubtitle ?? dest.shortDescription,
@@ -57,19 +57,24 @@ export default async function DestinationDetailPage({
     params: Promise<{ locale: Locale; slug: string }>;
 }) {
     const { locale, slug } = await params;
-    const dest = destinations.find((d) => d.slug === slug);
+    const allDestinations = getDestinations(locale);
+    const dest = allDestinations.find((d) => d.slug === slug);
     if (!dest) notFound();
 
-    const content = destinationContent[slug];
+    const content = getDestinationContent(slug, locale);
     if (!content) notFound();
 
     const dict = await getDictionary(locale);
+    const t = dict.destination_page;
     const altText = dest.alt[locale] || dest.name;
 
-    const otherDestinations = destinations.filter((d) => d.slug !== slug).slice(0, 3);
+    const otherDestinations = allDestinations.filter((d) => d.slug !== slug).slice(0, 3);
     const descriptions = (dict.destinations.descriptions ?? {}) as Record<string, string>;
 
-    const gallery: GalleryImage[] = destinationGallery[slug] ?? [];
+    // Gallery text is Italian at the top level; swap in the English alt/caption when available.
+    const gallery: GalleryImage[] = (destinationGallery[slug] ?? []).map((img) =>
+        locale === 'en' && img.en ? { ...img, ...img.en } : img,
+    );
     const fallback: GalleryImage = { src: dest.image, alt: altText };
     const g = (i: number): GalleryImage => gallery[i] ?? fallback;
     const heroImg = g(0);
@@ -79,7 +84,7 @@ export default async function DestinationDetailPage({
 
     return (
         <div className="min-h-screen flex flex-col bg-white">
-            <Header dict={dict} lang={locale} />
+            <Header labels={dict.nav} lang={locale} />
 
             <main className="flex-1">
                 {/* ── HERO ── */}
@@ -156,7 +161,7 @@ export default async function DestinationDetailPage({
 
                 {/* ── BREADCRUMB ── */}
                 <nav
-                    aria-label="Breadcrumb"
+                    aria-label={t.breadcrumb_label}
                     className="border-b border-black/[0.08]"
                     style={{ paddingTop: '1.25rem', paddingBottom: '1.25rem' }}
                 >
@@ -172,13 +177,13 @@ export default async function DestinationDetailPage({
                         >
                             <li>
                                 <Link href={`/${locale}`} className="hover:text-midnight transition">
-                                    Home
+                                    {dict.nav.home}
                                 </Link>
                             </li>
                             <li aria-hidden="true">/</li>
                             <li>
                                 <Link href={`/${locale}/destinazioni`} className="hover:text-midnight transition">
-                                    Destinazioni
+                                    {dict.nav.destinations}
                                 </Link>
                             </li>
                             <li aria-hidden="true">/</li>
@@ -194,7 +199,7 @@ export default async function DestinationDetailPage({
                             <div className="lg:col-span-7">
                                 <FadeIn>
                                     <p className="text-midnight/55 mb-6" style={eyebrowStyle}>
-                                        Panoramica
+                                        {t.overview}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={100}>
@@ -227,14 +232,14 @@ export default async function DestinationDetailPage({
                             <aside className="lg:col-span-5 lg:pl-8 lg:border-l lg:border-black/[0.08]">
                                 <FadeIn delay={200}>
                                     <p className="text-midnight/55 mb-6" style={eyebrowStyle}>
-                                        In sintesi
+                                        {t.at_a_glance}
                                     </p>
                                 </FadeIn>
                                 <dl className="space-y-5">
-                                    <FactRow label="Regione" value={dest.region} />
-                                    <FactRow label="Stagione consigliata" value={dest.bestSeason} />
-                                    <FactRow label="Ideale per" value={content.characteristics.idealePer.join(' · ')} />
-                                    <FactRow label="Vibe" value={content.characteristics.vibe} />
+                                    <FactRow label={t.region} value={dest.region} />
+                                    <FactRow label={t.best_season} value={dest.bestSeason} />
+                                    <FactRow label={t.ideal_for} value={content.characteristics.idealePer.join(' · ')} />
+                                    <FactRow label={t.vibe} value={content.characteristics.vibe} />
                                 </dl>
                             </aside>
                         </div>
@@ -250,7 +255,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-6xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Carattere del luogo
+                                    {t.character_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -261,13 +266,13 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Cosa aspettarsi
+                                    {t.character_title}
                                 </h2>
                             </FadeIn>
                             <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
-                                <CharRow label="Paesaggio" value={content.characteristics.paesaggio} />
-                                <CharRow label="Mare e coste" value={content.characteristics.mare} />
-                                <CharRow label="Borghi e città" value={content.characteristics.borghi} />
+                                <CharRow label={t.landscape} value={content.characteristics.paesaggio} />
+                                <CharRow label={t.sea} value={content.characteristics.mare} />
+                                <CharRow label={t.towns} value={content.characteristics.borghi} />
                             </div>
                         </div>
                     </div>
@@ -280,7 +285,7 @@ export default async function DestinationDetailPage({
                             <div className="lg:col-span-5">
                                 <FadeIn>
                                     <p className="text-midnight/55 mb-4" style={eyebrowStyle}>
-                                        Dove si trova
+                                        {t.location_eyebrow}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={100}>
@@ -291,14 +296,14 @@ export default async function DestinationDetailPage({
                                             fontWeight: 400,
                                         }}
                                     >
-                                        Posizione & arrivo
+                                        {t.location_title}
                                     </h2>
                                 </FadeIn>
                             </div>
                             <div className="lg:col-span-7 space-y-6">
-                                <FactBlock label="Dove" value={content.location.dove} />
-                                <FactBlock label="Area" value={content.location.area} />
-                                <FactBlock label="Come arrivare" value={content.location.comeArrivare} />
+                                <FactBlock label={t.where} value={content.location.dove} />
+                                <FactBlock label={t.area} value={content.location.area} />
+                                <FactBlock label={t.getting_there} value={content.location.comeArrivare} />
                             </div>
                         </div>
                     </div>
@@ -351,7 +356,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-5xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Curiosità
+                                    {t.facts_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -362,7 +367,7 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Lo sapevi che…
+                                    {t.facts_title}
                                 </h2>
                             </FadeIn>
                             <ul className="grid md:grid-cols-2 gap-x-12 gap-y-8">
@@ -399,7 +404,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-6xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Itinerari
+                                    {t.itineraries_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -410,7 +415,7 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Come la puoi vivere
+                                    {t.itineraries_title}
                                 </h2>
                             </FadeIn>
                             <div className="grid md:grid-cols-2 gap-x-10 gap-y-12">
@@ -463,7 +468,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-5xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Cosa non perdere
+                                    {t.must_see_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -474,7 +479,7 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    I luoghi e le esperienze
+                                    {t.must_see_title}
                                 </h2>
                             </FadeIn>
                             <ul className="divide-y divide-black/[0.10]">
@@ -519,7 +524,7 @@ export default async function DestinationDetailPage({
                             <div className="text-center mb-12 lg:mb-16">
                                 <FadeIn>
                                     <p className="text-midnight/55 mb-4" style={eyebrowStyle}>
-                                        Un assaggio per gli occhi
+                                        {t.gallery_eyebrow}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={100}>
@@ -530,7 +535,7 @@ export default async function DestinationDetailPage({
                                             fontWeight: 400,
                                         }}
                                     >
-                                        {dest.name} in immagini
+                                        {t.gallery_title.replace('{name}', dest.name)}
                                     </h2>
                                 </FadeIn>
                             </div>
@@ -563,7 +568,7 @@ export default async function DestinationDetailPage({
                                         textTransform: 'uppercase',
                                     }}
                                 >
-                                    Foto: Pexels. {Array.from(new Set(
+                                    {dict.common.photo}: Pexels. {Array.from(new Set(
                                         gridImages
                                             .map((m) => m.credit)
                                             .filter((c): c is string => Boolean(c))
@@ -582,7 +587,7 @@ export default async function DestinationDetailPage({
                             <div className="max-w-5xl mx-auto text-center">
                                 <FadeIn>
                                     <p className="text-midnight/55 mb-4" style={eyebrowStyle}>
-                                        Highlights
+                                        {t.highlights_eyebrow}
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={100}>
@@ -593,7 +598,7 @@ export default async function DestinationDetailPage({
                                             fontWeight: 400,
                                         }}
                                     >
-                                        Le icone di {dest.name}
+                                        {t.highlights_title.replace('{name}', dest.name)}
                                     </h2>
                                 </FadeIn>
                                 <FadeIn delay={150}>
@@ -627,7 +632,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-5xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Consigli pratici
+                                    {t.tips_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -638,13 +643,13 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Prima di partire
+                                    {t.tips_title}
                                 </h2>
                             </FadeIn>
                             <div className="grid md:grid-cols-3 gap-x-10 gap-y-10">
-                                <TipCard label="Periodo migliore" value={content.tips.periodo} />
-                                <TipCard label="Tempo ideale" value={content.tips.durata} />
-                                <TipCard label="Buono a sapersi" value={content.tips.note} />
+                                <TipCard label={t.best_period} value={content.tips.periodo} />
+                                <TipCard label={t.ideal_length} value={content.tips.durata} />
+                                <TipCard label={t.good_to_know} value={content.tips.note} />
                             </div>
                         </div>
                     </div>
@@ -656,7 +661,7 @@ export default async function DestinationDetailPage({
                         <div className="max-w-7xl mx-auto">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>
-                                    Continua a esplorare
+                                    {t.more_eyebrow}
                                 </p>
                             </FadeIn>
                             <FadeIn delay={100}>
@@ -667,7 +672,7 @@ export default async function DestinationDetailPage({
                                         fontWeight: 400,
                                     }}
                                 >
-                                    Altre destinazioni
+                                    {t.more_title}
                                 </h2>
                             </FadeIn>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-12 lg:gap-x-5">
@@ -687,7 +692,7 @@ export default async function DestinationDetailPage({
                                     href={`/${locale}/destinazioni`}
                                     className="bay-btn bay-btn-dark px-8 py-3 text-xs"
                                 >
-                                    Vedi tutte
+                                    {t.see_all}
                                 </Link>
                             </div>
                         </div>
@@ -696,7 +701,7 @@ export default async function DestinationDetailPage({
             </main>
 
             <Footer dict={dict} lang={locale} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }

@@ -5,7 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Locale } from '@/i18n-config';
+import type { Dictionary } from '@/lib/i18n/types';
 import { useHeaderState } from './hooks/useHeaderState';
+import LangSwitcher from './LangSwitcher';
 
 const MQ = '(prefers-reduced-motion: reduce)';
 function subscribeRM(cb: () => void) {
@@ -17,9 +19,10 @@ function getRM() { return window.matchMedia(MQ).matches; }
 function getRMServer() { return false; }
 
 export default function Header({
+    labels,
     lang,
 }: {
-    dict?: Record<string, unknown>;
+    labels: Dictionary['nav'];
     lang: Locale;
 }) {
     const pathname = usePathname();
@@ -48,10 +51,10 @@ export default function Header({
     const textColor = isScrolled ? '#1a1a1a' : '#ffffff';
 
     const links = [
-        { href: `/${lang}`, label: 'HOME' },
-        { href: `/${lang}/destinazioni`, label: 'DESTINAZIONI' },
-        { href: `/${lang}/servizi`, label: 'SERVIZI' },
-        { href: `/${lang}/chi-siamo-contatti`, label: 'CHI SIAMO' },
+        { href: `/${lang}`, label: labels.home },
+        { href: `/${lang}/destinazioni`, label: labels.destinations },
+        { href: `/${lang}/servizi`, label: labels.services },
+        { href: `/${lang}/chi-siamo-contatti`, label: labels.about },
     ];
 
     return (
@@ -177,8 +180,10 @@ export default function Header({
                     </nav>
                 </div>
 
-                {/* ── RIGHT: Phone + CONTATTACI button ── */}
+                {/* ── RIGHT: Language + phone + contact button ── */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '24px' }}>
+                    <LangSwitcher scrolled={isScrolled} label={labels.language} />
+
                     <a
                         href="tel:+390813331096"
                         className="bay-phone hidden lg:block"
@@ -202,7 +207,7 @@ export default function Header({
                         href={`/${lang}/chi-siamo-contatti#contatti`}
                         className={`bay-btn ${isScrolled ? 'bay-btn-dark' : 'bay-btn-light'}`}
                     >
-                        CONTATTACI
+                        {labels.contact}
                     </Link>
                 </div>
             </div>

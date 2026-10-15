@@ -2,19 +2,18 @@ import Header from './Header';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
 import { Locale } from '@/i18n-config';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Dict = Record<string, any>;
+import type { Dictionary } from '@/lib/i18n/types';
 
 /** Data controller details shown on the privacy and cookie pages. */
 export const CONTROLLER = {
     name: 'Baywatch Travel',
-    address: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italia',
+    address: {
+        it: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italia',
+        en: 'Via Castiglione, 36, 80074 Casamicciola Terme (NA), Italy',
+    } satisfies Record<Locale, string>,
     email: 'info@baywatchtravel.it',
     phone: '+39 081 333 1096',
 };
-
-export const LAST_UPDATED = '15 ottobre 2026';
 
 /**
  * Shared shell for legal pages. The dark top band keeps the white header
@@ -27,7 +26,7 @@ export default function LegalPage({
     title,
     children,
 }: {
-    dict: Dict;
+    dict: Dictionary;
     lang: Locale;
     eyebrow: string;
     title: string;
@@ -35,7 +34,7 @@ export default function LegalPage({
 }) {
     return (
         <div className="min-h-screen flex flex-col bg-white">
-            <Header dict={dict} lang={lang} />
+            <Header labels={dict.nav} lang={lang} />
 
             <main className="flex-1">
                 <section className="bg-midnight text-white" style={{ paddingTop: 'calc(108px + 4rem)', paddingBottom: '4rem' }}>
@@ -55,7 +54,7 @@ export default function LegalPage({
                         <h1 className="font-serif font-normal leading-tight" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
                             {title}
                         </h1>
-                        <p className="mt-6 text-sm text-white/50">Ultimo aggiornamento: {LAST_UPDATED}</p>
+                        <p className="mt-6 text-sm text-white/50">{dict.legal.last_updated}: {dict.legal.updated_on}</p>
                     </div>
                 </section>
 
@@ -65,7 +64,7 @@ export default function LegalPage({
             </main>
 
             <Footer dict={dict} lang={lang} />
-            <WhatsAppButton />
+            <WhatsAppButton labels={dict.whatsapp} />
         </div>
     );
 }
