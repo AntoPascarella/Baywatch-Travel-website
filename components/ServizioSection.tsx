@@ -24,7 +24,7 @@ export default function ServizioSection({ copy }: { copy: Copy }) {
 
                 {/* ── Section label ── */}
                 <FadeIn>
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-12 md:mb-20">
                         <p
                             className="text-black"
                             style={{
@@ -42,11 +42,11 @@ export default function ServizioSection({ copy }: { copy: Copy }) {
                 </FadeIn>
 
                 {/* ── Services list ── */}
-                <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
+                <div className="max-w-6xl mx-auto space-y-16 md:space-y-24 lg:space-y-36">
                     {services.map((service, i) => (
                         <FadeIn key={service.id} delay={i * 60}>
                             <div
-                                className={`flex flex-col gap-10 lg:gap-20 items-center ${
+                                className={`flex flex-col gap-8 md:gap-10 lg:gap-20 items-center ${
                                     service.imageRight
                                         ? 'lg:flex-row'
                                         : 'lg:flex-row-reverse'
@@ -80,7 +80,7 @@ export default function ServizioSection({ copy }: { copy: Copy }) {
                                     </h2>
 
                                     <p
-                                        className="text-black/60 leading-relaxed text-justify hyphens-auto"
+                                        className="text-black/60 leading-relaxed md:text-justify md:hyphens-auto"
                                         style={{
                                             fontSize: '1.0625rem',
                                             lineHeight: 1.8,
@@ -101,8 +101,8 @@ export default function ServizioSection({ copy }: { copy: Copy }) {
                                     />
                                 </div>
 
-                                {/* ── Image column ── */}
-                                <div className="w-full lg:w-1/2">
+                                {/* ── Image column (first on phones) ── */}
+                                <div className="w-full lg:w-1/2 order-first lg:order-none">
                                     <div
                                         className="relative overflow-hidden"
                                         style={{ aspectRatio: '4/3' }}

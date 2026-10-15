@@ -48,7 +48,7 @@ export default function CookieNotice({ labels, policyHref }: { labels: Labels; p
         <div
             role="region"
             aria-label={labels.label}
-            className="fixed bottom-6 left-4 right-24 sm:left-6 sm:right-auto sm:max-w-sm z-40 bg-white text-midnight border border-black/10 rounded-lg shadow-lg px-5 py-4 text-small"
+            className="fixed bottom-4 left-4 right-24 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm z-40 bg-white text-midnight border border-black/10 rounded-lg shadow-lg px-5 py-4 text-small"
         >
             <p className="leading-relaxed text-midnight/75">
                 {labels.text}{' '}

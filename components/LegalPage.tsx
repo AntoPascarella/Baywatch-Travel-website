@@ -38,7 +38,7 @@ export default function LegalPage({
             <Header labels={dict.nav} lang={lang} />
 
             <main className="flex-1">
-                <section className="bg-midnight text-white" style={{ paddingTop: 'calc(108px + 4rem)', paddingBottom: '4rem' }}>
+                <section className="bg-midnight text-white" style={{ paddingTop: 'calc(var(--header-h) + 4rem)', paddingBottom: '4rem' }}>
                     <div className="container mx-auto px-4 max-w-3xl">
                         <p
                             className="text-white/60 mb-5"

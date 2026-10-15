@@ -95,7 +95,7 @@ function ServiceBlock({ s, locale, copy, photoLabel }: { s: Service; locale: Loc
     return (
         <article
             id={s.id}
-            className={`scroll-mt-32 flex flex-col gap-10 lg:gap-20 lg:items-start ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+            className={`scroll-mt-24 xl:scroll-mt-36 flex flex-col gap-8 md:gap-10 lg:gap-20 lg:items-start ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
         >
             <div className="w-full lg:w-1/2">
                 {s.eyebrow && <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>}
@@ -185,7 +185,7 @@ export default async function ServiziPage({
             <main className="flex-1">
                 {/* ── HERO ── */}
                 <section className="relative overflow-hidden">
-                    <div className="relative w-full" style={{ minHeight: '70vh' }}>
+                    <div className="relative w-full" style={{ minHeight: '70svh' }}>
                         <Image
                             src={HERO}
                             alt={copy.hero.image_alt}
@@ -201,7 +201,7 @@ export default async function ServiziPage({
                                     'linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.60) 100%)',
                             }}
                         />
-                        <div className="relative container mx-auto px-4 flex items-center justify-center" style={{ minHeight: '70vh' }}>
+                        <div className="relative container mx-auto px-4 flex items-center justify-center" style={{ minHeight: '70svh' }}>
                             <div className="text-center max-w-3xl py-24">
                                 <FadeIn>
                                     <p className="text-white/85 mb-6" style={eyebrowStyle}>
@@ -252,11 +252,11 @@ export default async function ServiziPage({
                             </div>
                         </FadeIn>
                         <FadeIn delay={80}>
-                            <nav aria-label={copy.index_label} className="max-w-3xl mx-auto mb-24 lg:mb-36 border-y border-black/[0.10] py-5">
-                                <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+                            <nav aria-label={copy.index_label} className="max-w-3xl mx-auto mb-16 md:mb-24 lg:mb-36 border-y border-black/[0.10] py-3 md:py-5">
+                                <ul className="flex flex-wrap justify-center gap-x-6 md:gap-x-8 gap-y-0 md:gap-y-3">
                                     {serviceIndex.map((item) => (
                                         <li key={item.id}>
-                                            <a href={`#${item.id}`} className="text-midnight/60 hover:text-midnight transition-colors" style={eyebrowStyle}>
+                                            <a href={`#${item.id}`} className="inline-block py-2.5 md:py-0 text-midnight/60 hover:text-midnight transition-colors" style={eyebrowStyle}>
                                                 {item.label}
                                             </a>
                                         </li>
@@ -264,7 +264,7 @@ export default async function ServiziPage({
                                 </ul>
                             </nav>
                         </FadeIn>
-                        <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
+                        <div className="max-w-6xl mx-auto space-y-16 md:space-y-24 lg:space-y-36">
                             <FadeIn threshold={0}>
                                 <ServiceBlock s={transfer} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
@@ -296,7 +296,7 @@ export default async function ServiziPage({
                             <ol className="space-y-8">
                                 {copy.package.steps.map((step, i) => (
                                     <FadeIn key={step.title} delay={80 + i * 50}>
-                                        <li className="grid md:grid-cols-12 gap-6 border-t border-black/[0.10] pt-7">
+                                        <li className="grid grid-cols-[2.75rem_1fr] md:grid-cols-12 gap-x-3 gap-y-3 md:gap-6 max-md:items-baseline border-t border-black/[0.10] pt-7">
                                             <div className="md:col-span-1 text-midnight/40 font-serif" style={{ fontSize: '1.5rem' }}>
                                                 {String(i + 1).padStart(2, '0')}
                                             </div>
@@ -305,7 +305,7 @@ export default async function ServiziPage({
                                                     {step.title}
                                                 </h3>
                                             </div>
-                                            <p className="md:col-span-7 text-midnight/75" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.0625rem', lineHeight: 1.75 }}>
+                                            <p className="col-span-2 md:col-span-7 text-midnight/75" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.0625rem', lineHeight: 1.75 }}>
                                                 {step.body}
                                             </p>
                                         </li>
@@ -324,7 +324,7 @@ export default async function ServiziPage({
                                 <ServiceBlock s={escursioni} locale={locale} copy={copy} photoLabel={dict.common.photo} />
                             </FadeIn>
                         </div>
-                        <div className="max-w-6xl mx-auto mt-24 lg:mt-36">
+                        <div className="max-w-6xl mx-auto mt-16 md:mt-24 lg:mt-36">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>{copy.tours.eyebrow}</p>
                             </FadeIn>

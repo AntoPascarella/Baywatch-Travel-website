@@ -54,7 +54,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.visit,
-            lines: dict.contact.address,
+            lines: dict.contact.address.map((text) => ({ text })),
         },
         {
             icon: (
@@ -63,7 +63,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.email_us,
-            lines: ['info@baywatchtravel.it', 'booking@baywatchtravel.it'],
+            lines: ['info@baywatchtravel.it', 'booking@baywatchtravel.it'].map((email) => ({ text: email, href: `mailto:${email}` })),
         },
         {
             icon: (
@@ -72,7 +72,7 @@ export default async function ContactPage({
                 </svg>
             ),
             title: dict.contact.call_us,
-            lines: ['+39 081 333 1096', dict.contact.hours],
+            lines: [{ text: '+39 081 333 1096', href: 'tel:+390813331096' }, { text: dict.contact.hours }],
         },
     ];
 
@@ -82,7 +82,7 @@ export default async function ContactPage({
 
             <main className="flex-1">
                 {/* Hero */}
-                <section className="relative overflow-hidden" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+                <section className="relative overflow-hidden" style={{ paddingTop: 'max(var(--section-py), calc(var(--header-h) + 3rem))', paddingBottom: 'var(--section-py)' }}>
                     <Image
                         src="https://images.unsplash.com/photo-1622385444566-99dcb428a483?q=80&w=2400&auto=format&fit=crop"
                         alt={dict.contact.hero_image_alt}
@@ -190,14 +190,12 @@ export default async function ContactPage({
                                         {story.paragraphs.map((paragraph, i) => (
                                             <p
                                                 key={i}
-                                                className="text-black/70"
+                                                className="text-black/70 md:text-justify md:hyphens-auto"
                                                 style={{
                                                     fontFamily: 'var(--font-inter)',
                                                     fontSize: '1.0625rem',
                                                     lineHeight: 1.8,
-                                                    textAlign: 'justify',
                                                     textJustify: 'inter-word',
-                                                    hyphens: 'auto',
                                                 }}
                                             >
                                                 {paragraph}
@@ -241,7 +239,7 @@ export default async function ContactPage({
                 </section>
 
                 {/* Content */}
-                <section style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+                <section id="contatti" className="scroll-mt-14 xl:scroll-mt-24" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
                         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
                             {/* Contact Info Column */}
@@ -253,17 +251,21 @@ export default async function ContactPage({
 
                                     <div className="space-y-6">
                                         {contactCards.map((card, i) => (
-                                            <div key={i} className="card p-5 flex gap-4 items-start">
+                                            <div key={i} className="card p-4 sm:p-5 flex gap-4 items-start">
                                                 <div className="bg-gradient-to-br from-peach/40 to-soft-coral/20 p-3 rounded-xl text-midnight flex-shrink-0">
                                                     {card.icon}
                                                 </div>
-                                                <div>
+                                                <div className="min-w-0">
                                                     <h3 className="font-bold text-midnight text-body mb-1">
                                                         {card.title}
                                                     </h3>
                                                     {card.lines.map((line, j) => (
-                                                        <p key={j} className="text-gray-500 text-small">
-                                                            {line}
+                                                        <p key={j} className="text-gray-500 text-small break-words">
+                                                            {line.href ? (
+                                                                <a href={line.href} className="inline-block py-1 underline-offset-2 hover:text-midnight hover:underline">
+                                                                    {line.text}
+                                                                </a>
+                                                            ) : line.text}
                                                         </p>
                                                     ))}
                                                 </div>
@@ -294,7 +296,7 @@ export default async function ContactPage({
                             {/* Form Column */}
                             <div className="lg:w-1/2">
                                 <FadeIn delay={200}>
-                                    <div className="card p-8">
+                                    <div className="card p-5 sm:p-8">
                                         <h2 className="text-h3 font-serif font-normal text-midnight mb-6">
                                             {dict.contact.form_title}
                                         </h2>

@@ -7,7 +7,19 @@ import { i18n, type Locale } from '@/i18n-config';
 // Each language is named in its own language, so it is recognisable whatever the current page is in.
 const LANGUAGE_NAMES: Record<Locale, string> = { it: 'Italiano', en: 'English', de: 'Deutsch' };
 
-export default function LangSwitcher({ scrolled = false, label }: { scrolled?: boolean; label: string }) {
+export default function LangSwitcher({
+    scrolled = false,
+    label,
+    size = 'sm',
+    onNavigate,
+}: {
+    scrolled?: boolean;
+    label: string;
+    /** 'lg' gives each language a 44px touch target, for the mobile menu. */
+    size?: 'sm' | 'lg';
+    /** Called when a language is picked, e.g. to close the mobile menu. */
+    onNavigate?: () => void;
+}) {
     const pathname = usePathname();
     const router = useRouter();
 
@@ -38,13 +50,14 @@ export default function LangSwitcher({ scrolled = false, label }: { scrolled?: b
                         hrefLang={locale}
                         lang={locale}
                         onClick={(e) => {
+                            onNavigate?.();
                             // Keep the visitor on the same section (e.g. #contatti) in the other language.
                             const { hash } = window.location;
                             if (!hash) return;
                             e.preventDefault();
                             router.push(href + hash);
                         }}
-                        className={`uppercase px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${isActive
+                        className={`uppercase font-bold rounded-full ${size === 'lg' ? 'flex items-center justify-center min-w-14 min-h-11 px-4 text-xs' : 'px-3 py-1 text-[10px]'} transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-black/40 ${isActive
                                 ? scrolled
                                     ? 'bg-midnight text-white shadow-sm'
                                     : 'bg-white text-midnight shadow-sm'

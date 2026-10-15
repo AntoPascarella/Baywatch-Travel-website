@@ -90,7 +90,7 @@ export default async function DestinationDetailPage({
             <main className="flex-1">
                 {/* ── HERO ── */}
                 <section className="relative overflow-hidden">
-                    <div className="relative w-full" style={{ minHeight: '85vh' }}>
+                    <div className="relative w-full" style={{ minHeight: '85svh' }}>
                         <Image
                             src={heroImg.src}
                             alt={heroImg.alt || altText}
@@ -109,7 +109,7 @@ export default async function DestinationDetailPage({
                         />
                         <div
                             className="relative container mx-auto px-4 flex items-end"
-                            style={{ minHeight: '85vh' }}
+                            style={{ minHeight: '85svh' }}
                         >
                             <div className="max-w-3xl pb-20 md:pb-28">
                                 <FadeIn>
@@ -168,7 +168,7 @@ export default async function DestinationDetailPage({
                 >
                     <div className="container mx-auto px-4">
                         <ol
-                            className="flex items-center gap-2 text-midnight/65"
+                            className="flex flex-wrap items-center gap-x-2 gap-y-1 text-midnight/65"
                             style={{
                                 fontFamily: 'var(--font-futura)',
                                 fontSize: '0.6875rem',
@@ -217,7 +217,7 @@ export default async function DestinationDetailPage({
                                 {content.intro.map((para, i) => (
                                     <FadeIn key={i} delay={150 + i * 60}>
                                         <p
-                                            className="text-midnight/80 mb-5 text-justify hyphens-auto"
+                                            className="text-midnight/80 mb-5 md:text-justify md:hyphens-auto"
                                             style={{
                                                 fontFamily: 'var(--font-inter)',
                                                 fontSize: '1.125rem',
@@ -374,7 +374,7 @@ export default async function DestinationDetailPage({
                             <ul className="grid md:grid-cols-2 gap-x-12 gap-y-8">
                                 {content.funFacts.map((f, i) => (
                                     <FadeIn key={i} delay={100 + i * 50}>
-                                        <li className="flex gap-5">
+                                        <li className="flex gap-4 md:gap-5">
                                             <span
                                                 className="font-serif text-midnight/40 leading-none shrink-0"
                                                 style={{ fontSize: '2rem', fontWeight: 400, lineHeight: 1 }}
@@ -486,7 +486,7 @@ export default async function DestinationDetailPage({
                             <ul className="divide-y divide-black/[0.10]">
                                 {content.mustSee.map((m, i) => (
                                     <FadeIn key={m.title} delay={80 + i * 40}>
-                                        <li className="grid md:grid-cols-12 gap-6 py-7">
+                                        <li className="grid grid-cols-[2.25rem_1fr] md:grid-cols-12 gap-x-3 gap-y-3 md:gap-6 max-md:items-baseline py-7">
                                             <div className="md:col-span-1 text-midnight/40 font-serif" style={{ fontSize: '1.125rem' }}>
                                                 {String(i + 1).padStart(2, '0')}
                                             </div>
@@ -501,7 +501,7 @@ export default async function DestinationDetailPage({
                                                 {m.title}
                                             </h3>
                                             <p
-                                                className="md:col-span-7 text-midnight/75"
+                                                className="col-span-2 md:col-span-7 text-midnight/75"
                                                 style={{
                                                     fontFamily: 'var(--font-inter)',
                                                     fontSize: '1.0625rem',
