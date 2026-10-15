@@ -1,4 +1,6 @@
-import { i18n } from '@/i18n-config';
+import { i18n, Locale } from '@/i18n-config';
+import { getDictionary } from '@/lib/i18n/get-dictionary';
+import CookieNotice from '@/components/CookieNotice';
 import '@/app/globals.css';
 import { Inter, EB_Garamond, Cormorant_Garamond, Jost } from 'next/font/google';
 
@@ -54,9 +56,13 @@ export default async function RootLayout({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
+    const dict = await getDictionary(locale as Locale);
     return (
         <html lang={locale} className={`${inter.variable} ${ebGaramond.variable} ${cormorantGaramond.variable} ${jost.variable}`} suppressHydrationWarning>
-            <body className="antialiased">{children}</body>
+            <body className="antialiased">
+                {children}
+                <CookieNotice labels={dict.cookie_notice} policyHref={`/${locale}/cookie`} />
+            </body>
         </html>
     );
 }

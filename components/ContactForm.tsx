@@ -1,18 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import { destinations } from '@/data/destinations';
-
-const formSchema = z.object({
-    name: z.string().min(2, { message: 'error_name' }),
-    email: z.string().email({ message: 'error_email' }),
-    phone: z.string().optional(),
-    destination: z.string().optional(),
-    message: z.string().min(10, { message: 'error_message' }),
-});
+import { contactSchema, type ContactValues } from '@/lib/contact-schema';
 
 type FormLabels = {
     name: string;
@@ -31,34 +24,45 @@ type FormLabels = {
     error_name: string;
     error_email: string;
     error_message: string;
+    error_privacy: string;
+    error_send: string;
+    privacy_consent: string;
+    privacy_link: string;
 };
 
 export default function ContactForm({
     labels,
+    privacyHref,
     variant = 'default',
 }: {
     labels: FormLabels;
+    privacyHref: string;
     variant?: 'default' | 'compact';
 }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [sendError, setSendError] = useState(false);
 
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    } = useForm<ContactValues>({
+        resolver: zodResolver(contactSchema),
+        defaultValues: { privacy: false, website: '' },
     });
+
+    const [consentBefore, consentAfter = ''] = labels.privacy_consent.split('{link}');
 
     const getErrorMessage = (errorKey?: string) => {
         if (!errorKey) return '';
         return labels[errorKey as keyof FormLabels] || errorKey;
     };
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
+    async function onSubmit(values: ContactValues) {
         setIsSubmitting(true);
+        setSendError(false);
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -74,7 +78,7 @@ export default function ContactForm({
             reset();
         } catch (error) {
             console.error(error);
-            alert('Qualcosa è andato storto. Riprova più tardi.');
+            setSendError(true);
         } finally {
             setIsSubmitting(false);
         }
@@ -205,6 +209,45 @@ export default function ContactForm({
                     <p className="form-helper">{labels.message_helper}</p>
                 ) : null}
             </div>
+
+            {/* Honeypot: off-screen, skipped by keyboard and screen readers */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+                <label htmlFor="contact-website">Website</label>
+                <input id="contact-website" type="text" tabIndex={-1} autoComplete="off" {...register('website')} />
+            </div>
+
+            {/* Privacy acknowledgement */}
+            <div>
+                <label htmlFor="contact-privacy" className="flex items-start gap-3 text-small text-midnight/70 cursor-pointer">
+                    <input
+                        id="contact-privacy"
+                        type="checkbox"
+                        {...register('privacy')}
+                        className="mt-0.5 h-4 w-4 flex-shrink-0 accent-midnight"
+                    />
+                    <span>
+                        {consentBefore}
+                        <Link href={privacyHref} target="_blank" className="underline underline-offset-2 hover:text-midnight">
+                            {labels.privacy_link}
+                        </Link>
+                        {consentAfter}
+                    </span>
+                </label>
+                {errors.privacy && (
+                    <p className="form-error">
+                        <svg className="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {getErrorMessage(errors.privacy.message)}
+                    </p>
+                )}
+            </div>
+
+            {sendError && (
+                <p role="alert" className="text-small text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                    {labels.error_send}
+                </p>
+            )}
 
             {/* Submit */}
             <button

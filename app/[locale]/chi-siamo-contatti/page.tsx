@@ -289,7 +289,7 @@ export default async function ContactPage({
                                         <h2 className="text-h3 font-serif font-normal text-midnight mb-6">
                                             {dict.contact.form_title}
                                         </h2>
-                                        <ContactForm labels={formLabels} />
+                                        <ContactForm labels={formLabels} privacyHref={`/${locale}/privacy`} />
                                     </div>
                                 </FadeIn>
                             </div>

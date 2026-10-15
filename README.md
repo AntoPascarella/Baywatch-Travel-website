@@ -19,6 +19,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Contact form
+
+Enquiries from the contact form are sent by email over SMTP (Nodemailer). Copy `.env.example` to `.env.local` and fill in the mailbox credentials; set the same variables on the hosting provider for production. Without them the form shows an error and nothing is sent.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
