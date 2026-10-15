@@ -21,10 +21,12 @@ const HERO = px(37270135, 2400); // Ischia soleggiata, Heinz Klier / Pexels
 
 type Service = {
     id: string;
-    eyebrow: string;
+    eyebrow?: string;
     title: string;
-    body: string;
-    bullets: string[];
+    body: string | string[];
+    // Ogni elemento di body è un paragrafo; un array annidato diventa un elenco puntato.
+    subsections?: { title: string; body: (string | string[])[] }[];
+    bullets?: string[];
     image: string;
     imageAlt: string;
     credit: string;
@@ -33,11 +35,68 @@ type Service = {
 
 const services: Service[] = [
     {
+        id: 'tour',
+        title: 'Tour ed esperienze',
+        body: [
+            'Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.',
+            'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permettere ai nostri ospiti di conoscere e vivere ogni destinazione in modo completo e originale.',
+        ],
+        image: '/images/destinations/amalfi/Amalfi.jpg',
+        imageAlt: 'Vista della Costiera Amalfitana',
+        credit: '',
+        imageRight: true,
+    },
+    {
+        id: 'soggiorni-balneari',
+        title: 'Soggiorni balneari',
+        body: 'Per chi desidera staccare dalla quotidianità e concedersi momenti di tranquillità, proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
+        image: px(33839184),
+        imageAlt: 'Giornata di sole sulla spiaggia di Positano',
+        credit: 'Foto: Fran / Pexels',
+        imageRight: false,
+    },
+    {
         id: 'transfer',
         eyebrow: 'Punto di forza',
-        title: 'Transfer di gruppo, in bus Gran Turismo',
-        body:
-            'Il nostro pane quotidiano. Bus Gran Turismo per spostare gruppi da e per aeroporti, porti, hotel. Affidabili, puliti, con autisti che fanno questo da una vita. Per chi viaggia da solo o in coppia ci sono anche auto private con conducente.',
+        title: 'Servizi di Transfer: il nostro fiore all’occhiello',
+        body: [
+            'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantire ai nostri clienti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
+            'Organizziamo trasferimenti personalizzati in base alle esigenze del cliente, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
+        ],
+        subsections: [
+            {
+                title: 'Accoglienza in aeroporto',
+                body: [
+                    'Il servizio inizia direttamente in aeroporto, dove il cliente viene preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendo tutte le indicazioni necessarie e accompagnando il cliente durante le procedure previste.',
+                ],
+            },
+            {
+                title: 'Trasferimenti verso il porto d’imbarco',
+                body: [
+                    'Mettiamo a disposizione diverse soluzioni di trasporto, in funzione del numero di passeggeri e delle specifiche necessità:',
+                    [
+                        'Auto private per trasferimenti individuali o di piccoli gruppi;',
+                        'Minivan per gruppi di dimensioni intermedie;',
+                        'Bus per gruppi numerosi.',
+                    ],
+                    'Ogni trasferimento viene organizzato con particolare attenzione alla puntualità, al comfort e alla gestione dei tempi, assicurando un coordinamento efficiente tra l’aeroporto e i collegamenti marittimi e le strutture ricettive prescelte.',
+                ],
+            },
+            {
+                title: 'Gestione delle procedure e fornitura dei ticket',
+                body: [
+                    'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere l’esperienza del cliente il più semplice e organizzata possibile.',
+                ],
+            },
+            {
+                title: 'Assistenza durante tutto il servizio',
+                body: [
+                    'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendo al cliente un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
+                    'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale il cliente possa sentirsi seguito e assistito in ogni momento.',
+                    'Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer.',
+                ],
+            },
+        ],
         bullets: [
             'Bus Gran Turismo 30-55 posti',
             'Auto private e van per piccoli gruppi',
@@ -69,9 +128,35 @@ const services: Service[] = [
     {
         id: 'escursioni',
         eyebrow: 'Esperienze',
-        title: 'Escursioni, con o senza guida',
-        body:
-            'Gite di mezza giornata o di una giornata intera, organizzate per gruppi o piccoli. Si può scegliere con guida abilitata o solo trasferimento e accesso al posto. Esempi: giro dell’isola di Ischia in 3 ore e mezza con soste, parchi termali con biglietto + transfer, Capri in barca con skipper.',
+        title: 'Escursioni ed Esperienze',
+        body: [
+            'Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.',
+            'Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te.',
+        ],
+        subsections: [
+            {
+                title: 'Alla scoperta dell’Isola',
+                body: [
+                    'Il modo ideale per iniziare a conoscere l’isola è attraverso il classico giro dell’isola, disponibile in minibus, bus, battello e/o veliero.',
+                    'Un itinerario che permette di ammirare panorami suggestivi, conoscere i luoghi più caratteristici e scoprire, comodamente accompagnati, le diverse anime dell’isola, tra borghi, coste, paesaggi e tradizioni.',
+                ],
+            },
+            {
+                title: 'Escursioni in barca: il fascino delle isole',
+                body: [
+                    'Il mare è protagonista anche delle nostre escursioni in barca, alla scoperta delle isole vicine, ognuna con la propria identità e il proprio fascino.',
+                    'Potrai navigare verso Capri e Procida, ammirandole da una prospettiva privilegiata e vivendo il piacere di una giornata sul mare, tra panorami, acque cristalline e scorci indimenticabili.',
+                ],
+            },
+            {
+                title: 'Trekking e natura: quando il viaggio diventa emozione',
+                body: [
+                    'E se invece sei alla ricerca di sentieri, natura e avventura, allora porta con te le scarpe giuste!',
+                    'Ti accompagneremo lungo percorsi dove è la Natura a fare da padrona, tra sentieri panoramici, profumi della vegetazione mediterranea e scorci sul mare.',
+                    'Qui terra e mare si incontrano, e tutti gli elementi della Vita sembrano fondersi in un unico paesaggio.',
+                ],
+            },
+        ],
         bullets: [
             'Giro dell’isola di Ischia (~3h30 con soste)',
             'Parchi termali (giornata o mezza giornata)',
@@ -88,9 +173,13 @@ const services: Service[] = [
     {
         id: 'su-misura',
         eyebrow: 'Su misura',
-        title: 'Pacchetti personalizzati',
-        body:
-            'Se ti serve qualcosa che non sta in una scheda standard, lo costruiamo insieme. Itinerari su misura per famiglie, coppie, gruppi di amici, aziende. Lavoriamo a fondo per capire cosa vuoi e da lì partiamo.',
+        title: 'Viaggi su misura per ogni esigenza',
+        body: [
+            'Crediamo che ogni viaggiatore abbia esigenze, aspettative e desideri differenti. Per questo non proponiamo semplicemente pacchetti standard, ma siamo in grado di progettare e organizzare viaggi su misura, costruiti attorno alle necessità di ogni cliente.',
+            'Che tu sia un viaggiatore solitario, una famiglia, un gruppo di amici, un’associazione o una scolaresca, studiamo insieme il viaggio più adatto, occupandoci dell’organizzazione e coordinando ogni aspetto dell’esperienza.',
+            'Dal primo contatto al rientro, il nostro obiettivo è uno solo: trasformare ogni viaggio in un’esperienza da ricordare.',
+            'Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio.',
+        ],
         bullets: [
             'Briefing iniziale per capire le tue esigenze',
             'Proposta scritta con voci e prezzi chiari',
@@ -257,7 +346,7 @@ export default async function ServiziPage({
                                             lineHeight: 1.7,
                                         }}
                                     >
-                                        Transfer di gruppo, soggiorni con assistenza multilingue, escursioni con o senza guida. Quattro modi di lavorare con noi.
+                                        Transfer di gruppo, soggiorni con assistenza multilingue, escursioni con o senza guida.
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={320}>
@@ -268,9 +357,21 @@ export default async function ServiziPage({
                     </div>
                 </section>
 
-                {/* ── 4 SERVIZI principali ── */}
+                {/* ── INTRO + SERVIZI principali ── */}
                 <section className="bg-white" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
+                        <FadeIn>
+                            <div className="max-w-3xl mx-auto mb-24 lg:mb-36">
+                                {[
+                                    'Siamo un Tour Operator con una consolidata esperienza nel settore turistico, specializzato nell’organizzazione di soggiorni, tour ed esperienze dedicati sia alla clientela individuale sia a gruppi di ogni dimensione.',
+                                    'La nostra filosofia nasce dall’unione di competitività, professionalità e attenzione al cliente: proponiamo offerte turistiche particolarmente vantaggiose e studiate per rispondere alle diverse esigenze, senza mai rinunciare alla qualità dei servizi, alla cura dei dettagli e alla soddisfazione di chi sceglie di viaggiare con noi.',
+                                ].map((para) => (
+                                    <p key={para} className="text-black/70 mb-6 last:mb-0 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.1875rem', lineHeight: 1.8 }}>
+                                        {para}
+                                    </p>
+                                ))}
+                            </div>
+                        </FadeIn>
                         <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
                             {services.map((s, i) => (
                                 <FadeIn key={s.id} delay={i * 40}>
@@ -279,13 +380,39 @@ export default async function ServiziPage({
                                         className={`flex flex-col gap-10 lg:gap-20 items-center ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
                                     >
                                         <div className="w-full lg:w-1/2">
-                                            <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>
+                                            {s.eyebrow && <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>}
                                             <h2 className="font-serif text-black leading-tight mb-6" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.625rem)', fontWeight: 400 }}>
                                                 {s.title}
                                             </h2>
-                                            <p className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
-                                                {s.body}
-                                            </p>
+                                            {(Array.isArray(s.body) ? s.body : [s.body]).map((para) => (
+                                                <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                                    {para}
+                                                </p>
+                                            ))}
+                                            {s.subsections?.map((sub) => (
+                                                <div key={sub.title}>
+                                                    <h3 className="font-serif text-black leading-tight mb-4" style={{ fontSize: '1.5rem', fontWeight: 400 }}>
+                                                        {sub.title}
+                                                    </h3>
+                                                    {sub.body.map((para) =>
+                                                        Array.isArray(para) ? (
+                                                            <ul key={para.join('|')} className="space-y-2 mb-8 -mt-4">
+                                                                {para.map((item) => (
+                                                                    <li key={item} className="flex gap-3 text-black/70" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                                                        <span aria-hidden="true" className="shrink-0">•</span>
+                                                                        <span>{item}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        ) : (
+                                                            <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                                                {para}
+                                                            </p>
+                                                        )
+                                                    )}
+                                                </div>
+                                            ))}
+                                            {s.bullets && (
                                             <ul className="space-y-3 border-t border-black/[0.10] pt-6">
                                                 {s.bullets.map((b) => (
                                                     <li key={b} className="flex gap-3 text-black/80" style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', lineHeight: 1.6 }}>
@@ -296,6 +423,7 @@ export default async function ServiziPage({
                                                     </li>
                                                 ))}
                                             </ul>
+                                            )}
                                             <div className="mt-8" style={{ width: '2.5rem', height: '1px', background: 'rgba(0,0,0,0.18)' }} />
                                         </div>
                                         <div className="w-full lg:w-1/2">
@@ -309,7 +437,7 @@ export default async function ServiziPage({
                                                     sizes="(max-width: 1024px) 100vw, 50vw"
                                                 />
                                             </figure>
-                                            <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{s.credit}</p>
+                                            {s.credit && <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{s.credit}</p>}
                                         </div>
                                     </article>
                                 </FadeIn>
