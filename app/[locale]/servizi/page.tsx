@@ -23,7 +23,7 @@ type Service = {
     id: string;
     eyebrow?: string;
     title: string;
-    body: string | string[];
+    body?: string[];
     // Ogni elemento di body è un paragrafo; un array annidato diventa un elenco puntato.
     subsections?: { title: string; body: (string | string[])[] }[];
     bullets?: string[];
@@ -33,164 +33,167 @@ type Service = {
     imageRight: boolean;
 };
 
-const services: Service[] = [
-    {
-        id: 'tour',
-        title: 'Tour ed esperienze',
-        body: [
-            'Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.',
-            'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permettere ai nostri ospiti di conoscere e vivere ogni destinazione in modo completo e originale.',
-        ],
-        image: '/images/destinations/amalfi/Amalfi.jpg',
-        imageAlt: 'Vista della Costiera Amalfitana',
-        credit: '',
-        imageRight: true,
-    },
-    {
-        id: 'soggiorni-balneari',
-        title: 'Soggiorni balneari',
-        body: 'Per chi desidera staccare dalla quotidianità e concedersi momenti di tranquillità, proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
-        image: px(33839184),
-        imageAlt: 'Giornata di sole sulla spiaggia di Positano',
-        credit: 'Foto: Fran / Pexels',
-        imageRight: false,
-    },
-    {
-        id: 'transfer',
-        eyebrow: 'Punto di forza',
-        title: 'Servizi di Transfer: il nostro fiore all’occhiello',
-        body: [
-            'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantire ai nostri clienti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
-            'Organizziamo trasferimenti personalizzati in base alle esigenze del cliente, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
-        ],
-        subsections: [
-            {
-                title: 'Accoglienza in aeroporto',
-                body: [
-                    'Il servizio inizia direttamente in aeroporto, dove il cliente viene preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendo tutte le indicazioni necessarie e accompagnando il cliente durante le procedure previste.',
+const transfer: Service = {
+    id: 'transfer',
+    eyebrow: 'Punto di forza',
+    title: 'Servizi di Transfer: il nostro fiore all’occhiello',
+    body: [
+        'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantire ai nostri clienti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
+        'Organizziamo trasferimenti personalizzati in base alle esigenze del cliente, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
+    ],
+    subsections: [
+        {
+            title: 'Accoglienza in aeroporto',
+            body: [
+                'Il servizio inizia direttamente in aeroporto, dove il cliente viene preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendo tutte le indicazioni necessarie e accompagnando il cliente durante le procedure previste.',
+            ],
+        },
+        {
+            title: 'Trasferimenti verso il porto d’imbarco',
+            body: [
+                'Mettiamo a disposizione diverse soluzioni di trasporto, in funzione del numero di passeggeri e delle specifiche necessità:',
+                [
+                    'Auto private per trasferimenti individuali o di piccoli gruppi;',
+                    'Minivan per gruppi di dimensioni intermedie;',
+                    'Bus per gruppi numerosi.',
                 ],
-            },
-            {
-                title: 'Trasferimenti verso il porto d’imbarco',
-                body: [
-                    'Mettiamo a disposizione diverse soluzioni di trasporto, in funzione del numero di passeggeri e delle specifiche necessità:',
-                    [
-                        'Auto private per trasferimenti individuali o di piccoli gruppi;',
-                        'Minivan per gruppi di dimensioni intermedie;',
-                        'Bus per gruppi numerosi.',
-                    ],
-                    'Ogni trasferimento viene organizzato con particolare attenzione alla puntualità, al comfort e alla gestione dei tempi, assicurando un coordinamento efficiente tra l’aeroporto e i collegamenti marittimi e le strutture ricettive prescelte.',
-                ],
-            },
-            {
-                title: 'Gestione delle procedure e fornitura dei ticket',
-                body: [
-                    'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere l’esperienza del cliente il più semplice e organizzata possibile.',
-                ],
-            },
-            {
-                title: 'Assistenza durante tutto il servizio',
-                body: [
-                    'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendo al cliente un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
-                    'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale il cliente possa sentirsi seguito e assistito in ogni momento.',
-                    'Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer.',
-                ],
-            },
-        ],
-        bullets: [
-            'Bus Gran Turismo 30-55 posti',
-            'Auto private e van per piccoli gruppi',
-            'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
-            'Coordinamento con voli e traghetti',
-        ],
-        image: px(13232525),
-        imageAlt: 'Man on a ferry looking at coastal town and castle under blue sky.',
-        credit: 'Foto: Nati, Pexels',
-        imageRight: true,
-    },
-    {
-        id: 'soggiorni',
-        eyebrow: 'La nostra firma',
-        title: 'Soggiorni di gruppo, gestiti su misura',
-        body:
-            'La gestione dei gruppi è il punto forte della nostra vita professionale. Lavoriamo con strutture alberghiere di ogni livello, dalle famiglie alle agenzie. Costruiamo pacchetti ad hoc, con assistenza multilingue in ogni fase del viaggio.',
-        bullets: [
-            'Ampia scelta di hotel e strutture, selezionate negli anni',
-            'Pacchetti su misura per gruppi grandi e piccoli',
-            'Assistenza multilingue dedicata',
-            'Eventi privati, ricorrenze, team building',
-        ],
-        image: px(16014522),
-        imageAlt: 'Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago.',
-        credit: 'Foto: Pexels',
-        imageRight: false,
-    },
-    {
-        id: 'escursioni',
-        eyebrow: 'Esperienze',
-        title: 'Escursioni ed Esperienze',
-        body: [
-            'Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.',
-            'Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te.',
-        ],
-        subsections: [
-            {
-                title: 'Alla scoperta dell’Isola',
-                body: [
-                    'Il modo ideale per iniziare a conoscere l’isola è attraverso il classico giro dell’isola, disponibile in minibus, bus, battello e/o veliero.',
-                    'Un itinerario che permette di ammirare panorami suggestivi, conoscere i luoghi più caratteristici e scoprire, comodamente accompagnati, le diverse anime dell’isola, tra borghi, coste, paesaggi e tradizioni.',
-                ],
-            },
-            {
-                title: 'Escursioni in barca: il fascino delle isole',
-                body: [
-                    'Il mare è protagonista anche delle nostre escursioni in barca, alla scoperta delle isole vicine, ognuna con la propria identità e il proprio fascino.',
-                    'Potrai navigare verso Capri e Procida, ammirandole da una prospettiva privilegiata e vivendo il piacere di una giornata sul mare, tra panorami, acque cristalline e scorci indimenticabili.',
-                ],
-            },
-            {
-                title: 'Trekking e natura: quando il viaggio diventa emozione',
-                body: [
-                    'E se invece sei alla ricerca di sentieri, natura e avventura, allora porta con te le scarpe giuste!',
-                    'Ti accompagneremo lungo percorsi dove è la Natura a fare da padrona, tra sentieri panoramici, profumi della vegetazione mediterranea e scorci sul mare.',
-                    'Qui terra e mare si incontrano, e tutti gli elementi della Vita sembrano fondersi in un unico paesaggio.',
-                ],
-            },
-        ],
-        bullets: [
-            'Giro dell’isola di Ischia (~3h30 con soste)',
-            'Parchi termali (giornata o mezza giornata)',
-            'Tour in barca Capri, Procida, Costiera',
-            'Pompei, Vesuvio, Reggia di Caserta',
-            'Tour enogastronomici e cantine',
-            'Hiking sui sentieri Epomeo, Sentiero degli Dei',
-        ],
-        image: px(8206930),
-        imageAlt: 'Gruppo in escursione su un sentiero in Campania',
-        credit: 'Foto: Michele Busce / Pexels',
-        imageRight: true,
-    },
-    {
-        id: 'su-misura',
-        eyebrow: 'Su misura',
-        title: 'Viaggi su misura per ogni esigenza',
-        body: [
-            'Crediamo che ogni viaggiatore abbia esigenze, aspettative e desideri differenti. Per questo non proponiamo semplicemente pacchetti standard, ma siamo in grado di progettare e organizzare viaggi su misura, costruiti attorno alle necessità di ogni cliente.',
-            'Che tu sia un viaggiatore solitario, una famiglia, un gruppo di amici, un’associazione o una scolaresca, studiamo insieme il viaggio più adatto, occupandoci dell’organizzazione e coordinando ogni aspetto dell’esperienza.',
-            'Dal primo contatto al rientro, il nostro obiettivo è uno solo: trasformare ogni viaggio in un’esperienza da ricordare.',
-            'Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio.',
-        ],
-        bullets: [
-            'Briefing iniziale per capire le tue esigenze',
-            'Proposta scritta con voci e prezzi chiari',
-            'Modifiche fino a quando il programma è giusto',
-            'Assistenza dedicata durante il viaggio',
-        ],
-        image: px(7634231),
-        imageAlt: 'Mano su una mappa con appunti di viaggio',
-        credit: 'Foto: Marina Zasorina / Pexels',
-        imageRight: false,
-    },
+                'Ogni trasferimento viene organizzato con particolare attenzione alla puntualità, al comfort e alla gestione dei tempi, assicurando un coordinamento efficiente tra l’aeroporto e i collegamenti marittimi e le strutture ricettive prescelte.',
+            ],
+        },
+        {
+            title: 'Gestione delle procedure e fornitura dei ticket',
+            body: [
+                'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere l’esperienza del cliente il più semplice e organizzata possibile.',
+            ],
+        },
+        {
+            title: 'Assistenza durante tutto il servizio',
+            body: [
+                'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendo al cliente un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
+                'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale il cliente possa sentirsi seguito e assistito in ogni momento.',
+                'Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer.',
+            ],
+        },
+    ],
+    bullets: [
+        'Bus Gran Turismo 30-55 posti',
+        'Auto private e van per piccoli gruppi',
+        'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
+        'Coordinamento con voli e traghetti',
+    ],
+    image: px(13232525),
+    imageAlt: 'Man on a ferry looking at coastal town and castle under blue sky.',
+    credit: 'Foto: Nati, Pexels',
+    imageRight: true,
+};
+
+// Soggiorni balneari + soggiorni di gruppo in un unico blocco
+const soggiorni: Service = {
+    id: 'soggiorni',
+    eyebrow: 'La nostra firma',
+    title: 'Soggiorni',
+    subsections: [
+        {
+            title: 'Soggiorni balneari',
+            body: [
+                'Per chi desidera staccare dalla quotidianità e concedersi momenti di tranquillità, proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
+            ],
+        },
+        {
+            title: 'Soggiorni di gruppo, gestiti su misura',
+            body: [
+                'La gestione dei gruppi è il punto forte della nostra vita professionale. Lavoriamo con strutture alberghiere di ogni livello, dalle famiglie alle agenzie. Costruiamo pacchetti ad hoc, con assistenza multilingue in ogni fase del viaggio.',
+            ],
+        },
+    ],
+    bullets: [
+        'Ampia scelta di hotel e strutture, selezionate negli anni',
+        'Pacchetti su misura per gruppi grandi e piccoli',
+        'Assistenza multilingue dedicata',
+        'Eventi privati, ricorrenze, team building',
+    ],
+    image: px(16014522),
+    imageAlt: 'Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago.',
+    credit: 'Foto: Pexels',
+    imageRight: false,
+};
+
+// Tour ed esperienze + escursioni in un unico blocco
+const escursioni: Service = {
+    id: 'escursioni',
+    title: 'Tour ed esperienze',
+    body: [
+        'Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.',
+        'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permettere ai nostri ospiti di conoscere e vivere ogni destinazione in modo completo e originale.',
+        'Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.',
+        'Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te.',
+    ],
+    subsections: [
+        {
+            title: 'Alla scoperta dell’Isola',
+            body: [
+                'Il modo ideale per iniziare a conoscere l’isola è attraverso il classico giro dell’isola, disponibile in minibus, bus, battello e/o veliero.',
+                'Un itinerario che permette di ammirare panorami suggestivi, conoscere i luoghi più caratteristici e scoprire, comodamente accompagnati, le diverse anime dell’isola, tra borghi, coste, paesaggi e tradizioni.',
+            ],
+        },
+        {
+            title: 'Escursioni in barca: il fascino delle isole',
+            body: [
+                'Il mare è protagonista anche delle nostre escursioni in barca, alla scoperta delle isole vicine, ognuna con la propria identità e il proprio fascino.',
+                'Potrai navigare verso Capri e Procida, ammirandole da una prospettiva privilegiata e vivendo il piacere di una giornata sul mare, tra panorami, acque cristalline e scorci indimenticabili.',
+            ],
+        },
+        {
+            title: 'Trekking e natura: quando il viaggio diventa emozione',
+            body: [
+                'E se invece sei alla ricerca di sentieri, natura e avventura, allora porta con te le scarpe giuste!',
+                'Ti accompagneremo lungo percorsi dove è la Natura a fare da padrona, tra sentieri panoramici, profumi della vegetazione mediterranea e scorci sul mare.',
+                'Qui terra e mare si incontrano, e tutti gli elementi della Vita sembrano fondersi in un unico paesaggio.',
+            ],
+        },
+    ],
+    bullets: [
+        'Giro dell’isola di Ischia (~3h30 con soste)',
+        'Parchi termali (giornata o mezza giornata)',
+        'Tour in barca Capri, Procida, Costiera',
+        'Pompei, Vesuvio, Reggia di Caserta',
+        'Tour enogastronomici e cantine',
+        'Hiking sui sentieri Epomeo, Sentiero degli Dei',
+    ],
+    image: px(8206930),
+    imageAlt: 'Gruppo in escursione su un sentiero in Campania',
+    credit: 'Foto: Michele Busce / Pexels',
+    imageRight: true,
+};
+
+const suMisura: Service = {
+    id: 'su-misura',
+    eyebrow: 'Su misura',
+    title: 'Viaggi su misura per ogni esigenza',
+    body: [
+        'Crediamo che ogni viaggiatore abbia esigenze, aspettative e desideri differenti. Per questo non proponiamo semplicemente pacchetti standard, ma siamo in grado di progettare e organizzare viaggi su misura, costruiti attorno alle necessità di ogni cliente.',
+        'Che tu sia un viaggiatore solitario, una famiglia, un gruppo di amici, un’associazione o una scolaresca, studiamo insieme il viaggio più adatto, occupandoci dell’organizzazione e coordinando ogni aspetto dell’esperienza.',
+        'Dal primo contatto al rientro, il nostro obiettivo è uno solo: trasformare ogni viaggio in un’esperienza da ricordare.',
+        'Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio.',
+    ],
+    bullets: [
+        'Briefing iniziale per capire le tue esigenze',
+        'Proposta scritta con voci e prezzi chiari',
+        'Modifiche fino a quando il programma è giusto',
+        'Assistenza dedicata durante il viaggio',
+    ],
+    image: px(7634231),
+    imageAlt: 'Mano su una mappa con appunti di viaggio',
+    credit: 'Foto: Marina Zasorina / Pexels',
+    imageRight: false,
+};
+
+// Indice in testa alla pagina, nell'ordine in cui compaiono i servizi
+const serviceIndex = [
+    { id: transfer.id, label: 'Transfer' },
+    { id: soggiorni.id, label: 'Soggiorni' },
+    { id: escursioni.id, label: 'Tour ed escursioni' },
+    { id: suMisura.id, label: 'Viaggi su misura' },
 ];
 
 // Pacchetto tipo (lavorazione completa). Mostrato come timeline.
@@ -288,6 +291,76 @@ const eyebrowStyle = {
     lineHeight: 1.2,
 };
 
+function ServiceBlock({ s }: { s: Service }) {
+    return (
+        <article
+            id={s.id}
+            className={`scroll-mt-32 flex flex-col gap-10 lg:gap-20 items-center ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+        >
+            <div className="w-full lg:w-1/2">
+                {s.eyebrow && <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>}
+                <h2 className="font-serif text-black leading-tight mb-6" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.625rem)', fontWeight: 400 }}>
+                    {s.title}
+                </h2>
+                {s.body?.map((para) => (
+                    <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                        {para}
+                    </p>
+                ))}
+                {s.subsections?.map((sub) => (
+                    <div key={sub.title}>
+                        <h3 className="font-serif text-black leading-tight mb-4" style={{ fontSize: '1.5rem', fontWeight: 400 }}>
+                            {sub.title}
+                        </h3>
+                        {sub.body.map((para) =>
+                            Array.isArray(para) ? (
+                                <ul key={para.join('|')} className="space-y-2 mb-8 -mt-4">
+                                    {para.map((item) => (
+                                        <li key={item} className="flex gap-3 text-black/70" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                            <span aria-hidden="true" className="shrink-0">•</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            ) : (
+                                <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                    {para}
+                                </p>
+                            )
+                        )}
+                    </div>
+                ))}
+                {s.bullets && (
+                <ul className="space-y-3 border-t border-black/[0.10] pt-6">
+                    {s.bullets.map((b) => (
+                        <li key={b} className="flex gap-3 text-black/80" style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', lineHeight: 1.6 }}>
+                            <span aria-hidden="true" className="text-midnight/35 shrink-0" style={{ marginTop: '0.55rem' }}>
+                                <span style={{ display: 'inline-block', width: '14px', height: '1px', background: 'currentColor' }} />
+                            </span>
+                            <span>{b}</span>
+                        </li>
+                    ))}
+                </ul>
+                )}
+                <div className="mt-8" style={{ width: '2.5rem', height: '1px', background: 'rgba(0,0,0,0.18)' }} />
+            </div>
+            <div className="w-full lg:w-1/2">
+                <figure className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                    <Image
+                        src={s.image}
+                        alt={s.imageAlt}
+                        fill
+                        loading="lazy"
+                        className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                </figure>
+                {s.credit && <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{s.credit}</p>}
+            </div>
+        </article>
+    );
+}
+
 export default async function ServiziPage({
     params,
 }: {
@@ -357,11 +430,11 @@ export default async function ServiziPage({
                     </div>
                 </section>
 
-                {/* ── INTRO + SERVIZI principali ── */}
+                {/* ── INTRO + INDICE + TRANSFER + SOGGIORNI ── */}
                 <section className="bg-white" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
                         <FadeIn>
-                            <div className="max-w-3xl mx-auto mb-24 lg:mb-36">
+                            <div className="max-w-3xl mx-auto mb-12">
                                 {[
                                     'Siamo un Tour Operator con una consolidata esperienza nel settore turistico, specializzato nell’organizzazione di soggiorni, tour ed esperienze dedicati sia alla clientela individuale sia a gruppi di ogni dimensione.',
                                     'La nostra filosofia nasce dall’unione di competitività, professionalità e attenzione al cliente: proponiamo offerte turistiche particolarmente vantaggiose e studiate per rispondere alle diverse esigenze, senza mai rinunciare alla qualità dei servizi, alla cura dei dettagli e alla soddisfazione di chi sceglie di viaggiare con noi.',
@@ -372,76 +445,26 @@ export default async function ServiziPage({
                                 ))}
                             </div>
                         </FadeIn>
+                        <FadeIn delay={80}>
+                            <nav aria-label="Indice dei servizi" className="max-w-3xl mx-auto mb-24 lg:mb-36 border-y border-black/[0.10] py-5">
+                                <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+                                    {serviceIndex.map((item) => (
+                                        <li key={item.id}>
+                                            <a href={`#${item.id}`} className="text-midnight/60 hover:text-midnight transition-colors" style={eyebrowStyle}>
+                                                {item.label}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </nav>
+                        </FadeIn>
                         <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
-                            {services.map((s, i) => (
-                                <FadeIn key={s.id} delay={i * 40}>
-                                    <article
-                                        id={s.id}
-                                        className={`flex flex-col gap-10 lg:gap-20 items-center ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
-                                    >
-                                        <div className="w-full lg:w-1/2">
-                                            {s.eyebrow && <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>}
-                                            <h2 className="font-serif text-black leading-tight mb-6" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.625rem)', fontWeight: 400 }}>
-                                                {s.title}
-                                            </h2>
-                                            {(Array.isArray(s.body) ? s.body : [s.body]).map((para) => (
-                                                <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
-                                                    {para}
-                                                </p>
-                                            ))}
-                                            {s.subsections?.map((sub) => (
-                                                <div key={sub.title}>
-                                                    <h3 className="font-serif text-black leading-tight mb-4" style={{ fontSize: '1.5rem', fontWeight: 400 }}>
-                                                        {sub.title}
-                                                    </h3>
-                                                    {sub.body.map((para) =>
-                                                        Array.isArray(para) ? (
-                                                            <ul key={para.join('|')} className="space-y-2 mb-8 -mt-4">
-                                                                {para.map((item) => (
-                                                                    <li key={item} className="flex gap-3 text-black/70" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
-                                                                        <span aria-hidden="true" className="shrink-0">•</span>
-                                                                        <span>{item}</span>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        ) : (
-                                                            <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
-                                                                {para}
-                                                            </p>
-                                                        )
-                                                    )}
-                                                </div>
-                                            ))}
-                                            {s.bullets && (
-                                            <ul className="space-y-3 border-t border-black/[0.10] pt-6">
-                                                {s.bullets.map((b) => (
-                                                    <li key={b} className="flex gap-3 text-black/80" style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', lineHeight: 1.6 }}>
-                                                        <span aria-hidden="true" className="text-midnight/35 shrink-0" style={{ marginTop: '0.55rem' }}>
-                                                            <span style={{ display: 'inline-block', width: '14px', height: '1px', background: 'currentColor' }} />
-                                                        </span>
-                                                        <span>{b}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            )}
-                                            <div className="mt-8" style={{ width: '2.5rem', height: '1px', background: 'rgba(0,0,0,0.18)' }} />
-                                        </div>
-                                        <div className="w-full lg:w-1/2">
-                                            <figure className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                                                <Image
-                                                    src={s.image}
-                                                    alt={s.imageAlt}
-                                                    fill
-                                                    loading="lazy"
-                                                    className="object-cover transition-transform duration-700 ease-out hover:scale-[1.03]"
-                                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                                />
-                                            </figure>
-                                            {s.credit && <p className="mt-3 text-midnight/40" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.7rem', letterSpacing: '0.06em' }}>{s.credit}</p>}
-                                        </div>
-                                    </article>
-                                </FadeIn>
-                            ))}
+                            <FadeIn>
+                                <ServiceBlock s={transfer} />
+                            </FadeIn>
+                            <FadeIn>
+                                <ServiceBlock s={soggiorni} />
+                            </FadeIn>
                         </div>
                     </div>
                 </section>
@@ -487,10 +510,15 @@ export default async function ServiziPage({
                     </div>
                 </section>
 
-                {/* ── TOUR PACKAGES: destinazioni per gite (Amalfi, Positano, Pompei, Sorrento) ── */}
+                {/* ── TOUR ED ESCURSIONI + destinazioni per le gite (Amalfi, Positano, Pompei, Sorrento) ── */}
                 <section className="bg-white" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
+                            <FadeIn>
+                                <ServiceBlock s={escursioni} />
+                            </FadeIn>
+                        </div>
+                        <div className="max-w-6xl mx-auto mt-24 lg:mt-36">
                             <FadeIn>
                                 <p className="text-midnight/55 mb-4 text-center" style={eyebrowStyle}>Destinazioni per le gite</p>
                             </FadeIn>
@@ -540,6 +568,17 @@ export default async function ServiziPage({
                                     </FadeIn>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ── VIAGGI SU MISURA ── */}
+                <section className="bg-white border-t border-black/[0.05]" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-6xl mx-auto">
+                            <FadeIn>
+                                <ServiceBlock s={suMisura} />
+                            </FadeIn>
                         </div>
                     </div>
                 </section>
