@@ -18,6 +18,12 @@ const META: Record<Locale, { title: string; heading: string; description: string
         description:
             'The Baywatch Travel website uses no profiling or analytics cookies. Here is what your browser stores and how to manage it.',
     },
+    de: {
+        title: 'Cookie-Richtlinie | Baywatch Travel',
+        heading: 'Cookie-Richtlinie',
+        description:
+            'Die Website von Baywatch Travel verwendet weder Profiling- noch Analyse-Cookies. Hier erfahren Sie, was Ihr Browser speichert und wie Sie dies verwalten können.',
+    },
 };
 
 export async function generateMetadata({
@@ -43,7 +49,9 @@ export default async function CookiePage({
         <LegalPage dict={dict} lang={locale} eyebrow="Cookie" title={META[locale].heading}>
             {locale === 'en'
                 ? <CookieEn locale={locale} dismissLabel={dismissLabel} />
-                : <CookieIt locale={locale} dismissLabel={dismissLabel} />}
+                : locale === 'de'
+                  ? <CookieDe locale={locale} dismissLabel={dismissLabel} />
+                  : <CookieIt locale={locale} dismissLabel={dismissLabel} />}
         </LegalPage>
     );
 }
@@ -152,6 +160,64 @@ function CookieEn({ locale, dismissLabel }: { locale: Locale; dismissLabel: stri
                 For questions about this policy, write to{' '}
                 <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a>. To find out how we handle the
                 data you send us, read the <Link href={`/${locale}/privacy`}>privacy policy</Link>.
+            </p>
+        </>
+    );
+}
+
+function CookieDe({ locale, dismissLabel }: { locale: Locale; dismissLabel: string }) {
+    return (
+        <>
+            <p>
+                Cookies sind kleine Textdateien, die eine Website im Browser ihrer Besucher speichert.
+                Einige sind für den Betrieb der Website erforderlich, andere messen ihre Nutzung oder
+                dienen dazu, gezielte Werbung anzuzeigen. Diese Seite erläutert, was geschieht, wenn Sie
+                die Website von {CONTROLLER.name} besuchen.
+            </p>
+
+            <h2>Kurz gesagt</h2>
+            <p>
+                <strong>Diese Website setzt keine Cookies</strong>: weder Profiling- noch Analyse- noch
+                technische Cookies. Wir verwenden keine Statistik-Tools, Werbepixel oder Inhalte Dritter,
+                die Sie tracken. Schriftarten und Bilder werden direkt von unseren Servern ausgeliefert.
+            </p>
+
+            <h2>Was Ihr Browser speichert</h2>
+            <p>
+                Wenn Sie den Cookie-Hinweis mit &bdquo;{dismissLabel}&ldquo; schließen, speichert der
+                Browser diese Auswahl im lokalen Speicher (localStorage) unter dem Namen{' '}
+                <code>{COOKIE_NOTICE_KEY}</code>, damit Ihnen der Hinweis nicht erneut angezeigt wird. Es
+                handelt sich um eine technische Information: Sie enthält keine personenbezogenen Daten,
+                läuft nicht ab und wird weder an uns noch an andere übermittelt. Sie können sie jederzeit
+                über die Einstellungen Ihres Browsers löschen.
+            </p>
+
+            <h2>Links zu anderen Websites</h2>
+            <p>
+                Die WhatsApp-Schaltfläche und die anderen externen Links führen Sie zu Websites, die wir
+                nicht betreiben und die eigene Cookies verwenden können. In diesem Fall gelten die
+                Richtlinien dieser Websites.
+            </p>
+
+            <h2>So verwalten Sie Cookies in Ihrem Browser</h2>
+            <p>
+                Alle Browser ermöglichen es, Cookies und Website-Daten anzuzeigen, zu blockieren und zu
+                löschen. Diese Optionen finden Sie in der Regel in den Einstellungen unter dem Punkt
+                Datenschutz oder Sicherheit; die Hilfe Ihres Browsers erklärt die genauen Schritte.
+            </p>
+
+            <h2>Falls sich etwas ändert</h2>
+            <p>
+                Sollten wir künftig Analyse-Tools oder andere nicht technische Cookies einsetzen, werden
+                wir diese Seite aktualisieren und Sie vor deren Aktivierung um Ihre Einwilligung bitten.
+            </p>
+
+            <h2>Kontakt</h2>
+            <p>
+                Bei Fragen zu dieser Richtlinie schreiben Sie an{' '}
+                <a href={`mailto:${CONTROLLER.email}`}>{CONTROLLER.email}</a>. Wie wir die Daten
+                verarbeiten, die Sie uns senden, erfahren Sie in der{' '}
+                <Link href={`/${locale}/privacy`}>Datenschutzerklärung</Link>.
             </p>
         </>
     );

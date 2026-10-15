@@ -1,5 +1,6 @@
 import type { Locale } from '@/i18n-config';
 import { destinationContentEn } from './destination-content.en';
+import { destinationContentDe } from './destination-content.de';
 
 export type Itinerary = {
     title: string;
@@ -1051,7 +1052,12 @@ export const destinationContent: Record<string, DestinationContent> = {
     },
 };
 
+const translatedContent: Partial<Record<Locale, Record<string, DestinationContent>>> = {
+    en: destinationContentEn,
+    de: destinationContentDe,
+};
+
 /** Content for a destination in the requested language, falling back to Italian. */
 export function getDestinationContent(slug: string, locale: Locale): DestinationContent | undefined {
-    return (locale === 'en' ? destinationContentEn[slug] : undefined) ?? destinationContent[slug];
+    return translatedContent[locale]?.[slug] ?? destinationContent[slug];
 }
