@@ -1,38 +1,15 @@
-'use client';
-
 import Link from 'next/link';
 import { Locale } from '@/i18n-config';
-import { useState } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Dict = Record<string, any>;
 
 export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
-    const [email, setEmail] = useState('');
     const f = dict.footer;
 
     return (
         <footer className="bg-cream border-t border-black/5">
-            {/* Newsletter bar */}
             <div className="container mx-auto px-4 py-14">
-                <div className="max-w-md mx-auto text-center mb-16">
-                    <h3 className="text-h4 font-serif text-midnight mb-4">
-                        {f.newsletter_title}
-                    </h3>
-                    <div className="flex gap-2">
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder={f.newsletter_placeholder}
-                            className="flex-1 px-4 py-2.5 border border-black/10 rounded-full text-sm bg-white text-midnight outline-none focus:border-midnight/40 transition-colors"
-                        />
-                        <button className="btn btn-dark !py-2.5 !px-6 !text-xs">
-                            {f.newsletter_button}
-                        </button>
-                    </div>
-                </div>
-
                 {/* Columns */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
                     {/* Sito */}
@@ -78,6 +55,16 @@ export default function Footer({ dict, lang }: { dict: Dict; lang: Locale }) {
                             <li>
                                 <Link href="#" className="text-sm text-midnight/50 hover:text-midnight transition-colors">
                                     {f.link_terms}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href={`/${lang}/privacy`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                    {f.link_privacy}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href={`/${lang}/cookie`} className="text-sm text-midnight/50 hover:text-midnight transition-colors">
+                                    {f.link_cookies}
                                 </Link>
                             </li>
                         </ul>

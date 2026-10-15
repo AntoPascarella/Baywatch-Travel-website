@@ -188,12 +188,13 @@
         "send_another": "Send another message",
         "error_name": "Name must be at least 2 characters.",
         "error_email": "Invalid email address.",
-        "error_message": "Message must be at least 10 characters."
+        "error_message": "Message must be at least 10 characters.",
+        "privacy_consent": "I have read the {link}.",
+        "privacy_link": "privacy policy",
+        "error_privacy": "Please confirm you have read the privacy policy to send your message.",
+        "error_send": "Your message could not be sent. Please try again in a few minutes or write to info@baywatchtravel.it."
     },
     "footer": {
-        "newsletter_title": "Stay updated",
-        "newsletter_placeholder": "Your email",
-        "newsletter_button": "Subscribe",
         "col_site": "Site",
         "col_info": "Information",
         "col_contact": "Contact",
@@ -203,7 +204,15 @@
         "link_about": "About us",
         "link_faq": "FAQs",
         "link_terms": "Terms and conditions",
+        "link_privacy": "Privacy policy",
+        "link_cookies": "Cookie policy",
         "contact_email": "info@baywatchtravel.it",
         "contact_phone": "+39 081 333 1096"
+    },
+    "cookie_notice": {
+        "label": "Cookie notice",
+        "text": "This site does not use profiling or analytics cookies.",
+        "link": "Cookie policy",
+        "dismiss": "Got it"
     }
 }

@@ -186,12 +186,13 @@
         "send_another": "Invia un altro messaggio",
         "error_name": "Il nome deve avere almeno 2 caratteri.",
         "error_email": "Indirizzo email non valido.",
-        "error_message": "Il messaggio deve avere almeno 10 caratteri."
+        "error_message": "Il messaggio deve avere almeno 10 caratteri.",
+        "privacy_consent": "Ho letto l'{link}.",
+        "privacy_link": "informativa sulla privacy",
+        "error_privacy": "Conferma di aver letto l'informativa per inviare il messaggio.",
+        "error_send": "Il messaggio non è partito. Riprova tra qualche minuto oppure scrivici a info@baywatchtravel.it."
     },
     "footer": {
-        "newsletter_title": "Resta aggiornato",
-        "newsletter_placeholder": "La tua email",
-        "newsletter_button": "Iscriviti",
         "col_site": "Sito",
         "col_info": "Informazioni",
         "col_contact": "Contatti",
@@ -203,6 +204,14 @@
         "link_faq": "Domande Frequenti",
         "link_terms": "Termini e Condizioni",
         "contact_email": "info@baywatchtravel.it",
-        "contact_phone": "+39 081 333 1096"
+        "contact_phone": "+39 081 333 1096",
+        "link_privacy": "Informativa sulla privacy",
+        "link_cookies": "Informativa sui cookie"
+    },
+    "cookie_notice": {
+        "label": "Avviso sui cookie",
+        "text": "Questo sito non usa cookie di profilazione né di analisi.",
+        "link": "Informativa sui cookie",
+        "dismiss": "Ho capito"
     }
 }
