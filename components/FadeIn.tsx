@@ -30,10 +30,13 @@ export default function FadeIn({
     children,
     className = '',
     delay = 0,
+    threshold = 0.1,
 }: {
     children: React.ReactNode;
     className?: string;
     delay?: number;
+    /** Share of the element that must be visible; use 0 for blocks taller than the viewport. */
+    threshold?: number;
 }) {
     const prefersReducedMotion = useSyncExternalStore(
         subscribeToReducedMotion,
@@ -60,7 +63,7 @@ export default function FadeIn({
         if (!node) return;
 
         const observer = new IntersectionObserver(handleIntersect, {
-            threshold: 0.1,
+            threshold,
             rootMargin: '0px 0px -50px 0px',
         });
 
@@ -69,7 +72,7 @@ export default function FadeIn({
         return () => {
             observer.unobserve(node);
         };
-    }, [prefersReducedMotion, isVisible, handleIntersect]);
+    }, [prefersReducedMotion, isVisible, handleIntersect, threshold]);
 
     // If reduced motion, render immediately without animation styles
     if (prefersReducedMotion) {

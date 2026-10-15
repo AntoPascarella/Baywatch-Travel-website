@@ -38,14 +38,14 @@ const transfer: Service = {
     eyebrow: 'Punto di forza',
     title: 'Servizi di Transfer: il nostro fiore all’occhiello',
     body: [
-        'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantire ai nostri clienti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
-        'Organizziamo trasferimenti personalizzati in base alle esigenze del cliente, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
+        'Offriamo un servizio di transfer individuale e di gruppo, pensato per garantirti la massima comodità, puntualità e assistenza in ogni fase del trasferimento.',
+        'Organizziamo trasferimenti personalizzati in base alle tue esigenze, curando ogni dettaglio del servizio dalla fase di arrivo fino alla destinazione finale.',
     ],
     subsections: [
         {
             title: 'Accoglienza in aeroporto',
             body: [
-                'Il servizio inizia direttamente in aeroporto, dove il cliente viene preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendo tutte le indicazioni necessarie e accompagnando il cliente durante le procedure previste.',
+                'Il servizio inizia direttamente in aeroporto, dove verrai preso in carico e accolto da un nostro assistente plurilingue. Il nostro personale garantisce un’accoglienza professionale e attenta, fornendoti tutte le indicazioni necessarie e accompagnandoti durante le procedure previste.',
             ],
         },
         {
@@ -63,23 +63,21 @@ const transfer: Service = {
         {
             title: 'Gestione delle procedure e fornitura dei ticket',
             body: [
-                'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere l’esperienza del cliente il più semplice e organizzata possibile.',
+                'Ci occupiamo, quando previsto dal servizio, anche della gestione delle procedure necessarie e della fornitura dei relativi ticket, così da rendere la tua esperienza il più semplice e organizzata possibile.',
             ],
         },
         {
             title: 'Assistenza durante tutto il servizio',
             body: [
-                'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendo al cliente un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
-                'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale il cliente possa sentirsi seguito e assistito in ogni momento.',
+                'Il nostro supporto non si limita al semplice trasferimento. Garantiamo assistenza per l’intera durata del servizio, offrendoti un unico punto di riferimento per eventuali necessità, informazioni o esigenze che possano emergere durante il percorso.',
+                'L’obiettivo è offrire un servizio completo, affidabile e personalizzato, nel quale tu possa sentirti seguito e assistito in ogni momento.',
                 'Professionalità, organizzazione e attenzione al cliente sono alla base di ogni nostro servizio di transfer.',
             ],
         },
     ],
     bullets: [
         'Bus Gran Turismo 30-55 posti',
-        'Auto private e van per piccoli gruppi',
         'Aeroporti del Centro-Sud e porti di Napoli, Pozzuoli, Salerno',
-        'Coordinamento con voli e traghetti',
     ],
     image: px(13232525),
     imageAlt: 'Man on a ferry looking at coastal town and castle under blue sky.',
@@ -96,7 +94,7 @@ const soggiorni: Service = {
         {
             title: 'Soggiorni balneari',
             body: [
-                'Per chi desidera staccare dalla quotidianità e concedersi momenti di tranquillità, proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
+                'Se desideri staccare dalla quotidianità e concederti momenti di tranquillità, ti proponiamo soggiorni balneari all’insegna del relax, pensati per vivere il mare, il sole e il tempo libero con la massima serenità.',
             ],
         },
         {
@@ -105,12 +103,6 @@ const soggiorni: Service = {
                 'La gestione dei gruppi è il punto forte della nostra vita professionale. Lavoriamo con strutture alberghiere di ogni livello, dalle famiglie alle agenzie. Costruiamo pacchetti ad hoc, con assistenza multilingue in ogni fase del viaggio.',
             ],
         },
-    ],
-    bullets: [
-        'Ampia scelta di hotel e strutture, selezionate negli anni',
-        'Pacchetti su misura per gruppi grandi e piccoli',
-        'Assistenza multilingue dedicata',
-        'Eventi privati, ricorrenze, team building',
     ],
     image: px(16014522),
     imageAlt: 'Rilassante vista su un resort mediterraneo a Capri, in Italia, con sdraio e ombrelloni a bordo piscina, ideale per chi è alla ricerca di viaggi e svago.',
@@ -124,7 +116,7 @@ const escursioni: Service = {
     title: 'Tour ed esperienze',
     body: [
         'Organizziamo tour accompagnati e itinerari personalizzati, affidandoci ad accompagnatori esperti e guide professionali, capaci di trasformare ogni viaggio in un’esperienza autentica e coinvolgente.',
-        'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permettere ai nostri ospiti di conoscere e vivere ogni destinazione in modo completo e originale.',
+        'Dalle visite culturali alle escursioni, dalle tradizioni locali alla scoperta dei luoghi più suggestivi, proponiamo esperienze indimenticabili, costruite per permetterti di conoscere e vivere ogni destinazione in modo completo e originale.',
         'Un ampio ventaglio di escursioni ed esperienze pensate per tutti i gusti, per scoprire il territorio attraverso itinerari, paesaggi e atmosfere sempre diverse.',
         'Che tu preferisca un tour panoramico, la storia e la cultura, il mare e la navigazione oppure il contatto diretto con la natura, abbiamo l’escursione giusta per te.',
     ],
@@ -155,7 +147,6 @@ const escursioni: Service = {
     bullets: [
         'Giro dell’isola di Ischia (~3h30 con soste)',
         'Parchi termali (giornata o mezza giornata)',
-        'Tour in barca Capri, Procida, Costiera',
         'Pompei, Vesuvio, Reggia di Caserta',
         'Tour enogastronomici e cantine',
         'Hiking sui sentieri Epomeo, Sentiero degli Dei',
@@ -177,10 +168,8 @@ const suMisura: Service = {
         'Competenza, convenienza, cura del dettaglio e attenzione alle persone sono i valori che mettiamo in ogni proposta, perché per noi la soddisfazione del cliente è parte integrante del viaggio.',
     ],
     bullets: [
-        'Briefing iniziale per capire le tue esigenze',
         'Proposta scritta con voci e prezzi chiari',
         'Modifiche fino a quando il programma è giusto',
-        'Assistenza dedicata durante il viaggio',
     ],
     image: px(7634231),
     imageAlt: 'Mano su una mappa con appunti di viaggio',
@@ -224,7 +213,7 @@ const tourPackages: TourPackage[] = [
         slug: 'amalfi',
         name: 'Costiera Amalfitana e Sorrentina',
         eyebrow: 'Gita giornaliera',
-        tagline: 'Da Amalfi a Positano lungo la SS163, con barca o pullman a seconda di voi.',
+        tagline: 'Da Amalfi a Positano lungo la SS163, con barca o pullman a seconda delle tue preferenze.',
         activities: [
             'Tour in barca Amalfi, Furore, Conca dei Marini',
             'Visita Duomo di Amalfi + Atrani a piedi',
@@ -291,11 +280,20 @@ const eyebrowStyle = {
     lineHeight: 1.2,
 };
 
-function ServiceBlock({ s }: { s: Service }) {
+// Trattino degli elenchi: alto quanto una riga di testo, così resta centrato sulla prima riga.
+function ListDash({ width = 14 }: { width?: number }) {
+    return (
+        <span aria-hidden="true" className="text-midnight/35 shrink-0 flex items-center" style={{ height: '1lh' }}>
+            <span style={{ width: `${width}px`, height: '1px', background: 'currentColor' }} />
+        </span>
+    );
+}
+
+function ServiceBlock({ s, locale }: { s: Service; locale: Locale }) {
     return (
         <article
             id={s.id}
-            className={`scroll-mt-32 flex flex-col gap-10 lg:gap-20 items-center ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+            className={`scroll-mt-32 flex flex-col gap-10 lg:gap-20 lg:items-start ${s.imageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
         >
             <div className="w-full lg:w-1/2">
                 {s.eyebrow && <p className="text-midnight/45 mb-5" style={eyebrowStyle}>{s.eyebrow}</p>}
@@ -303,7 +301,7 @@ function ServiceBlock({ s }: { s: Service }) {
                     {s.title}
                 </h2>
                 {s.body?.map((para) => (
-                    <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                    <p key={para} className="text-black/70 mb-8 md:text-justify md:hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
                         {para}
                     </p>
                 ))}
@@ -317,13 +315,13 @@ function ServiceBlock({ s }: { s: Service }) {
                                 <ul key={para.join('|')} className="space-y-2 mb-8 -mt-4">
                                     {para.map((item) => (
                                         <li key={item} className="flex gap-3 text-black/70" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
-                                            <span aria-hidden="true" className="shrink-0">•</span>
+                                            <ListDash />
                                             <span>{item}</span>
                                         </li>
                                     ))}
                                 </ul>
                             ) : (
-                                <p key={para} className="text-black/70 mb-8 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
+                                <p key={para} className="text-black/70 mb-8 md:text-justify md:hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.125rem', lineHeight: 1.8 }}>
                                     {para}
                                 </p>
                             )
@@ -334,17 +332,21 @@ function ServiceBlock({ s }: { s: Service }) {
                 <ul className="space-y-3 border-t border-black/[0.10] pt-6">
                     {s.bullets.map((b) => (
                         <li key={b} className="flex gap-3 text-black/80" style={{ fontFamily: 'var(--font-inter)', fontSize: '1rem', lineHeight: 1.6 }}>
-                            <span aria-hidden="true" className="text-midnight/35 shrink-0" style={{ marginTop: '0.55rem' }}>
-                                <span style={{ display: 'inline-block', width: '14px', height: '1px', background: 'currentColor' }} />
-                            </span>
+                            <ListDash />
                             <span>{b}</span>
                         </li>
                     ))}
                 </ul>
                 )}
-                <div className="mt-8" style={{ width: '2.5rem', height: '1px', background: 'rgba(0,0,0,0.18)' }} />
+                <Link
+                    href={`/${locale}/chi-siamo-contatti`}
+                    className="inline-block mt-8 pb-1 border-b border-black/30 text-midnight hover:border-midnight transition-colors"
+                    style={eyebrowStyle}
+                >
+                    Richiedi informazioni
+                </Link>
             </div>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 order-first lg:order-none lg:sticky lg:top-32">
                 <figure className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
                     <Image
                         src={s.image}
@@ -419,7 +421,7 @@ export default async function ServiziPage({
                                             lineHeight: 1.7,
                                         }}
                                     >
-                                        Transfer di gruppo, soggiorni con assistenza multilingue, escursioni con o senza guida.
+                                        Transfer, soggiorni, tour ed escursioni, viaggi su misura.
                                     </p>
                                 </FadeIn>
                                 <FadeIn delay={320}>
@@ -439,7 +441,7 @@ export default async function ServiziPage({
                                     'Siamo un Tour Operator con una consolidata esperienza nel settore turistico, specializzato nell’organizzazione di soggiorni, tour ed esperienze dedicati sia alla clientela individuale sia a gruppi di ogni dimensione.',
                                     'La nostra filosofia nasce dall’unione di competitività, professionalità e attenzione al cliente: proponiamo offerte turistiche particolarmente vantaggiose e studiate per rispondere alle diverse esigenze, senza mai rinunciare alla qualità dei servizi, alla cura dei dettagli e alla soddisfazione di chi sceglie di viaggiare con noi.',
                                 ].map((para) => (
-                                    <p key={para} className="text-black/70 mb-6 last:mb-0 text-justify hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.1875rem', lineHeight: 1.8 }}>
+                                    <p key={para} className="text-black/70 mb-6 last:mb-0 md:text-justify md:hyphens-auto" style={{ fontFamily: 'var(--font-inter)', fontSize: '1.1875rem', lineHeight: 1.8 }}>
                                         {para}
                                     </p>
                                 ))}
@@ -459,11 +461,11 @@ export default async function ServiziPage({
                             </nav>
                         </FadeIn>
                         <div className="max-w-6xl mx-auto space-y-24 lg:space-y-36">
-                            <FadeIn>
-                                <ServiceBlock s={transfer} />
+                            <FadeIn threshold={0}>
+                                <ServiceBlock s={transfer} locale={locale} />
                             </FadeIn>
-                            <FadeIn>
-                                <ServiceBlock s={soggiorni} />
+                            <FadeIn threshold={0}>
+                                <ServiceBlock s={soggiorni} locale={locale} />
                             </FadeIn>
                         </div>
                     </div>
@@ -514,8 +516,8 @@ export default async function ServiziPage({
                 <section className="bg-white" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
-                            <FadeIn>
-                                <ServiceBlock s={escursioni} />
+                            <FadeIn threshold={0}>
+                                <ServiceBlock s={escursioni} locale={locale} />
                             </FadeIn>
                         </div>
                         <div className="max-w-6xl mx-auto mt-24 lg:mt-36">
@@ -557,9 +559,7 @@ export default async function ServiziPage({
                                             <ul className="space-y-2 border-t border-black/[0.10] pt-5">
                                                 {t.activities.map((a) => (
                                                     <li key={a} className="flex gap-3 text-midnight/80" style={{ fontFamily: 'var(--font-inter)', fontSize: '0.9375rem', lineHeight: 1.65 }}>
-                                                        <span aria-hidden="true" className="text-midnight/35 shrink-0" style={{ marginTop: '0.5rem' }}>
-                                                            <span style={{ display: 'inline-block', width: '12px', height: '1px', background: 'currentColor' }} />
-                                                        </span>
+                                                        <ListDash width={12} />
                                                         <span>{a}</span>
                                                     </li>
                                                 ))}
@@ -576,8 +576,8 @@ export default async function ServiziPage({
                 <section className="bg-white border-t border-black/[0.05]" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
                     <div className="container mx-auto px-4">
                         <div className="max-w-6xl mx-auto">
-                            <FadeIn>
-                                <ServiceBlock s={suMisura} />
+                            <FadeIn threshold={0}>
+                                <ServiceBlock s={suMisura} locale={locale} />
                             </FadeIn>
                         </div>
                     </div>
