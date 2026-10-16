@@ -14,7 +14,7 @@ const WhatsAppIcon = () => (
 );
 
 export default function WhatsAppButton({ labels }: { labels: { label: string; message: string } }) {
-    const phoneNumber = "390813331096"; // Configuration
+    const phoneNumber = "393400881364"; // Configuration
     const { message, label } = labels;
 
     return (
